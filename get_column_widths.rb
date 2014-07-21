@@ -1,5 +1,3 @@
-line = "=================== ================ ========================= ============= ==================== "
-
 def get_column_widths line
 	spaces = []
 	result = []
@@ -20,5 +18,3 @@ def get_column_widths line
 	
 	return spaces
 end
-
-puts get_column_widths line
