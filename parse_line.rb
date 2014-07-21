@@ -1,11 +1,4 @@
 
-
-
-column_sizes = [19, 16, 25, 13, 20]
-line = "            2658187           113577  7-JAN-2008 17:52:09.0000             5                  333 "
-
-
-
 def extract_values line, column_sizes
 	result = []
 	offset = 0
@@ -15,5 +8,3 @@ def extract_values line, column_sizes
 	end
 	return result
 end
-
-puts extract_values line, column_sizes
