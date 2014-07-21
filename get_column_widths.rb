@@ -1,4 +1,4 @@
-def extract_values line
+def get_column_widths line
 	spaces = []
 	result = []
 

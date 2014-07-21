@@ -1,4 +1,5 @@
 require_relative 'parse_line'
+require_relative 'get_column_widths'
 
 filename = ARGV[0]
 
@@ -20,6 +21,12 @@ column_sizes = nil
 
 File.open(filename, "r").each do |line|
 	next if /^\s*$/ =~ line
+	if /^[=\s]+$/ =~ line then
+		next if column_sizes != nil
+		column_sizes = get_column_widths line
+		next
+	end
+
   puts line
   lines += 1
   if lines >= MAX_LINES then
