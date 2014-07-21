@@ -1,3 +1,5 @@
+line = "=================== ================ ========================= ============= ==================== "
+
 def get_column_widths line
 	spaces = []
 	result = []
@@ -11,8 +13,12 @@ def get_column_widths line
 		end
 
 		result = line.index(' ')
-		spaces.push(result)
+		if result != nil
+			spaces.push(result)
+		end
 	end	
 	
 	return spaces
 end
+
+puts get_column_widths line
