@@ -1,6 +1,7 @@
 require 'csv'
 require_relative 'parse_line'
 require_relative 'get_column_widths'
+require_relative 'convert_dt'
 
 filename = ARGV[0]
 
@@ -14,15 +15,14 @@ if not File.file?(filename) then
 	Process.exit(2)
 end
 
-MAX_LINES = 100
-lines = 0
-
 column_names_line = nil
 column_names = nil
 column_sizes = nil
 
 CSV do |csv|
 	File.open(filename, "r").each do |line|
+		next if /^Records affected/ =~ line  # Last line in database export.
+
 		next if /^\s*$/ =~ line
 		if /^[=\s]+$/ =~ line then
 			next if column_sizes != nil
@@ -40,10 +40,5 @@ CSV do |csv|
 		else
 			column_names_line = line
 		end
-
-	  lines += 1
-	  if lines >= MAX_LINES then
-	    break
-	  end
 	end
 end

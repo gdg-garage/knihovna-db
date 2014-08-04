@@ -5,6 +5,9 @@
 require 'time'
 require 'date'
 
+def is_valid_dt(string):
+	return false
+
 def convertDT(mlp_dt)
 
 	mlp_dt = "#{mlp_dt.strip} #{Time.now.zone}"
