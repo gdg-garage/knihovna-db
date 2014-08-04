@@ -5,8 +5,9 @@
 require 'time'
 require 'date'
 
-def is_valid_dt(string):
-	return false
+def is_valid_dt(string)
+	return /^\d{2}-[A-Z]{3}-\d{4} \d{2}:\d{2}:\d{2}\.\d{4}$/ =~ string
+end
 
 def convertDT(mlp_dt)
 
