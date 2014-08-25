@@ -8,6 +8,19 @@ def get_ords(string)
 	end
 end
 
+def find_in_lines(lines, regexp, offset)
+	lines.each do |line|
+		if regexp =~ line then
+			offset -= 1
+			if offset == 0 then
+				get_ords(line)
+			  break
+			end
+			puts line
+		end
+	end
+end
+
 @lines = []
 File.open("pomocne/tituly.txt", "r", :encoding => 'windows-1250').each do |line|
 	@lines << line
