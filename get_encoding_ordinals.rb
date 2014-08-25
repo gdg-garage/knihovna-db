@@ -8,8 +8,7 @@ def get_ords(string)
 	end
 end
 
-lines = []
+@lines = []
 File.open("pomocne/tituly.txt", "r", :encoding => 'windows-1250').each do |line|
-	lines << line
+	@lines << line
 end
-
