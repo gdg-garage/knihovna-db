@@ -19,7 +19,7 @@ column_names = nil
 column_sizes = nil
 
 CSV do |csv|
-	File.open(filename, "r").each do |line|
+	File.open(filename, "r", :encoding => 'windows-1250').each do |line|
 		next if /^Records affected/ =~ line  # Last line in database export.
 
 		next if /^\s*$/ =~ line
