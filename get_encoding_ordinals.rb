@@ -22,6 +22,6 @@ def find_in_lines(lines, regexp, offset)
 end
 
 @lines = []
-File.open("pomocne/tituly.txt", "r", :encoding => 'windows-1250').each do |line|
+File.open("pomocne/tituly.txt", "r", :encoding => 'ibm852').each do |line|
 	@lines << line
 end
