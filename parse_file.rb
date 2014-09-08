@@ -19,17 +19,27 @@ end
 column_names_line = nil
 column_names = nil
 column_sizes = nil
+printed_header = false
 
 CSV do |csv|
 	File.open(filename, "r", :encoding => 'ibm852').each do |line|
 		next if /^Records affected/ =~ line  # Last line in database export.
 
-		next if /^\s*$/ =~ line
-		if /^[=\s]+$/ =~ line then
+		if /^\s*$/ =~ line then
+			# Blank line.
+			column_sizes = nil
+			column_names_line = nil
+			next
+		end
+
+		if /^[=\s]+$/ =~ line then  # Underscore line.
 			next if column_sizes != nil
 			column_sizes = get_column_widths line
 			column_names = extract_values column_names_line, column_sizes
-			csv << column_names
+			if not printed_header then
+				csv << column_names
+				printed_header = true
+			end
 			next
 		end
 
