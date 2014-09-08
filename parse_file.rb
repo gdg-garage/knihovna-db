@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'csv'
 require_relative 'parse_line'
 require_relative 'get_column_widths'
@@ -34,7 +36,7 @@ CSV do |csv|
 		next if line == column_names_line
 
 		if column_sizes != nil then
-			csv_values = extract_values line, column_sizes
+			csv_values = extract_values line.encode("utf-8"), column_sizes
 			csv << csv_values
 		else
 			column_names_line = line
