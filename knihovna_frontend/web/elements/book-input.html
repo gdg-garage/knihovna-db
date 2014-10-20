@@ -1,0 +1,17 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/paper_elements/paper_input.html">
+<link rel="import" href="book-suggestion-list.html">
+
+<polymer-element name="book-input" on-keydown="{{handleKeyDown}}">
+  <template>
+    <style>
+    </style>
+    <paper-input label="Zadejte název knížku nebo jméno autora"
+                 floatingLabel>
+                 </paper-input>
+    <book-suggestion-list></book-suggestion-list>
+  </template>
+  <script type="application/dart" src="book_input.dart"></script>
+</polymer-element>
+
