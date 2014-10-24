@@ -2,11 +2,16 @@
 <link rel="import" href="packages/polymer/polymer.html">
 <link rel="import" href="packages/paper_elements/paper_input.html">
 
-<polymer-element name="book-suggestion">
+<polymer-element name="book-suggestion" attributes="book">
   <template>
     <style>
     </style>
-    <div>NOT IMPLEMENTED</div>
+    <div>
+      <span hidden?="{{!book.selected}}">&gt;</span>
+      Book
+      <span>{{book.author}}</span>
+      <span>{{book.title}}</span>
+    </div>
   </template>
   <script type="application/dart" src="book_suggestion.dart"></script>
 </polymer-element>

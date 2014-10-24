@@ -6,8 +6,11 @@
   <template>
     <style>
     </style>
+    <div id="loading" hidden?="{{!isLoading}}">Loading...</div>
     <div id="suggestions">
-      <book-suggestion></book-suggestion>
+      <template repeat="{{book in suggestions}}">
+        <book-suggestion book="{{book}}"></book-suggestion>
+      </template>
     </div>
   </template>
   <script type="application/dart" src="book_suggestion_list.dart"></script>

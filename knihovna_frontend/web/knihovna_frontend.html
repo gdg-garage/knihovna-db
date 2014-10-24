@@ -11,18 +11,12 @@
     <script src="packages/web_components/dart_support.js"></script>
 
     <!-- import the click-counter -->
-    <link rel="import" href="elements/book-input.html">
+    <link rel="import" href="elements/book-app.html">
 
     <link rel="stylesheet" href="knihovna_frontend.css">
   </head>
-  <body>
-    <h1>Knihovna frontend</h1>
-
-    <p>Hello world from Dart!</p>
-
-    <div id="sample_container_id">
-      <book-input></book-input>
-    </div>
+  <body unresolved fullbleed>
+    <book-app></book-app>
 
     <!-- bootstrap polymer -->
     <script type="application/dart">export 'package:polymer/init.dart';</script>

@@ -4,6 +4,7 @@ dependencies:
   core_elements: any
   paper_elements: any
   polymer: '>=0.12.0 <0.13.0'
+  rate_limit: any
 transformers:
 - polymer:
     entry_points: web/knihovna_frontend.html

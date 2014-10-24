@@ -1,16 +1,21 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="packages/polymer/polymer.html">
 <link rel="import" href="packages/paper_elements/paper_input.html">
+<link rel="import" href="packages/core_elements/core_ajax_dart.html">
 <link rel="import" href="book-suggestion-list.html">
 
-<polymer-element name="book-input" on-keydown="{{handleKeyDown}}">
+<polymer-element name="book-input">
   <template>
     <style>
     </style>
-    <paper-input label="Zadejte název knížku nebo jméno autora"
-                 floatingLabel>
-                 </paper-input>
-    <book-suggestion-list></book-suggestion-list>
+    <core-ajax-dart id="ajax" url="/mock_response.json"
+                    handleAs="json"></core-ajax-dart>
+
+    <paper-input id="searchbox" label="Oblíbená knížka"
+                 on-keydown="{{handleKeyDown}}"
+                 on-input="{{handleChange}}"
+                 floatingLabel></paper-input>
+    <book-suggestion-list id="suggestion-list"></book-suggestion-list>
   </template>
   <script type="application/dart" src="book_input.dart"></script>
 </polymer-element>
