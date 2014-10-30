@@ -9,6 +9,8 @@ class BookSuggestionList extends PolymerElement {
   @observable List<SuggestedBook> suggestions = toObservable(<SuggestedBook>[]);
   int _selected = -1;
 
+  int get selected => _selected;
+
   @published
   bool get isLoading => readValue(#isLoading, () => false);
   set isLoading(bool newValue) => writeValue(#isLoading, newValue);

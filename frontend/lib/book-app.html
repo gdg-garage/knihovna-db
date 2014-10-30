@@ -2,7 +2,7 @@
 <link rel="import" href="../../packages/polymer/polymer.html">
 <link rel="import" href="../../packages/core_elements/core_toolbar.html">
 <link rel="import" href="../../packages/core_elements/core_header_panel.html">
-<link rel="import" href="../../packages/core_elements/core_scaffold.html">
+<link rel="import" href="../../packages/core_elements/core_animated_pages.html">
 <link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
 <link rel="import" href="elements/book-input.html">
 
@@ -36,7 +36,7 @@
         padding-top: 2em;
       }
 
-      content[select=".tagline"]::content p {
+      #tagline {
         font-size: 150%;
       }
 
@@ -55,11 +55,18 @@
         <content select="h1"></content>
       </core-toolbar>
 
-      <div class="content">
-        <content select=".tagline"></content>
-        <book-input></book-input>
-        <content></content>
-      </div>
+      <core-animated-pages id='animated-pages'
+                           class="content" transitions="cross-fade-all">
+        <section id="welcome" on-book-selected="{{handleBookInput}}">
+          <!--<content select=".tagline"></content>-->
+          <p id="tagline"></p>
+          <book-input></book-input>
+          <!--<content></content>-->
+        </section>
+        <section id="wait">
+          <p>WAIT HERE</p>
+        </section>
+      </core-animated-pages>
     </core-header-panel>
 
   </template>

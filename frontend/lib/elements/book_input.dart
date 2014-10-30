@@ -38,12 +38,16 @@ class BookInput extends PolymerElement {
   void handleKeyDown(Event e, var detail, Node target) {
     int code = (e as KeyboardEvent).keyCode;
     switch (code) {
-      case 40:
+      case KeyCode.DOWN:
         _suggestionList.moveDown();
         e.preventDefault();
         break;
-      case 38:
+      case KeyCode.UP:
         _suggestionList.moveUp();
+        e.preventDefault();
+        break;
+      case KeyCode.ENTER:
+        fire("book-selected", detail: _suggestionList.selected);
         e.preventDefault();
         break;
     }

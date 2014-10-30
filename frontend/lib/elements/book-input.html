@@ -1,7 +1,7 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="../../../packages/polymer/polymer.html">
-<link rel="import" href="../../../packages/paper_elements/paper_input.html">
 <link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input.html">
 <link rel="import" href="book-suggestion-list.html">
 
 <polymer-element name="book-input">
@@ -15,6 +15,12 @@
         width: 100%;
         font-size: 150%;
         color: #03A9F4;
+        margin-bottom: 0;
+      }
+
+      paper-progress {
+        width: 100%;
+        margin-top: 0;
       }
     </style>
     <core-ajax-dart id="ajax" url="/mock_response.json"
