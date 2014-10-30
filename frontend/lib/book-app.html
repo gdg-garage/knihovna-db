@@ -1,0 +1,50 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../packages/polymer/polymer.html">
+<link rel="import" href="../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../packages/core_elements/core_header_panel.html">
+<link rel="import" href="../../packages/core_elements/core_scaffold.html">
+<link rel="import" href="elements/book-input.html">
+
+<polymer-element name="book-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      core-header-panel {
+      }
+
+      core-toolbar {
+        background-color: #03A9F4;
+        height: 180px;
+      }
+
+      content[select="h1"]::content * {
+        font-size: 100%;
+        font-weight: normal;
+        color: white;
+      }
+
+      .content {
+        width: 900px;
+        margin: 0 auto;
+        padding-top: 2em;
+      }
+    </style>
+
+    <core-header-panel fit>
+      <core-toolbar class="tall">
+        <content select="h1"></content>
+      </core-toolbar>
+
+      <div class="content">
+        <content select=".tagline" class="tagline"></content>
+        <book-input></book-input>
+        <content></content>
+      </div>
+    </core-header-panel>
+
+  </template>
+  <script type="application/dart" src="book_app.dart"></script>
+</polymer-element>
