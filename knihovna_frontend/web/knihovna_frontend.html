@@ -8,15 +8,18 @@
 
     <!-- include the web_components polyfills with support for Dart. -->
     <script src="packages/web_components/platform.js"></script>
-    <script src="packages/web_components/dart_support.js"></script>
 
     <!-- import the click-counter -->
     <link rel="import" href="elements/book-app.html">
 
     <link rel="stylesheet" href="knihovna_frontend.css">
   </head>
-  <body unresolved fullbleed>
-    <book-app></book-app>
+  <body unresolved fullbleed layout vertical>
+
+    <book-app>
+      <h1>1000 knih</h1>
+      <p class="tagline">Zadejte knížku, kterou máte rádi, a my vám doporučíme tisíc podobných.</p>
+    </book-app>
 
     <!-- bootstrap polymer -->
     <script type="application/dart">export 'package:polymer/init.dart';</script>

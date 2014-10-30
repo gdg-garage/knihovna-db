@@ -50,10 +50,14 @@ class BookInput extends PolymerElement {
   }
 
   void handleChange(Event e, var detail, Node target) {
-    _newValue.add((_deepInputElement).value);
+    _newValue.add((_deepInputElement).value);  // Throttles through Debouncer.
   }
 
   _sendAjaxRequest(String value) {
+    if (value.trim() == "") {
+      _suggestionList.clear();
+      return;
+    }
     _coreAjax.params = JSON.encode({"q": value});
     _coreAjax.go();
     _suggestionList.isLoading = true;

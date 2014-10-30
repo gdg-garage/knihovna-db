@@ -3,9 +3,7 @@ import '../models.dart';
 
 @CustomTag('book-suggestion')
 class BookSuggestion extends PolymerElement {
-  @published
-  SuggestedBook get book => readValue(#book);
-  set book(SuggestedBook newValue) => writeValue(#book, newValue);
+  @published SuggestedBook book;
 
   BookSuggestion.created() : super.created() {
   }

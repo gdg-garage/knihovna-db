@@ -25,21 +25,22 @@ class BookSuggestionList extends PolymerElement {
   }
 
   void _changeSelected(int oldValue, int newValue) {
-    print("$oldValue -> $newValue");
     _changeSelectionByIndex(oldValue, false);
     if (newValue >= suggestions.length) newValue = -1;
     if (newValue < -1) newValue = suggestions.length - 1;
     _selected = newValue;
     _changeSelectionByIndex(_selected, true);
-    print(_selected);
   }
 
   void _changeSelectionByIndex(int index, bool value) {
     if (index >= 0 && index < suggestions.length) {
       suggestions[index].selected = value;
-      suggestions[index].author = "Filip";
-      print("changing ${suggestions[index]} to $value");
     }
+  }
+
+  void clear() {
+    suggestions.clear();
+    _selected = -1;
   }
 
   void createSuggestionsFromJson(var jsonObject) {

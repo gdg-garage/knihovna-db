@@ -1,5 +1,8 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/core_elements/core_toolbar.html">
+<link rel="import" href="packages/core_elements/core_header_panel.html">
+<link rel="import" href="packages/core_elements/core_scaffold.html">
 <link rel="import" href="book-input.html">
 
 <polymer-element name="book-app">
@@ -7,9 +10,19 @@
     <style>
     </style>
 
-    <h1>1000 knih</h1>
-    <p>Zadejte knížku, kterou máte rádi, a my vám doporučíme tisíc podobných.</p>
-    <book-input></book-input>
+    <core-header-panel>
+      <core-toolbar class="tall">
+        <div>1000 knih</div>
+      </core-toolbar>
+
+      <div class="content">
+        <div>hello</div>
+        <!--<content select="h1"></content>
+        <content select=".tagline"></content>
+        <book-input></book-input>
+        <content></content>-->
+      </div>
+    </core-header-panel>
 
   </template>
   <script type="application/dart" src="book_app.dart"></script>

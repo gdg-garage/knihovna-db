@@ -1,15 +1,4 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.2em;
 }
-
-h1, p {
-  color: #333;
-}
-
-.wrapper {
-/*  width: 800px;
-  margin: 0 auto;*/
-}
-
-
