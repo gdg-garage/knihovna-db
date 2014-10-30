@@ -7,6 +7,15 @@
 <polymer-element name="book-input">
   <template>
     <style>
+      :host {
+        display: block;
+      }
+
+      paper-input {
+        width: 100%;
+        font-size: 150%;
+        color: #03A9F4;
+      }
     </style>
     <core-ajax-dart id="ajax" url="/mock_response.json"
                     handleAs="json"></core-ajax-dart>

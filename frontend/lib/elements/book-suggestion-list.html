@@ -5,6 +5,10 @@
 <polymer-element name="book-suggestion-list">
   <template>
     <style>
+      :host {
+        display: block;
+        min-height: 100px;
+      }
     </style>
     <div id="loading" hidden?="{{!isLoading}}">Loading...</div>
     <div id="suggestions">

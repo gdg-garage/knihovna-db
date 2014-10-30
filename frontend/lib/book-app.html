@@ -3,6 +3,7 @@
 <link rel="import" href="../../packages/core_elements/core_toolbar.html">
 <link rel="import" href="../../packages/core_elements/core_header_panel.html">
 <link rel="import" href="../../packages/core_elements/core_scaffold.html">
+<link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
 <link rel="import" href="elements/book-input.html">
 
 <polymer-element name="book-app">
@@ -17,7 +18,10 @@
 
       core-toolbar {
         background-color: #03A9F4;
-        height: 180px;
+      }
+
+      paper-icon-button {
+        color: white;
       }
 
       content[select="h1"]::content * {
@@ -27,19 +31,32 @@
       }
 
       .content {
-        width: 900px;
+        width: 500px;
         margin: 0 auto;
         padding-top: 2em;
+      }
+
+      content[select=".tagline"]::content p {
+        font-size: 150%;
+      }
+
+      content[select=".tagline"]::content small {
+        color: gray;
+      }
+
+      book-input {
+        width: 100%;
       }
     </style>
 
     <core-header-panel fit>
-      <core-toolbar class="tall">
+      <core-toolbar> <!-- class="medium-tall" ? -->
+        <paper-icon-button icon="book" title="book"></paper-icon-button>
         <content select="h1"></content>
       </core-toolbar>
 
       <div class="content">
-        <content select=".tagline" class="tagline"></content>
+        <content select=".tagline"></content>
         <book-input></book-input>
         <content></content>
       </div>

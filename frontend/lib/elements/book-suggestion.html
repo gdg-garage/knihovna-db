@@ -1,16 +1,35 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="../../../packages/polymer/polymer.html">
-<link rel="import" href="../../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../../packages/paper_elements/paper_shadow.html">
 
 <polymer-element name="book-suggestion" attributes="book">
   <template>
     <style>
+      :host {
+        display: block;
+      }
+
+      .wrapper {
+        text-align: left;
+        width: 100%;
+        color: #03A9F4;
+      }
+
+      .book {
+        padding: 0.5em 1em;
+      }
     </style>
-    <div>
-      <span hidden?="{{!book.selected}}">&gt;</span>
+    <div class="wrapper">
+      <!--<span hidden?="{{!book.selected}}">&gt;</span>
       Book
       <span>{{book.author}}</span>
-      <span>{{book.title}}</span>
+      <span>{{book.title}}</span>-->
+
+      <div class="book">
+        {{book.author}} &mdash; {{book.title}}
+        <paper-shadow z="{{book.selected ? 1 : 0}}" animated></paper-shadow>
+      </div>
+
     </div>
   </template>
   <script type="application/dart" src="book_suggestion.dart"></script>
