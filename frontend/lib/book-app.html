@@ -4,7 +4,9 @@
 <link rel="import" href="../../packages/core_elements/core_header_panel.html">
 <link rel="import" href="../../packages/core_elements/core_animated_pages.html">
 <link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
-<link rel="import" href="elements/book-input.html">
+<link rel="import" href="book-input/book-input.html">
+<link rel="import" href="suggestions-loader/suggestions-loader.html">
+<link rel="import" href="books-list/books-list.html">
 
 <polymer-element name="book-app">
   <template>
@@ -50,22 +52,36 @@
     </style>
 
     <core-header-panel fit>
-      <core-toolbar> <!-- class="medium-tall" ? -->
+      <core-toolbar>
         <paper-icon-button icon="book" title="book"></paper-icon-button>
+        <!-- TODO: create a custom paper-icon-button that crossfades to a
+                   back button when needed -->
         <content select="h1"></content>
       </core-toolbar>
 
       <core-animated-pages id='animated-pages'
-                           class="content" transitions="cross-fade-all">
-        <section id="welcome" on-book-selected="{{handleBookInput}}">
-          <!--<content select=".tagline"></content>-->
+                           valueattr='id'
+                           class="content"
+                           transitions="cross-fade-all"
+                           fit>
+        <section
+                id="welcome"
+                on-book-selected="{{handleBookInput}}">
+          <!--<content select=".tagline"></content>
+              - Cannot use because it doesn't work well with
+                <core-animated-pages> (it doesn't fade). -->
           <p id="tagline"></p>
           <book-input></book-input>
-          <!--<content></content>-->
+          <!--<content></content>
+              - Same as above. -->
         </section>
         <section id="wait">
-          <p>WAIT HERE</p>
+          <suggestions-loader
+                  id="loader"
+                  on-suggestions-loaded="{{handleSuggestionsLoaded}}">
+          </suggestions-loader>
         </section>
+        <books-list id="list"></books-list>
       </core-animated-pages>
     </core-header-panel>
 

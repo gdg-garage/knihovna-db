@@ -47,7 +47,10 @@ class BookInput extends PolymerElement {
         e.preventDefault();
         break;
       case KeyCode.ENTER:
-        fire("book-selected", detail: _suggestionList.selected);
+        var book = _suggestionList.selectedBook;
+        if (book != null) {
+          fire("book-selected", detail: _suggestionList.selectedBook);
+        }
         e.preventDefault();
         break;
     }

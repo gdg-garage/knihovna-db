@@ -1,0 +1,22 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input.html">
+
+<polymer-element name="suggestions-loader">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <core-ajax-dart
+            url="mock_suggestion_results.json"
+            id="ajax-results" handleAs="json"></core-ajax-dart>
+
+    <p>WAIT HERE PLEASE</p>
+    <img src="../../../packages/knihovna_frontend/assets/loader.svg" />
+  </template>
+  <script type="application/dart" src="suggestions_loader.dart"></script>
+</polymer-element>
+
