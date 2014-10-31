@@ -2,7 +2,7 @@
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="../../../packages/core_elements/core_list_dart.html">
 
-<polymer-element name="books-list" layout vertical fit >
+<polymer-element name="books-list" layout vertical fit>
     <template>
         <style>
             :host {
@@ -12,8 +12,6 @@
 
         <p>LIST OF RESULTS:</p>
 
-
-        <!--TODO: use core-list-dart when we can upgrade to 0.4.0 -->
         <core-list-dart id="list"
                         data="{{books}}"
                         height="80" flex>

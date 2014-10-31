@@ -23,8 +23,6 @@ class SuggestedBook extends Book {
 class ListedBook extends Book {
   @observable int itemId;
   // TODO: add description, url, etc.
-//  @observable int index;     // list index for this item
-//  @observable bool selected; // selection state for this item
 
   ListedBook.fromMap(Map<String, Object> map) : super.fromMap(map) {
     itemId = map['itemId'];
