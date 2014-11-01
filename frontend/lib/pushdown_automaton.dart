@@ -9,6 +9,7 @@ class PushdownAutomatonStateMachine<T> {
   final StreamController<T> _newStateStreamController =
       new StreamController<T>();
 
+  Queue<T> get states => _states;
   T get currentState => _states.last;
   Stream<T> onNewState;
 
