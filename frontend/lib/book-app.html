@@ -7,6 +7,7 @@
 <link rel="import" href="book-input/book-input.html">
 <link rel="import" href="suggestions-loader/suggestions-loader.html">
 <link rel="import" href="books-list/books-list.html">
+<link rel="import" href="optional-back-button/optional-back-button.html">
 
 <polymer-element name="book-app">
   <template>
@@ -20,10 +21,6 @@
 
       core-toolbar {
         background-color: #03A9F4;
-      }
-
-      paper-icon-button {
-        color: white;
       }
 
       content[select="h1"]::content * {
@@ -53,10 +50,13 @@
 
     <core-header-panel fit>
       <core-toolbar>
+        <!--
         <paper-icon-button icon="book" title="book"></paper-icon-button>
-        <!-- TODO: create a custom paper-icon-button that crossfades to a
-                   back button when needed -->
-        <div>{{backButtonEnabled}}</div>
+        <div>{{backButtonEnabled}}</div>-->
+        <optional-back-button
+                backButtonEnabled="{{backButtonEnabled}}"
+                on-back-button-tapped="{{goToParentState}}">
+        </optional-back-button>
         <content select="h1"></content>
       </core-toolbar>
 

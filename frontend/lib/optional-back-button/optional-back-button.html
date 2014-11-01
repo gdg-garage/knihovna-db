@@ -1,0 +1,21 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../packages/paper_elements/paper_icon_button.html">
+
+<polymer-element name="optional-back-button" attributes="backButtonEnabled">
+    <template>
+        <style>
+            paper-icon-button {
+                color: white;
+            }
+        </style>
+
+        <!-- TODO: make transition using page crossfade -->
+        <!-- TODO: allow inserting other default icon than 'book' -->
+        <paper-icon-button
+                icon="{{ backButtonEnabled ? 'arrow-back' : 'book'}}"
+                on-tap="{{handleTap}}">
+        </paper-icon-button>
+    </template>
+    <script type="application/dart" src="optional_back_button.dart"></script>
+</polymer-element>

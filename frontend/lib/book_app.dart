@@ -29,7 +29,7 @@ class BookApp extends PolymerElement {
 
   Router _router;
 
-  static const BASE_PATH = "/frontend";
+  static const BASE_PATH = "/frontend"; // XXX: hack to make this work in WebStorm
 
   final _homeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
   final _listUrl = new UrlPattern(BASE_PATH + r'/#(\d+)');
@@ -93,6 +93,12 @@ class BookApp extends PolymerElement {
 
   void showDetail(String path) {
     throw new UnimplementedError("Detail not yet implemented.");
+  }
+
+  void goToParentState(_, __, ___) {
+    assert(state.parentState != null);
+    state = state.parentState;
+    _showStatePage();
   }
 }
 
