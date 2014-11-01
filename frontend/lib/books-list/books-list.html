@@ -8,6 +8,10 @@
             :host {
                 display: block;
             }
+
+            .item {
+                height: 80px;
+            }
         </style>
 
         <p>LIST OF RESULTS:</p>
@@ -16,7 +20,7 @@
                         data="{{books}}"
                         height="80" flex>
             <template>
-                <div>
+                <div class="item">
                     <span class="rank">{{index + 1}}.</span>
                     <span class="author">{{model.author}}</span>
                     <span class="title">{{model.title}}</span>

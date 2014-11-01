@@ -1,3 +1,5 @@
+library books_list;
+
 import 'package:polymer/polymer.dart';
 import '../models.dart';
 

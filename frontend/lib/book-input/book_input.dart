@@ -14,9 +14,13 @@ class BookInput extends PolymerElement {
   BookInput.created() : super.created() {
     // Wait for Polymer to initialize before searching $[] fields.
     Polymer.onReady.then((_) {
-      var inp = $['searchbox'] as PaperInput;
-      _deepInputElement = inp.querySelector('* /deep/ #input');
-      _deepInputElement.focus();
+      _inputElement = $['searchbox'] as PaperInput;
+      _deepInputElement = _inputElement.querySelector('* /deep/ #input');
+      if (_deepInputElement != null) {
+        _deepInputElement.focus();
+      } else {
+        print("Input element not found.");
+      }
 
       _suggestionList = $['suggestion-list'];
 
@@ -33,6 +37,7 @@ class BookInput extends PolymerElement {
 
   BookSuggestionList _suggestionList;
   CoreAjax _coreAjax;
+  PaperInput _inputElement;
   InputElement _deepInputElement;
 
   void handleKeyDown(Event e, var detail, Node target) {
@@ -57,7 +62,7 @@ class BookInput extends PolymerElement {
   }
 
   void handleChange(Event e, var detail, Node target) {
-    _newValue.add((_deepInputElement).value);  // Throttles through Debouncer.
+    _newValue.add(_inputElement.inputValue);  // Throttles through Debouncer.
   }
 
   _sendAjaxRequest(String value) {
