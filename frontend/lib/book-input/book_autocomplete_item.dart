@@ -7,5 +7,13 @@ class BookSuggestion extends PolymerElement {
 
   BookSuggestion.created() : super.created() {
   }
+
+  void handleMouseOver(_, __, ___) {
+    book.selected = true;
+  }
+
+  void handleMouseOut(_, __, ___) {
+    book.selected = false;
+  }
 }
 

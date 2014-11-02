@@ -17,6 +17,7 @@
 
       .book {
         padding: 0.5em 1em;
+        cursor: pointer;
       }
     </style>
     <div class="wrapper">
@@ -25,7 +26,9 @@
       <span>{{book.author}}</span>
       <span>{{book.title}}</span>-->
 
-      <div class="book">
+      <div class="book"
+              on-mouseover="{{handleMouseOver}}"
+              on-mouseout="{{handleMouseOut}}">
         {{book.author}} &mdash; {{book.title}}
         <paper-shadow z="{{book.selected ? 1 : 0}}" animated></paper-shadow>
       </div>
