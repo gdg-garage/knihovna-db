@@ -32,15 +32,21 @@
             .item {
                 height: 80px;
             }
+
+            a {
+                color: blue;
+                cursor: pointer;
+            }
         </style>
 
         <h3>{{originalBook.author}}</h3>
         <h2>{{originalBook.title}}</h2>
 
-        <p>Dobrého čtiva není nikdy dost. Tady je pár doporučení, pokud se vám
-        líbila knížka {{originalBook.title}}. <a>Jak jsme na ně přišli?</a></p>
+        <p>Dobrého čtiva není nikdy dost. Tady je pár doporučení pro lidi, kterým se
+        líbila knížka <em>{{originalBook.title}}</em>. <a>Jak jsme na ně přišli?</a></p>
 
-
+        <p>Tento seznam si můžete <a on-tap="{{}}">stáhnout</a> nebo jej
+            <a on-tap="{{}}">sdílet</a>.</p>
 
         <core-list-dart id="list"
                         data="{{books}}"
@@ -55,20 +61,20 @@
             </template>
         </core-list-dart>
 
-        <div id="buttons" horizontal layout>
-            <paper-button>
-                <core-icon icon="file-download"></core-icon>
-                Stáhnout
-            </paper-button>
-            <paper-button>
-                <core-icon icon="social:share"></core-icon>
-                Sdílet
-            </paper-button>
-            <paper-button>
-                <core-icon icon="refresh"></core-icon>
-                Jiné zadání
-            </paper-button>
-        </div>
+        <!--<div id="buttons" horizontal layout>-->
+            <!--<paper-button>-->
+                <!--<core-icon icon="file-download"></core-icon>-->
+                <!--Stáhnout-->
+            <!--</paper-button>-->
+            <!--<paper-button>-->
+                <!--<core-icon icon="social:share"></core-icon>-->
+                <!--Sdílet-->
+            <!--</paper-button>-->
+            <!--<paper-button>-->
+                <!--<core-icon icon="refresh"></core-icon>-->
+                <!--Jiné zadání-->
+            <!--</paper-button>-->
+        <!--</div>-->
     </template>
     <script type="application/dart" src="books_list.dart"></script>
 </polymer-element>
