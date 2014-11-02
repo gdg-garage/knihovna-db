@@ -4,6 +4,7 @@ import 'dart:html';
 import 'suggestions-loader/suggestions_loader.dart';
 import 'books-list/books_list.dart';
 import 'pushdown_automaton.dart';
+import 'models.dart';
 
 import 'package:route/client.dart';
 
@@ -53,8 +54,9 @@ class BookApp extends PolymerElement {
 
   handleBookInput(_, var detail, __) {
     print("Book selected: $detail");
-    _router.gotoPath(_listUrl.reverse(["1234"], useFragment: true),
-                     "Hledám" /* TODO */);
+    var book = detail as AutocompletedBook;
+    _router.gotoPath(_listUrl.reverse(["${book.itemId}"], useFragment: true),
+                     book.title);
   }
 
   void routeToWelcome(String path) {

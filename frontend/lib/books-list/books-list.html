@@ -9,12 +9,39 @@
                 display: block;
             }
 
+            h3 {
+                margin: 1em 0 0;
+                font-weight: lighter;
+                font-size: 150%;
+            }
+
+            h2 {
+                margin: 0;
+                text-transform: uppercase;
+                font-weight: lighter;
+                font-size: 200%;
+            }
+
+            #buttons {
+                margin-bottom: 2em;
+            }
+
             .item {
                 height: 80px;
             }
         </style>
 
-        <p>LIST OF RESULTS:</p>
+        <h3>{{originalBook.author}}</h3>
+        <h2>{{originalBook.title}}</h2>
+
+        <p>Dobrého čtiva není nikdy dost. Tady je pár doporučení, pokud se vám
+        líbila knížka {{originalBook.title}}. <a>Jak jsme na ně přišli?</a></p>
+
+        <div id="buttons" horizontal layout>
+            <a>Stáhnout</a>
+            <a>Jiné zadání</a>
+            <a>Sdílet</a>
+        </div>
 
         <core-list-dart id="list"
                         data="{{books}}"

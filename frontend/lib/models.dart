@@ -3,6 +3,7 @@ library books;
 import 'package:observe/observe.dart';
 
 class Book extends Observable {
+  int itemId;
   String author;
   String title;
   // TODO: add year? (to distinguish)
@@ -10,6 +11,7 @@ class Book extends Observable {
   Book.fromMap(Map<String,Object> map) {
     author = map['author'];
     title = map['title'];
+    itemId = map['itemId'];
   }
 
   toString() => "Book<$author//$title>";
@@ -21,10 +23,10 @@ class AutocompletedBook extends Book {
 }
 
 class ListedBook extends Book {
-  @observable int itemId;
+  String description;
   // TODO: add description, url, etc.
 
   ListedBook.fromMap(Map<String, Object> map) : super.fromMap(map) {
-    itemId = map['itemId'];
+    description = map['description'];
   }
 }
