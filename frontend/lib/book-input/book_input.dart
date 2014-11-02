@@ -24,8 +24,8 @@ class BookInput extends PolymerElement {
         .listen(_showNewSuggestions);
 
       _newValue.stream
-      .transform(new Debouncer(const Duration(milliseconds: 150)))
-      .listen(_sendAjaxRequest);
+        .transform(new Debouncer(const Duration(milliseconds: 150)))
+        .listen(_sendAjaxRequest);
     });
   }
 
@@ -33,28 +33,22 @@ class BookInput extends PolymerElement {
   CoreAjax _coreAjax;
   PaperInput _inputElement;
 
-  void handleKeyDown(Event e, var detail, Node target) {
-    int code = (e as KeyboardEvent).keyCode;
-    switch (code) {
-      case KeyCode.DOWN:
-        _suggestionList.moveDown();
-        e.preventDefault();
-        break;
-      case KeyCode.UP:
-        _suggestionList.moveUp();
-        e.preventDefault();
-        break;
-      case KeyCode.ENTER:
-        var book = _suggestionList.selectedBook;
-        if (book != null) {
-          fire("book-selected", detail: _suggestionList.selectedBook);
-        } else {
-          // Unfocus for the benefit of mobile users who don't see the
-          // suggestions because of their software keyboard overlay.
-          _inputElement.blur();
-        }
-        e.preventDefault();
-        break;
+  void selectUp(Event e, var detail, Node target) {
+    _suggestionList.moveUp();
+  }
+
+  void selectDown(Event e, var detail, Node target) {
+    _suggestionList.moveDown();
+  }
+
+  void handleEnterPressed(Event e, var detail, Node target) {
+    var book = _suggestionList.selectedBook;
+    if (book != null) {
+      fire("book-selected", detail: _suggestionList.selectedBook);
+    } else {
+      // Unfocus for the benefit of mobile users who don't see the
+      // suggestions because of their software keyboard overlay.
+      _inputElement.blur();
     }
   }
 

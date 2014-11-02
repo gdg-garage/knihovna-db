@@ -20,7 +20,7 @@ class PushdownAutomatonStateMachine<T> {
   }
 
   void switchTo(T state) {
-    _states.removeLast();
+    if (states.isNotEmpty) _states.removeLast();
     _states.addLast(state);
     _notifyState();
   }

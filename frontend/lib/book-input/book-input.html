@@ -2,6 +2,7 @@
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
 <link rel="import" href="../../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../../packages/core_elements/core_a11y_keys.html">
 <link rel="import" href="book-suggestion-list.html">
 
 <polymer-element name="book-input">
@@ -23,11 +24,24 @@
         margin-top: 0;
       }
     </style>
-    <core-ajax-dart id="ajax" url="../../../packages/knihovna_frontend/book-input/mock_response.json"
+
+    <core-ajax-dart id="ajax"
+                    url="../../../packages/knihovna_frontend/book-input/mock_response.json"
                     handleAs="json"></core-ajax-dart>
 
+    <core-a11y-keys target="{{}}"
+                    keys="up"
+                    on-keys-pressed="{{selectUp}}"></core-a11y-keys>
+
+    <core-a11y-keys target="{{}}"
+                    keys="down"
+                    on-keys-pressed="{{selectDown}}"></core-a11y-keys>
+
+    <core-a11y-keys target="{{}}"
+                    keys="enter"
+                    on-keys-pressed="{{handleEnterPressed}}"></core-a11y-keys>
+
     <paper-input id="searchbox" label="Oblíbená knížka"
-                 on-keydown="{{handleKeyDown}}"
                  on-input="{{handleChange}}"
                  autofocus
                  floatingLabel></paper-input>
