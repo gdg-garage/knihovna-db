@@ -29,7 +29,7 @@ class BookApp extends PolymerElement {
 
   Router _router;
 
-  static const BASE_PATH = ""; // XXX: hack to make this work in WebStorm - put "/frontend" here
+  static const BASE_PATH = "/frontend"; // XXX: hack to make this work in WebStorm - put "/frontend" here
 
   final _homeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
   final _listUrl = new UrlPattern(BASE_PATH + r'/#(\d+)');

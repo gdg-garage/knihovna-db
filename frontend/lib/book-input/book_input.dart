@@ -15,12 +15,6 @@ class BookInput extends PolymerElement {
     // Wait for Polymer to initialize before searching $[] fields.
     Polymer.onReady.then((_) {
       _inputElement = $['searchbox'] as PaperInput;
-      _deepInputElement = _inputElement.querySelector('* /deep/ #input');
-      if (_deepInputElement != null) {
-        _deepInputElement.focus();
-      } else {
-        print("Input element not found.");
-      }
 
       _suggestionList = $['suggestion-list'];
 
@@ -28,17 +22,16 @@ class BookInput extends PolymerElement {
       _coreAjax.onCoreResponse
         .transform(new Debouncer(const Duration(milliseconds: 150)))
         .listen(_showNewSuggestions);
-    });
 
-    _newValue.stream
+      _newValue.stream
       .transform(new Debouncer(const Duration(milliseconds: 150)))
       .listen(_sendAjaxRequest);
+    });
   }
 
   BookSuggestionList _suggestionList;
   CoreAjax _coreAjax;
   PaperInput _inputElement;
-  InputElement _deepInputElement;
 
   void handleKeyDown(Event e, var detail, Node target) {
     int code = (e as KeyboardEvent).keyCode;
@@ -55,6 +48,10 @@ class BookInput extends PolymerElement {
         var book = _suggestionList.selectedBook;
         if (book != null) {
           fire("book-selected", detail: _suggestionList.selectedBook);
+        } else {
+          // Unfocus for the benefit of mobile users who don't see the
+          // suggestions because of their software keyboard overlay.
+          _inputElement.blur();
         }
         e.preventDefault();
         break;
