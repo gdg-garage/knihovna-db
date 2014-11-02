@@ -1,6 +1,9 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="../../../packages/core_elements/core_list_dart.html">
+<link rel="import" href="../../../packages/core_elements/core_icons.html">
+<link rel="import" href="../../../packages/core_elements/social_icons.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
 
 <polymer-element name="books-list" layout vertical fit>
     <template>
@@ -23,7 +26,7 @@
             }
 
             #buttons {
-                margin-bottom: 2em;
+                /*margin-bottom: 2em;*/
             }
 
             .item {
@@ -37,11 +40,7 @@
         <p>Dobrého čtiva není nikdy dost. Tady je pár doporučení, pokud se vám
         líbila knížka {{originalBook.title}}. <a>Jak jsme na ně přišli?</a></p>
 
-        <div id="buttons" horizontal layout>
-            <a>Stáhnout</a>
-            <a>Jiné zadání</a>
-            <a>Sdílet</a>
-        </div>
+
 
         <core-list-dart id="list"
                         data="{{books}}"
@@ -55,6 +54,21 @@
                 </div>
             </template>
         </core-list-dart>
+
+        <div id="buttons" horizontal layout>
+            <paper-button>
+                <core-icon icon="file-download"></core-icon>
+                Stáhnout
+            </paper-button>
+            <paper-button>
+                <core-icon icon="social:share"></core-icon>
+                Sdílet
+            </paper-button>
+            <paper-button>
+                <core-icon icon="refresh"></core-icon>
+                Jiné zadání
+            </paper-button>
+        </div>
     </template>
     <script type="application/dart" src="books_list.dart"></script>
 </polymer-element>
