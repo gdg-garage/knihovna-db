@@ -28,7 +28,8 @@
 
       <div class="book"
               on-mouseover="{{handleMouseOver}}"
-              on-mouseout="{{handleMouseOut}}">
+              on-mouseout="{{handleMouseOut}}"
+              on-tap="{{handleTap}}">
         {{book.author}} &mdash; {{book.title}}
         <paper-shadow z="{{book.selected ? 1 : 0}}" animated></paper-shadow>
       </div>

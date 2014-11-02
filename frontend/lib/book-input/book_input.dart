@@ -1,6 +1,7 @@
 import 'package:polymer/polymer.dart';
 import 'dart:html';
 import 'package:paper_elements/paper_input.dart';
+import 'package:paper_elements/paper_toast.dart';
 import 'dart:async';
 import 'package:rate_limit/rate_limit.dart';
 import 'book_autocomplete_list.dart';
@@ -18,6 +19,8 @@ class BookInput extends PolymerElement {
 
       _suggestionList = $['suggestion-list'];
 
+      _enterToastElement = $['enter-toast'];
+
       _coreAjax = $['ajax'];
       _coreAjax.onCoreResponse
         .transform(new Debouncer(const Duration(milliseconds: 150)))
@@ -32,6 +35,7 @@ class BookInput extends PolymerElement {
   BookSuggestionList _suggestionList;
   CoreAjax _coreAjax;
   PaperInput _inputElement;
+  PaperToast _enterToastElement;
 
   void selectUp(Event e, var detail, Node target) {
     _suggestionList.moveUp();
@@ -49,6 +53,7 @@ class BookInput extends PolymerElement {
       // Unfocus for the benefit of mobile users who don't see the
       // suggestions because of their software keyboard overlay.
       _inputElement.blur();
+      _enterToastElement.show();
     }
   }
 

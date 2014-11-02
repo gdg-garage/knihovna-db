@@ -5,10 +5,11 @@ import '../models.dart';
 
 @CustomTag('book-autocomplete-list')
 class BookSuggestionList extends PolymerElement {
-  @observable List<SuggestedBook> suggestions = toObservable(<SuggestedBook>[]);
+  @observable List<AutocompletedBook> suggestions =
+      toObservable(<AutocompletedBook>[]);
   int _selected = -1;
 
-  SuggestedBook get selectedBook {
+  AutocompletedBook get selectedBook {
     if (_selected == -1) return null;
     return suggestions[_selected];
   }
@@ -51,7 +52,24 @@ class BookSuggestionList extends PolymerElement {
     // TODO: reset selection (but only if currently selected book != selected book in new collection)
     suggestions.clear();
     for (var map in (jsonObject as List)) {
-      suggestions.add(new SuggestedBook.fromMap(map));
+      suggestions.add(new AutocompletedBook.fromMap(map));
+    }
+  }
+
+  void handleDirectSelection(_, var detail, __) {
+    assert(detail != null && detail is AutocompletedBook);
+    _selected = suggestions.indexOf(detail);
+    _updateSelectedPropertiesFromIndex();
+  }
+
+  void handleDirectUnselection(_, var detail, __) {
+    _selected = -1;
+    _updateSelectedPropertiesFromIndex();
+  }
+
+  void _updateSelectedPropertiesFromIndex() {
+    for (int i = 0; i < suggestions.length; i++) {
+      suggestions[i].selected = i == _selected;
     }
   }
 }

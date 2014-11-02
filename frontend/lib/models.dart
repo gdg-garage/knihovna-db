@@ -15,9 +15,9 @@ class Book extends Observable {
   toString() => "Book<$author//$title>";
 }
 
-class SuggestedBook extends Book {
+class AutocompletedBook extends Book {
   @observable bool selected = false;
-  SuggestedBook.fromMap(Map<String, Object> map) : super.fromMap(map);
+  AutocompletedBook.fromMap(Map<String, Object> map) : super.fromMap(map);
 }
 
 class ListedBook extends Book {

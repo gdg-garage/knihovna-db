@@ -2,7 +2,9 @@
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="book-autocomplete-item.html">
 
-<polymer-element name="book-autocomplete-list">
+<polymer-element name="book-autocomplete-list"
+        on-autocomplete-item-selected="{{handleDirectSelection}}"
+        on-autocomplete-item-unselected="{{handleDirectUnselection}}">
   <template>
     <style>
       :host {

@@ -1,8 +1,9 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
-<link rel="import" href="../../../packages/paper_elements/paper_input.html">
 <link rel="import" href="../../../packages/core_elements/core_a11y_keys.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../../packages/paper_elements/paper_toast.html">
 <link rel="import" href="book-autocomplete-list.html">
 
 <polymer-element name="book-input">
@@ -40,6 +41,10 @@
     <core-a11y-keys target="{{}}"
                     keys="enter"
                     on-keys-pressed="{{handleEnterPressed}}"></core-a11y-keys>
+
+    <paper-toast id="enter-toast"
+                 text="Vyberte si jednu z knížek a klikněte na ni.">
+    </paper-toast>
 
     <paper-input id="searchbox" label="Oblíbená knížka"
                  on-input="{{handleChange}}"
