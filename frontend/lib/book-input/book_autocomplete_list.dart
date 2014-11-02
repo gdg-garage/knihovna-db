@@ -1,10 +1,9 @@
 import 'package:polymer/polymer.dart';
 import '../models.dart';
 
-// TODO: use <core-list> here: https://www.polymer-project.org/docs/elements/core-elements.html#core-list
 // TODO: also: core-selector
 
-@CustomTag('book-suggestion-list')
+@CustomTag('book-autocomplete-list')
 class BookSuggestionList extends PolymerElement {
   @observable List<SuggestedBook> suggestions = toObservable(<SuggestedBook>[]);
   int _selected = -1;

@@ -1,7 +1,7 @@
 import 'package:polymer/polymer.dart';
 import '../models.dart';
 
-@CustomTag('book-suggestion')
+@CustomTag('book-autocomplete-item')
 class BookSuggestion extends PolymerElement {
   @published SuggestedBook book;
 

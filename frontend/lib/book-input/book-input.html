@@ -3,7 +3,7 @@
 <link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
 <link rel="import" href="../../../packages/paper_elements/paper_input.html">
 <link rel="import" href="../../../packages/core_elements/core_a11y_keys.html">
-<link rel="import" href="book-suggestion-list.html">
+<link rel="import" href="book-autocomplete-list.html">
 
 <polymer-element name="book-input">
   <template>
@@ -45,7 +45,7 @@
                  on-input="{{handleChange}}"
                  autofocus
                  floatingLabel></paper-input>
-    <book-suggestion-list id="suggestion-list"></book-suggestion-list>
+    <book-autocomplete-list id="suggestion-list"></book-autocomplete-list>
   </template>
   <script type="application/dart" src="book_input.dart"></script>
 </polymer-element>

@@ -3,7 +3,7 @@ import 'dart:html';
 import 'package:paper_elements/paper_input.dart';
 import 'dart:async';
 import 'package:rate_limit/rate_limit.dart';
-import 'book_suggestion_list.dart';
+import 'book_autocomplete_list.dart';
 import 'package:core_elements/core_ajax_dart.dart';
 import 'dart:convert';
 
