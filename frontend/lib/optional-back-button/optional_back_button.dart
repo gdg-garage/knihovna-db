@@ -1,7 +1,6 @@
 library optional_back_button;
 
 import 'package:polymer/polymer.dart';
-import '../models.dart';
 
 @CustomTag('optional-back-button')
 class OptionalBackButton extends PolymerElement {
