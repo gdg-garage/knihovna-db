@@ -50,9 +50,6 @@
 
     <core-header-panel fit>
       <core-toolbar>
-        <!--
-        <paper-icon-button icon="book" title="book"></paper-icon-button>
-        <div>{{backButtonEnabled}}</div>-->
         <optional-back-button
                 backButtonEnabled="{{backButtonEnabled}}"
                 on-back-button-tapped="{{goToParentState}}">
@@ -60,6 +57,7 @@
         <content select="h1"></content>
       </core-toolbar>
 
+      <!-- The different views ('Activities') of the web app. -->
       <core-animated-pages id='animated-pages'
                            valueattr='id'
                            class="content"

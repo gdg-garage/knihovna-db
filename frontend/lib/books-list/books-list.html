@@ -38,7 +38,28 @@
             }
 
             .item {
-                height: 80px;
+                height: 60px;
+            }
+
+            .rank {
+                width: 30px;
+                padding-right: 10px;
+                text-align: right;
+                font-weight: lighter;
+                font-size: 120%;
+            }
+
+            .author-and-title {
+                padding-left: 10px;
+            }
+
+            .author {
+            }
+
+            .title {
+                text-transform: uppercase;
+                font-weight: lighter;
+                font-size: 120%;
             }
 
             a {
@@ -58,13 +79,16 @@
 
         <core-list-dart id="list"
                         data="{{books}}"
-                        height="80" flex>
+                        height="60" flex>
             <template>
-                <div class="item">
-                    <span class="rank">{{index + 1}}.</span>
-                    <span class="author">{{model.author}}</span>
-                    <span class="title">{{model.title}}</span>
-                    <span>{{model.itemId}}</span>
+                <div class="item" horizontal layout center>
+                    <div class="rank">{{index + 1}}.</div>
+                    <div class="author-and-title" flex>
+                        <div class="author">{{model.author}}</div>
+                        <div class="title">{{model.title}}</div>
+                    </div>
+
+                    <core-icon icon="info-outline"></core-icon>
                 </div>
             </template>
         </core-list-dart>
