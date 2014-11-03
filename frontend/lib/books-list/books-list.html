@@ -13,16 +13,24 @@
             }
 
             h3 {
-                margin: 1em 0 0;
-                font-weight: lighter;
-                font-size: 150%;
+                margin: 30px 0 0;
+                font-weight: normal;
+                font-size: 100%;
             }
 
             h2 {
-                margin: 0;
+                margin: 0 0 10px 0;
                 text-transform: uppercase;
                 font-weight: lighter;
                 font-size: 200%;
+            }
+
+            p {
+                margin: 0.5em 0;
+            }
+
+            #options {
+                margin-bottom: 2em;
             }
 
             #buttons {
@@ -42,11 +50,11 @@
         <h3>{{originalBook.author}}</h3>
         <h2>{{originalBook.title}}</h2>
 
-        <p>Dobrého čtiva není nikdy dost. Tady je pár doporučení pro lidi, kterým se
-        líbila knížka <em>{{originalBook.title}}</em>. <a>Jak jsme na ně přišli?</a></p>
+        <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
+        líbila knížka <em>{{originalBook.title}}</em>.</p>
 
-        <p>Tento seznam si můžete <a on-tap="{{}}">stáhnout</a> nebo jej
-            <a on-tap="{{}}">sdílet</a>.</p>
+        <p id="options">Tento seznam si můžete <a on-tap="{{}}">stáhnout</a> nebo jej
+            <a on-tap="{{}}">sdílet</a>. Nebo se <a on-tap="{{}}">dozvědět</a>, jak jsme na něj přišli.</p>
 
         <core-list-dart id="list"
                         data="{{books}}"
