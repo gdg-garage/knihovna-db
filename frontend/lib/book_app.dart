@@ -1,6 +1,7 @@
 import 'package:polymer/polymer.dart';
 import 'package:core_elements/core_animated_pages.dart';
 import 'dart:html';
+import 'book-input/book_input.dart';
 import 'suggestions-loader/suggestions_loader.dart';
 import 'books-list/books_list.dart';
 import 'pushdown_automaton.dart';
@@ -19,6 +20,7 @@ class BookApp extends PolymerElement {
   bool backButtonEnabled = false;
 
   CoreAnimatedPages _animatedPages;
+  BookInput _bookInput;
   SuggestionsLoader _suggestionsLoader;
   BooksList _booksList;
 
@@ -35,6 +37,7 @@ class BookApp extends PolymerElement {
 
     Polymer.onReady.then((_) {
       _animatedPages = $['animated-pages'];
+      _bookInput = $['book-input'];
       _suggestionsLoader = $['loader'];
       _booksList = $['list'];
 
@@ -62,6 +65,7 @@ class BookApp extends PolymerElement {
   void routeToWelcome(String path) {
     _machine.states.clear();
     _machine.pushTo(_welcome);
+    _bookInput.unselectAutocomplete();
     _showStatePage();
   }
 

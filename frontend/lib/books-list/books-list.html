@@ -2,10 +2,9 @@
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="../../../packages/core_elements/core_list_dart.html">
 <link rel="import" href="../../../packages/core_elements/core_icons.html">
-<link rel="import" href="../../../packages/core_elements/social_icons.html">
-<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/paper_elements/paper_icon_button.html">
 
-<polymer-element name="books-list" layout vertical fit>
+<polymer-element name="books-list">
     <template>
         <style>
             :host {
@@ -51,6 +50,10 @@
 
             .author-and-title {
                 padding-left: 10px;
+                padding-right: 10px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .author {
@@ -74,7 +77,7 @@
         <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
         líbila knížka <em>{{originalBook.title}}</em>.</p>
 
-        <p id="options">Tento seznam si můžete <a on-tap="{{}}">stáhnout</a> nebo jej
+        <p id="options">Tento seznam si můžete <a href="/download/{{originalBook.itemId}}.txt">stáhnout</a> nebo jej
             <a on-tap="{{}}">sdílet</a>. Nebo se <a on-tap="{{}}">dozvědět</a>, jak jsme na něj přišli.</p>
 
         <core-list-dart id="list"
@@ -83,12 +86,14 @@
             <template>
                 <div class="item" horizontal layout center>
                     <div class="rank">{{index + 1}}.</div>
-                    <div class="author-and-title" flex>
+                    <div class="author-and-title">
                         <div class="author">{{model.author}}</div>
                         <div class="title">{{model.title}}</div>
                     </div>
 
-                    <core-icon icon="info-outline"></core-icon>
+                    <paper-icon-button
+                            icon="info-outline"
+                            on-tap="{{showInfo}}"></paper-icon-button>
                 </div>
             </template>
         </core-list-dart>

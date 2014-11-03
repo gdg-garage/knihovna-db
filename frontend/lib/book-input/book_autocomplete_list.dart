@@ -48,6 +48,11 @@ class BookSuggestionList extends PolymerElement {
     _selected = -1;
   }
 
+  void unselect() {
+    _selected = -1;
+    _updateSelectedPropertiesFromIndex();
+  }
+
   void createSuggestionsFromJson(var jsonObject) {
     // TODO: reset selection (but only if currently selected book != selected book in new collection)
     suggestions.clear();

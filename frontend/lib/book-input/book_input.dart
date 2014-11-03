@@ -1,3 +1,5 @@
+library book_input;
+
 import 'package:polymer/polymer.dart';
 import 'dart:html';
 import 'package:paper_elements/paper_input.dart';
@@ -43,6 +45,11 @@ class BookInput extends PolymerElement {
 
   void selectDown(Event e, var detail, Node target) {
     _suggestionList.moveDown();
+  }
+
+  void unselectAutocomplete() {
+    print("unselecting autocomplete");
+    _suggestionList.unselect();
   }
 
   void handleEnterPressed(Event e, var detail, Node target) {
