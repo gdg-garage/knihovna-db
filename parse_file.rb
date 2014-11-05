@@ -21,8 +21,10 @@ column_names = nil
 column_sizes = nil
 printed_header = false
 
+error_count = 0
+
 CSV do |csv|
-	File.open(filename, "r", :encoding => 'ibm852').each do |line|
+	File.open(filename, "r", :encoding => 'windows-1250').each do |line|
 		next if /^Records affected/ =~ line  # Last line in database export.
 
 		if /^\s*$/ =~ line then
@@ -46,10 +48,18 @@ CSV do |csv|
 		next if line == column_names_line
 
 		if column_sizes != nil then
-			csv_values = extract_values line.encode("utf-8"), column_sizes
-			csv << csv_values
+			begin
+				csv_values = extract_values line.encode("utf-8"), column_sizes
+				csv << csv_values
+			rescue
+				error_count += 1
+				$stderr.puts line
+				# Process.exit(3)
+			end
 		else
 			column_names_line = line
 		end
 	end
 end
+
+$stderr.puts "Number of encoding errors: #{error_count}." 
