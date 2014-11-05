@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{%  block title %}{% endblock %}</title>
+
+        <meta name="description" content="{% block description %}{% endblock %}" />
+
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/css/pure/0.4.2/pure-min.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+        <div class="site">
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+
+    </body>
+</html>
+{% endautoescape %}
