@@ -1,33 +1,39 @@
 # coding=utf-8
+import logging
 
 from unidecode import unidecode
 from google.appengine.api import search
 from google.appengine.ext import ndb
-
+import re
 
 class Autocompleter(object):
     def __init__(self):
         self.index = search.Index(name='book_autocomplete')
 
+    SANITIZE_PATTERN = re.compile("[^a-zA-Z_0-9 ]")
+
     def get_results(self, query):
         query_ascii = unidecode(query)
+        query_ascii = Autocompleter.SANITIZE_PATTERN.sub("", query_ascii)
+
+        logging.info("Autocomplete search for '{}' (sanitized to '{}').".format(
+            query, query_ascii
+        ))
+
         results = self.index.search(
-            query=search.Query('tokens:{}'.format(query_ascii),
+            query=search.Query('tokens:({})'.format(query_ascii),
                 options=search.QueryOptions(limit=5,
-                    sort_options=search.SortOptions(
-                        expressions=[search.SortExpression(expression='count_log')],
-                        limit=1000)
-                    #returned_fields=['author', 'subject', 'summary'],
-                    #snippeted_fields=['content']
-              )))
+                                            ids_only=True)
+            )
+        )
+        logging.info("Got {} results.".format(len(results.results)))
         assert(isinstance(results, search.SearchResults))
-        datastore_results = []
+        list_of_keys = []
         for search_result in results.results:
             assert(isinstance(search_result, search.ScoredDocument))
             key = ndb.Key('BookRecord', search_result.doc_id)
-            datastore_record = key.get()
-            datastore_results.append(datastore_record)
-        return datastore_results
+            list_of_keys.append(key)
+        return ndb.get_multi(list_of_keys)
 
     def add(self, item_id, author, title, year, count):
         document, record = Autocompleter.create_instances_to_be_saved(
@@ -73,19 +79,24 @@ class Autocompleter(object):
         author_ascii = unidecode(author)
         title_ascii = unidecode(title)
         phrase = "{} {}".format(author_ascii, title_ascii)
-        tokens = ','.join(Autocompleter.tokenize_autocomplete(phrase))
+        tokens = ','.join(Autocompleter.tokenize_autocomplete_simpler(phrase))
         document = search.Document(
             doc_id=item_id,
             fields=[
                 search.TextField(name='tokens', value=tokens),
-                search.NumberField(name='count_log', value=count)
-            ]
+            ],
+            rank=count,
+            language='cs'
         )
         return document
 
 
     @staticmethod
     def tokenize_autocomplete(phrase):
+        """
+        Chops the phrase into substrings. This is the more complete version
+        which includes things like 'rst' in phrase 'prsten'.
+        """
         a = []
         for word in phrase.split():
             j = 1
@@ -97,10 +108,22 @@ class Autocompleter(object):
                 j += 1
         return a
 
+    @staticmethod
+    def tokenize_autocomplete_simpler(phrase):
+        """
+        Chops the phrase into substrings. This is the less complete version
+        which only includes substrings from start of word.
+        """
+        a = []
+        for word in phrase.split():
+            for i in range(1, len(word) + 1):
+                a.append(word[0:i])
+        return a
+
 
 class BookRecord(ndb.Model):
-    item_id = ndb.StringProperty()
-    author = ndb.StringProperty()
-    title = ndb.StringProperty()
-    year = ndb.IntegerProperty()
-    count = ndb.IntegerProperty()
+    author = ndb.StringProperty(indexed=False)
+    title = ndb.StringProperty(indexed=False)
+    year = ndb.IntegerProperty(indexed=False)
+    count = ndb.IntegerProperty(indexed=False)
+

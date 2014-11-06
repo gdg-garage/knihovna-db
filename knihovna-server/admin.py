@@ -6,6 +6,7 @@ from jinja import render_html
 from bigquery import BigQueryClient, BigQueryTable
 from autocompleter import Autocompleter, BookRecord
 import logging
+from google.appengine.ext import deferred
 
 class AdminPage(webapp2.RequestHandler):
     def get(self):
@@ -23,7 +24,8 @@ class TestAutocomplete(webapp2.RequestHandler):
     def get(self):
         result = u"<p>Behold autocomplete stuff:</p>"
         autocompleter = Autocompleter()
-        suggestions = autocompleter.get_results(u"kinn")
+        query = self.request.get('q', default_value=u"Tolkien")
+        suggestions = autocompleter.get_results(query)
         result += u"<pre>"
         for suggestion in suggestions:
             assert isinstance(suggestion, BookRecord)
@@ -35,40 +37,45 @@ class TestAutocomplete(webapp2.RequestHandler):
 
 class UpdateAutocompleteFromBigQuery(webapp2.RequestHandler):
     def get(self):
-        autocompleter = Autocompleter()
-        bq = BigQueryClient()
-        query = ALL_BOOKS_QUERY
-        job = bq.create_query_job(query, timeout_ms=30000)
-        json = job.execute()
-        table = BigQueryTable(json)
-        books = consolidate_books(table)
-        docs = []
-        records = []
-        for book in books:
-            assert isinstance(book, _ConsolidatedBooksData)
-            doc, record = Autocompleter.create_instances_to_be_saved(
-                book.item_ids,
-                book.author,
-                book.title,
-                book.year,
-                book.count
-            )
-            docs.append(doc)
-            if len(docs) >= 200:
-                autocompleter.index.put(docs)
-                logging.info("{} docs were put into index".format(len(docs)))
-                docs = []
-            records.append(record)
-            if len(records) >= 50:
-                ndb.put_multi(records)
-                logging.info("{} records were put into storage".format(len(records)))
-                records = []
-
-        autocompleter.index.put(docs)
-        logging.info("{} docs were put into index".format(len(docs)))
-        ndb.put_multi(records)
-        logging.info("{} records were put into storage".format(len(records)))
+        logging.info("Starting task to update autocomplete from BigQuery")
+        deferred.defer(run_autocomplete_updating)
         self.redirect("/admin/")
+
+
+def run_autocomplete_updating():
+    autocompleter = Autocompleter()
+    bq = BigQueryClient()
+    query = ALL_BOOKS_QUERY
+    job = bq.create_query_job(query, timeout_ms=30000)
+    json = job.execute()
+    table = BigQueryTable(json)
+    books = consolidate_books(table)
+    docs = []
+    records = []
+    for book in books:
+        assert isinstance(book, _ConsolidatedBooksData)
+        doc, record = Autocompleter.create_instances_to_be_saved(
+            book.item_ids,
+            book.author,
+            book.title,
+            book.year,
+            book.count
+        )
+        docs.append(doc)
+        if len(docs) >= 200:
+            autocompleter.index.put(docs)
+            logging.info("{} docs were put into index".format(len(docs)))
+            docs = []
+        records.append(record)
+        if len(records) >= 100:
+            ndb.put_multi(records)
+            logging.info(
+                "{} records were put into storage".format(len(records)))
+            records = []
+    autocompleter.index.put(docs)
+    logging.info("{} docs were put into index".format(len(docs)))
+    ndb.put_multi(records)
+    logging.info("{} records were put into storage".format(len(records)))
 
 ALL_BOOKS_QUERY = """
     SELECT
@@ -99,6 +106,10 @@ def consolidate_books(table):
     books = []
     ignore_rows = []
     for i in range(table.nrows):
+        if i % 50 == 0:
+            logging.info("Consolidating books: row {}/{}".format(
+                i, table.nrows
+            ))
         if i in ignore_rows:
             continue
         row = table.data[i]
@@ -145,6 +156,9 @@ def consolidate_books(table):
         logging.info(u"Book '{}' consolidated into item_ids='{}'.".format(
             author_and_title, book.item_ids
         ))
+    logging.info("Consolidating books: done ({} books from {} rows)".format(
+        len(books), table.nrows
+    ))
     return books
 
 
