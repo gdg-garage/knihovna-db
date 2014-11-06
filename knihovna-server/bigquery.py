@@ -31,6 +31,36 @@ class BigQueryClient(object):
         return self.service.jobs()\
             .query(projectId=BigQueryClient.PROJECT_NUMBER, body=query_config)
 
+    def create_query_job_async(self, query, job_id):
+        """
+        Constructs a query job that starts running independently on BigQuery.
+        User must periodically check whether it's completed.
+        :return: jobId of the created job.
+        """
+        query_config = {
+            'jobReference': {
+                'projectId': BigQueryClient.PROJECT_NUMBER,
+                'jobId': job_id
+            },
+            'configuration': {
+                'query': {
+                    'query': query
+                }
+            }
+        }
+        job = self.service.jobs()\
+            .insert(projectId=BigQueryClient.PROJECT_NUMBER, body=query_config)
+        json = job.execute()
+        assert(json['jobReference']['jobId'] == job_id)
+        return job_id
+
+    def get_async_job_results(self, job_id):
+        job = self.service.jobs()\
+            .getQueryResults(projectId=BigQueryClient.PROJECT_NUMBER,
+                             jobId=job_id)
+        json = job.execute()
+        return json
+
 
 class BigQueryTable(object):
     """

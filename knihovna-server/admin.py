@@ -1,6 +1,7 @@
 # coding=utf-8
 import logging
 import os
+from datetime import datetime
 
 from google.appengine.ext import ndb
 import webapp2
@@ -39,22 +40,42 @@ class TestAutocomplete(webapp2.RequestHandler):
         render_html(self, "admin_generic.html", u"Testing BQ",
                     result)
 
+
 class UpdateAutocompleteFromBigQuery(webapp2.RequestHandler):
     def get(self):
         logging.info("Starting task to update autocomplete from BigQuery")
-        deferred.defer(run_autocomplete_updating)
+        deferred.defer(init_autocomplete_updating)
         self.redirect("/admin/")
 
 
-def run_autocomplete_updating():
-    autocompleter = Autocompleter()
+def init_autocomplete_updating():
     bq = BigQueryClient()
     query = ALL_BOOKS_QUERY
     if is_dev_server():
         logging.info("We are in dev_server.")
         query += " LIMIT 1000"
-    job = bq.create_query_job(query, timeout_ms=30000)
-    json = job.execute()
+    job_id = 'autocomplete-big-update-{}'.format(
+        int((datetime.now()-datetime.utcfromtimestamp(0)).total_seconds())
+    )
+    logging.info("Creating new autocomplete update job.")
+    bq.create_query_job_async(query, job_id)
+    deferred.defer(check_autocomplete_update_job_done, job_id,
+                   _countdown=10)
+
+
+def check_autocomplete_update_job_done(job_id):
+    bq = BigQueryClient()
+    logging.info("Polling autocomplete update job.")
+    json = bq.get_async_job_results(job_id)
+    if json['jobComplete']:
+        deferred.defer(parse_autocomplete_update_json, json)
+    else:
+        deferred.defer(check_autocomplete_update_job_done, job_id,
+                       _countdown=10)
+
+
+def parse_autocomplete_update_json(json):
+    autocompleter = Autocompleter()
     table = BigQueryTable(json)
     books = consolidate_books(table)
     docs = []
