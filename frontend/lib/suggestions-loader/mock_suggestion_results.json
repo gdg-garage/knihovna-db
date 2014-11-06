@@ -1,37 +1,463 @@
 {
-  "version": "0.0.1",
-  "originalBook": {
-    "author": "J.R.R. Tolkien",
-    "title": "Pán prstenů: Dvě věže",
-    "itemId": 123,
-    "description": "Tato kniha je dobrá. Lorem ipsum."
-  },
   "suggestions": [
-    {"author": "J.R.R. Tolkien",
-      "title": "Pán prstenů: Společenstvo prstenu",
-      "itemId": 1231,
-      "description": "Tato kniha je dobrá. Lorem ipsum."
+    {
+      "author": "TOLKIEN, John Ronald Reuel",
+      "title": "Silmarillion",
+      "item_ids": "38079"
     },
-    {"author": "J.R.R. Tolkien",
-      "title": "Pán prstenů: Návrat krále",
-      "itemId": 12313,
-      "description": "Tato kniha je dobrá. Lorem ipsum."
+    {
+      "author": "TOLKIEN, John Ronald Reuel",
+      "title": "Hobit aneb Cesta tam a zase zp\u00e1tky",
+      "item_ids": "35530"
     },
-    {"author": "J.R.R. Tolkien",
-      "title": "Silmarilion",
-      "itemId": 123134,
-      "description": "Tato kniha je dobrá. Lorem ipsum."
+    {
+      "author": "LEWIS, Clive Staples",
+      "title": "Plavba Jit\u0159n\u00edho poutn\u00edka",
+      "item_ids": "37386"
     },
-    {"author": "J.R.R. Tolkien",
-      "title": "Hobit",
-      "itemId": 1231345,
-      "description": "Tato kniha je dobrá. Lorem ipsum."
+    {
+      "author": "ROWLING, J. K.",
+      "title": "Harry Potter a Tajemn\u00e1 komnata",
+      "item_ids": "2231298"
     },
-    {"author": "Terry Pratchet",
-      "title": "Úžasná Zeměplocha",
-      "itemId": 12313456,
-      "description": "Tato kniha je dobrá. Lorem ipsum."
+    {
+      "author": "PAOLINI, Christopher",
+      "title": "Eragon",
+      "item_ids": "2414963"
+    },
+    {
+      "author": "ROWLING, J. K.",
+      "title": "Harry Potter a Ohniv\u00fd poh\u00e1r",
+      "item_ids": "2285167"
+    },
+    {
+      "author": "ROWLING, J. K.",
+      "title": "Harry Potter a v\u011bze\u0148 z Azkabanu",
+      "item_ids": "2250169"
+    },
+    {
+      "author": "LEWIS, Clive Staples",
+      "title": "Princ Kaspian",
+      "item_ids": "32637"
+    },
+    {
+      "author": "PAOLINI, Christopher",
+      "title": "Eldest",
+      "item_ids": "2501686"
+    },
+    {
+      "author": "ROWLING, J. K.",
+      "title": "Harry Potter a F\u00e9nix\u016fv \u0159\u00e1d",
+      "item_ids": "2370103"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Lehk\u00e9 fantasti\u010dno",
+      "item_ids": "43461"
+    },
+    {
+      "author": "ROWLING, J. K.",
+      "title": "Harry Potter a K\u00e1men mudrc\u016f",
+      "item_ids": "2211740"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Str\u00e1\u017ee! Str\u00e1\u017ee!",
+      "item_ids": "55000"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Sek\u00e1\u010d",
+      "item_ids": "2013315"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "T\u011b\u017ek\u00e9 melodi\u010dno",
+      "item_ids": "2070698"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Ma\u0161kar\u00e1da",
+      "item_ids": "2180439"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "D\u00e1my a p\u00e1nov\u00e9",
+      "item_ids": "64746"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Pyramidy",
+      "item_ids": "53457"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "\u010carod\u011bjky na cest\u00e1ch",
+      "item_ids": "58957"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Barva kouzel",
+      "item_ids": "41337"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Mort",
+      "item_ids": "48889"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Soudn\u00e9 sestry",
+      "item_ids": "52584"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Mu\u017ei ve zbrani",
+      "item_ids": "2002514"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Mal\u00ed bohov\u00e9",
+      "item_ids": "2344511"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Magick\u00fd prazdroj",
+      "item_ids": "51221"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Posledn\u00ed kontinent",
+      "item_ids": "2205049"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Nohy z j\u00edlu",
+      "item_ids": "2197751"
+    },
+    {
+      "author": "DEARY, Terry",
+      "title": "Mizern\u00e1 prvn\u00ed sv\u011btov\u00e1 v\u00e1lka",
+      "item_ids": "2342597"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "P\u00e1t\u00fd elefant",
+      "item_ids": "2240948"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Hrrr na n\u011b!",
+      "item_ids": "2192356"
+    },
+    {
+      "author": "ROWLING, J. K.",
+      "title": "Harry Potter a princ dvoj\u00ed krve",
+      "item_ids": "2504413"
+    },
+    {
+      "author": "DEARY, Terry",
+      "title": "Stra\u0161n\u00e1 druh\u00e1 sv\u011btov\u00e1 v\u00e1lka",
+      "item_ids": "2343557"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Dobr\u00e1 znamen\u00ed",
+      "item_ids": "63902"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Zaj\u00edmav\u00e9 \u010dasy",
+      "item_ids": "2160433"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Pohybliv\u00e9 obr\u00e1zky",
+      "item_ids": "57213"
+    },
+    {
+      "author": "ROWLING, J. K.",
+      "title": "Harry Potter a relikvie smrti",
+      "item_ids": "2668460"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Erik",
+      "item_ids": "2203803"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a slavn\u00fd \u0161t\u00edt",
+      "item_ids": "59947"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a G\u00f3tov\u00e9",
+      "item_ids": "2232614"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Zlod\u011bj \u010dasu",
+      "item_ids": "2319434"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a Caesar\u016fv vav\u0159\u00ednov\u00fd v\u011bnec",
+      "item_ids": "2232613"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix v Hisp\u00e1nii",
+      "item_ids": "2201589"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Nesv\u00e1r",
+      "item_ids": "2220313"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix v Brit\u00e1nii",
+      "item_ids": "2310828"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Otec pras\u00e1tek",
+      "item_ids": "2186470"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Carpe jugulum",
+      "item_ids": "2209594"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield v\u00e1l\u00ed sudy",
+      "item_ids": "2301578|2604637"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield si d\u00e1v\u00e1 do nosu",
+      "item_ids": "2331167|2625247"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "No\u010dn\u00ed hl\u00eddka",
+      "item_ids": "2357417"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield v nad\u017eivotn\u00ed velikosti",
+      "item_ids": "2013308"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Velk\u00e1 j\u00edzda",
+      "item_ids": "57584"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix legion\u00e1\u0159em",
+      "item_ids": "2001555"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield: nohy z dohledu",
+      "item_ids": "2240381"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "S\u00eddli\u0161t\u011b boh\u016f",
+      "item_ids": "2326672"
+    },
+    {
+      "author": "DEARY, Terry",
+      "title": "Drsn\u00e1 doba kamenn\u00e1",
+      "item_ids": "2236519"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Pravda",
+      "item_ids": "2289653"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a olympijsk\u00e9 hry",
+      "item_ids": "2232612"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Kobercov\u00e9",
+      "item_ids": "2252112"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Podivn\u00fd regiment",
+      "item_ids": "2386098"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a kotl\u00edk",
+      "item_ids": "57201"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield v\u00e1\u017e\u00ed slova",
+      "item_ids": "2160706"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Svobodnej n\u00e1rod",
+      "item_ids": "2424626"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a velk\u00e1 z\u00e1mo\u0159sk\u00e1 plavba",
+      "item_ids": "2310833"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield sl\u00edzne smetanu",
+      "item_ids": "2201773"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield obl\u00e9h\u00e1 d\u016fm",
+      "item_ids": "2206110"
+    },
+    {
+      "author": "ADAMS, Douglas",
+      "title": "Stopa\u0159\u016fv pr\u016fvodce po Galaxii",
+      "item_ids": "2185301"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a zlat\u00fd srp",
+      "item_ids": "2310838"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Divadlo krutosti",
+      "item_ids": "2363486"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "\u00da\u017easn\u00fd Mauric a jeho vzd\u011blan\u00ed hlodavci",
+      "item_ids": "2344460"
+    },
+    {
+      "author": "SHAN, Darren",
+      "title": "Darren Shan a Madame Okta",
+      "item_ids": "2328978"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Souboj n\u00e1\u010deln\u00edk\u016f",
+      "item_ids": "2207499"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield se u\u017e\u00edr\u00e1",
+      "item_ids": "2196416"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield p\u0159ib\u00edr\u00e1 na v\u00e1ze",
+      "item_ids": "2001726"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Obelix & spol.",
+      "item_ids": "2241322"
+    },
+    {
+      "author": "DISNEY, Walt",
+      "title": "Super komiks",
+      "item_ids": "2313782"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield je na v\u00e1\u017ek\u00e1ch",
+      "item_ids": "2275726"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "Garfield nen\u00ed tro\u0161ka\u0159",
+      "item_ids": "2261815"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Buch!",
+      "item_ids": "2533329"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix na Korsice",
+      "item_ids": "2348029"
+    },
+    {
+      "author": "PRATCHETT, Terry",
+      "title": "Zaslan\u00e1 po\u0161ta",
+      "item_ids": "2474385"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix u Belg\u016f",
+      "item_ids": "2431205"
+    },
+    {
+      "author": "SHAN, Darren",
+      "title": "Up\u00ed\u0159\u00ed hora",
+      "item_ids": "2441393"
+    },
+    {
+      "author": "SHAN, Darren",
+      "title": "Krvav\u00e9 chodby",
+      "item_ids": "2360482"
+    },
+    {
+      "author": "SHAN, Darren",
+      "title": "Up\u00edr\u016fv pomocn\u00edk",
+      "item_ids": "2340557"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix a Kleopatra",
+      "item_ids": "2437059"
+    },
+    {
+      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Asterix v Helvetii",
+      "item_ids": "2349153"
+    },
+    {
+      "author": "UDERZO, Albert",
+      "title": "Velk\u00fd p\u0159\u00edkop",
+      "item_ids": "2531359"
+    },
+    {
+      "author": "NEJKR\u00c1SN\u011aJ\u0160\u00cd",
+      "title": "Nejkr\u00e1sn\u011bj\u0161\u00ed dopl\u0148ky z prov\u00e1zk\u016f",
+      "item_ids": "2161519"
+    },
+    {
+      "author": "DAVIS, Jim",
+      "title": "J\u00edm, tedy jsem",
+      "item_ids": "2334909"
+    },
+    {
+      "author": "SCOTT, Walter",
+      "title": "Ivanhoe",
+      "item_ids": "27193"
     }
-  ]
+  ],
+  "status": "completed",
+  "job_started": "2014-11-06T21:02:19.708995",
+  "item_ids": "28747|33661|36773|2301571",
+  "version": 1,
+  "original_book": {
+    "author": "TOLKIEN, John Ronald Reuel",
+    "title": "P\u00e1n prsten\u016f",
+    "year": 2001
+  }
 }
-

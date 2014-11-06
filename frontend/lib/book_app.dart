@@ -26,11 +26,11 @@ class BookApp extends PolymerElement {
 
   Router _router;
 
-  static const BASE_PATH = "/frontend"; // XXX: hack to make this work in WebStorm - put "/frontend" here
+  static const BASE_PATH = ""; // XXX: hack to make this work in WebStorm - put "/frontend" here
 
   final _welcomeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
-  final _listUrl = new UrlPattern(BASE_PATH + r'/#(\d+)');
-  final _detailUrl = new UrlPattern(BASE_PATH + r'/#(\d+)/detail-(\d+)');
+  final _listUrl = new UrlPattern(BASE_PATH + r'/#([\d|]+)');
+  final _detailUrl = new UrlPattern(BASE_PATH + r'/#(\d+)/detail-([\d|]+)');
 
   BookApp.created() : super.created() {
     _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
@@ -58,7 +58,7 @@ class BookApp extends PolymerElement {
   handleBookInput(_, var detail, __) {
     print("Book selected: $detail");
     var book = detail as AutocompletedBook;
-    _router.gotoPath(_listUrl.reverse(["${book.itemId}"], useFragment: true),
+    _router.gotoPath(_listUrl.reverse(["${book.itemIds}"], useFragment: true),
                      book.title);
   }
 
@@ -71,8 +71,8 @@ class BookApp extends PolymerElement {
 
   void routeToLoaderOrList(String path) {
     // TODO: find out if we already have this loaded, skip to LIST if so
-    int itemId = int.parse(_listUrl.parse(path)[0]);
-    _suggestionsLoader.startLoading(itemId);
+    String itemIds = _listUrl.parse(path)[0];
+    _suggestionsLoader.startLoading(itemIds);
     var wait = new WaitState(path);
     _machine.pushTo(wait);
     _showStatePage();

@@ -79,7 +79,9 @@ class BookInput extends PolymerElement {
   }
 
   void _showNewSuggestions(CustomEvent event) {
-    _suggestionList.createSuggestionsFromJson(_coreAjax.response);
+    if (_coreAjax.response != null) {
+      _suggestionList.createSuggestionsFromJson(_coreAjax.response);
+    }
     _suggestionList.isLoading = false;
   }
 }

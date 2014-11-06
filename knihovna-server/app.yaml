@@ -5,13 +5,25 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /css
-  static_dir: static/css
+- url: /static_admin/
+  static_dir: static_admin
+
 - url: /admin/.*
   login: admin
   script: admin.application
-- url: /.*
+
+- url: /autocomplete/.*
   script: main.application
+
+- url: /query/.*
+  script: main.application
+
+- url: /
+  static_files: static/index.html
+  upload: static
+
+- url: /
+  static_dir: static
 
 libraries:
 - name: webapp2

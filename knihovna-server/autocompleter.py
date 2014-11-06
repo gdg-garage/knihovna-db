@@ -1,5 +1,6 @@
 # coding=utf-8
 import logging
+from book_record import BookRecord
 
 from unidecode import unidecode
 from google.appengine.api import search
@@ -16,9 +17,12 @@ class Autocompleter(object):
         query_ascii = unidecode(query)
         query_ascii = Autocompleter.SANITIZE_PATTERN.sub("", query_ascii)
 
-        logging.info("Autocomplete search for '{}' (sanitized to '{}').".format(
+        logging.info(u"Autocomplete search for '{}' sanitized to '{}'.".format(
             query, query_ascii
         ))
+
+        if not query_ascii:
+            return []
 
         results = self.index.search(
             query=search.Query('tokens:({})'.format(query_ascii),
@@ -43,29 +47,31 @@ class Autocompleter(object):
         record.put()
 
     @staticmethod
-    def create_instances_to_be_saved(item_id, author, title, year, count):
+    def create_instances_to_be_saved(item_ids, author, title, year, count):
         """
         A method that returns saveable objects without actually saving them.
         This allows batching saves.
-        :param item_id: String with unique item id.
+        :param item_ids: String with unique item ids.
         :param author:
         :param title:
         :param year:
         :param count: Count. Will be forced to an integer if it isn't already.
         :return: a tuple of document (Search API) and record (NDB)
         """
-        document = Autocompleter._create_document(item_id, author, title,
+        document = Autocompleter._create_document(item_ids, author, title,
                                                   count)
-        record = Autocompleter._create_record(item_id, author, title,
+        record = Autocompleter._create_record(item_ids, author, title,
                                               year, count)
         return document, record
 
 
     @staticmethod
-    def _create_record(item_id, author, title, year, count):
-        key = ndb.Key('BookRecord', item_id)
+    def _create_record(item_ids, author, title, year, count):
+        key = ndb.Key(BookRecord, item_ids)
+        item_id_array = item_ids.split("|")
         datastore_record = BookRecord(
             key=key,
+            item_id_array=item_id_array,
             author=author,
             title=title,
             year=year,
@@ -75,13 +81,13 @@ class Autocompleter(object):
 
 
     @staticmethod
-    def _create_document(item_id, author, title, count):
+    def _create_document(item_ids, author, title, count):
         author_ascii = unidecode(author)
         title_ascii = unidecode(title)
         phrase = "{} {}".format(author_ascii, title_ascii)
         tokens = ','.join(Autocompleter.tokenize_autocomplete_simpler(phrase))
         document = search.Document(
-            doc_id=item_id,
+            doc_id=item_ids,
             fields=[
                 search.TextField(name='tokens', value=tokens),
             ],
@@ -119,11 +125,4 @@ class Autocompleter(object):
             for i in range(1, len(word) + 1):
                 a.append(word[0:i])
         return a
-
-
-class BookRecord(ndb.Model):
-    author = ndb.StringProperty(indexed=False)
-    title = ndb.StringProperty(indexed=False)
-    year = ndb.IntegerProperty(indexed=False)
-    count = ndb.IntegerProperty(indexed=False)
 
