@@ -5,6 +5,7 @@ import httplib2
 from apiclient.discovery import build
 from oauth2client.appengine import AppAssertionCredentials
 
+
 class BigQueryClient(object):
     # BigQuery API Settings
     SCOPE = 'https://www.googleapis.com/auth/bigquery'
@@ -31,26 +32,24 @@ class BigQueryClient(object):
             .query(projectId=BigQueryClient.PROJECT_NUMBER, body=query_config)
 
 
+class BigQueryTable(object):
+    """
+    Copies data from a BigQuery json result into more pythonic data structure.
+    """
+    def __init__(self, json):
+        self.ncols = len(json['schema']['fields'])
+        self.nrows = len(json['rows'])
+        self.data = []
+        for i in range(self.nrows):
+            self.data.append(BigQueryTable.get_row(i, json))
 
-ALL_BOOKS_QUERY = """
-    SELECT
-      tituly.item_id as item_id,
-      tituly.author as author,
-      tituly.title as title,
-      tituly.year as year,
-      COUNT(log.item_id) AS cnt
-    FROM
-      [mlp.log_generalized] as log
-    JOIN
-      EACH [mlp.tituly] AS tituly
-    ON
-      tituly.item_id = log.item_id
-    WHERE
-      # Guard against old books getting more count due to being there longer.
-      log.vypujcky_when > '2013-01-01 00:00:00 UTC'
-    GROUP BY
-      item_id, author, title, year
-    HAVING
-      cnt >= 50  # Control against obscure books and potentially personally identifiable books.
-    ORDER BY cnt DESC
-"""
+    @staticmethod
+    def get_row(i, json):
+        result = []
+        raw_row = json['rows'][i]
+        for raw_value in raw_row['f']:
+            value = raw_value['v']
+            result.append(value)
+        return result
+
+

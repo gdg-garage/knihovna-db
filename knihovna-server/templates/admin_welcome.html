@@ -7,7 +7,19 @@
         {{ title }}
     </h1>
 
-    {% autoescape false %}
-        {{ message }}
-    {% endautoescape %}
+    {% if message %}
+        <div class="message">
+        {% autoescape false %}
+            {{ message }}
+        {% endautoescape %}
+        </div>
+    {% endif %}
+
+    {% if links %}
+        <ul>
+            {% for link in links %}
+            <li><a href="{{ link[1] }}">{{ link[0] }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}
