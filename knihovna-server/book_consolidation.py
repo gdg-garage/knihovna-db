@@ -11,26 +11,26 @@ class _ConsolidatedBooksData(object):
         self.count = count
 
 
-def consolidate_books(table):
-    assert isinstance(table, BigQueryTable)
+def consolidate_books(data):
+    assert isinstance(data, list)
     books = []
     ignore_rows = []
-    for i in range(table.nrows):
+    for i in range(len(data)):
         if i % 50 == 0:
             logging.info("Consolidating books: row {}/{}".format(
-                i, table.nrows
+                i, len(data)
             ))
         if i in ignore_rows:
             continue
-        row = table.data[i]
+        row = data[i]
         item_ids = [row[0]]
         author = row[1]
         title = row[2]
         years = [row[3]]
         counts = [int(row[4])]
         author_and_title = u"{}//{}".format(author, title)
-        for j in range(i + 1, table.nrows):
-            row2 = table.data[j]
+        for j in range(i + 1, len(data)):
+            row2 = data[j]
             other_author_and_title = u"{}//{}".format(row2[1], row2[2])
             if author_and_title != other_author_and_title:
                 continue
@@ -67,6 +67,6 @@ def consolidate_books(table):
             author_and_title, book.item_ids
         ))
     logging.info("Consolidating books: done ({} books from {} rows)".format(
-        len(books), table.nrows
+        len(books), len(data)
     ))
     return books

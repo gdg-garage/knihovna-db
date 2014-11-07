@@ -54,10 +54,12 @@ class BigQueryClient(object):
         assert(json['jobReference']['jobId'] == job_id)
         return job_id
 
-    def get_async_job_results(self, job_id):
+    def get_async_job_results(self, job_id, page_token="", max_results=1000):
         job = self.service.jobs()\
             .getQueryResults(projectId=BigQueryClient.PROJECT_NUMBER,
-                             jobId=job_id)
+                             jobId=job_id,
+                             pageToken=page_token,
+                             maxResults=max_results)
         json = job.execute()
         return json
 

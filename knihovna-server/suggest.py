@@ -3,7 +3,6 @@ import logging
 from google.appengine.ext import deferred
 from admin import is_dev_server
 from bigquery import BigQueryClient, BigQueryTable
-from book_consolidation import consolidate_books
 from book_record import BookRecord
 from google.appengine.ext import ndb
 import datetime

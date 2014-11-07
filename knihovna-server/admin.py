@@ -53,7 +53,7 @@ def init_autocomplete_updating():
     query = ALL_BOOKS_QUERY
     if is_dev_server():
         logging.info("We are in dev_server.")
-        query += " LIMIT 1000"
+        query += " LIMIT 2000"
     job_id = 'autocomplete-big-update-{}'.format(
         int((datetime.now()-datetime.utcfromtimestamp(0)).total_seconds())
     )
@@ -63,21 +63,39 @@ def init_autocomplete_updating():
                    _countdown=10)
 
 
-def check_autocomplete_update_job_done(job_id):
+def check_autocomplete_update_job_done(job_id,
+                                       max_results=1000,
+                                       page_token="",
+                                       past_data=None):
+    if not past_data:
+        past_data = []
     bq = BigQueryClient()
     logging.info("Polling autocomplete update job.")
-    json = bq.get_async_job_results(job_id)
+    json = bq.get_async_job_results(job_id,
+                                    page_token,
+                                    max_results=max_results)
     if json['jobComplete']:
-        deferred.defer(parse_autocomplete_update_json, json)
+        # Job is complete, we have payload.
+        page_token = json.get('pageToken', "")
+        new_data = BigQueryTable(json).data
+        past_data.append(new_data)
+        if page_token != "":
+            # Run again
+            deferred.defer(check_autocomplete_update_job_done,
+                           page_token=page_token,
+                           past_data=past_data)
+        else:
+            # flatten data
+            data = [item for sublist in past_data for item in sublist]
+            deferred.defer(parse_autocomplete_update_data, data)
     else:
         deferred.defer(check_autocomplete_update_job_done, job_id,
                        _countdown=10)
 
 
-def parse_autocomplete_update_json(json):
+def parse_autocomplete_update_data(data):
     autocompleter = Autocompleter()
-    table = BigQueryTable(json)
-    books = consolidate_books(table)
+    books = consolidate_books(data)
     docs = []
     records = []
     for book in books:
