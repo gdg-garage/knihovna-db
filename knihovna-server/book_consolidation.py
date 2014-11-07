@@ -11,7 +11,7 @@ class _ConsolidatedBooksData(object):
         self.count = count
 
 
-def consolidate_books(data, delete_redundant_data=False):
+def consolidate_books(data):
     assert isinstance(data, list)
     # saves 'author/title hash': (first_index, 'item_ids')
     consolidated_books = {}
@@ -33,8 +33,6 @@ def consolidate_books(data, delete_redundant_data=False):
             first_index, item_ids = consolidated_books[book_hash]
             item_ids = "{}|{}".format(item_ids, row[0])
             consolidated_books[book_hash] = (first_index, item_ids)
-            if delete_redundant_data:
-                data[i] = None
     logging.info("Consolidating books: done ({} books from {} rows)".format(
         len(consolidated_books), len(data)
     ))

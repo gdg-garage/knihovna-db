@@ -59,6 +59,7 @@ class UpdateAutocompleteConsolidateOnly(webapp2.RequestHandler):
 def init_autocomplete_updating():
     past_data_records = _AutocompleteUpdateJobRawData.query().fetch(1000)
     ndb.delete_multi([m.key for m in past_data_records])
+    _ConsolidationHashMap.get_by_id('singleton_record').key.delete()
     bq = BigQueryClient()
     query = ALL_BOOKS_QUERY
     if is_dev_server():
@@ -114,6 +115,10 @@ class _AutocompleteUpdateJobRawData(ndb.Model):
     rows = ndb.JsonProperty(indexed=False)
 
 
+class _ConsolidationHashMap(ndb.Model):
+    hashmap = ndb.JsonProperty(indexed=False)
+
+
 def parse_autocomplete_update_data():
     past_data_records = _AutocompleteUpdateJobRawData.query().fetch(1000)
     if len(past_data_records) >= 1000:
@@ -125,16 +130,23 @@ def parse_autocomplete_update_data():
     # flatten data
     data = [item for sublist in past_data for item in sublist]
     del past_data
-    consolidated_books = consolidate_books(data, delete_redundant_data=False)
+    consolidated_books = consolidate_books(data)
+    consolidated_record = _ConsolidationHashMap(
+        id='singleton_record',
+        hashmap=consolidated_books
+    )
+    consolidated_record.put()
     per_subprocess = 1000
     for offset in range(0, len(data), per_subprocess):
         next_offset = min(offset + per_subprocess, len(data))
         deferred.defer(save_consolidated_autocomplete_data,
-                       consolidated_books, data[offset:next_offset],
+                       data[offset:next_offset],
                        offset)
     #ndb.delete_multi([m.key for m in past_data_records])
 
-def save_consolidated_autocomplete_data(consolidated_books, data_slice, offset):
+def save_consolidated_autocomplete_data(data_slice, offset):
+    consolidated_record = _ConsolidationHashMap.get_by_id('singleton_record')
+    consolidated_books = consolidated_record.hashmap
     logging.info("Running save subprocess for {} records, offset={}. "
                  "consolidated_books={}".format(
         len(data_slice), offset, len(consolidated_books)
@@ -144,7 +156,8 @@ def save_consolidated_autocomplete_data(consolidated_books, data_slice, offset):
     records = []
     for book_hash in consolidated_books:
         book = consolidated_books[book_hash]
-        assert isinstance(book, tuple)
+        # assert isinstance(book, tuple)
+        assert len(book) == 2
         index = book[0] - offset
         if not (0 <= index < len(data_slice)):
             continue  # not found in slice - a sibling process will take care of this
