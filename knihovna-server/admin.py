@@ -59,16 +59,13 @@ def init_autocomplete_updating():
     )
     logging.info("Creating new autocomplete update job: {}".format(job_id))
     bq.create_query_job_async(query, job_id)
-    deferred.defer(check_autocomplete_update_job_done, job_id, 500, "", None,
+    deferred.defer(check_autocomplete_update_job_done, job_id, 1000, "",
                    _countdown=5)
 
 
 def check_autocomplete_update_job_done(job_id,
                                        max_results,
-                                       page_token,
-                                       past_data):
-    if not past_data:
-        past_data = []
+                                       page_token):
     bq = BigQueryClient()
     logging.info("Polling autocomplete update job (pageToken={}).".format(
         page_token
@@ -82,28 +79,42 @@ def check_autocomplete_update_job_done(job_id,
         next_page_token = json.get('pageToken', "")
         new_data = BigQueryTable(json).data
         logging.info("- we have {} new rows".format(len(new_data)))
-        past_data.append(new_data)
+        data_record = _AutocompleteUpdateJobRawData(
+            rows=new_data
+        )
+        data_record.put()
         if next_page_token != "":
             # Run again
             logging.info("- running next round with token {}".format(next_page_token))
             deferred.defer(check_autocomplete_update_job_done,
                            job_id, max_results,
-                           next_page_token, past_data,
+                           next_page_token,
                            _countdown=5)
         else:
             logging.info("- we have the whole dataset")
-            # flatten data
-            data = [item for sublist in past_data for item in sublist]
-            deferred.defer(parse_autocomplete_update_data, data)
+            deferred.defer(parse_autocomplete_update_data,
+                           _countdown=5)
     else:
         logging.info("- job isn't complete yet")
         deferred.defer(check_autocomplete_update_job_done,
-                       job_id, max_results,
-                       page_token, past_data,
+                       job_id, max_results, "",
                        _countdown=10)
 
 
-def parse_autocomplete_update_data(data):
+class _AutocompleteUpdateJobRawData(ndb.Model):
+    rows = ndb.JsonProperty(indexed=False)
+
+
+def parse_autocomplete_update_data():
+    past_data_records = _AutocompleteUpdateJobRawData.query().fetch(1000)
+    if len(past_data_records) >= 1000:
+        logging.warning("There are more than 1000 data records.")
+    past_data = []
+    for data_record in past_data_records:
+        assert isinstance(data_record, _AutocompleteUpdateJobRawData)
+        past_data.append(data_record.rows)
+    # flatten data
+    data = [item for sublist in past_data for item in sublist]
     autocompleter = Autocompleter()
     books = consolidate_books(data)
     docs = []
@@ -132,6 +143,7 @@ def parse_autocomplete_update_data(data):
     logging.info("{} docs were put into index".format(len(docs)))
     ndb.put_multi(records)
     logging.info("{} records were put into storage".format(len(records)))
+    ndb.delete_multi([m.key for m in past_data_records])
 
 ALL_BOOKS_QUERY = """
     SELECT
