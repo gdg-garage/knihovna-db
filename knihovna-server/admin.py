@@ -227,7 +227,7 @@ ALL_BOOKS_QUERY = """
       item_id, author, title, year
     HAVING
       # Control against obscure books and potentially personally identifiable books.
-      cnt >= 50
+      cnt >= 100
     ORDER BY cnt DESC
 """
 

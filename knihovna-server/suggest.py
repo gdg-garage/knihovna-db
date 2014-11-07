@@ -69,7 +69,7 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     table = BigQueryTable(json)
     item_ids_array = item_ids.split('|')
     # Get the consolidated book for each item_id
-    books = []
+    suggestions = suggestions_key.get()
     for row in table.data:
         item_id = row[0]
         if item_id in item_ids_array:
@@ -80,12 +80,10 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
             logging.info("No consolidated book with item_id '{}' found."
                          .format(item_id))
             continue
-        if not consolidated_book in books:
-            books.append(consolidated_book)
-        if len(books) >= 1000:
+        if not consolidated_book in suggestions.books:
+            suggestions.books.append(consolidated_book)
+        if len(suggestions.books) >= 1000:
             break
-    suggestions = suggestions_key.get()
-    suggestions.books.extend(map(lambda br: br.key, books))
     next_page_token = json.get('pageToken', "")
     if next_page_token != "":
         suggestions.put()
