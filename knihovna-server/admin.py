@@ -48,6 +48,14 @@ class UpdateAutocompleteFromBigQuery(webapp2.RequestHandler):
         self.redirect("/admin/")
 
 
+class UpdateAutocompleteConsolidateOnly(webapp2.RequestHandler):
+    def get(self):
+        logging.info("Starting task to consolidate autocomplete data from "
+                     "BigQuery")
+        deferred.defer(parse_autocomplete_update_data)
+        self.redirect("/admin/")
+
+
 def init_autocomplete_updating():
     bq = BigQueryClient()
     query = ALL_BOOKS_QUERY
@@ -116,17 +124,24 @@ def parse_autocomplete_update_data():
     # flatten data
     data = [item for sublist in past_data for item in sublist]
     autocompleter = Autocompleter()
-    books = consolidate_books(data)
+    consolidated_books = consolidate_books(data)
     docs = []
     records = []
-    for book in books:
-        assert isinstance(book, _ConsolidatedBooksData)
+    for book_hash in consolidated_books:
+        book = consolidated_books[book_hash]
+        assert isinstance(book, tuple)
+        row = data[book[0]]
+        year = None
+        try:
+            year = int(unicode(row[3]))
+        except:
+            pass
         doc, record = Autocompleter.create_instances_to_be_saved(
-            book.item_ids,
-            book.author,
-            book.title,
-            book.year,
-            book.count
+            book[1],  # item_ids
+            row[1],  # author
+            row[2],  # title
+            year,  # year
+            int(row[4])  # count
         )
         docs.append(doc)
         if len(docs) >= 200:
@@ -134,7 +149,7 @@ def parse_autocomplete_update_data():
             logging.info("{} docs were put into index".format(len(docs)))
             docs = []
         records.append(record)
-        if len(records) >= 100:
+        if len(records) >= 500:
             ndb.put_multi(records)
             logging.info(
                 "{} records were put into storage".format(len(records)))
@@ -200,5 +215,6 @@ application = webapp2.WSGIApplication([
     ('/admin/', AdminPage),
     ('/admin/test/bq/', TestBqPage),
     ('/admin/test/autocomplete/', TestAutocomplete),
-    ('/admin/update_autocomplete/', UpdateAutocompleteFromBigQuery)
+    ('/admin/update_autocomplete/', UpdateAutocompleteFromBigQuery),
+    ('/admin/update_autocomplete/consolidate_only', UpdateAutocompleteConsolidateOnly)
 ], debug=True)
