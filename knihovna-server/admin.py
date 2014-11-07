@@ -23,7 +23,8 @@ class AdminPage(webapp2.RequestHandler):
                         ("Update Autocomplete From BigQuery",
                          '/admin/update_autocomplete/'),
                         ("Consolidate data downloaded from BigQuery",
-                         '/admin/update_autocomplete/consolidate_only')
+                         '/admin/update_autocomplete/consolidate_only'),
+                        ("Delete all books", '/admin/delete/books')
                     ]})
 
 
@@ -251,6 +252,23 @@ class TestBqPage(webapp2.RequestHandler):
         render_html(self, "admin_generic.html", u"Testing BQ",
                     result)
 
+class DeleteAllBooks(webapp2.RequestHandler):
+    def get(self):
+        logging.info("Starting task to delete all books")
+        deferred.defer(delete_books)
+        self.redirect("/admin/")
+
+
+def delete_books():
+    rec_keys = BookRecord.query().fetch(1000, keys_only=True)
+    if rec_keys:
+        ndb.delete_multi(rec_keys)
+        deferred.defer(delete_books)
+    else:
+        logging.info("All books deleted!")
+
+
+
 def is_dev_server():
     if os.environ['SERVER_SOFTWARE'].find('Development') == 0:
         return True
@@ -262,5 +280,6 @@ application = webapp2.WSGIApplication([
     ('/admin/test/bq/', TestBqPage),
     ('/admin/test/autocomplete/', TestAutocomplete),
     ('/admin/update_autocomplete/', UpdateAutocompleteFromBigQuery),
-    ('/admin/update_autocomplete/consolidate_only', UpdateAutocompleteConsolidateOnly)
+    ('/admin/update_autocomplete/consolidate_only', UpdateAutocompleteConsolidateOnly),
+    ('/admin/delete/books', DeleteAllBooks)
 ], debug=True)
