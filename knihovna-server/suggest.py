@@ -46,6 +46,9 @@ def start_bq_job(suggestions):
     item_ids_array = item_ids.split('|')
     sql_item_ids = ', '.join(item_ids_array)  # 12|123 -> 12, 123
     query = SUGGESTION_QUERY.format(sql_item_ids)
+
+    # TODO XXX START HERE use create_query_job_async, defer the rest
+
     job = bq.create_query_job(query, timeout_ms=100000)
     json = job.execute()
     table = BigQueryTable(json)

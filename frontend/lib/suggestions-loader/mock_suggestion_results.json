@@ -1,463 +1,5014 @@
+
 {
+  "status": "completed",
+  "item_ids": "2334904|2353957|2365511|2505744|2665870|139026|35530|2454075|2558273|49618",
+  "job_started": "2014-11-07T17:35:31.885470",
   "suggestions": [
     {
-      "author": "TOLKIEN, John Ronald Reuel",
       "title": "Silmarillion",
-      "item_ids": "38079"
+      "item_ids": "2235254|2756773|2346161|38079|2742454|2365659",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "TOLKIEN, John Ronald Reuel",
-      "title": "Hobit aneb Cesta tam a zase zp\u00e1tky",
-      "item_ids": "35530"
+      "title": "P\u00e1n prsten\u016f",
+      "item_ids": "39077|40168|41163|28747|33661|36773|2301571|2314552|2331595|2535199|2541677|2567345",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "LEWIS, Clive Staples",
-      "title": "Plavba Jit\u0159n\u00edho poutn\u00edka",
-      "item_ids": "37386"
+      "title": "Nedokon\u010den\u00e9 p\u0159\u00edb\u011bhy N\u00famenoru a St\u0159edozem\u011b",
+      "item_ids": "48200",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "ROWLING, J. K.",
-      "title": "Harry Potter a Tajemn\u00e1 komnata",
-      "item_ids": "2231298"
+      "title": "H\u00farinovy d\u011bti",
+      "item_ids": "2618911",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "PAOLINI, Christopher",
-      "title": "Eragon",
-      "item_ids": "2414963"
+      "title": "Tolkien - Kniha kv\u00edz\u016f",
+      "item_ids": "2218692",
+      "author": "MURRAY, Andrew"
     },
     {
-      "author": "ROWLING, J. K.",
-      "title": "Harry Potter a Ohniv\u00fd poh\u00e1r",
-      "item_ids": "2285167"
+      "title": "Pr\u016fvodce sv\u011btem J. R. R. Tolkiena",
+      "item_ids": "51739|2338198",
+      "author": "DAY, David"
     },
     {
-      "author": "ROWLING, J. K.",
-      "title": "Harry Potter a v\u011bze\u0148 z Azkabanu",
-      "item_ids": "2250169"
+      "title": "P\u0159\u00edb\u011bhy z \u010darovn\u00e9 \u0159\u00ed\u0161e",
+      "item_ids": "65088",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "LEWIS, Clive Staples",
-      "title": "Princ Kaspian",
-      "item_ids": "32637"
+      "title": "Princ z Persie",
+      "item_ids": "2844137",
+      "author": "SINA, A. B."
     },
     {
-      "author": "PAOLINI, Christopher",
-      "title": "Eldest",
-      "item_ids": "2501686"
+      "title": "Usagi Yojimbo",
+      "item_ids": "2502861|3679717|2620263|2678263|2598071|2821479|2758826|2479680|2569897|3647806|2717947|2860242|3539389|3451514|3800893|3800895|3800896|2860241|2538496",
+      "author": "SAKAI, Stan"
     },
     {
-      "author": "ROWLING, J. K.",
-      "title": "Harry Potter a F\u00e9nix\u016fv \u0159\u00e1d",
-      "item_ids": "2370103"
+      "title": "Atlas St\u0159edozem\u011b",
+      "item_ids": "2180798",
+      "author": "FONSTAD, Karen Wynn"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Lehk\u00e9 fantasti\u010dno",
-      "item_ids": "43461"
+      "title": "Kniha ztracen\u00fdch pov\u011bst\u00ed",
+      "item_ids": "54052",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "ROWLING, J. K.",
-      "title": "Harry Potter a K\u00e1men mudrc\u016f",
-      "item_ids": "2211740"
+      "title": "Zlat\u00e9 \u00fadol\u00ed",
+      "item_ids": "2390875",
+      "author": "DACH, Zbyn\u011bk"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Str\u00e1\u017ee! Str\u00e1\u017ee!",
-      "item_ids": "55000"
+      "title": "Kouzeln\u00edk\u016fv prsten",
+      "item_ids": "2371349",
+      "author": "GASKIN, Carol"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Sek\u00e1\u010d",
-      "item_ids": "2013315"
+      "title": "Posledn\u00ed z l\u00e9taj\u00edc\u00edch pir\u00e1t\u016f",
+      "item_ids": "2586435",
+      "author": "STEWART, Paul"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "T\u011b\u017ek\u00e9 melodi\u010dno",
-      "item_ids": "2070698"
+      "title": "Tolkien\u016fv besti\u00e1\u0159.",
+      "item_ids": "55790",
+      "author": "DAY, David"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Ma\u0161kar\u00e1da",
-      "item_ids": "2180439"
+      "title": "Souboj \u010darod\u011bj\u016f",
+      "item_ids": "2448292",
+      "author": "GASKIN, Carol"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "D\u00e1my a p\u00e1nov\u00e9",
-      "item_ids": "64746"
+      "title": "Fantastick\u00e1 zv\u00ed\u0159ata a kde je naj\u00edt",
+      "item_ids": "2309001",
+      "author": "MLOK SCAMANDER"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Pyramidy",
-      "item_ids": "53457"
+      "title": "Smrt\u00edc\u00ed jed",
+      "item_ids": "2428290",
+      "author": "KROC, V\u00e1clav"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "\u010carod\u011bjky na cest\u00e1ch",
-      "item_ids": "58957"
+      "title": "Vra\u017eda Rogera Ackroyda",
+      "item_ids": "2804514",
+      "author": "LACHARD, Bruno"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Barva kouzel",
-      "item_ids": "41337"
+      "title": "Tajemn\u00e9 labyrinty",
+      "item_ids": "2441170",
+      "author": "GASKIN, Carol"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Mort",
-      "item_ids": "48889"
+      "title": "Hrani\u010d\u00e1\u0159\u016fv u\u010de\u0148",
+      "item_ids": "2740443|3716485|3451524|2776495|3559797|2728418|3353706|2801254|2820250|2840705|2714292",
+      "author": "FLANAGAN, John"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Soudn\u00e9 sestry",
-      "item_ids": "52584"
+      "title": "Krvav\u00e1 zem\u011b",
+      "item_ids": "2468451",
+      "author": "KROC, V\u00e1clav"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Mu\u017ei ve zbrani",
-      "item_ids": "2002514"
+      "title": "Famfrp\u00e1l v pr\u016fb\u011bhu v\u011bk\u016f",
+      "item_ids": "2277299",
+      "author": "KENNILWORTHY WHISP"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Mal\u00ed bohov\u00e9",
-      "item_ids": "2344511"
+      "title": "Tajemstv\u00ed gobel\u00ednu",
+      "item_ids": "2810785|2767667|3635155",
+      "author": "NEFF, Henry H."
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Magick\u00fd prazdroj",
-      "item_ids": "51221"
+      "title": "X-men",
+      "item_ids": "2513844|3572196",
+      "author": "CLAREMONT, Chris"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Posledn\u00ed kontinent",
-      "item_ids": "2205049"
+      "title": "Poh\u00e1dky",
+      "item_ids": "39108",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Nohy z j\u00edlu",
-      "item_ids": "2197751"
+      "title": "Hlava smrtihlava",
+      "item_ids": "2333408",
+      "author": "DACH, Zbyn\u011bk"
     },
     {
-      "author": "DEARY, Terry",
-      "title": "Mizern\u00e1 prvn\u00ed sv\u011btov\u00e1 v\u00e1lka",
-      "item_ids": "2342597"
+      "title": "Citadela chaosu",
+      "item_ids": "46984|2215139|2355429",
+      "author": "JACKSON, Steve"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "P\u00e1t\u00fd elefant",
-      "item_ids": "2240948"
+      "title": "Cesta za tajemn\u00fd Hvozd",
+      "item_ids": "2360486",
+      "author": "STEWART, Paul"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Hrrr na n\u011b!",
-      "item_ids": "2192356"
+      "title": "\u0160erolichotn\u00edkova kletba",
+      "item_ids": "2537469",
+      "author": "STEWART, Paul"
     },
     {
-      "author": "ROWLING, J. K.",
-      "title": "Harry Potter a princ dvoj\u00ed krve",
-      "item_ids": "2504413"
+      "title": "Physikus",
+      "item_ids": "2646570",
+      "author": "SAGE, Angie"
     },
     {
-      "author": "DEARY, Terry",
-      "title": "Stra\u0161n\u00e1 druh\u00e1 sv\u011btov\u00e1 v\u00e1lka",
-      "item_ids": "2343557"
+      "title": "Hrobka no\u010dn\u00edch m\u016fr",
+      "item_ids": "2333401",
+      "author": "BRENNAN, J. H."
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Dobr\u00e1 znamen\u00ed",
-      "item_ids": "63902"
+      "title": "Artemis Fowl",
+      "item_ids": "2591907|2713236|2319829|2758800|2361736|2352134|2504075|2668664",
+      "author": "COLFER, Eoin"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Zaj\u00edmav\u00e9 \u010dasy",
-      "item_ids": "2160433"
+      "title": "Modr\u00e1 p\u011btka na stezce dobrodru\u017estv\u00ed",
+      "item_ids": "2219531",
+      "author": "KAMIL, J. B."
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Pohybliv\u00e9 obr\u00e1zky",
-      "item_ids": "57213"
+      "title": "St\u0159\u00edbrok\u0159\u00eddl\u00fd",
+      "item_ids": "2497448",
+      "author": "OPPEL, Kenneth"
     },
     {
-      "author": "ROWLING, J. K.",
-      "title": "Harry Potter a relikvie smrti",
-      "item_ids": "2668460"
+      "title": "Zak\u00e1zan\u00e9 v\u011b\u017ee",
+      "item_ids": "2371348",
+      "author": "GASKIN, Carol"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Erik",
-      "item_ids": "2203803"
+      "title": "Kr\u00e1l noci",
+      "item_ids": "2362297",
+      "author": "KROC, V\u00e1clav"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a slavn\u00fd \u0161t\u00edt",
-      "item_ids": "59947"
+      "title": "Kruhy magie",
+      "item_ids": "2314690|2321340|2262913|2284421|2254418|2286142",
+      "author": "DOYLE, Debra"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a G\u00f3tov\u00e9",
-      "item_ids": "2232614"
+      "title": "Dvan\u00e1ct so\u0161ek Almiru",
+      "item_ids": "2175726",
+      "author": "HOUSER, Pavel"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Zlod\u011bj \u010dasu",
-      "item_ids": "2319434"
+      "title": "Bou\u0159liv\u00e1k",
+      "item_ids": "2414846",
+      "author": "STEWART, Paul"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a Caesar\u016fv vav\u0159\u00ednov\u00fd v\u011bnec",
-      "item_ids": "2232613"
+      "title": "Artu\u0161ovsk\u00e9 legendy",
+      "item_ids": "2618765",
+      "author": "SIMPSON, Margaret"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix v Hisp\u00e1nii",
-      "item_ids": "2201589"
+      "title": "Eymerik\u016fv hn\u011bv",
+      "item_ids": "2415275",
+      "author": "EVANGELISTI, Valerio"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Nesv\u00e1r",
-      "item_ids": "2220313"
+      "title": "Arm\u00e1dy smrti",
+      "item_ids": "2326742",
+      "author": "LIVINGSTONE, Ian"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix v Brit\u00e1nii",
-      "item_ids": "2310828"
+      "title": "Zp\u011bv drak\u016f",
+      "item_ids": "2665950|2793686",
+      "author": "\u010cERM\u00c1KOV\u00c1, Michaela"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Otec pras\u00e1tek",
-      "item_ids": "2186470"
+      "title": "Legie smrti",
+      "item_ids": "2347986",
+      "author": "BRENNAN, J. H."
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Carpe jugulum",
-      "item_ids": "2209594"
+      "title": "Wolverine",
+      "item_ids": "2539334|2539333|2808285",
+      "author": "WOLVERINE"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield v\u00e1l\u00ed sudy",
-      "item_ids": "2301578|2604637"
+      "title": "P\u00e1n zbroje",
+      "item_ids": "2332845|2362311",
+      "author": "BROWN, Richard"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield si d\u00e1v\u00e1 do nosu",
-      "item_ids": "2331167|2625247"
+      "title": "Kniha m\u011bsta Ember",
+      "item_ids": "2760350|2789722",
+      "author": "DuPRAU, Jeanne"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "No\u010dn\u00ed hl\u00eddka",
-      "item_ids": "2357417"
+      "title": "Grandville",
+      "item_ids": "2797057|2800805",
+      "author": "TALBOT, Bryan"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield v nad\u017eivotn\u00ed velikosti",
-      "item_ids": "2013308"
+      "title": "Kouzeln\u00fd sv\u011bt Harryho Pottera",
+      "item_ids": "2320375",
+      "author": "COLBERT, David"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Velk\u00e1 j\u00edzda",
-      "item_ids": "57584"
+      "title": "B\u00e1sn\u011b z trilogie P\u00e1n prsten\u016f",
+      "item_ids": "2246745",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix legion\u00e1\u0159em",
-      "item_ids": "2001555"
+      "title": "Slunok\u0159\u00eddl\u00fd",
+      "item_ids": "2599829",
+      "author": "OPPEL, Kenneth"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield: nohy z dohledu",
-      "item_ids": "2240381"
+      "title": "P\u00e1n prsten\u016f",
+      "item_ids": "2354279",
+      "author": "SIBLEY, Brian"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "S\u00eddli\u0161t\u011b boh\u016f",
-      "item_ids": "2326672"
+      "title": "Br\u00e1na zla",
+      "item_ids": "2345593",
+      "author": "JACKSON, Steve"
     },
     {
-      "author": "DEARY, Terry",
-      "title": "Drsn\u00e1 doba kamenn\u00e1",
-      "item_ids": "2236519"
+      "title": "Luko",
+      "item_ids": "2659060|2556035",
+      "author": "VEBROV\u00c1, Sandra"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Pravda",
-      "item_ids": "2289653"
+      "title": "\u00dad\u011bsn\u00e9 \u00dater\u00fd",
+      "item_ids": "2576492",
+      "author": "NIX, Garth"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a olympijsk\u00e9 hry",
-      "item_ids": "2232612"
+      "title": "Ztracen\u00e1 \u0159\u00ed\u0161e",
+      "item_ids": "2533262",
+      "author": "KROC, V\u00e1clav"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Kobercov\u00e9",
-      "item_ids": "2252112"
+      "title": "Congo",
+      "item_ids": "2282643",
+      "author": "RUFLEDT, Hubertus"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Podivn\u00fd regiment",
-      "item_ids": "2386098"
+      "title": "Probuzen\u00ed tmy",
+      "item_ids": "2650214",
+      "author": "COOPER, Susan"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a kotl\u00edk",
-      "item_ids": "57201"
+      "title": "Superman pro z\u00edt\u0159ek",
+      "item_ids": "2596132|2622294",
+      "author": "AZZARELLO, Brian"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield v\u00e1\u017e\u00ed slova",
-      "item_ids": "2160706"
+      "title": "Zk\u00e1za l\u00e9taj\u00edc\u00edho m\u011bsta",
+      "item_ids": "2472364",
+      "author": "STEWART, Paul"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Svobodnej n\u00e1rod",
-      "item_ids": "2424626"
+      "title": "Poj\u00edda\u010d du\u0161\u00ed",
+      "item_ids": "2586427",
+      "author": "PAVER, Michelle"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a velk\u00e1 z\u00e1mo\u0159sk\u00e1 plavba",
-      "item_ids": "2310833"
+      "title": "Velk\u00e1 kniha komiks\u016f z \u010dasopis\u016f V\u011btrn\u00edk a Pion\u00fdr",
+      "item_ids": "2331739",
+      "author": "VELK\u00c1"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield sl\u00edzne smetanu",
-      "item_ids": "2201773"
+      "title": "V\u00fdprava za hrdinstv\u00edm",
+      "item_ids": "2717890",
+      "author": "SAGE, Angie"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield obl\u00e9h\u00e1 d\u016fm",
-      "item_ids": "2206110"
+      "title": "451 stup\u0148\u016f Fahrenheita",
+      "item_ids": "136304|2781005|2275825|2831417",
+      "author": "BRADBURY, Ray"
     },
     {
-      "author": "ADAMS, Douglas",
-      "title": "Stopa\u0159\u016fv pr\u016fvodce po Galaxii",
-      "item_ids": "2185301"
+      "title": "Akta Fowl",
+      "item_ids": "2596346",
+      "author": "COLFER, Eoin"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a zlat\u00fd srp",
-      "item_ids": "2310838"
+      "title": "Portfolio",
+      "item_ids": "2161258",
+      "author": "PRATCHETT, Terry"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Divadlo krutosti",
-      "item_ids": "2363486"
+      "title": "\u0158\u00ed\u0161e chaosu",
+      "item_ids": "2324287",
+      "author": "BRENNAN, J. H."
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "\u00da\u017easn\u00fd Mauric a jeho vzd\u011blan\u00ed hlodavci",
-      "item_ids": "2344460"
+      "title": "Charlie a Zrcadlov\u00fd hrad",
+      "item_ids": "2788343",
+      "author": "NIMMO, Jenny"
     },
     {
-      "author": "SHAN, Darren",
-      "title": "Darren Shan a Madame Okta",
-      "item_ids": "2328978"
+      "title": "Nekropole",
+      "item_ids": "2844107",
+      "author": "HOROWITZ, Anthony"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Souboj n\u00e1\u010deln\u00edk\u016f",
-      "item_ids": "2207499"
+      "title": "Charlie a modr\u00fd hrozn\u00fd\u0161",
+      "item_ids": "2580425",
+      "author": "NIMMO, Jenny"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield se u\u017e\u00edr\u00e1",
-      "item_ids": "2196416"
+      "title": "Hobit",
+      "item_ids": "2365514",
+      "author": "TOLKIEN, John Ronald Reuel"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield p\u0159ib\u00edr\u00e1 na v\u00e1ze",
-      "item_ids": "2001726"
+      "title": "Ryt\u00ed\u0159 p\u016flno\u010dn\u00ed hv\u011bzdy",
+      "item_ids": "2504260",
+      "author": "DACH, Zbyn\u011bk"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Obelix & spol.",
-      "item_ids": "2241322"
+      "title": "Sen noci svatoj\u00e1nsk\u00e9",
+      "item_ids": "3424244",
+      "author": "BROWN, Kate"
     },
     {
-      "author": "DISNEY, Walt",
+      "title": "Nemetonburk aneb Zlat\u00e1 br\u00e1na",
+      "item_ids": "2466056",
+      "author": "\u0160TULCOV\u00c1, Renata"
+    },
+    {
+      "title": "Hamlet",
+      "item_ids": "3354781",
+      "author": "VIECELI, Emma"
+    },
+    {
       "title": "Super komiks",
-      "item_ids": "2313782"
+      "item_ids": "2286844|2225642|2474151|2220316|2240956|2474162|2286846|2474352|2228838|2224302|2313782|2474158|2474148|2286851|2286174|2286173|2310016|2241319|2245993|2283459|2474354|2233682|2220315|2238229|2474353|2286853",
+      "author": "DISNEY, Walt"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield je na v\u00e1\u017ek\u00e1ch",
-      "item_ids": "2275726"
+      "title": "S\u00edla druid\u016f",
+      "item_ids": "2349538",
+      "author": "KROC, V\u00e1clav"
     },
     {
-      "author": "DAVIS, Jim",
-      "title": "Garfield nen\u00ed tro\u0161ka\u0159",
-      "item_ids": "2261815"
+      "title": "Spider-man: Odhalen\u00ed",
+      "item_ids": "2504251",
+      "author": "STRACZYNSKI, J. Michael"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Buch!",
-      "item_ids": "2533329"
+      "title": "\u010carokl\u00e1n\u00ed",
+      "item_ids": "2598106",
+      "author": "MOLLOY, Michael"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix na Korsice",
-      "item_ids": "2348029"
+      "title": "Drak Jeho Veli\u010denstva",
+      "item_ids": "2625420",
+      "author": "NOVIK, Naomi"
     },
     {
-      "author": "PRATCHETT, Terry",
-      "title": "Zaslan\u00e1 po\u0161ta",
-      "item_ids": "2474385"
+      "title": "Syn lovce vlk\u016f",
+      "item_ids": "2625410",
+      "author": "LOEVENBRUCK, Henri"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
+      "title": "Nemetonburk aneb Tajemstv\u00ed ve sk\u00e1le",
+      "item_ids": "2353948",
+      "author": "\u0160TULCOV\u00c1, Renata"
+    },
+    {
+      "title": "Seznam p\u0159\u00e1n\u00ed",
+      "item_ids": "2547196",
+      "author": "COLFER, Eoin"
+    },
+    {
+      "title": "\u0160ifra mistra Hanky",
+      "item_ids": "2650245",
+      "author": "JAROSLAV S."
+    },
+    {
+      "title": "Znamen\u00ed draka",
+      "item_ids": "2533247",
+      "author": "SAGE, Angie"
+    },
+    {
+      "title": "P\u00e1n prsten\u016f",
+      "item_ids": "2365460|2343545|2419460",
+      "author": "FISHER, Jude"
+    },
+    {
+      "title": "Liga v\u00fdjime\u010dn\u00fdch",
+      "item_ids": "2373855|2389813",
+      "author": "MOORE, Alan"
+    },
+    {
+      "title": "Up\u00edrova hrobka",
+      "item_ids": "2407353",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Knihy magie",
+      "item_ids": "2402297|2494032|2420180|2420179|2456270|2478024",
+      "author": "JABLONSKI, Carla"
+    },
+    {
+      "title": "Lord of the rings. The felowship of the ring",
+      "item_ids": "2317566|2310787",
+      "author": "SHORE, Howard"
+    },
+    {
+      "title": "Kr\u00e1lovstv\u00ed d\u011bsu",
+      "item_ids": "2310801",
+      "author": "BRENNAN, J. H."
+    },
+    {
+      "title": "Harry Trottel a k\u00e1men MUDr. Tse",
+      "item_ids": "2468706",
+      "author": "JOLIN, Peter M."
+    },
+    {
+      "title": "Dra\u010d\u00ed kniha",
+      "item_ids": "2682468",
+      "author": "SKELTON, Matthew"
+    },
+    {
+      "title": "Morana",
+      "item_ids": "2663808",
+      "author": "COOPER, Susan"
+    },
+    {
+      "title": "Pod postel\u00ed n\u011bco slint\u00e1",
+      "item_ids": "3358335",
+      "author": "WATTERSON, Bill"
+    },
+    {
+      "title": "Alexandr Velik\u00fd a jeho chvilka sl\u00e1vy",
+      "item_ids": "2640168",
+      "author": "ROBINS, Phil"
+    },
+    {
+      "title": "Krajina p\u016flno\u010dn\u00edch st\u00edn\u016f",
+      "item_ids": "2837828",
+      "author": "STRACZYNSKI, J. Michael"
+    },
+    {
+      "title": "P\u00e1n zlod\u011bj\u016f",
+      "item_ids": "2355304",
+      "author": "FUNKE, Cornelia"
+    },
+    {
+      "title": "M\u011bsto zlod\u011bj\u016f",
+      "item_ids": "52280|2318585",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "Ochr\u00e1nce",
+      "item_ids": "2289161",
+      "author": "KROC, V\u00e1clav"
+    },
+    {
+      "title": "Velk\u00e1 kniha komiks\u016f",
+      "item_ids": "2331520|2321351|2363200|2286152",
+      "author": "VELK\u00c1"
+    },
+    {
+      "title": "Robin Hood",
+      "item_ids": "2161698|2698607|2003267|3451568",
+      "author": "ROBIN"
+    },
+    {
+      "title": "Sv\u011btla Amalu",
+      "item_ids": "2318556|2263205",
+      "author": "GIBELIN, Christophe"
+    },
+    {
+      "title": "Slune\u010dn\u00ed studna",
+      "item_ids": "2707748|2626818|2707879",
+      "author": "KNAAK, Richard A."
+    },
+    {
+      "title": "Deltora [2]",
+      "item_ids": "2549023|2556003|2549025",
+      "author": "RODDA, Emily"
+    },
+    {
+      "title": "Kroniky Prydainu",
+      "item_ids": "2611407|2464941|2421116",
+      "author": "ALEXANDER, Lloyd"
+    },
+    {
+      "title": "Artemis Fowl a ztracen\u00fd ostrov",
+      "item_ids": "2650232",
+      "author": "COLFER, Eoin"
+    },
+    {
+      "title": "Alchymist\u016fv syn",
+      "item_ids": "2491781",
+      "author": "BOOTH, Martin"
+    },
+    {
+      "title": "Tul\u00e1k Rover",
+      "item_ids": "2203980",
+      "author": "TOLKIEN, John Ronald Reuel"
+    },
+    {
+      "title": "Nemrtv\u00e1 spravedlnost",
+      "item_ids": "2321329",
+      "author": "DACH, Zbyn\u011bk"
+    },
+    {
+      "title": "Star wars",
+      "item_ids": "2332925",
+      "author": "LEWIS, Ann Margaret"
+    },
+    {
+      "title": "Ve st\u00ednu Akropole",
+      "item_ids": "2656384",
+      "author": "HOLLER, Ren\u00e9e"
+    },
+    {
+      "title": "Magie",
+      "item_ids": "60494|58676|57547|2000162",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Percy Jackson",
+      "item_ids": "3603809|2810895|3404643|2846263|3528291",
+      "author": "RIORDAN, Rick"
+    },
+    {
+      "title": "Elegie pro ove\u010dku",
+      "item_ids": "3351386|3912075|3439901|3911348|3912073|2816197|3746611",
+      "author": "TOME, Kei"
+    },
+    {
+      "title": "\u00dadol\u00ed sku\u010d\u00edc\u00edch jeskyn\u00ed",
+      "item_ids": "2251038",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Kouzeln\u00e1 v\u011bda a Harry Potter",
+      "item_ids": "2360413",
+      "author": "HIGHFIELD, Roger"
+    },
+    {
+      "title": "Velk\u00fd objev Huga Cabreta",
+      "item_ids": "2719536",
+      "author": "SELZNICK, Brian"
+    },
+    {
+      "title": "H\u00e1danka dut\u00e9ho stromu",
+      "item_ids": "2310822",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "H\u00e1danka r\u00e1d\u017eova rub\u00ednu",
+      "item_ids": "2287737",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Laura a Pe\u010de\u0165 sedmi m\u011bs\u00edc\u016f",
+      "item_ids": "2456263",
+      "author": "FREUND, Peter"
+    },
+    {
+      "title": "\u010carod\u011bj p\u016flnoci",
+      "item_ids": "2586395",
+      "author": "JEMEC, Dmitrij Aleksandrovi\u010d"
+    },
+    {
+      "title": "\u010caroplut\u00ed",
+      "item_ids": "2517352",
+      "author": "MOLLOY, Michael"
+    },
+    {
+      "title": "Boj o poklad Velk\u00e9 pyramidy",
+      "item_ids": "2494930",
+      "author": "ROBERTS, Katherine"
+    },
+    {
+      "title": "Tes\u00e1ky b\u011bsu",
+      "item_ids": "2488325",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Laura a dobrodru\u017estv\u00ed Aventerry",
+      "item_ids": "2379847",
+      "author": "FREUND, Peter"
+    },
+    {
+      "title": "Sv\u011btozn\u00e1m\u00fd zem\u011bplo\u0161sk\u00fd almanach pro rok Garn\u00e1ta",
+      "item_ids": "2715190",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Krut\u00ed vl\u00e1dci a jejich poveden\u00e9 man\u017eelky",
+      "item_ids": "2495772",
+      "author": "PITRO, Martin"
+    },
+    {
+      "title": "\u010carokniha",
+      "item_ids": "2371386",
+      "author": "VESCO, Edi"
+    },
+    {
+      "title": "Pan Pond\u011bl\u00ed",
+      "item_ids": "2500330",
+      "author": "NIX, Garth"
+    },
+    {
+      "title": "Toulav\u00fd duch",
+      "item_ids": "2525710",
+      "author": "PAVER, Michelle"
+    },
+    {
+      "title": "Dvacet tis\u00edc mil pod mo\u0159em",
+      "item_ids": "2703777|768|172744|2217208|36978|2363561|16219|2177552|20648",
+      "author": "VERNE, Jules"
+    },
+    {
+      "title": "Kameny osudu",
+      "item_ids": "2387037",
+      "author": "BUJOR, Flavia"
+    },
+    {
+      "title": "Elyonova zem\u011b",
+      "item_ids": "2551523|2518851|2690642|2782508|2598002",
+      "author": "CARMAN, Patrick"
+    },
+    {
+      "title": "Charlie a kouzeln\u00fd kuli\u010das",
+      "item_ids": "2450654",
+      "author": "NIMMO, Jenny"
+    },
+    {
+      "title": "Temn\u00ed ryt\u00ed\u0159i a o\u0161um\u011bl\u00e9 hrady",
+      "item_ids": "2507063|2316068",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Koral\u00edna",
+      "item_ids": "2791572|2791620",
+      "author": "GAIMAN, Neil"
+    },
+    {
+      "title": "Ni\u010demn\u00ed Norman\u00e9",
+      "item_ids": "2352905",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Dracula",
+      "item_ids": "2506483",
+      "author": "KO\u010cANDRLE, Radim"
+    },
+    {
+      "title": "Vr\u00e1na",
+      "item_ids": "2672633|2764812|2673812",
+      "author": "O'BARR, James"
+    },
+    {
+      "title": "M\u00fdty a legendy v komiksech",
+      "item_ids": "2860953",
+      "author": "SHONE, Rob"
+    },
+    {
+      "title": "Charlie a tajupln\u00e1 truhli\u010dka",
+      "item_ids": "2398547",
+      "author": "NIMMO, Jenny"
+    },
+    {
+      "title": "Spiknut\u00ed proti Hannibalovi",
+      "item_ids": "2525765",
+      "author": "LENK, Fabian"
+    },
+    {
+      "title": "\u010carod\u011bn\u00ed",
+      "item_ids": "2381242",
+      "author": "MOLLOY, Michael"
+    },
+    {
+      "title": "Dra\u010d\u00ed jezdec",
+      "item_ids": "2358822",
+      "author": "FUNKE, Cornelia"
+    },
+    {
+      "title": "Do st\u0159edu Zem\u011b",
+      "item_ids": "2697101|35695",
+      "author": "VERNE, Jules"
+    },
+    {
+      "title": "V zajet\u00ed Hororlandu",
+      "item_ids": "2262314",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Spisovatel\u00e9 a jejich tlustospisy",
+      "item_ids": "2680394",
+      "author": "TURNER, Tracey"
+    },
+    {
+      "title": "Kdepak je m\u00e1 kravi\u010dka?",
+      "item_ids": "2594200",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "\u010carovn\u00fd k\u00e1men Brisingamenu",
+      "item_ids": "2717940",
+      "author": "GARNER, Alan"
+    },
+    {
+      "title": "\u010cern\u00e9 st\u00edny",
+      "item_ids": "2251631",
+      "author": "DACH, Zbyn\u011bk"
+    },
+    {
+      "title": "Dami\u00e1novy katakomby",
+      "item_ids": "2356768",
+      "author": "MEYER, Kai"
+    },
+    {
+      "title": "Letopisy Blarnie",
+      "item_ids": "2525757",
+      "author": "GERBER, Michael"
+    },
+    {
+      "title": "Ostrov vyhnanc\u016f",
+      "item_ids": "2232471",
+      "author": "DACH, Zbyn\u011bk"
+    },
+    {
+      "title": "To nejlep\u0161\u00ed ze Zem\u011bplo\u0161sk\u00fdch di\u00e1\u0159\u016f a ro\u010denek 1998-",
+      "item_ids": "2682522",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Kr\u00e1l Artu\u0161 a jeho dru\u017eina",
+      "item_ids": "44817",
+      "author": "WOLF, Robert"
+    },
+    {
+      "title": "\u010carod\u011bj\u016fv synovec",
+      "item_ids": "46938|2491787|2577977",
+      "author": "LEWIS, Clive Staples"
+    },
+    {
+      "title": "Harry Trottel a ta jemn\u00e1 tenata",
+      "item_ids": "2499405",
+      "author": "JOLIN, Peter M."
+    },
+    {
+      "title": "Chy\u0165te Bycha",
+      "item_ids": "2372857",
+      "author": "SMOL\u00cdKOV\u00c1, Kl\u00e1ra"
+    },
+    {
+      "title": "Cesta do st\u0159edu Zem\u011b",
+      "item_ids": "2728790|3335625|36015",
+      "author": "VERNE, Jules"
+    },
+    {
+      "title": "V\u011bdma",
+      "item_ids": "2823847",
+      "author": "SCOTT, Michael"
+    },
+    {
+      "title": "Spider-Man",
+      "item_ids": "2321244",
+      "author": "TEITELBAUM, Michael"
+    },
+    {
+      "title": "V jako vendeta",
+      "item_ids": "2508321",
+      "author": "MOORE, Alan"
+    },
+    {
+      "title": "Harry Potter a K\u00e1men mudrc\u016f",
+      "item_ids": "2738967|2211740|2680965|2366703|2361895|2301560|3458833|2361903",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Dra\u010d\u00ed sluj",
+      "item_ids": "2224263",
+      "author": "BRENNAN, J. H."
+    },
+    {
+      "title": "Sandman: \u00dadob\u00ed mlh",
+      "item_ids": "2498926",
+      "author": "GAIMAN, Neil"
+    },
+    {
+      "title": "Eldest",
+      "item_ids": "2592263|2853690|2501686|2600969",
+      "author": "PAOLINI, Christopher"
+    },
+    {
+      "title": "Penhaligon",
+      "item_ids": "2023048|63192|2001461",
+      "author": "HEINRICH, D. J."
+    },
+    {
+      "title": "Deltora [3]",
+      "item_ids": "2599923|2640172|2640175|2599922",
+      "author": "RODDA, Emily"
+    },
+    {
+      "title": "Perfektn\u00ed p\u00e1re\u010dek a dal\u0161\u00ed vzore\u010dky k nakousnut\u00ed",
+      "item_ids": "2701520",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "The Hobbit or there and back again",
+      "item_ids": "2289830|2226137",
+      "author": "TOLKIEN, John Ronald Reuel"
+    },
+    {
+      "title": "P\u00e1n prsten\u016f. Dv\u011b v\u011b\u017ee",
+      "item_ids": "2577933",
+      "author": "TOLKIEN, John Ronald Reuel"
+    },
+    {
+      "title": "D\u00e1vn\u00e9 proroctv\u00ed",
+      "item_ids": "2684841",
+      "author": "STEWART, Paul"
+    },
+    {
+      "title": "Cesta hr\u016fzy",
+      "item_ids": "2242826",
+      "author": "BRENNAN, J. H."
+    },
+    {
+      "title": "Magyk",
+      "item_ids": "2504365",
+      "author": "SAGE, Angie"
+    },
+    {
+      "title": "Deltora",
+      "item_ids": "2365372|2398539|2415339|2365370|2452501|2491136|2453630|2491133",
+      "author": "RODDA, Emily"
+    },
+    {
+      "title": "Tortilly pro bratry Daltonovy",
+      "item_ids": "2500342",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Elfov\u00e9",
+      "item_ids": "2776516|2743651",
+      "author": "HENNEN, Bernhard"
+    },
+    {
+      "title": "Tajemstv\u00ed chr\u00e1mu svat\u00e9ho Abakuse",
+      "item_ids": "2341146",
+      "author": "MEYER, Kai"
+    },
+    {
+      "title": "Robin Hood",
+      "item_ids": "2184577",
+      "author": "PHILIP, Neil"
+    },
+    {
+      "title": "Winston Churchill a jeho sv\u011btov\u00e9 v\u00e1lky",
+      "item_ids": "2545778",
+      "author": "MacDONALD, Alan"
+    },
+    {
+      "title": "Eragon",
+      "item_ids": "2807303|2853687|2414963|2592262|2721474|2776152",
+      "author": "PAOLINI, Christopher"
+    },
+    {
+      "title": "Temnota",
+      "item_ids": "2772022",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Abhorsenka",
+      "item_ids": "2551692",
+      "author": "NIX, Garth"
+    },
+    {
+      "title": "Zpropaden\u00e9 Skotsko",
+      "item_ids": "2280795|2461231",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Poh\u00e1dka o zlobiv\u00e9 kryse",
+      "item_ids": "2769650",
+      "author": "TALBOT, Bryan"
+    },
+    {
+      "title": "Muminek",
+      "item_ids": "3616305|2951008|2779507|3519062|2828167",
+      "author": "JANSSON, Tove"
+    },
+    {
+      "title": "Nekone\u010dn\u00fd p\u0159\u00edb\u011bh",
+      "item_ids": "2557377|2809832|2336397",
+      "author": "ENDE, Michael"
+    },
+    {
+      "title": "X-Men",
+      "item_ids": "2821551",
+      "author": "CLAREMONT, Chris"
+    },
+    {
+      "title": "Hv\u011bzdn\u00e1 kniha",
+      "item_ids": "2495790|2478022|2489883",
+      "author": "L'HOMME, Erik"
+    },
+    {
+      "title": "Bratr vlk",
+      "item_ids": "2511242",
+      "author": "PAVER, Michelle"
+    },
+    {
+      "title": "Hlas b\u00e1jn\u00fdch stvo\u0159en\u00ed",
+      "item_ids": "2654151",
+      "author": "LOEVENBRUCK, Henri"
+    },
+    {
+      "title": "Fantom X",
+      "item_ids": "2737425",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Sandman: Krajina sn\u016f",
+      "item_ids": "2450651",
+      "author": "GAIMAN, Neil"
+    },
+    {
+      "title": "Posledn\u00ed bitva",
+      "item_ids": "2518839|2577970|46939",
+      "author": "LEWIS, Clive Staples"
+    },
+    {
+      "title": "2/2004 Ka\u010der Donald",
+      "item_ids": "2364792",
+      "author": "<null>"
+    },
+    {
+      "title": "\u0158ada ne\u0161\u0165astn\u00fdch p\u0159\u00edhod",
+      "item_ids": "2282652|2262912|2484817|2613297|2398543|2458536|2350006|2260725|2538448|2437704|2326797|2321349|2367741|2321348|2464945",
+      "author": "SNICKET, Lemony"
+    },
+    {
+      "title": "Tajemn\u00e1 zem\u011b Rondo",
+      "item_ids": "3404642|2856118|2812537",
+      "author": "RODDA, Emily"
+    },
+    {
+      "title": "P\u00e1n prsten\u016f. Spole\u010denstvo Prstenu",
+      "item_ids": "2515383",
+      "author": "TOLKIEN, John Ronald Reuel"
+    },
+    {
+      "title": "Calvin a Hobbes",
+      "item_ids": "3438038",
+      "author": "WATTERSON, Bill"
+    },
+    {
+      "title": "Ostrov je\u0161t\u011b\u0159\u00edho kr\u00e1le",
+      "item_ids": "53510",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "Hloub\u011bji do podzem\u00ed",
+      "item_ids": "2725444",
+      "author": "GORDON, Roderick"
+    },
+    {
+      "title": "Krev elf\u016f",
+      "item_ids": "2391602|2073976|2344428|2504880|53183|2549132|3647853",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "K\u016f\u0148 a jeho chlapec",
+      "item_ids": "40000|2493875|3450445|2577976",
+      "author": "LEWIS, Clive Staples"
+    },
+    {
+      "title": "Hrozba z M\u011bs\u00edce",
+      "item_ids": "2376611",
+      "author": "MEYER, Kai"
+    },
+    {
+      "title": "Ostrov poklad\u016f",
+      "item_ids": "2343552|173658|2656481|2206421|2757561|2246486|2864282|2808321",
+      "author": "STEVENSON, Robert Louis"
+    },
+    {
+      "title": "Zachra\u0148te ryt\u00ed\u0159e kr\u00e1le Artu\u0161e",
+      "item_ids": "2446721",
+      "author": "DIXON, Andy"
+    },
+    {
+      "title": "Den\u00edk p\u00e1na d\u00e9mon\u016f",
+      "item_ids": "2701504|2610330|2614917|2701507|2701510|2711875|2605398",
+      "author": "KARA"
+    },
+    {
+      "title": "Nov\u00fd policista",
+      "item_ids": "2601113",
+      "author": "THOMPSON, Kate"
+    },
+    {
+      "title": "C\u00edsa\u0159 Smith",
+      "item_ids": "2715141",
+      "author": "MORRIS"
+    },
+    {
+      "title": "\u010carod\u011bjovo doup\u011b",
+      "item_ids": "2323633",
+      "author": "HAINING, Peter"
+    },
+    {
+      "title": "Sv\u011btla Severu",
+      "item_ids": "2331347",
+      "author": "PULLMAN, Philip"
+    },
+    {
+      "title": "Str\u00e1\u017ece visut\u00fdch zahrad",
+      "item_ids": "2494929",
+      "author": "ROBERTS, Katherine"
+    },
+    {
+      "title": "Smrt: vysok\u00e1 cena za \u017eivot",
+      "item_ids": "2622691",
+      "author": "GAIMAN, Neil"
+    },
+    {
+      "title": "Proklet\u00fd hvozd",
+      "item_ids": "58677|2355427",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "Vzbou\u0159en\u00e1 planeta",
+      "item_ids": "2001039",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Ameri\u010dan \u010d\u00ednsk\u00e9ho p\u016fvodu",
+      "item_ids": "2757076",
+      "author": "YANG, Gene Luen"
+    },
+    {
+      "title": "Kethersk\u00e9 bratrstvo",
+      "item_ids": "61118",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Oidipus rex",
+      "item_ids": "2611874",
+      "author": "JERIE, Karel"
+    },
+    {
+      "title": "N\u00e1ro\u010dn\u00e9 m\u00edry",
+      "item_ids": "2492837",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Inkoustov\u00e9 srdce",
+      "item_ids": "2440152",
+      "author": "FUNKE, Cornelia"
+    },
+    {
+      "title": "Pes baskervillsk\u00fd",
+      "item_ids": "173141|3638715|2851903|172960|2816077|2496330|2762275",
+      "author": "DOYLE, Arthur Conan"
+    },
+    {
+      "title": "Eon",
+      "item_ids": "2786544",
+      "author": "GOODMAN, Alison"
+    },
+    {
+      "title": "Cesta Viking\u016f",
+      "item_ids": "2345123",
+      "author": "FANNING, Kieran"
+    },
+    {
+      "title": "St\u0159\u00edbrn\u00e1 \u017eidle",
+      "item_ids": "39999|2577972|2517360",
+      "author": "LEWIS, Clive Staples"
+    },
+    {
+      "title": "\u010cern\u00fd \u010d\u00e1p",
+      "item_ids": "2341752",
+      "author": "MEYER, Kai"
+    },
+    {
+      "title": "Neuv\u011b\u0159iteln\u00e9 p\u0159\u00edhody \u017e\u00e1k\u016f Kopyta a M\u0148ouka 3",
+      "item_ids": "2213843",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Nebesk\u00fd lord",
+      "item_ids": "2245979",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Krotitelka dr\u00e1\u010dk\u016f",
+      "item_ids": "2599909",
+      "author": "DOWNER, Ann"
+    },
+    {
+      "title": "Modr\u00fd lotos",
+      "item_ids": "3588107|2426488",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "18/2002 Ka\u010der Donald",
+      "item_ids": "2326303",
+      "author": "<null>"
+    },
+    {
+      "title": "Ztracen\u00fd sv\u011bt v podzem\u00ed",
+      "item_ids": "2678446",
+      "author": "GORDON, Roderick"
+    },
+    {
+      "title": "Masky zmaru",
+      "item_ids": "2187560",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Zrada v ar\u00e9n\u011b",
+      "item_ids": "2525766",
+      "author": "LENK, Fabian"
+    },
+    {
+      "title": "D\u00fdky temnoty",
+      "item_ids": "2313817",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "\u0160kola \u010darod\u011bj\u016f",
+      "item_ids": "2318563",
+      "author": "KRONZEK, Allan Zola"
+    },
+    {
+      "title": "Harry Trottel a posel T\u00e1lib\u00e1nu",
+      "item_ids": "2580354",
+      "author": "JOLIN, Peter M."
+    },
+    {
+      "title": "Klasick\u00e9 p\u0159\u00edb\u011bhy",
+      "item_ids": "2538612",
+      "author": "WILDING, Valerie"
+    },
+    {
+      "title": "Artemis Fowl a \u010dasov\u00fd paradox",
+      "item_ids": "2791685",
+      "author": "COLFER, Eoin"
+    },
+    {
+      "title": "11/2004 Ka\u010der Donald",
+      "item_ids": "2388237",
+      "author": "<null>"
+    },
+    {
+      "title": "Plavba Jit\u0159n\u00edho poutn\u00edka",
+      "item_ids": "37386|2577973|2509929",
+      "author": "LEWIS, Clive Staples"
+    },
+    {
+      "title": "Velkov\u00e9voda",
+      "item_ids": "2633514",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Zlod\u011bj du\u0161\u00ed",
+      "item_ids": "2283437",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Drak z Nikdybylu",
+      "item_ids": "2709599",
+      "author": "DOWNER, Ann"
+    },
+    {
+      "title": "Nev\u011bsta pro \u010darod\u011bje",
+      "item_ids": "2350005",
+      "author": "IBBOTSON, Eva"
+    },
+    {
+      "title": "Raub\u00ed\u0159sk\u00e9 revoluce",
+      "item_ids": "2395419",
+      "author": "DEARY, Terry"
+    },
+    {
       "title": "Asterix u Belg\u016f",
-      "item_ids": "2431205"
+      "item_ids": "2707705|2431205",
+      "author": "GOSCINNY, Ren\u00e9"
     },
     {
-      "author": "SHAN, Darren",
-      "title": "Up\u00ed\u0159\u00ed hora",
-      "item_ids": "2441393"
+      "title": "Odhalen\u00ed zlo\u010dinu",
+      "item_ids": "2407342",
+      "author": "FANNING, Kieran"
     },
     {
-      "author": "SHAN, Darren",
-      "title": "Krvav\u00e9 chodby",
-      "item_ids": "2360482"
+      "title": "Sabriel",
+      "item_ids": "2436411",
+      "author": "NIX, Garth"
     },
     {
-      "author": "SHAN, Darren",
-      "title": "Up\u00edr\u016fv pomocn\u00edk",
-      "item_ids": "2340557"
+      "title": "Za p\u00e1r prsten\u016f",
+      "item_ids": "2323675",
+      "author": "BEARD, Henry N."
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix a Kleopatra",
-      "item_ids": "2437059"
+      "title": "Zem\u011b t\u0159\u00ed \u00fasm\u011bv\u016f & apokalyptick\u00e9 p\u0159\u00edb\u011bhy",
+      "item_ids": "2289273",
+      "author": "TRONDHEIM, Lewis"
     },
     {
-      "author": "GOSCINNY, Ren\u00e9",
-      "title": "Asterix v Helvetii",
-      "item_ids": "2349153"
+      "title": "Letopisy Narnie",
+      "item_ids": "2645284|3813409|2815514",
+      "author": "LEWIS, Clive Staples"
     },
     {
-      "author": "UDERZO, Albert",
+      "title": "Krakatit",
+      "item_ids": "3426827|2223612|2242557|3440357|145042|2508330|27737|2242560|2764694|130534|129266|2766634|25819|2223250",
+      "author": "\u010cAPEK, Karel"
+    },
+    {
+      "title": "Neskute\u010dn\u00ed Inkov\u00e9",
+      "item_ids": "2309056",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Smrteln\u00e9 stroje",
+      "item_ids": "2474291",
+      "author": "REEVE, Philip"
+    },
+    {
+      "title": "H\u00e1danka, kter\u00e1 v\u016fbec nebyla",
+      "item_ids": "2276491",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Al Capone a jeho gang",
+      "item_ids": "2356769|2690557|2479330",
+      "author": "MacDONALD, Alan"
+    },
+    {
+      "title": "Zap\u00e1len\u00ed jezuit\u00e9",
+      "item_ids": "2497445",
+      "author": "FERSTL, Roman"
+    },
+    {
+      "title": "Spartakus",
+      "item_ids": "2532450",
+      "author": "BROWN, Toby"
+    },
+    {
+      "title": "Lovec lid\u00ed",
+      "item_ids": "2627053",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Voln\u00fd p\u00e1d do podzem\u00ed",
+      "item_ids": "2810872",
+      "author": "GORDON, Roderick"
+    },
+    {
+      "title": "Bojechtiv\u00fd v\u00e1le\u010dn\u00edk",
+      "item_ids": "2223159",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Vykut\u00e1len\u00e9 v\u00fdtvarn\u00e9 um\u011bn\u00ed",
+      "item_ids": "2580256|2372848",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "Julius Caesar a jeho proradn\u00ed p\u0159\u00e1tel\u00e9",
+      "item_ids": "2622657",
+      "author": "BROWN, Toby"
+    },
+    {
+      "title": "2/2003 Ka\u010der Donald",
+      "item_ids": "2335868",
+      "author": "<null>"
+    },
+    {
+      "title": "Poklad na St\u0159\u00edbrn\u00e9m jeze\u0159e",
+      "item_ids": "34669",
+      "author": "MAY, Karl"
+    },
+    {
+      "title": "Atika",
+      "item_ids": "2596299",
+      "author": "KILWORTH, Garry"
+    },
+    {
+      "title": "Kotel strachu",
+      "item_ids": "52828",
+      "author": "DEVER, Joe"
+    },
+    {
+      "title": "Yrrhedesovo oko",
+      "item_ids": "54674",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "Mal\u00fd Vinnetou",
+      "item_ids": "2236941",
+      "author": "FRANTA, Karel"
+    },
+    {
+      "title": "Br\u00e1na zk\u00e1zy",
+      "item_ids": "2236967",
+      "author": "BRENNAN, J. H."
+    },
+    {
+      "title": "Labyrint smrti",
+      "item_ids": "2013249",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "Dra\u010d\u00ed let",
+      "item_ids": "2594157",
+      "author": "McCAFFREY, Anne"
+    },
+    {
+      "title": "Dalton city",
+      "item_ids": "2526759",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Zabil jsem Adolfa Hitlera",
+      "item_ids": "2721858",
+      "author": "JASON"
+    },
+    {
+      "title": "Bombardovan\u00ed Britov\u00e9",
+      "item_ids": "2358770|2467097",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Jantarov\u00fd dalekohled",
+      "item_ids": "2353953",
+      "author": "PULLMAN, Philip"
+    },
+    {
+      "title": "Zakl\u00edna\u010d",
+      "item_ids": "2282453|3580055|3525819|2199851",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "Krkav\u010d\u00ed br\u00e1na",
+      "item_ids": "2586441",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Viking Vike kr\u00e1lem",
+      "item_ids": "60984",
+      "author": "JONSSON, Runer"
+    },
+    {
+      "title": "B\u00edl\u00fd kaval\u00edr",
+      "item_ids": "2668817",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Noc vl\u010dice",
+      "item_ids": "2494642",
+      "author": "LOEVENBRUCK, Henri"
+    },
+    {
+      "title": "Asterix a slavn\u00fd \u0161t\u00edt",
+      "item_ids": "59947|2525804|2245512",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Stopa vede k akvaduktu",
+      "item_ids": "2658415",
+      "author": "LENK, Fabian"
+    },
+    {
+      "title": "Princ Kaspian",
+      "item_ids": "32637|2501102|2188687|2577975",
+      "author": "LEWIS, Clive Staples"
+    },
+    {
+      "title": "P\u00e1tr\u00e1n\u00ed na Nilu",
+      "item_ids": "2526746",
+      "author": "HOLLER, Ren\u00e9e"
+    },
+    {
+      "title": "Akademie Jedi",
+      "item_ids": "2364699|2387114|2364691",
+      "author": "ANDERSON, Kevin J."
+    },
+    {
+      "title": "Str\u00e1\u017eci",
+      "item_ids": "3705605|2460136",
+      "author": "MOORE, Alan"
+    },
+    {
+      "title": "H\u00e1danka chlapce ze sousedstv\u00ed",
+      "item_ids": "2335805",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Asterix v Hisp\u00e1nii",
+      "item_ids": "2672926|2201589|2356385",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Zlov\u011bstn\u00e1 hv\u011bzda",
+      "item_ids": "2668936",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Stra\u0161n\u00e1 druh\u00e1 sv\u011btov\u00e1 v\u00e1lka",
+      "item_ids": "2343557|2467104",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "D\u011bsn\u00ed dinosau\u0159i",
+      "item_ids": "2262320|2537117|2399425",
+      "author": "OLIVER, Martin"
+    },
+    {
+      "title": "P\u0159\u00edzraky strachu",
+      "item_ids": "2205357",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Hrad temnoty",
+      "item_ids": "2222870",
+      "author": "BRENNAN, J. H."
+    },
+    {
+      "title": "Brisingr",
+      "item_ids": "2760540|3426008|2796626",
+      "author": "PAOLINI, Christopher"
+    },
+    {
+      "title": "Ba\u017ein\u00e1\u010d",
+      "item_ids": "3875289|2830093|3660883|3793869|2363961",
+      "author": "MOORE, Alan"
+    },
+    {
+      "title": "Lirael",
+      "item_ids": "2472388",
+      "author": "NIX, Garth"
+    },
+    {
+      "title": "Stra\u0161liv\u00fd netvor",
+      "item_ids": "2191572",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Akademie no\u010dn\u00edch m\u016fr",
+      "item_ids": "2747349|2687230",
+      "author": "LOREY, Dean"
+    },
+    {
+      "title": "Kdy\u017e Duben p\u0159ich\u00e1z\u00ed",
+      "item_ids": "2194183|34020|52207|2622620",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Akademie Point Blanc",
+      "item_ids": "2520039",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Smr\u0165ova \u0159\u00ed\u0161e",
+      "item_ids": "2238860",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Moby Dick",
+      "item_ids": "97681|3638722|2335424|2240619",
+      "author": "MELVILLE, Herman"
+    },
+    {
+      "title": "Kedrigern doma a  Na cest\u00e1ch",
+      "item_ids": "49965",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "Raketopl\u00e1n Poutn\u00edk",
+      "item_ids": "2193674",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Eldor\u00e1do kreslen\u00fdch p\u0159\u00edb\u011bh\u016f",
+      "item_ids": "2249067",
+      "author": "ELDOR\u00c1DO"
+    },
+    {
+      "title": "Z\u00e1chrana planety Bliss",
+      "item_ids": "2446722",
+      "author": "DIXON, Andy"
+    },
+    {
+      "title": "Bludi\u0161t\u011b hr\u016fzy",
+      "item_ids": "2201824",
+      "author": "ESTES, Rose"
+    },
+    {
+      "title": "Tajemstv\u00ed muzea",
+      "item_ids": "2790885",
+      "author": "CHANCELLOR, Henry"
+    },
+    {
+      "title": "V\u00e1lka trpasl\u00edk\u016f",
+      "item_ids": "2504079",
+      "author": "HEITZ, Markus"
+    },
+    {
+      "title": "Tramtabumovo d\u011bdictv\u00ed",
+      "item_ids": "2674366",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Zelen\u00e1\u010d",
+      "item_ids": "2510077",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Stra\u0161liv\u00ed Egyp\u0165an\u00e9",
+      "item_ids": "2193105|2287617",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Johanka z Arku a jej\u00ed pochoduj\u00edc\u00ed \u0161iky",
+      "item_ids": "2430467",
+      "author": "ROBINS, Phil"
+    },
+    {
       "title": "Velk\u00fd p\u0159\u00edkop",
-      "item_ids": "2531359"
+      "item_ids": "2694188|2531359",
+      "author": "UDERZO, Albert"
     },
     {
-      "author": "NEJKR\u00c1SN\u011aJ\u0160\u00cd",
-      "title": "Nejkr\u00e1sn\u011bj\u0161\u00ed dopl\u0148ky z prov\u00e1zk\u016f",
-      "item_ids": "2161519"
+      "title": "Vesm\u00edrn\u00e1 archa",
+      "item_ids": "2738660",
+      "author": "HOROWITZ, Anthony"
     },
     {
-      "author": "DAVIS, Jim",
+      "title": "Zu\u0159iv\u00ed Azt\u00e9kov\u00e9",
+      "item_ids": "2355524|2518985",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Divoc\u00ed Anglosasov\u00e9",
+      "item_ids": "2250624",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Asterix legion\u00e1\u0159em",
+      "item_ids": "2437064|2310837|2001555",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Tajn\u00e1 sedma",
+      "item_ids": "2199847|2157083|2345342|2243820|2210012|2251036|2203824|2238230|2186799|2182350|2225643|2161141|2218703|2187989|2276493",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Asterix a cesta kolem Galie",
+      "item_ids": "2437060",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Pomsta trpasl\u00edk\u016f",
+      "item_ids": "2540080",
+      "author": "HEITZ, Markus"
+    },
+    {
+      "title": "Jesse James",
+      "item_ids": "2536096",
+      "author": "MORRIS"
+    },
+    {
+      "title": "\u00damorn\u00e9 divadlo",
+      "item_ids": "2389650",
+      "author": "WRIGHT, Rachel"
+    },
+    {
+      "title": "Jursk\u00fd park 3",
+      "item_ids": "2282640",
+      "author": "CIENCIN, Scott"
+    },
+    {
+      "title": "Popleten\u00e9 po\u010d\u00edta\u010de",
+      "item_ids": "2231152",
+      "author": "COLEMAN, Michael"
+    },
+    {
+      "title": "Spr\u00e1vn\u00e1 p\u011btka",
+      "item_ids": "2205663|2003211|46744|57215|46351|2070865|2239816|2276025|3650457|2220308|3372787|50758|2760417|2310867|2703749|48742|2208935|2846294|2001178|46344|2215126|2238231|2243345|57716|50124|2161312|2677200|59931|2158685|61842|2230259|2808306|2251034|2243228|57756|2190572|2186380|44930|2223134",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Goblin hrdina",
+      "item_ids": "2698991",
+      "author": "HINES, Jim C."
+    },
+    {
+      "title": "Inheritance",
+      "item_ids": "3800683|3719122",
+      "author": "PAOLINI, Christopher"
+    },
+    {
+      "title": "\u0158eck\u00e9 b\u00e1je a legendy",
+      "item_ids": "3335621",
+      "author": "COOPER, Gilly Cameron"
+    },
+    {
+      "title": "Romeo & Julie",
+      "item_ids": "2782569",
+      "author": "LEONG, Sonia"
+    },
+    {
+      "title": "P\u0159\u00edpady inspektora Kop\u0159ivy",
+      "item_ids": "2488441",
+      "author": "VESEL\u00dd, Marek"
+    },
+    {
+      "title": "Tup\u00ed tyrani",
+      "item_ids": "2728387",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "U\u010de\u0148 lovce duch\u016f",
+      "item_ids": "2747363",
+      "author": "DELANEY, Joseph"
+    },
+    {
+      "title": "Pod stra\u0161ideln\u00fdm z\u00e1mkem",
+      "item_ids": "2196081",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "\u00datok na Pompeje",
+      "item_ids": "2524505",
+      "author": "LENK, Fabian"
+    },
+    {
+      "title": "Otroci propasti",
+      "item_ids": "2237630",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "York",
+      "item_ids": "2781019",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "H\u00e1danka Pr\u00e1zdninov\u00e9ho domu",
+      "item_ids": "2252137",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Z\u00e1ludn\u00e9 mistrovstv\u00ed sv\u011bta",
+      "item_ids": "2159804",
+      "author": "COLEMAN, Michael"
+    },
+    {
+      "title": "And\u011bl\u00e9 pekel",
+      "item_ids": "2441399",
+      "author": "MEYER, Kai"
+    },
+    {
+      "title": "Zlov\u011bstn\u00e9 kruhy a jin\u00e9 divok\u00e9 tvary",
+      "item_ids": "2467319",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Za\u0159\u00edk\u00e1va\u010d",
+      "item_ids": "3442018",
+      "author": "SCOTT, Michael"
+    },
+    {
+      "title": "Hugo, po\u010d\u00edta\u010dov\u00fd pir\u00e1t",
+      "item_ids": "2321341",
+      "author": "STEKLA\u010c, Vojt\u011bch"
+    },
+    {
+      "title": "Asterix a G\u00f3tov\u00e9",
+      "item_ids": "2437953|2232614",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Je\u0161t\u011b prohnilej\u0161\u00ed \u0158\u00edman\u00e9",
+      "item_ids": "2367677|2504423",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Jak vycvi\u010dit draka",
+      "item_ids": "2588254|2854136",
+      "author": "COWELL, Cressida"
+    },
+    {
+      "title": "Stormbreaker",
+      "item_ids": "2345666|2627932|2558678",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Trpasl\u00edci",
+      "item_ids": "2637066|2484868",
+      "author": "HEITZ, Markus"
+    },
+    {
+      "title": "Asterix a zlat\u00fd srp",
+      "item_ids": "2186517|2310838|2437954",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Viking Vike v zemi M\u00e1vink\u016f",
+      "item_ids": "60986",
+      "author": "JONSSON, Runer"
+    },
+    {
+      "title": "Bartimaeova trilogie",
+      "item_ids": "2461354|2507269|2576494",
+      "author": "STROUD, Jonathan"
+    },
+    {
+      "title": "Z pekla",
+      "item_ids": "2362611",
+      "author": "MOORE, Alan"
+    },
+    {
+      "title": "B\u00eddn\u00ed viktori\u00e1ni",
+      "item_ids": "2705741",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Zlod\u011bj du\u0161\u00ed",
+      "item_ids": "2523636",
+      "author": "BOOTH, Martin"
+    },
+    {
+      "title": "Jind\u0159ich VIII. a jeho poprav\u010d\u00ed \u0161palek",
+      "item_ids": "2348004",
+      "author": "MacDONALD, Alan"
+    },
+    {
+      "title": "Brut\u00e1ln\u00ed t\u0159icetilet\u00e1 v\u00e1lka",
+      "item_ids": "2467333",
+      "author": "FERSTL, Roman"
+    },
+    {
+      "title": "Ostrov kostlivc\u016f",
+      "item_ids": "2537427",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "\u010carod\u011bj Zem\u011bmo\u0159\u00ed",
+      "item_ids": "2348172|38470",
+      "author": "LE GUIN, Ursula Kroeber"
+    },
+    {
+      "title": "Malfuria",
+      "item_ids": "2816181|2766671|2728342",
+      "author": "MARZI, Christoph"
+    },
+    {
+      "title": "D\u00e1rek od Caesara",
+      "item_ids": "2014626|2356252|2669837|2186513",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Potrhl\u00ed v\u011bdci",
+      "item_ids": "2243758",
+      "author": "FOWKE, Bob"
+    },
+    {
+      "title": "Rab\u00edn\u016fv kocour",
+      "item_ids": "2762287|2650241",
+      "author": "SFAR, Joann"
+    },
+    {
+      "title": "Star wars",
+      "item_ids": "2201825|2319864|2467361",
+      "author": "LUCAS, George"
+    },
+    {
+      "title": "H\u00e1danka ukryt\u00e9ho pokladu",
+      "item_ids": "2321339",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "\u0158eck\u00e9 b\u00e1je",
+      "item_ids": "2511276|2691716",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Bl\u00e1zniv\u00e1 d\u011bjepisn\u00e1 v\u0161ehochu\u0165",
+      "item_ids": "2497318",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Oxford",
+      "item_ids": "2717946",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "S\u00eddli\u0161t\u011b boh\u016f",
+      "item_ids": "2634981|2326672",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Tajemn\u00e9 mo\u0159e",
+      "item_ids": "2310105",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Darebn\u00ed Vikingov\u00e9",
+      "item_ids": "2355666|2215008",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Elvis a jeho p\u00e1nev",
+      "item_ids": "2333412",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "Garfield sl\u00edzne smetanu",
+      "item_ids": "2201773|2186514",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Zlo\u010dinu na stop\u011b",
+      "item_ids": "2576738",
+      "author": "MARTIN, Paul"
+    },
+    {
+      "title": "Mazan\u00ed Slovan\u00e9",
+      "item_ids": "2355498|2518984|2244914|2371682",
+      "author": "FABIANOWSKA, Ma\u0142gorzata"
+    },
+    {
+      "title": "Soudce Bean",
+      "item_ids": "2856058",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Dokonal\u00fd n\u016f\u017e",
+      "item_ids": "2337310",
+      "author": "PULLMAN, Philip"
+    },
+    {
+      "title": "Cirkus Western",
+      "item_ids": "2566424",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Smrt\u00edc\u00ed evoluce",
+      "item_ids": "2713640",
+      "author": "GATES, Phil"
+    },
+    {
+      "title": "D\u011bsiv\u00e9 V\u00e1noce",
+      "item_ids": "2360959",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Lajka",
+      "item_ids": "2764817",
+      "author": "ABADZIS, Nick"
+    },
+    {
+      "title": "Vyhrocen\u00e9 hory",
+      "item_ids": "2551589",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "M\u00e1ma Daltonov\u00e1",
+      "item_ids": "2605325",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Biggles, pilot RAF vypr\u00e1v\u00ed",
+      "item_ids": "2007660",
+      "author": "JOHNS, William Earl"
+    },
+    {
+      "title": "Bajky barda Beedleho",
+      "item_ids": "2745627",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Velk\u00e9 putov\u00e1n\u00ed Vlase a Brady",
+      "item_ids": "2013198|2610265|29208",
+      "author": "SK\u00c1LA, Franti\u0161ek"
+    },
+    {
+      "title": "Moucha",
+      "item_ids": "2500280",
+      "author": "TRONDHEIM, Lewis"
+    },
+    {
+      "title": "Zapeklit\u00e9 hlavolamy \u010f\u00e1belsk\u00e9ho profesora",
+      "item_ids": "2620356",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Magick\u00fd prazdroj. Soudn\u00e9 sestry",
+      "item_ids": "2818115",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Protivn\u00e9 breberky",
+      "item_ids": "2556697|2360221|2247916",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Kedrigern a kouzeln\u00fd P\u00e1r",
+      "item_ids": "50894",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "Dostavn\u00edk",
+      "item_ids": "2500341",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Tintin v Americe",
+      "item_ids": "3588105|2395378",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Soudn\u00e9 sestry",
+      "item_ids": "2359112|52584",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Lev, \u010darod\u011bjnice a sk\u0159\u00ed\u0148",
+      "item_ids": "2491786|32636|2577978|2186381",
+      "author": "LEWIS, Clive Staples"
+    },
+    {
+      "title": "Detektiv v galerii",
+      "item_ids": "2360498",
+      "author": "NILSEN, Anna"
+    },
+    {
+      "title": "P\u00e1n p\u0159elud\u016f",
+      "item_ids": "2428373",
+      "author": "TAYLOR, G. P."
+    },
+    {
+      "title": "Obchod se zapomenut\u00fdmi mapami",
+      "item_ids": "2568269",
+      "author": "MOORE, Ulysses"
+    },
+    {
+      "title": "P\u00e1n prsten\u016f. N\u00e1vrat kr\u00e1le",
+      "item_ids": "2636852",
+      "author": "TOLKIEN, John Ronald Reuel"
+    },
+    {
+      "title": "Rodinn\u00e9 tajemstv\u00ed",
+      "item_ids": "2613296",
+      "author": "PR\u00c1\u0160KOV\u00c1, Mark\u00e9ta"
+    },
+    {
+      "title": "Kelt\u0161t\u00ed hrdlo\u0159ezov\u00e9",
+      "item_ids": "2308467|2206276",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Prohnil\u00ed \u0158\u00edman\u00e9",
+      "item_ids": "2518688|2287605|2202266",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Br\u00e1na \u010dasu",
+      "item_ids": "2568268",
+      "author": "MOORE, Ulysses"
+    },
+    {
+      "title": "T\u0159i mu\u017ei ve \u010dlunu",
+      "item_ids": "188789|2670478|3656335|188656",
+      "author": "JEROME, Jerome Klapka"
+    },
+    {
+      "title": "M\u011bs\u00edc Gomrathu",
+      "item_ids": "2775337",
+      "author": "GARNER, Alan"
+    },
+    {
+      "title": "Kedrigern a kouzeln\u00e1 h\u016flka",
+      "item_ids": "46033",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "Kr\u00e1lovnin ryt\u00ed\u0159",
+      "item_ids": "2762290|2762292|2762294|2650278|2650279|2650280",
+      "author": "KIM, Kang-Won"
+    },
+    {
+      "title": "Nijura",
+      "item_ids": "2656424",
+      "author": "NUYEN, Jenny-Mai"
+    },
+    {
+      "title": "Superv\u011bd\u00e1tor",
+      "item_ids": "2470448",
+      "author": "COLFER, Eoin"
+    },
+    {
+      "title": "Alchymista",
+      "item_ids": "2665944",
+      "author": "SCOTT, Michael"
+    },
+    {
+      "title": "Asterix a Normani",
+      "item_ids": "2665377|64204|2536092",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Opice",
+      "item_ids": "2607663",
+      "author": "STONE, Jeff"
+    },
+    {
+      "title": "Orl\u00ed \u00fader",
+      "item_ids": "2613476",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Proces",
+      "item_ids": "2277366|2223809|2793093|37768|2483330|52972|2072475|64755|2731053",
+      "author": "KAFKA, Franz"
+    },
+    {
+      "title": "Had",
+      "item_ids": "2638475",
+      "author": "STONE, Jeff"
+    },
+    {
+      "title": "Vesm\u00edr, hv\u011bzdy a slizc\u00ed ufoni",
+      "item_ids": "2366956|2580260",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "\u0160ifry a k\u00f3dy",
+      "item_ids": "2364750",
+      "author": "ADAMS, Simon"
+    },
+    {
+      "title": "Goblin",
+      "item_ids": "2604501",
+      "author": "HINES, Jim C."
+    },
+    {
+      "title": "Wetemaa",
+      "item_ids": "3751016|2193850|39581|3917000",
+      "author": "ANDRES, Adam"
+    },
+    {
+      "title": "Most do zem\u011b Terabithia",
+      "item_ids": "2604347|2199652",
+      "author": "PATERSON, Katherine"
+    },
+    {
+      "title": "Futurama-O-Rama",
+      "item_ids": "3354785",
+      "author": "ROGERS, Eric"
+    },
+    {
+      "title": "Nesv\u00e1r",
+      "item_ids": "2220313|2437061",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Synov\u00e9 osudu",
+      "item_ids": "2814462",
+      "author": "SHAN, Darren"
+    },
+    {
+      "title": "Str\u00e1\u017eci blesku",
+      "item_ids": "2478229",
+      "author": "NICHOLLS, Stan"
+    },
+    {
+      "title": "Letn\u00ed blond\u00fdnka",
+      "item_ids": "2715142",
+      "author": "TOMINE, Adrian"
+    },
+    {
+      "title": "Drakobijci",
+      "item_ids": "2200224",
+      "author": "DRAKOBIJCI"
+    },
+    {
+      "title": "Z\u00e1ke\u0159n\u00e1 zele\u0148",
+      "item_ids": "2370320",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Je\u0159\u00e1b",
+      "item_ids": "2640135",
+      "author": "STONE, Jeff"
+    },
+    {
+      "title": "Vra\u017eedn\u00e1 matematika",
+      "item_ids": "2342595",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Anglie",
+      "item_ids": "2453680",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Asterix a Caesar\u016fv vav\u0159\u00ednov\u00fd v\u011bnec",
+      "item_ids": "2707703|63535|2232613|2437952",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Ostrov tet",
+      "item_ids": "2448572",
+      "author": "IBBOTSON, Eva"
+    },
+    {
+      "title": "100 z\u00e1zrak\u016f v \u00fadol\u00ed",
+      "item_ids": "2224298",
+      "author": "GESTIN, Sandrine"
+    },
+    {
+      "title": "Simpsonovi",
+      "item_ids": "2801536|3378854|2661251",
+      "author": "SIMPSONOVI"
+    },
+    {
+      "title": "\u010c\u00edtanka pro za\u010d\u00ednaj\u00edc\u00ed detektivy",
+      "item_ids": "2348010",
+      "author": "\u010cECHURA, Rudolf"
+    },
+    {
+      "title": "Anna chce sko\u010dit",
+      "item_ids": "2614895",
+      "author": "LOMOV\u00c1, Lucie"
+    },
+    {
+      "title": "Simpsonovi vrac\u00ed \u00fader!",
+      "item_ids": "3455386",
+      "author": "SIMPSONOVI"
+    },
+    {
+      "title": "Asterix v Helvetii",
+      "item_ids": "2186557|2349153|2521341",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Asterix na Korsice",
+      "item_ids": "2348029|2634979",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Kamenn\u00ed str\u00e1\u017eci",
+      "item_ids": "2646606",
+      "author": "MOORE, Ulysses"
+    },
+    {
+      "title": "V\u011b\u0161tec",
+      "item_ids": "2356251",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Planina ledov\u00e9ho v\u011btru",
+      "item_ids": "2001266|62041|2001275|2627044|2575630|2607653",
+      "author": "SALVATORE, Robert A."
+    },
+    {
+      "title": "R\u016f\u017ee a me\u010d",
+      "item_ids": "2596267",
+      "author": "UDERZO, Albert"
+    },
+    {
+      "title": "Red meat",
+      "item_ids": "3452039|2785055|2951145",
+      "author": "CANNON, Max"
+    },
+    {
+      "title": "Os\u00eddlov\u00e1n\u00ed Oklahomy",
+      "item_ids": "3369383",
+      "author": "MORRIS"
+    },
+    {
+      "title": "D\u00e9moni z hlubin",
+      "item_ids": "2002664",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Irsko",
+      "item_ids": "2481550",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Asterix a velk\u00e1 z\u00e1mo\u0159sk\u00e1 plavba",
+      "item_ids": "2437062|2186510|2310833",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Ostrov masek",
+      "item_ids": "2622702",
+      "author": "MOORE, Ulysses"
+    },
+    {
+      "title": "Umpa-pa a tajn\u00e9 posl\u00e1n\u00ed",
+      "item_ids": "2737387",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Asterix a Kleopatra",
+      "item_ids": "2437059|2690609",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "100 tajemstv\u00ed v knihovn\u011b",
+      "item_ids": "2207504",
+      "author": "BIZIEN, Jean-Luc"
+    },
+    {
+      "title": "5/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2380096",
+      "author": ""
+    },
+    {
+      "title": "\u0160ifry",
+      "item_ids": "2789697",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Asterix z Galie",
+      "item_ids": "2186550|2437955|2310829|2668774",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "13/2002 Ka\u010der Donald",
+      "item_ids": "2322461",
+      "author": "<null>"
+    },
+    {
+      "title": "Arthur a minimojov\u00e9",
+      "item_ids": "2421108",
+      "author": "BESSON, Luc"
+    },
+    {
+      "title": "Zmu\u017eil\u00ed objevitel\u00e9",
+      "item_ids": "2505533",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "P\u0159\u00edzrak minulosti",
+      "item_ids": "2366858",
+      "author": "ZAHN, Timothy"
+    },
+    {
+      "title": "Tygr",
+      "item_ids": "2607660",
+      "author": "STONE, Jeff"
+    },
+    {
+      "title": "Harry Potter and the goblet of fire",
+      "item_ids": "2289774|2561843|2242577",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Biblick\u00e9 p\u0159\u00edb\u011bhy",
+      "item_ids": "2599864",
+      "author": "COLEMAN, Michael"
+    },
+    {
+      "title": "Star wars",
+      "item_ids": "2343739|2201830",
+      "author": "BROOKS, Terry"
+    },
+    {
+      "title": "Souboj n\u00e1\u010deln\u00edk\u016f",
+      "item_ids": "2672933|2207499|2356389",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Temn\u00e1 jezera",
+      "item_ids": "2614904",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Hlubok\u00e9 r\u00e1ny",
+      "item_ids": "2680508",
+      "author": "MODAN, Rutu"
+    },
+    {
+      "title": "Olympijsk\u00e1 hore\u010dka",
+      "item_ids": "2226152",
+      "author": "COLEMAN, Michael"
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a hromada zlata",
+      "item_ids": "2357932",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Dra\u010d\u00ed br\u00e1na",
+      "item_ids": "2793011",
+      "author": "NUYEN, Jenny-Mai"
+    },
+    {
+      "title": "Psychoterapie Daltonov\u00fdch",
+      "item_ids": "2684833",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a maharad\u017eova pomsta",
+      "item_ids": "57469",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Asterix a Rahaz\u00e1da",
+      "item_ids": "2547193|2694151",
+      "author": "UDERZO, Albert"
+    },
+    {
+      "title": "Zamrzl\u00e1 lo\u010f kapit\u00e1na Flinta",
+      "item_ids": "35867|2282111",
+      "author": "RANSOME, Arthur"
+    },
+    {
+      "title": "Legie hromu",
+      "item_ids": "2495586",
+      "author": "NICHOLLS, Stan"
+    },
+    {
+      "title": "Z\u00e1hada tajn\u00e9ho p\u0159\u00edstavu.",
+      "item_ids": "61655",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Hv\u011bzdn\u00e1 br\u00e1na",
+      "item_ids": "54999",
+      "author": "DEVLIN, Dean"
+    },
+    {
+      "title": "Keltsk\u00e9 m\u00fdty a b\u00e1je",
+      "item_ids": "2230551",
+      "author": "HULPACH, Vladim\u00edr"
+    },
+    {
+      "title": "Zachra\u0148te faraona!",
+      "item_ids": "2525762",
+      "author": "HOLLER, Ren\u00e9e"
+    },
+    {
+      "title": "3 mu\u0161ket\u00fd\u0159i",
+      "item_ids": "3650558",
+      "author": "DUMAS, Alexandre"
+    },
+    {
+      "title": "Tetov\u00e1n\u00ed krv\u00ed",
+      "item_ids": "2736151|2687210",
+      "author": "CORNISH, D. M."
+    },
+    {
+      "title": "Asterix v Brit\u00e1nii",
+      "item_ids": "2004935|2310828|2861307|2437066",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Val\u010d\u00edk s Ba\u0161\u00edrem",
+      "item_ids": "2850338",
+      "author": "FOLMAN, Ari"
+    },
+    {
+      "title": "D\u011bsn\u00fd den\u00edk",
+      "item_ids": "2361345",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Tajemstv\u00ed zmizel\u00e9ho prince",
+      "item_ids": "2329409",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Samuraj\u016fv me\u010d",
+      "item_ids": "2022607",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Viking Vike a rudooc\u00ed rv\u00e1\u010di",
+      "item_ids": "53886",
+      "author": "JONSSON, Runer"
+    },
+    {
+      "title": "Je\u0161t\u011b vra\u017eedn\u011bj\u0161\u00ed matematika",
+      "item_ids": "2442820",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Mot\u00fdlek",
+      "item_ids": "3577644|3702643|3413298|2831510|3457649",
+      "author": "AIKAWA, Yu"
+    },
+    {
+      "title": "Neuv\u011b\u0159iteln\u00e9 p\u0159\u00edhody \u017e\u00e1k\u016f Kopyta a M\u0148ouka 2",
+      "item_ids": "2202432",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Jak b\u00fdt pir\u00e1tem",
+      "item_ids": "2588253",
+      "author": "COWELL, Cressida"
+    },
+    {
+      "title": "Prvn\u00ed kl\u00ed\u010d",
+      "item_ids": "2658859",
+      "author": "MOORE, Ulysses"
+    },
+    {
+      "title": "\u010cas opovr\u017een\u00ed",
+      "item_ids": "3647854|2346638|56912|2634921|2449931",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "Surov\u00e1 st\u0159edov\u011bk\u00e1 Anglie",
+      "item_ids": "2632068",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Vzpurn\u00ed husit\u00e9",
+      "item_ids": "2389233|2545429",
+      "author": "FERSTL, Roman"
+    },
+    {
+      "title": "Tajemstv\u00ed Zlat\u00e9ho kon\u011b",
+      "item_ids": "2354851",
+      "author": "SAUDEK, Karel"
+    },
+    {
+      "title": "Dublin",
+      "item_ids": "2816141",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Tutanchamon a jeho hrobka pln\u00e1 poklad\u016f",
+      "item_ids": "2675348",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "7/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2388432",
+      "author": ""
+    },
+    {
+      "title": "Potrhl\u00ed v\u011bd\u00e1to\u0159i",
+      "item_ids": "2390849",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Hv\u011bzdn\u00fd lovec",
+      "item_ids": "2201755",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "USA",
+      "item_ids": "2339860",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Dcera \u010darod\u011bjek",
+      "item_ids": "2317333",
+      "author": "TERAKOWSKA, Dorota"
+    },
+    {
+      "title": "Leonardo da Vinci a jeho supermozek",
+      "item_ids": "2408784",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "Dra\u010d\u00ed ohe\u0148",
+      "item_ids": "2648692",
+      "author": "D'LACEY, Chris"
+    },
+    {
+      "title": "T\u0159i mu\u0161ket\u00fd\u0159i",
+      "item_ids": "58293|12952|2360035|52099|2275845|130624|59045|2185729|123160|59044|131304|2857123|10719|2178463|130625",
+      "author": "DUMAS, Alexandre"
+    },
+    {
+      "title": "12/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2325632",
+      "author": "<null>"
+    },
+    {
+      "title": "11/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2401909",
+      "author": "<null>"
+    },
+    {
+      "title": "P\u0159\u00ed\u0161ern\u011b velk\u00e1 kniha kviz\u016f",
+      "item_ids": "2590615",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Arthur Spiderwick: Kl\u00ed\u010d k ur\u010dov\u00e1n\u00ed kouzeln\u00fdch tvor",
+      "item_ids": "2584318",
+      "author": "DiTERLIZZI, Tony"
+    },
+    {
+      "title": "Trapn\u00e9 Britsk\u00e9 imp\u00e9rium",
+      "item_ids": "2372849|2525886",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Temn\u00fd elf",
+      "item_ids": "2657827|2648687|2671451",
+      "author": "SALVATORE, Robert A."
+    },
+    {
+      "title": "Zrcadlov\u00fd d\u016fm",
+      "item_ids": "2598001",
+      "author": "MOORE, Ulysses"
+    },
+    {
+      "title": "Ze\u010f \u017ealu",
+      "item_ids": "2824719",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Rychl\u00e9 \u0161\u00edpy a jejich 65 \u00fa\u017easn\u00fdch dobrodru\u017estv\u00ed",
+      "item_ids": "61880",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Kedrigern",
+      "item_ids": "62298",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "Asterix\u016fv syn",
+      "item_ids": "2541957|2694154",
+      "author": "UDERZO, Albert"
+    },
+    {
+      "title": "Vra\u017eedn\u00e1 t\u0159\u00eddn\u00ed sch\u016fzka a dal\u0161\u00ed tajemn\u00e9 historky",
+      "item_ids": "2324315",
+      "author": "WOLF, Klaus-Peter"
+    },
+    {
+      "title": "Doba ledov\u00e1",
+      "item_ids": "2747403",
+      "author": "CR\u00c9CY, Nicolas de"
+    },
+    {
+      "title": "8/2003 Ka\u010der Donald",
+      "item_ids": "2343397",
+      "author": "<null>"
+    },
+    {
+      "title": "Krimin\u00e1ln\u00ed p\u0159\u00edpady pro detektivy za\u010d\u00e1te\u010dn\u00edky",
+      "item_ids": "2243811",
+      "author": "BRO\u017dEK, Lud\u011bk"
+    },
+    {
+      "title": "Nezdrav\u00e9 nemoci",
+      "item_ids": "2348006|2507777",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Velk\u00e1 \u0161estka",
+      "item_ids": "2331354|2564677",
+      "author": "RANSOME, Arthur"
+    },
+    {
+      "title": "Petr Pan v \u0161arlatov\u00e9m pl\u00e1\u0161ti",
+      "item_ids": "2564682",
+      "author": "McCAUGHREAN, Geraldine"
+    },
+    {
+      "title": "Ka\u0148on Apa\u010d\u016f",
+      "item_ids": "2584309",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Charizarde, le\u0165!",
+      "item_ids": "2249058",
+      "author": "WEST, Tracey"
+    },
+    {
+      "title": "Protivn\u00e1 p\u0159\u00edroda",
+      "item_ids": "2343564|2507775",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "V\u011b\u017e vla\u0161tovky",
+      "item_ids": "2349598|2179995",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "Platina",
+      "item_ids": "2767829|2767884",
+      "author": "KIM, Yeon Joo"
+    },
+    {
+      "title": "Mizern\u00e1 prvn\u00ed sv\u011btov\u00e1 v\u00e1lka",
+      "item_ids": "2342597|2580262",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Mraziv\u00e9 p\u00f3ly",
+      "item_ids": "2576730",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Hal\u00f3, tady \u010cty\u0159l\u00edstek",
+      "item_ids": "9193|22777",
+      "author": "\u0160T\u00cdPLOV\u00c1, Ljuba"
+    },
+    {
+      "title": "Past na Alexandra",
+      "item_ids": "2658414",
+      "author": "LENK, Fabian"
+    },
+    {
+      "title": "Marie Stuartovna a jej\u00ed nemo\u017en\u00ed man\u017eel\u00e9",
+      "item_ids": "2378452",
+      "author": "SIMPSON, Margaret"
+    },
+    {
+      "title": "11/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2352730",
+      "author": "<null>"
+    },
+    {
+      "title": "Indi\u00e1n Umpa-pa",
+      "item_ids": "2674389",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "William Shakespeare a jeho dramatick\u00e1 jedn\u00e1n\u00ed",
+      "item_ids": "2518803",
+      "author": "DONKIN, Andrew"
+    },
+    {
+      "title": "Elantris",
+      "item_ids": "2566429",
+      "author": "SANDERSON, Brandon"
+    },
+    {
+      "title": "Ledov\u00fd drak",
+      "item_ids": "2474260",
+      "author": "KNAAK, Richard A."
+    },
+    {
+      "title": "Pa\u0159\u00ed\u017e pod vodou",
+      "item_ids": "2650283",
+      "author": "MORVAN, Jean-David"
+    },
+    {
+      "title": "Z\u00e1vratn\u00e1 architektura",
+      "item_ids": "2453682",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "20x \u010cty\u0159l\u00edstek",
+      "item_ids": "24805",
+      "author": "\u0160T\u00cdPLOV\u00c1, Ljuba"
+    },
+    {
+      "title": "D\u016fm v\u011bdmy z vr\u0161ku",
+      "item_ids": "60264",
+      "author": "SEDZIKOWSKA, Miroslava"
+    },
+    {
+      "title": "Jm\u00e9no v\u011btru",
+      "item_ids": "2745305|2745304",
+      "author": "ROTHFUSS, Patrick"
+    },
+    {
+      "title": "Yakari a B\u00edl\u00fd bizon",
+      "item_ids": "2321346",
+      "author": "DERIB"
+    },
+    {
+      "title": "Mourrison",
+      "item_ids": "2529371|2868712",
+      "author": "FIBRICH, Luk\u00e1\u0161"
+    },
+    {
+      "title": "P\u00e1n drak\u016f",
+      "item_ids": "2645161|2486660",
+      "author": "BUNCH, Chris"
+    },
+    {
+      "title": "Futurama",
+      "item_ids": "2846177",
+      "author": "BOOTHBY, Ian"
+    },
+    {
+      "title": "D\u011bsiv\u011b pravdiv\u00e9 \u0161pion\u00e1\u017en\u00ed p\u0159\u00edb\u011bhy",
+      "item_ids": "2646929",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Garfield v nad\u017eivotn\u00ed velikosti",
+      "item_ids": "2643706|2013308",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Tajemstv\u00ed podivn\u00fdch vzkaz\u016f",
+      "item_ids": "2353683",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Knofl\u00edkov\u00e1 v\u00e1lka",
+      "item_ids": "2857537|3590606",
+      "author": "GABELLA, Mathieu"
+    },
+    {
+      "title": "\u017dezlo kr\u00e1le Ottokara",
+      "item_ids": "2663797",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Zp\u00edvaj\u00edc\u00ed dr\u00e1t",
+      "item_ids": "2793012",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Hu\u010d\u00edc\u00ed \u0159eky",
+      "item_ids": "2513718",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "\u00da\u017easn\u00ed \u0158ekov\u00e9",
+      "item_ids": "2287601|2467106|2197599",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Kucha\u0159ka sta\u0159enky Oggov\u00e9",
+      "item_ids": "2289080",
+      "author": "KUCHA\u0158KA"
+    },
+    {
+      "title": "Matematick\u00e9 detektivky",
+      "item_ids": "2356305",
+      "author": "WISE, Bill"
+    },
+    {
+      "title": "Kronika rodu Spiderwick\u016f",
+      "item_ids": "2453665|2711530|2716529|2499411|2437683|2525781|2508340",
+      "author": "DiTERLIZZI, Tony"
+    },
+    {
+      "title": "P\u0159\u00edb\u011bhy ze zem\u011b Anthropos",
+      "item_ids": "56880|63722",
+      "author": "WHITE, John"
+    },
+    {
+      "title": "Yakari a kr\u00e1l\u00edk Nanabozo",
+      "item_ids": "2321344",
+      "author": "DERIB"
+    },
+    {
+      "title": "Francie",
+      "item_ids": "2416638",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "14/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2237903",
+      "author": "<null>"
+    },
+    {
+      "title": "Chr\u00e1m zk\u00e1zy",
+      "item_ids": "60151",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "\u010carod\u011bj",
+      "item_ids": "2745315",
+      "author": "SCOTT, Michael"
+    },
+    {
+      "title": "Tajn\u00fd spolek \u0160korpiona",
+      "item_ids": "2658413",
+      "author": "HOLLER, Ren\u00e9e"
+    },
+    {
+      "title": "K\u0159est ohn\u011bm",
+      "item_ids": "3590954|2336589|2469548|62308",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "Poselstv\u00ed jednoro\u017ec\u016f",
+      "item_ids": "2723623|2723624|2764684",
+      "author": "BURDOV\u00c1, Michaela"
+    },
+    {
+      "title": "2/2001 \u010cty\u0159l\u00edstek",
+      "item_ids": "2243534",
+      "author": "<null>"
+    },
+    {
+      "title": "12/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2353790",
+      "author": "<null>"
+    },
+    {
+      "title": "P\u0159\u00ed\u0161ern\u00e9 sv\u011btlo",
+      "item_ids": "2512425",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "The tales of beedle the bard",
+      "item_ids": "2748885",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "\u010carod\u011bj\u016fv u\u010de\u0148",
+      "item_ids": "3498752|2363582|56203",
+      "author": "PREUSSLER, Otfried"
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a kelt\u0161t\u00ed duchov\u00e9",
+      "item_ids": "2328971",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Kronika Hoch\u016f od Bob\u0159\u00ed \u0159eky",
+      "item_ids": "2475295|2495820|58366|55897|2215128",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Prohnan\u00ed P\u0159emyslovci",
+      "item_ids": "2356790|2580257",
+      "author": "FERSTL, Roman"
+    },
+    {
+      "title": "V\u00e1lka vlk\u016f",
+      "item_ids": "2464942",
+      "author": "LOEVENBRUCK, Henri"
+    },
+    {
+      "title": "Oliver Twist",
+      "item_ids": "2230658|2370963|2597810|45896|2765963|47278|2824657|127988|2229322|2244317|6921|96914|64601|2478766|2050505|2696165|2656479|2318307|134200|2194431|2366651|2050193|34336|2193095|2678930|2193704|2202395|2249859",
+      "author": "DICKENS, Charles"
+    },
+    {
+      "title": "Unesli M\u0148ouka, Baskerville!",
+      "item_ids": "39100",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Asterix, nebe mu pad\u00e1 na hlavu",
+      "item_ids": "2494638",
+      "author": "UDERZO, Albert"
+    },
+    {
+      "title": "Hra na Egypt",
+      "item_ids": "2378404",
+      "author": "SNYDER, Zilpha Keatley"
+    },
+    {
+      "title": "V Ba\u017ein\u00e1ch \u0161korpi\u00f3n\u016f",
+      "item_ids": "54719",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Sek\u00e1\u010d",
+      "item_ids": "2437554|2013315",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Vrtkav\u00e9 \u0161t\u011bst\u00ed",
+      "item_ids": "2495758",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Pozornost pro Kedrigerna",
+      "item_ids": "51570",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "\u010cern\u00fd ostrov",
+      "item_ids": "2582283",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Syn lovce medv\u011bd\u016f",
+      "item_ids": "2363483|280582|53650|4584",
+      "author": "MAY, Karl"
+    },
+    {
+      "title": "Jasn\u00fd p\u0159\u00edpad?!",
+      "item_ids": "2575654",
+      "author": "OBRIST, J\u00fcrg"
+    },
+    {
+      "title": "\u010c\u00edsla, kl\u00ed\u010d k vesm\u00edru",
+      "item_ids": "2779500",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Yakari a bob\u0159\u00ed hr\u00e1z",
+      "item_ids": "2321343",
+      "author": "DERIB"
+    },
+    {
+      "title": "V\u00e1lka prastar\u00fdch",
+      "item_ids": "2870587|2524488|2491099|2870583|2537498",
+      "author": "KNAAK, Richard A."
+    },
+    {
+      "title": "Ot\u0159esn\u00e9 d\u011bjiny sv\u011bta",
+      "item_ids": "2356687",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Lehk\u00e9 fantasti\u010dno",
+      "item_ids": "2768553|43461",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Sprost\u00e9 zlomky a hanebn\u00fd pr\u016fm\u011br",
+      "item_ids": "2614905",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Tajemstv\u00ed 13. n\u00e1stupi\u0161t\u011b",
+      "item_ids": "2346133",
+      "author": "IBBOTSON, Eva"
+    },
+    {
+      "title": "Vl\u00e1dce klan\u016f",
+      "item_ids": "2376626",
+      "author": "GOLDEN, Christie"
+    },
+    {
+      "title": "Vl\u010dice a d\u00edvka",
+      "item_ids": "2383872",
+      "author": "LOEVENBRUCK, Henri"
+    },
+    {
+      "title": "Po\u010d\u00edta\u010dov\u00ed zlod\u011bji",
+      "item_ids": "2180157",
+      "author": "COLEMAN, Michael"
+    },
+    {
+      "title": "Kedrigern a drak Comme il faut",
+      "item_ids": "49964",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "Mal\u00fd Vlk a Bystr\u00e9 O\u010dko",
+      "item_ids": "2529405",
+      "author": "FALTOV\u00c1, V\u011bra"
+    },
+    {
+      "title": "Str\u00e1\u017eci \u010dasu",
+      "item_ids": "2605328|2588161|2576541",
+      "author": "CURLEY, Marianne"
+    },
+    {
+      "title": "Barva kouzel",
+      "item_ids": "41337|2768552",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Mlad\u00fd Kedrigern - Zrozen\u00ed mistra",
+      "item_ids": "2289325",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "16/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2359583",
+      "author": "<null>"
+    },
+    {
+      "title": "12/2003 Ka\u010der Donald",
+      "item_ids": "2348052",
+      "author": "<null>"
+    },
+    {
+      "title": "Asterix a kotl\u00edk",
+      "item_ids": "57201|2513837|2245510",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Lovci z p\u0159\u00edtm\u00ed",
+      "item_ids": "2663710",
+      "author": "SHAN, Darren"
+    },
+    {
+      "title": "Kouzeln\u00fd kalend\u00e1\u0159",
+      "item_ids": "2744124|2332197",
+      "author": "GAARDER, Jostein"
+    },
+    {
+      "title": "Druidovo tajemstv\u00ed",
+      "item_ids": "2658412",
+      "author": "HOLLER, Ren\u00e9e"
+    },
+    {
+      "title": "Nervy v k\u00fdblu bublin",
+      "item_ids": "2749281",
+      "author": "NERVY"
+    },
+    {
+      "title": "Achilles",
+      "item_ids": "49010",
+      "author": "VALACHOVI\u010c, Pavol"
+    },
+    {
+      "title": "Kleopatra a jej\u00ed kobra",
+      "item_ids": "2507774|2324976",
+      "author": "SIMPSON, Margaret"
+    },
+    {
+      "title": "Asterixova odyssea",
+      "item_ids": "2694187|2536091",
+      "author": "UDERZO, Albert"
+    },
+    {
+      "title": "Z\u00e1hada tajn\u00e9ho dopisu",
+      "item_ids": "2180737",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "N\u00e1stroje smrti",
+      "item_ids": "2814273|3447361|3949190|3367525",
+      "author": "CLARE, Cassandra"
+    },
+    {
+      "title": "Asterix gladi\u00e1torem",
+      "item_ids": "2186490|2349152",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Dra\u010d\u00ed dar",
+      "item_ids": "2432903",
+      "author": "McCAFFREY, Anne"
+    },
+    {
+      "title": "Operace Zlat\u00e9 \u017eezlo",
+      "item_ids": "2461415",
+      "author": "PRESS, Julian"
+    },
+    {
+      "title": "Da\u0148 peklu",
+      "item_ids": "2628263",
+      "author": "BLACK, Holly"
+    },
+    {
+      "title": "Faraonovy doutn\u00edky",
+      "item_ids": "2395380|3588106",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "17/2002 Ka\u010der Donald",
+      "item_ids": "2325634",
+      "author": "<null>"
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a \u010dern\u00e1 magie",
+      "item_ids": "54700",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "7/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2346454",
+      "author": "<null>"
+    },
+    {
+      "title": "Svorn\u00ed gambus\u00edni a jin\u00e9 p\u0159\u00edb\u011bhy",
+      "item_ids": "2204582",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Garfield povoluje opasek",
+      "item_ids": "2440074",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Je v\u0161echno jasn\u00e9?!",
+      "item_ids": "2575655",
+      "author": "OBRIST, J\u00fcrg"
+    },
+    {
+      "title": "10/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2351802",
+      "author": "<null>"
+    },
+    {
+      "title": "Asterix a olympijsk\u00e9 hry",
+      "item_ids": "2232612|2669920|60195|2437065",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Divok\u00e9 ko\u010dky",
+      "item_ids": "2562415",
+      "author": "HUNTER, Erin"
+    },
+    {
+      "title": "2/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2367440",
+      "author": "<null>"
+    },
+    {
+      "title": "Pyskat\u00ed Habsburkov\u00e9",
+      "item_ids": "2564689",
+      "author": "PITRO, Martin"
+    },
+    {
+      "title": "Jirka na stop\u011b",
+      "item_ids": "2219906",
+      "author": "CROMPTON, Richmal"
+    },
+    {
+      "title": "O Zahrad\u011b",
+      "item_ids": "2454686",
+      "author": "\u010cECH, Pavel"
+    },
+    {
+      "title": "Prvn\u00ed p\u0159\u00edb\u011bhy ze Zem\u011bplochy",
+      "item_ids": "2737404",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Detektivn\u00ed agentura P\u016flm\u011bs\u00edc",
+      "item_ids": "2703765",
+      "author": "COLFER, Eoin"
+    },
+    {
+      "title": "Kletba \u010cern\u00e9ho ryt\u00ed\u0159e",
+      "item_ids": "2376582",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Had\u00ed hlava",
+      "item_ids": "2795840",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a vesm\u00edrn\u00e1 br\u00e1na",
+      "item_ids": "64860",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Kr\u00e1lovstv\u00ed st\u00ednu",
+      "item_ids": "2343409",
+      "author": "KNAAK, Richard A."
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a konec sv\u011bta",
+      "item_ids": "2251595",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "13/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2354750",
+      "author": "<null>"
+    },
+    {
+      "title": "Sek\u00e1\u010d. \u010carod\u011bjky na cest\u00e1ch",
+      "item_ids": "3557399",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Drsn\u00e1 doba kamenn\u00e1",
+      "item_ids": "2355669|2236519|2467087|2376066",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Asterix a La Traviata",
+      "item_ids": "2627052",
+      "author": "UDERZO, Albert"
+    },
+    {
+      "title": "8/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2321757",
+      "author": "<null>"
+    },
+    {
+      "title": "100 v\u011b\u017e\u00ed v oblac\u00edch",
+      "item_ids": "2207505",
+      "author": "BIZIEN, Jean-Luc"
+    },
+    {
+      "title": "Talisman smrti",
+      "item_ids": "56627",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "6/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2384644",
+      "author": ""
+    },
+    {
+      "title": "12/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2403813",
+      "author": ""
+    },
+    {
+      "title": "13/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2325952",
+      "author": "<null>"
+    },
+    {
+      "title": "Odporn\u00e9 organismy",
+      "item_ids": "2242827",
+      "author": "FOWKE, Bob"
+    },
+    {
+      "title": "Tajemstv\u00ed ukraden\u00fdch pen\u011bz",
+      "item_ids": "2308993",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Harry Potter and the order of the Phoenix",
+      "item_ids": "2561895|2348997|2352386",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Zlat\u00e1 jehla aneb Dobrodru\u017estv\u00ed mezi sv\u011bty",
+      "item_ids": "2714433",
+      "author": "GOLDING, Julia"
+    },
+    {
+      "title": "5/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2317220",
+      "author": "<null>"
+    },
+    {
+      "title": "Asterix V-VIII",
+      "item_ids": "3759261|2437705",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "16/2002 Ka\u010der Donald",
+      "item_ids": "2325319",
+      "author": "<null>"
+    },
+    {
+      "title": "P\u0159\u00edb\u011bhy ze zem\u011b Anthropos.",
+      "item_ids": "56881",
+      "author": "WHITE, John"
+    },
+    {
+      "title": "Fantom ulice",
+      "item_ids": "59000|2197535",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "M\u00fdty a legendy - vlci, draci, b\u00e1jn\u00e1 zv\u00ed\u0159ata",
+      "item_ids": "36027",
+      "author": "RAGACHE, Claude-Catherine"
+    },
+    {
+      "title": "15/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2416182",
+      "author": ""
+    },
+    {
+      "title": "Garfield \u0161kva\u0159\u00ed s\u00e1dlo",
+      "item_ids": "2392771",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "V\u00e1le\u010dn\u00edci bou\u0159e",
+      "item_ids": "2502876",
+      "author": "NICHOLLS, Stan"
+    },
+    {
+      "title": "Str\u00e1\u017ee! Str\u00e1\u017ee!",
+      "item_ids": "2421128|2233939|55000|2433432",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Fionavarsk\u00e1 tapis\u00e9rie",
+      "item_ids": "3537824|2795831|2857553",
+      "author": "KAY, Guy Gavriel"
+    },
+    {
+      "title": "Kronika rodu Spiderwick\u016f a co bylo potom",
+      "item_ids": "2821441|3442377|2797249",
+      "author": "DiTERLIZZI, Tony"
+    },
+    {
+      "title": "\u0160korpion",
+      "item_ids": "2648710",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Garfield: nohy z dohledu",
+      "item_ids": "2535008|2240381",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Viking Vike",
+      "item_ids": "48042",
+      "author": "JONSSON, Runer"
+    },
+    {
+      "title": "Vyprahl\u00e9 pou\u0161t\u011b",
+      "item_ids": "2523583",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Zr\u00e1dn\u00e9 s\u00edly",
+      "item_ids": "2408750",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Obelix & spol.",
+      "item_ids": "2241322|2627051",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "M\u00fdty a legendy - Vikingov\u00e9",
+      "item_ids": "39409",
+      "author": "M\u00ddTY"
+    },
+    {
+      "title": "Tajemstv\u00ed poh\u0159e\u0161ovan\u00e9ho mu\u017ee",
+      "item_ids": "2325312",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "IQ tr\u00e9nink pro d\u011bti",
+      "item_ids": "2370341",
+      "author": "SKITT, Carolyn"
+    },
+    {
+      "title": "Dal\u0161\u00ed prima m\u00fdtus",
+      "item_ids": "2356211|49493",
+      "author": "ASPRIN, Robert"
+    },
+    {
+      "title": "\u0160okuj\u00edc\u00ed elekt\u0159ina",
+      "item_ids": "2400290",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "3/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2370532",
+      "author": ""
+    },
+    {
+      "title": "Tajemstv\u00ed mechanick\u00fdch d\u011bt\u00ed",
+      "item_ids": "2184471",
+      "author": "HORN, Peter"
+    },
+    {
+      "title": "Z\u00e1hada zelen\u00e9 rukavice",
+      "item_ids": "53884|2591906",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Asterix a v\u011b\u0161tec",
+      "item_ids": "2530363",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Krut\u00e9 zlo\u010diny a tr\u00fdzniv\u00e9 tresty",
+      "item_ids": "2412818",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Harry Potter a Tajemn\u00e1 komnata",
+      "item_ids": "2361897|3512736|2354093|2356375|2417089|2763952|2231298|2354092|2738970",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Morov\u00e1 r\u00e1na",
+      "item_ids": "2733453",
+      "author": "SANDEMO, Margit"
+    },
+    {
+      "title": "Jirk\u016fv pern\u00fd den",
+      "item_ids": "2193365",
+      "author": "CROMPTON, Richmal"
+    },
+    {
+      "title": "Star wars: D\u011bdic \u0159\u00ed\u0161e",
+      "item_ids": "2237660",
+      "author": "ZAHN, Timothy"
+    },
+    {
+      "title": "Al\u017eb\u011bta I. a jej\u00ed dobyvatelsk\u00e9 \u00fasp\u011bchy",
+      "item_ids": "2758811",
+      "author": "SIMPSON, Margaret"
+    },
+    {
+      "title": "Po stop\u00e1ch Alexandra Velik\u00e9ho",
+      "item_ids": "2453713",
+      "author": "DAVIDSON, Marie-Th\u00e9rese"
+    },
+    {
+      "title": "Isaac Newton a jeho jablko",
+      "item_ids": "2701524",
+      "author": "POSKITT, Kjartan"
+    },
+    {
+      "title": "Drakobijci III",
+      "item_ids": "2276373",
+      "author": "DRAKOBIJCI"
+    },
+    {
+      "title": "Macecha Zem\u011b",
+      "item_ids": "2246395",
+      "author": "FOWKE, Bob"
+    },
+    {
+      "title": "Palestina",
+      "item_ids": "2659051",
+      "author": "SACCO, Joe"
+    },
+    {
+      "title": "D\u011bdictv\u00ed krve",
+      "item_ids": "2461557",
+      "author": "KNAAK, Richard A."
+    },
+    {
+      "title": "4/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2315133",
+      "author": "<null>"
+    },
+    {
+      "title": "Pir\u00e1ti",
+      "item_ids": "2605397",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Persepolis",
+      "item_ids": "2574336|2613510",
+      "author": "SATRAPI, Marjane"
+    },
+    {
+      "title": "St\u00ednadla se bou\u0159\u00ed",
+      "item_ids": "173550|2202431|2468711|36791|2778454",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Draci",
+      "item_ids": "2650285",
+      "author": "TOPSELL, John"
+    },
+    {
+      "title": "14/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2327556",
+      "author": "<null>"
+    },
+    {
+      "title": "Syn \u010dern\u00e9ho h\u0159ebce",
+      "item_ids": "2247937",
+      "author": "FARLEY, Walter"
+    },
+    {
+      "title": "Hrobka hr\u016fzy",
+      "item_ids": "2771962",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Umpa-pa na v\u00e1le\u010dn\u00e9 stezce",
+      "item_ids": "2694531",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Hust\u00fd pralesy",
+      "item_ids": "2558951",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "100 z\u00e1\u017eitk\u016f v cirkuse",
+      "item_ids": "2224299",
+      "author": "BIZIEN, Jean-Luc"
+    },
+    {
+      "title": "Pr\u016fvodce po Zem\u011bplo\u0161e",
+      "item_ids": "2576456",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Pan\u00ed jezera",
+      "item_ids": "3731621|2219492|2483090|2350711",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "Z\u00e1pisn\u00edk mlad\u00fdch svi\u0161\u0165\u016f",
+      "item_ids": "58566",
+      "author": "DISNEY, Walt"
+    },
+    {
+      "title": "Kdo je pachatel?",
+      "item_ids": "2536153",
+      "author": "CONRAD, Hy"
+    },
+    {
+      "title": "Chemick\u00fd chaos",
+      "item_ids": "2337223",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Garfield si d\u00e1v\u00e1 do nosu",
+      "item_ids": "2331167|2625247",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "UFO jm\u00e9nem Amadeus",
+      "item_ids": "2262914",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Tajemn\u00fd Skellig",
+      "item_ids": "2234991",
+      "author": "ALMOND, David"
+    },
+    {
+      "title": "Asterix IX-XII",
+      "item_ids": "2524842",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Mazan\u00e9 k\u00f3dy",
+      "item_ids": "2481555",
+      "author": "KIMPTON, Diana"
+    },
+    {
+      "title": "Poklad kapit\u00e1na Kida",
+      "item_ids": "20384",
+      "author": "\u0160T\u00cdPLOV\u00c1, Ljuba"
+    },
+    {
+      "title": "Kde padaj\u00ed hv\u011bzdy",
+      "item_ids": "2417007|60250",
+      "author": "ZINNEROV\u00c1, Mark\u00e9ta"
+    },
+    {
+      "title": "Jeskyn\u011b sn\u011b\u017en\u00e9 \u010darod\u011bjnice",
+      "item_ids": "55251|2228219",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "Vesm\u00edrn\u00fd zabij\u00e1k",
+      "item_ids": "58339|2251249",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "Tajemstv\u00ed ko\u010di\u010d\u00edho lidu",
+      "item_ids": "2200969",
+      "author": "HORN, Peter"
+    },
+    {
+      "title": "13/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2235130",
+      "author": "<null>"
+    },
+    {
+      "title": "6/2001 \u010cty\u0159l\u00edstek",
+      "item_ids": "2248807",
+      "author": "<null>"
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a akta X",
+      "item_ids": "2199026",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Tajemstv\u00ed li\u0161\u00e1kova doup\u011bte",
+      "item_ids": "2321347",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "\u00datok prehistorick\u00fdch Pok\u00e9mon\u016f",
+      "item_ids": "2246440",
+      "author": "WEST, Tracey"
+    },
+    {
+      "title": "\u010cern\u00fd h\u0159ebec se vrac\u00ed",
+      "item_ids": "2216798",
+      "author": "FARLEY, Walter"
+    },
+    {
+      "title": "Trocha pr\u00e1ce vzne\u0161en\u00e9ho druhu",
+      "item_ids": "60262",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "St\u00edn \u0161ibenice",
+      "item_ids": "2794269",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "V\u00fdbu\u0161n\u00e9 sopky",
+      "item_ids": "2446683",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Harry Potter a F\u00e9nix\u016fv \u0159\u00e1d",
+      "item_ids": "2738979|2741603|2680955|2370103",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Ohromn\u00e1 archeologie",
+      "item_ids": "2472357",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Proklet\u00e1 p\u0159\u00edsaha",
+      "item_ids": "2289079",
+      "author": "PAVELKOV\u00c1, Alexandra"
+    },
+    {
+      "title": "Tajemn\u00e1 magie",
+      "item_ids": "2423162|2580259",
+      "author": "BADDIEL, Ivor"
+    },
+    {
+      "title": "Draci padl\u00e9ho slunce",
+      "item_ids": "2667809",
+      "author": "WEIS, Margaret"
+    },
+    {
+      "title": "Bou\u0159liv\u00e9 po\u010das\u00ed",
+      "item_ids": "2485890",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Po stop\u00e1ch Julia Caesara",
+      "item_ids": "2502892",
+      "author": "MORILLON, St\u00e9phanie"
+    },
+    {
+      "title": "Detektiv Rychl\u00edk zasahuje",
+      "item_ids": "2513823",
+      "author": "SUKACH, Jim"
+    },
+    {
+      "title": "Harry Potter a relikvie smrti",
+      "item_ids": "2668460|2738978|2741601",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "3/2001 \u010cty\u0159l\u00edstek",
+      "item_ids": "2243669",
+      "author": "<null>"
+    },
+    {
+      "title": "18/2004 Ka\u010der Donald",
+      "item_ids": "2406127",
+      "author": "<null>"
+    },
+    {
+      "title": "7 k\u0159i\u0161\u0165\u00e1lov\u00fdch koul\u00ed",
+      "item_ids": "2760425",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "D\u011bti kapit\u00e1na Granta",
+      "item_ids": "2667462|26704|3675350|2209593",
+      "author": "VERNE, Jules"
+    },
+    {
+      "title": "Tobi\u00e1\u0161 Lolness",
+      "item_ids": "2721773|2831146|2654156",
+      "author": "FOMBELLE, Timoth\u00e9e de"
+    },
+    {
+      "title": "Spla\u0161en\u00fd \u010das",
+      "item_ids": "2628259",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Drak a Ji\u0159\u00ed.",
+      "item_ids": "52491",
+      "author": "DICKSON, Gordon Rupert"
+    },
+    {
+      "title": "16/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2330342",
+      "author": "<null>"
+    },
+    {
+      "title": "Garfield v\u00e1\u017e\u00ed slova",
+      "item_ids": "2160706",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "M\u00fdty a legendy - nebe a hv\u011bzdy",
+      "item_ids": "44004",
+      "author": "M\u00ddTY"
+    },
+    {
+      "title": "Tajemstv\u00ed Velk\u00e9ho Vonta",
+      "item_ids": "2468713|2201794|2678455|2001077|2856449|37022|3848485",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Annejet to tak nenech\u00e1",
+      "item_ids": "2354849|39408|173863",
+      "author": "DIEKMANN, Miep"
+    },
+    {
+      "title": "Harry Potter and the prisoner of Azkaban",
+      "item_ids": "2669976|2705615|2561879|2312308|2225814",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "N\u00e1stup m\u00fdtu aneb Prima d\u00e1rek pro Aahze",
+      "item_ids": "53634|2356213",
+      "author": "ASPRIN, Robert"
+    },
+    {
+      "title": "Atu\u00e1nsk\u00e9 hrobky",
+      "item_ids": "2357922",
+      "author": "LE GUIN, Ursula Kroeber"
+    },
+    {
+      "title": "Ryt\u00ed\u0159i Kruhov\u00e9ho stolu",
+      "item_ids": "44006",
+      "author": "MARTELLI, Stelio"
+    },
+    {
+      "title": "Jin\u00fd v\u00edtr",
+      "item_ids": "2459952",
+      "author": "LE GUIN, Ursula Kroeber"
+    },
+    {
+      "title": "Penderwickovi",
+      "item_ids": "2558909",
+      "author": "BIRDSALL, Jeanne"
+    },
+    {
+      "title": "Hork\u00e1 stopa",
+      "item_ids": "2410691",
+      "author": "PRESS, Hans J\u00fcrgen"
+    },
+    {
+      "title": "14/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2410548",
+      "author": ""
+    },
+    {
+      "title": "Obr\u00e1zky vyn\u00e1lez\u016f",
+      "item_ids": "2355316",
+      "author": "BEAUMONT, \u00c9milie"
+    },
+    {
+      "title": "N\u00e1vrat Squirtlova gangu",
+      "item_ids": "2250168",
+      "author": "WEST, Tracey"
+    },
+    {
+      "title": "Asterix I-IV",
+      "item_ids": "2367756|2467142",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Asterix v\u011b\u0161tec",
+      "item_ids": "2186598",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Sto tajn\u00fdch dv\u00ed\u0159ek",
+      "item_ids": "2812488",
+      "author": "WILSON, Nathan D."
+    },
+    {
+      "title": "Golemovo zlato",
+      "item_ids": "2494015",
+      "author": "MORITZ, Silke"
+    },
+    {
+      "title": "Garfield zaokrouhluje",
+      "item_ids": "2365374",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Ohavn\u00fd Lond\u00fdn",
+      "item_ids": "2510030",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Jirka a \u0161pion",
+      "item_ids": "2252133",
+      "author": "CROMPTON, Richmal"
+    },
+    {
+      "title": "Krab se zlat\u00fdmi klepety",
+      "item_ids": "2680349",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Ot\u0159esn\u00e9 d\u011bjiny \u010desk\u00fdch zem\u00ed",
+      "item_ids": "2648720",
+      "author": "PITRO, Martin"
+    },
+    {
+      "title": "Drsnej brouk",
+      "item_ids": "2349154|2481515",
+      "author": "SHIPTON, Paul"
+    },
+    {
+      "title": "Z\u00e1pas mistr\u016f",
+      "item_ids": "2157550",
+      "author": "LIVINGSTONE, Ian"
+    },
+    {
+      "title": "16/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2419419",
+      "author": "<null>"
+    },
+    {
+      "title": "Poklad \u010cern\u00e9ho delf\u00edna",
+      "item_ids": "34581|2183587|173175|56466|2607528",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Pou\u0165 poz\u016fstal\u00e9ho",
+      "item_ids": "2459719",
+      "author": "ZAHN, Timothy"
+    },
+    {
+      "title": "Poltergeist",
+      "item_ids": "2190340",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Ostrov ob\u0159\u00edch Pok\u00e9mon\u016f",
+      "item_ids": "2244965",
+      "author": "WEST, Tracey"
+    },
+    {
+      "title": "\u0160\u00edlen\u00e1 hudba",
+      "item_ids": "2403104",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "Ulomen\u00e9 ucho",
+      "item_ids": "2582286",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Princ ni\u010deho",
+      "item_ids": "2781053|3518994|3658923",
+      "author": "BAKKER, R. Scott"
+    },
+    {
+      "title": "An\u010da a Pep\u00edk op\u011bt v akci",
+      "item_ids": "2611824",
+      "author": "LOMOV\u00c1, Lucie"
+    },
+    {
+      "title": "Ot\u0159esn\u00e1 zem\u011bt\u0159esen\u00ed",
+      "item_ids": "2534970",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Z\u00e1hady nezn\u00e1ma",
+      "item_ids": "42726",
+      "author": "Z\u00c1HADY"
+    },
+    {
+      "title": "Souboj vyn\u00e1lezc\u016f",
+      "item_ids": "2204683",
+      "author": "POBOR\u00c1K, Ji\u0159\u00ed"
+    },
+    {
+      "title": "Garfield obl\u00e9h\u00e1 d\u016fm",
+      "item_ids": "2206110|2738220",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Nev\u00eddan\u00ed akademikov\u00e9",
+      "item_ids": "3426916",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Lev\u00e1 ruka bo\u017e\u00ed",
+      "item_ids": "2840763",
+      "author": "HOFFMAN, Paul"
+    },
+    {
+      "title": "\u0160en-\u010den",
+      "item_ids": "2809699",
+      "author": "DELISLE, Guy"
+    },
+    {
+      "title": "Odysseia",
+      "item_ids": "40734",
+      "author": "OLIVER, Peter"
+    },
+    {
+      "title": "3/2005 \u010cty\u0159l\u00edstek",
+      "item_ids": "2444161",
+      "author": "<null>"
+    },
+    {
+      "title": "Jirka a V\u00e1noce",
+      "item_ids": "2333499",
+      "author": "CROMPTON, Richmal"
+    },
+    {
+      "title": "Star wars: N\u00e1stup temn\u00e9 s\u00edly",
+      "item_ids": "2238021",
+      "author": "ZAHN, Timothy"
+    },
+    {
+      "title": "Kedrigern - \u010darod\u011bj na roztrh\u00e1n\u00ed",
+      "item_ids": "2362787",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "Teror z Toweru",
+      "item_ids": "2837924",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Tajemstv\u00ed jednoro\u017ece",
+      "item_ids": "2715952",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Ryt\u00ed\u0159i",
+      "item_ids": "3569127|2605388",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Obelix a Caesarova gal\u00e9ra",
+      "item_ids": "2605338",
+      "author": "UDERZO, Albert"
+    },
+    {
+      "title": "Leonardo da Vinci",
+      "item_ids": "2537442",
+      "author": "PARSONS, Alexandra"
+    },
+    {
+      "title": "Z\u00e1hadn\u00e1 hv\u011bzda",
+      "item_ids": "2703764",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Poh\u00e1dky pro neposlu\u0161n\u00e9 d\u011bti a jejich starostliv\u00e9 r",
+      "item_ids": "2532767|2331351",
+      "author": "TARAGEL, Du\u0161an"
+    },
+    {
+      "title": "Posledn\u00ed Str\u00e1\u017ece",
+      "item_ids": "2400173|3531037",
+      "author": "GRUBB, Jeff"
+    },
+    {
+      "title": "Mistr a Mark\u00e9tka",
+      "item_ids": "2814385|3512838",
+      "author": "BULGAKOV, Michail Afanas'jevi\u010d"
+    },
+    {
+      "title": "V\u011bd\u00e1to\u0159i a jejich \u0161\u00edlen\u00e9 objevy",
+      "item_ids": "2801314",
+      "author": "GOLDSMITH, Mike"
+    },
+    {
+      "title": "Princeta a kapit\u00e1n",
+      "item_ids": "2478005",
+      "author": "BONDOUX, Anne-Laure"
+    },
+    {
+      "title": "Prom\u011bna",
+      "item_ids": "2648753|3927514|2830326|2461230|3963144|3428131|2614718|172901|2410825|31981",
+      "author": "KAFKA, Franz"
+    },
+    {
+      "title": "\u017d\u00e1ci Kopyto a M\u0148ouk - postrach Pos\u00e1zav\u00ed",
+      "item_ids": "34697",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Proti proudu Mississippi",
+      "item_ids": "3515953",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Pod maskou \u010cern\u00e9ho mnicha",
+      "item_ids": "2321949",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "V\u00e1le\u010dn\u00ed draci",
+      "item_ids": "2355294",
+      "author": "ROWLEY, Christopher"
+    },
+    {
+      "title": "Albert Einstein a jeho nafukovac\u00ed vesm\u00edr",
+      "item_ids": "2644567|2492838",
+      "author": "GOLDSMITH, Mike"
+    },
+    {
+      "title": "Rozl\u00e1man\u00e1 pob\u0159e\u017e\u00ed",
+      "item_ids": "2598016",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Yakari a velk\u00fd orel",
+      "item_ids": "2321345",
+      "author": "DERIB"
+    },
+    {
+      "title": "Vyn\u00e1lezy pana Semtam\u0165uka",
+      "item_ids": "2530501",
+      "author": "HRN\u010c\u00cd\u0158, Svatopluk"
+    },
+    {
+      "title": "Dra\u010d\u00ed rod",
+      "item_ids": "2438823",
+      "author": "McCAFFREY, Anne"
+    },
+    {
+      "title": "Garfield v\u00e1l\u00ed sudy",
+      "item_ids": "2301578|2604637",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Harry Potter and the philosopher's stone",
+      "item_ids": "2225813|2545227|2561889",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Amanda a detektivov\u00e9",
+      "item_ids": "2443208",
+      "author": "FRIEDRICH, Joachim"
+    },
+    {
+      "title": "Nechte medv\u011bda \u017e\u00edt!",
+      "item_ids": "2197479",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Harry Potter a v\u011bze\u0148 z Azkabanu",
+      "item_ids": "2430891|2359674|2620215|2250169|2361898",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Tajemstv\u00ed kamenn\u00fdch \u010dert\u016f",
+      "item_ids": "2198372",
+      "author": "HORN, Peter"
+    },
+    {
+      "title": "Jirka v hlavn\u00ed roli",
+      "item_ids": "2198991",
+      "author": "CROMPTON, Richmal"
+    },
+    {
+      "title": "Jak (ne)vyhodit \u0161kolu do pov\u011bt\u0159\u00ed",
+      "item_ids": "2370342",
+      "author": "B\u00c1RTA, Milan"
+    },
+    {
+      "title": "Z\u00e1hady pro detektivy za\u010d\u00e1te\u010dn\u00edky",
+      "item_ids": "2341092",
+      "author": "BRO\u017dEK, Lud\u011bk"
+    },
+    {
+      "title": "Testy z v\u00edcelet\u00fdch gymn\u00e1zi\u00ed 2004",
+      "item_ids": "2356224|2356229|2356230",
+      "author": "TESTY"
+    },
+    {
+      "title": "M\u00fdty a legendy - Egypt, \u0158ecko, Galie",
+      "item_ids": "36305",
+      "author": "M\u00ddTY"
+    },
+    {
+      "title": "Duch Llana Estacada",
+      "item_ids": "52265|26633",
+      "author": "MAY, Karl"
+    },
+    {
+      "title": "\u0160\u00edbr",
+      "item_ids": "2779499",
+      "author": "SACCO, Joe"
+    },
+    {
+      "title": "Arthur v zak\u00e1zan\u00e9m m\u011bst\u011b",
+      "item_ids": "2470417",
+      "author": "BESSON, Luc"
+    },
+    {
+      "title": "Zabij\u00e1ck\u00e1 energie",
+      "item_ids": "2459700",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "M.Y.T.H. Inc. m\u00e1 starosti aneb A\u0165 \u017eije Gl\u00edp",
+      "item_ids": "2362314",
+      "author": "ASPRIN, Robert"
+    },
+    {
+      "title": "Indi\u00e1ni",
+      "item_ids": "2349613",
+      "author": "BULLER, Laura"
+    },
+    {
+      "title": "Z\u00e1hada Pavou\u010d\u00edho domu",
+      "item_ids": "52205",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Magick\u00e9 st\u0159\u00edpky",
+      "item_ids": "2332052",
+      "author": "SAPKOWSKI, Andrzej"
+    },
+    {
+      "title": "Garfield se u\u017e\u00edr\u00e1",
+      "item_ids": "2196416",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Spider-man",
+      "item_ids": "2821524|2584229|2760362|2822921|2539335|2801532|2738797",
+      "author": "SPIDER-MAN"
+    },
+    {
+      "title": "Ohniv\u00fd drak",
+      "item_ids": "2436541",
+      "author": "KNAAK, Richard A."
+    },
+    {
+      "title": "Zrozen\u00ed dra\u010d\u00edho ryt\u00ed\u0159e",
+      "item_ids": "2453635",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Tajemstv\u00ed neviditeln\u00e9ho lupi\u010de",
+      "item_ids": "2325403",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "D\u016fvtipn\u00ed detektivov\u00e9",
+      "item_ids": "2501426",
+      "author": "WRIGHT, Rachel"
+    },
+    {
+      "title": "Riskantn\u00ed experimenty",
+      "item_ids": "2492842",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Ulldart - doba temnoty",
+      "item_ids": "3702653|3451564|3590665|2830086|3828780",
+      "author": "HEITZ, Markus"
+    },
+    {
+      "title": "4/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2213426",
+      "author": "<null>"
+    },
+    {
+      "title": "Divok\u00e9 ostrovy",
+      "item_ids": "2640163",
+      "author": "GANERI, Anita"
+    },
+    {
+      "title": "Kalle Blomkvist zasahuje",
+      "item_ids": "172986|2346680",
+      "author": "LINDGREN, Astrid"
+    },
+    {
+      "title": "Lilith",
+      "item_ids": "2285795",
+      "author": "MacDONALD, George"
+    },
+    {
+      "title": "\u010carod\u011bjov\u00e9",
+      "item_ids": "2357401",
+      "author": "DEDOPULOS, Tim"
+    },
+    {
+      "title": "Dol\u016f mezi mrtv\u00e9",
+      "item_ids": "2376621",
+      "author": "GREEN, Simon R."
+    },
+    {
+      "title": "Lysky na severu a jin\u00e9 p\u0159\u00edb\u011bhy",
+      "item_ids": "2501736",
+      "author": "RANSOME, Arthur"
+    },
+    {
+      "title": "Cesta do fin\u00e1le",
+      "item_ids": "2240375",
+      "author": "COLEMAN, Michael"
+    },
+    {
+      "title": "Kamenn\u00fd sokol",
+      "item_ids": "2353681",
+      "author": "KAABERBOL, Lene"
+    },
+    {
+      "title": "Vize budoucnosti",
+      "item_ids": "2425690",
+      "author": "ZAHN, Timothy"
+    },
+    {
+      "title": "Ztraceni v \u010dase",
+      "item_ids": "2650258",
+      "author": "BRAUNOV\u00c1, Petra"
+    },
+    {
+      "title": "Tajemstv\u00ed ztracen\u00e9 ko\u010dky",
+      "item_ids": "2215002|2842255",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Strach nad Bob\u0159\u00ed \u0159ekou",
+      "item_ids": "2198992|43069|51985|33236",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Kr\u00e1l \u0161korpion",
+      "item_ids": "2318527",
+      "author": "COLLINS, Max Allan"
+    },
+    {
+      "title": "Draci ztracen\u00e9 hv\u011bzdy",
+      "item_ids": "2690763",
+      "author": "WEIS, Margaret"
+    },
+    {
+      "title": "Tintin v Tibetu",
+      "item_ids": "3369386",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Fantastick\u00e9 filmov\u00e9 triky",
+      "item_ids": "2446632",
+      "author": "KIMPTON, Diana"
+    },
+    {
+      "title": "Garfield ve velk\u00e9m",
+      "item_ids": "2408904",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Komando robot\u016f",
+      "item_ids": "2174034",
+      "author": "JACKSON, Steve"
+    },
+    {
+      "title": "No\u010dn\u00ed hl\u00eddka",
+      "item_ids": "2357417",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Tintin v zemi Sov\u011bt\u016f",
+      "item_ids": "3653894",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Nebezpe\u010dn\u00fd let",
+      "item_ids": "2642085",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "Kedrigern a spletit\u00e1 v\u00fdprava",
+      "item_ids": "45103",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "1/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2364948",
+      "author": "<null>"
+    },
+    {
+      "title": "Plout na vln\u00e1ch podivna",
+      "item_ids": "2652847",
+      "author": "POWERS, Tim"
+    },
+    {
+      "title": "5/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2343285",
+      "author": "<null>"
+    },
+    {
+      "title": "3/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2339347",
+      "author": "<null>"
+    },
+    {
+      "title": "3/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2211657",
+      "author": "<null>"
+    },
+    {
+      "title": "Bludi\u0161t\u011b rozumu pro d\u011bti",
+      "item_ids": "2205932",
+      "author": "ALLEN, Robert"
+    },
+    {
+      "title": "Kluci dareb\u00e1ci a pes",
+      "item_ids": "2426443|2677835",
+      "author": "LINDGREN, Astrid"
+    },
+    {
+      "title": "Kontejner",
+      "item_ids": "2349579",
+      "author": "ANDERSSON, Max"
+    },
+    {
       "title": "J\u00edm, tedy jsem",
-      "item_ids": "2334909"
+      "item_ids": "2334909",
+      "author": "DAVIS, Jim"
     },
     {
-      "author": "SCOTT, Walter",
-      "title": "Ivanhoe",
-      "item_ids": "27193"
+      "title": "Daltonovi na svobod\u011b",
+      "item_ids": "3437924",
+      "author": "MORRIS"
+    },
+    {
+      "title": "17/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2361250",
+      "author": "<null>"
+    },
+    {
+      "title": "Kopyto, M\u0148ouk a Ohniv\u00fd myslivec",
+      "item_ids": "2159979",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Jen \u010dtvrt vte\u0159iny na \u017eivot",
+      "item_ids": "2242770",
+      "author": "TRONDHEIM, Lewis"
+    },
+    {
+      "title": "Garfield \u0161iroko daleko",
+      "item_ids": "2362242",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Asterix XIII-XVI",
+      "item_ids": "2568239",
+      "author": "GOSCINNY, Ren\u00e9"
+    },
+    {
+      "title": "Poklad Daltonov\u00fdch",
+      "item_ids": "2804519",
+      "author": "MORRIS"
+    },
+    {
+      "title": "Hon na \u010darod\u011bjnice",
+      "item_ids": "2733455",
+      "author": "SANDEMO, Margit"
+    },
+    {
+      "title": "V\u011bj\u00ed\u0159",
+      "item_ids": "3748447|3385504|2824748|3933367|3590924",
+      "author": "\u0158EZN\u00cd\u010cEK, Daniel"
+    },
+    {
+      "title": "9/2004 \u010cty\u0159l\u00edstek",
+      "item_ids": "2396399",
+      "author": "<null>"
+    },
+    {
+      "title": "1/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2308726",
+      "author": "<null>"
+    },
+    {
+      "title": "Erik",
+      "item_ids": "2203803|2642886",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Ocelov\u00e9 m\u011bsto",
+      "item_ids": "189181|26166|174853|54776",
+      "author": "VERNE, Jules"
+    },
+    {
+      "title": "Drakobijci V",
+      "item_ids": "2361311",
+      "author": "DRAKOBIJCI"
+    },
+    {
+      "title": "Jirka postrach rodiny",
+      "item_ids": "46741|173677",
+      "author": "CROMPTON, Richmal"
+    },
+    {
+      "title": "Noc o\u017eivl\u00fdch brokol",
+      "item_ids": "2392745",
+      "author": "REEVE, Philip"
+    },
+    {
+      "title": "1/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2335540",
+      "author": "<null>"
+    },
+    {
+      "title": "Harry Potter and the chamber of secrets",
+      "item_ids": "2225815|2484910|2561926",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Maharal",
+      "item_ids": "2596307",
+      "author": "BEZOU\u0160KA, Martin"
+    },
+    {
+      "title": "Kamar\u00e1dky",
+      "item_ids": "2230546|2192743|2199039|2220305|2237648|2242832|2205483|2202419|2213347",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Rychl\u00e9 \u0161\u00edpy",
+      "item_ids": "3626055|300515|2532117|32247|32091|30626|3813473|29835|2182774|2251124|32670|32927|37298|299404|2643353|62388|35933",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Za Modr\u00fdm m\u011bs\u00edcem",
+      "item_ids": "2321245",
+      "author": "GREEN, Simon R."
+    },
+    {
+      "title": "Shiloh je n\u00e1\u0161",
+      "item_ids": "2247179",
+      "author": "REYNOLDS-Naylor, Phyllis"
+    },
+    {
+      "title": "T\u011b\u017ek\u00e9 melodi\u010dno",
+      "item_ids": "2070698",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Poklad Rud\u00e9ho Rackhama",
+      "item_ids": "2733430",
+      "author": "HERG\u00c9"
+    },
+    {
+      "title": "Tajemstv\u00ed z\u00e1hadn\u00e9ho bal\u00ed\u010dku",
+      "item_ids": "2335806",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "M\u00fdtus v ohro\u017een\u00ed aneb Zastaven\u00e1 St\u00e1zka",
+      "item_ids": "2358572|64904",
+      "author": "ASPRIN, Robert"
+    },
+    {
+      "title": "Draci trpasli\u010d\u00edch hlubin",
+      "item_ids": "2741579",
+      "author": "WEIS, Margaret"
+    },
+    {
+      "title": "Neboh\u00e9 \u010darod\u011bjnice a bo\u017e\u00ed inkvizito\u0159i",
+      "item_ids": "2824715",
+      "author": "KREJ\u010c\u00cd, Vladim\u00edra"
+    },
+    {
+      "title": "Z\u00e1hada jezdc\u016f z mo\u010d\u00e1lu",
+      "item_ids": "2180781",
+      "author": "HORN, Peter"
+    },
+    {
+      "title": "Mlad\u00fd Kedrigern a p\u00e1tr\u00e1n\u00ed po minulosti",
+      "item_ids": "2206454",
+      "author": "MORRESSY, John"
+    },
+    {
+      "title": "An\u010da a Pep\u00edk zasahuj\u00ed",
+      "item_ids": "2530361",
+      "author": "LOMOV\u00c1, Lucie"
+    },
+    {
+      "title": "Sherlock Holmes a p\u0159\u00edle\u017eitostn\u00ed mal\u00ed detektivov\u00e9 z",
+      "item_ids": "3563385|2951107|2818139|3428934",
+      "author": "MACK, Tracy"
+    },
+    {
+      "title": "2/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2209581",
+      "author": "<null>"
+    },
+    {
+      "title": "Nikdykde",
+      "item_ids": "2182131|2567734",
+      "author": "GAIMAN, Neil"
+    },
+    {
+      "title": "\u010cern\u00e1 cesta",
+      "item_ids": "2350666|3791894",
+      "author": "ODOM, Mel"
+    },
+    {
+      "title": "Stra\u0161idlo po telefonu",
+      "item_ids": "2631756",
+      "author": "IBBOTSON, Eva"
+    },
+    {
+      "title": "Hana a Hana, ty vogo",
+      "item_ids": "2464971",
+      "author": "GA\u0160PAREC, Milo\u0161"
+    },
+    {
+      "title": "\u017d\u00e1ci Kopyto a M\u0148ouk op\u011bt zasahuj\u00ed",
+      "item_ids": "40333",
+      "author": "\u0160VANDRL\u00cdK, Miloslav"
+    },
+    {
+      "title": "Jak se chod\u00ed do poh\u00e1dky",
+      "item_ids": "7808",
+      "author": "\u0160T\u00cdPLOV\u00c1, Ljuba"
+    },
+    {
+      "title": "Sp\u00e1ry orla",
+      "item_ids": "2356262",
+      "author": "KAABERBOL, Lene"
+    },
+    {
+      "title": "Brat\u0159i Lv\u00ed srdce",
+      "item_ids": "2668807|2325402|38222",
+      "author": "LINDGREN, Astrid"
+    },
+    {
+      "title": "6/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2216949",
+      "author": "<null>"
+    },
+    {
+      "title": "14/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2356127",
+      "author": "<null>"
+    },
+    {
+      "title": "4/2001 \u010cty\u0159l\u00edstek",
+      "item_ids": "2246679",
+      "author": "<null>"
+    },
+    {
+      "title": "N\u00e1vrat do Temn\u00e9ho dvorce",
+      "item_ids": "2601095",
+      "author": "HOROWITZ, Anthony"
+    },
+    {
+      "title": "Harry Potter and the Deathly Hallows",
+      "item_ids": "2770834|2627646",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Harry Potter and the Half-Blood Prince",
+      "item_ids": "2561927|2477581",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Sv\u011b\u0159te p\u0159\u00edpad Kallovi",
+      "item_ids": "2319840|2722721|173606",
+      "author": "LINDGREN, Astrid"
+    },
+    {
+      "title": "Vinnetou",
+      "item_ids": "44034|7914|12119|44433|44802|15490|2623412|127337|2658861|42233|2598150|44033|14174",
+      "author": "MAY, Karl"
+    },
+    {
+      "title": "P\u0159\u00edpad poh\u0159e\u0161ovan\u00e9ho mark\u00fdze",
+      "item_ids": "2690643",
+      "author": "SPRINGER, Nancy"
+    },
+    {
+      "title": "P\u00edsn\u011b temn\u00fdch v\u011bk\u016f",
+      "item_ids": "2481492",
+      "author": "JIRE\u0160, Ond\u0159ej"
+    },
+    {
+      "title": "2/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2310817",
+      "author": "<null>"
+    },
+    {
+      "title": "7/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2218768",
+      "author": "<null>"
+    },
+    {
+      "title": "Hrdinstv\u00ed pro za\u010d\u00e1te\u010dn\u00edky",
+      "item_ids": "2430649",
+      "author": "MOORE, John"
+    },
+    {
+      "title": "Emily Strange",
+      "item_ids": "3682317|3864445|3741761|2782568|2837894",
+      "author": "REGER, Rob"
+    },
+    {
+      "title": "Pat\u00e1lie se \u0161t\u011bn\u011btem",
+      "item_ids": "2247941",
+      "author": "SCOTT, Anne"
+    },
+    {
+      "title": "Mizern\u00e1 medic\u00edna",
+      "item_ids": "2715191",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "B\u00e1je\u010dn\u00e1 \u010dokol\u00e1da",
+      "item_ids": "2604693",
+      "author": "MacDONALD, Alan"
+    },
+    {
+      "title": "Je\u0161t\u011b hororov\u011bj\u0161\u00ed p\u0159\u00edb\u011bhy",
+      "item_ids": "2653793",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "Ryt\u00ed\u0159i - roboti",
+      "item_ids": "2201205",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Klob\u00e1sa 007 a SMS",
+      "item_ids": "2413263",
+      "author": "FRIEDRICH, Joachim"
+    },
+    {
+      "title": "Mal\u00ed bohov\u00e9",
+      "item_ids": "2344511",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "V temnot\u011b",
+      "item_ids": "3363710",
+      "author": "THURMAN, Rob"
+    },
+    {
+      "title": "1/2000 \u010cty\u0159l\u00edstek",
+      "item_ids": "2207789",
+      "author": "<null>"
+    },
+    {
+      "title": "Sv\u011bt podle Berta",
+      "item_ids": "2638536",
+      "author": "JACOBSSON, Anders"
+    },
+    {
+      "title": "Harry Potter a Ohniv\u00fd poh\u00e1r",
+      "item_ids": "2361906|2285167|2738977|2638577|2361899",
+      "author": "ROWLING, J. K."
+    },
+    {
+      "title": "Vinnetou",
+      "item_ids": "2173352|2607295",
+      "author": "MAY, Karel"
+    },
+    {
+      "title": "P\u0159\u00edb\u011bhy II",
+      "item_ids": "2355361",
+      "author": "WEIS, Margaret"
+    },
+    {
+      "title": "An\u010da a Pep\u00edk",
+      "item_ids": "2418241",
+      "author": "LOMOV\u00c1, Lucie"
+    },
+    {
+      "title": "Drakobijci II",
+      "item_ids": "2223098",
+      "author": "DRAKOBIJCI"
+    },
+    {
+      "title": "Tajupln\u00e9 lidsk\u00e9 t\u011blo",
+      "item_ids": "2507064|2353917",
+      "author": "ARNOLD, Nick"
+    },
+    {
+      "title": "K\u0159ehk\u00e9 v\u011bci",
+      "item_ids": "2625329",
+      "author": "GAIMAN, Neil"
+    },
+    {
+      "title": "\u010cty\u0159i a p\u016fl kamar\u00e1da",
+      "item_ids": "2236935|2711519",
+      "author": "FRIEDRICH, Joachim"
+    },
+    {
+      "title": "P\u00e1n st\u00edn\u016f",
+      "item_ids": "2791688",
+      "author": "SHAN, Darren"
+    },
+    {
+      "title": "A\u0165 \u017eij\u00ed duchov\u00e9!",
+      "item_ids": "2333493",
+      "author": "MEL\u00cd\u0160EK, Ji\u0159\u00ed"
+    },
+    {
+      "title": "T\u00e1bor sm\u016fly",
+      "item_ids": "57204|2251285|2634967|2176491|45652",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Bella a Sebasti\u00e1n",
+      "item_ids": "173774|300517|173578|41160",
+      "author": "AUBRY, C\u00e9cile"
+    },
+    {
+      "title": "Dobrodru\u017estv\u00ed v Zemi nikoho",
+      "item_ids": "2533156|54695|173415|32825",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "Historie sv\u011bta",
+      "item_ids": "2357913",
+      "author": "BINGHAM, Jane"
+    },
+    {
+      "title": "Zrozen\u00ed m\u00fdtu aneb Dal\u0161\u00ed p\u011bkn\u00e1 \u0161lamastyka",
+      "item_ids": "55395|2356219",
+      "author": "ASPRIN, Robert"
+    },
+    {
+      "title": "Cirkus Pepi",
+      "item_ids": "26871",
+      "author": "HOJKA, Stanislav"
+    },
+    {
+      "title": "Pyramidy",
+      "item_ids": "53457",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Garfield polyk\u00e1 p\u00fdchu",
+      "item_ids": "2349529",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "15/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2329222",
+      "author": "<null>"
+    },
+    {
+      "title": "Darren Shan a Madame Okta",
+      "item_ids": "2328978",
+      "author": "SHAN, Darren"
+    },
+    {
+      "title": "Garfield p\u0159ib\u00edr\u00e1 na v\u00e1ze",
+      "item_ids": "2001726",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Hororov\u00e9 p\u0159\u00edb\u011bhy",
+      "item_ids": "2515276",
+      "author": "COX, Michael"
+    },
+    {
+      "title": "Tom Sawyer detektivem",
+      "item_ids": "55319|2201801",
+      "author": "TWAIN, Mark"
+    },
+    {
+      "title": "Tajemstv\u00ed kocou\u0159\u00edho mu\u017ee",
+      "item_ids": "2263206",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "Dobrodru\u017estv\u00ed na \u00fatesech",
+      "item_ids": "2407318",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "9/2003 \u010cty\u0159l\u00edstek",
+      "item_ids": "2349786",
+      "author": "<null>"
+    },
+    {
+      "title": "Co zakopal pir\u00e1t St\u0159\u00edbrn\u00e1 ruka?",
+      "item_ids": "2333347",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Petr Kachna",
+      "item_ids": "2776491|2185856",
+      "author": "RANSOME, Arthur"
+    },
+    {
+      "title": "Nad\u011blat prachy",
+      "item_ids": "2698999",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "S\u00e1ga o Halldorovi z Mortaluny",
+      "item_ids": "2430539",
+      "author": "ANDRES, Adam"
+    },
+    {
+      "title": "\u0160moul\u00ed vyn\u00e1lezy",
+      "item_ids": "2341148",
+      "author": "DELZENNE, Philippe"
+    },
+    {
+      "title": "V\u00e1le\u010dn\u00edci",
+      "item_ids": "2725449",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "Posel z Lipt\u00e1kova",
+      "item_ids": "2189361|2192866|2320696",
+      "author": "SMOLJAK, Ladislav"
+    },
+    {
+      "title": "Z\u00e1hada star\u00e9ho klepadla",
+      "item_ids": "2070864",
+      "author": "BLYTON, Enid"
+    },
+    {
+      "title": "D\u00e1my a p\u00e1nov\u00e9",
+      "item_ids": "64746",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "D\u011bsiv\u00e9 d\u011bjiny",
+      "item_ids": "2654138",
+      "author": "DEARY, Terry"
+    },
+    {
+      "title": "17/2002 \u010cty\u0159l\u00edstek",
+      "item_ids": "2331965",
+      "author": "<null>"
+    },
+    {
+      "title": "Trose\u010dn\u00edci z Vla\u0161tovky",
+      "item_ids": "2333504|4090",
+      "author": "RANSOME, Arthur"
+    },
+    {
+      "title": "V\u011bda na Zem\u011bplo\u0161e",
+      "item_ids": "2430694",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Garfield je na v\u00e1\u017ek\u00e1ch",
+      "item_ids": "2275726|2738877",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "Mamut\u00ed kniha humoristick\u00e9 fantasy",
+      "item_ids": "2330219",
+      "author": "MAMUT\u00cd"
+    },
+    {
+      "title": "D\u00edvka dvou sv\u011bt\u016f",
+      "item_ids": "2566348",
+      "author": "BOTTERO, Pierre"
+    },
+    {
+      "title": "Piktov\u00e9 a mu\u010dedn\u00edci aneb Naprosto nev\u00edtan\u00e1 n\u00e1v\u0161t\u011bv",
+      "item_ids": "17847|2362804",
+      "author": "RANSOME, Arthur"
+    },
+    {
+      "title": "Magick\u00e1 kniha hlavolam\u016f",
+      "item_ids": "2389679",
+      "author": "EDMISTON, Margaret C."
+    },
+    {
+      "title": "Vet\u0159elci",
+      "item_ids": "2680525",
+      "author": "RICHARDSON, E. E."
+    },
+    {
+      "title": "\u010caropr\u00e1vnost",
+      "item_ids": "46370|2768555",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Star Trek",
+      "item_ids": "2220338|2187834|2187838|35413|2220337|2200686|2199390|2199391",
+      "author": "BLISH, James"
+    },
+    {
+      "title": "Modr\u00e1 rokle",
+      "item_ids": "2605182|2415383|49932",
+      "author": "FOGLAR, Jaroslav"
+    },
+    {
+      "title": "\u010cty\u0159i a p\u016fl kamar\u00e1da a zmizel\u00e1 u\u010ditelka",
+      "item_ids": "2242346",
+      "author": "FRIEDRICH, Joachim"
+    },
+    {
+      "title": "Koule",
+      "item_ids": "2557674",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Rex\u00edk v akci",
+      "item_ids": "2220314",
+      "author": "LADISLAV, Karel"
+    },
+    {
+      "title": "10/99 \u010cty\u0159l\u00edstek",
+      "item_ids": "2201641",
+      "author": "<null>"
+    },
+    {
+      "title": "Faraonova kletba",
+      "item_ids": "2215010",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "Jezero du\u0161\u00ed",
+      "item_ids": "2766631",
+      "author": "SHAN, Darren"
+    },
+    {
+      "title": "P\u0159\u00edpad pro mistrova \u017e\u00e1ka",
+      "item_ids": "2661276",
+      "author": "NEUBAUER, Annette"
+    },
+    {
+      "title": "Nejv\u011bt\u0161\u00ed kniha hlavolam\u016f",
+      "item_ids": "2590630",
+      "author": "NEJV\u011aT\u0160\u00cd"
+    },
+    {
+      "title": "Garfield: m\u00edsto na slunci",
+      "item_ids": "2549029",
+      "author": "DAVIS, Jim"
+    },
+    {
+      "title": "\u010carod\u011bjky na cest\u00e1ch",
+      "item_ids": "58957",
+      "author": "PRATCHETT, Terry"
+    },
+    {
+      "title": "Zlat\u00fd k\u0159\u00ed\u017e",
+      "item_ids": "2740428",
+      "author": "REN\u010c\u00cdN, Pavel"
+    },
+    {
+      "title": "Nejp\u0159\u00ed\u0161ern\u011bj\u0161\u00ed poklad sv\u011bta",
+      "item_ids": "2361398",
+      "author": "BREZINA, Thomas"
+    },
+    {
+      "title": "D\u00e9mon a zlod\u011bj",
+      "item_ids": "3575992",
+      "author": "SHAN, Darren"
+    },
+    {
+      "title": "Kletba slep\u00e9ho m\u00e1ga",
+      "item_ids": "2453637",
+      "author": "BREZINA, Thomas"
     }
   ],
-  "status": "completed",
-  "job_started": "2014-11-06T21:02:19.708995",
-  "item_ids": "28747|33661|36773|2301571",
   "version": 1,
   "original_book": {
-    "author": "TOLKIEN, John Ronald Reuel",
-    "title": "P\u00e1n prsten\u016f",
-    "year": 2001
+    "title": "Hobit aneb Cesta tam a zase zp\u00e1tky",
+    "year": 2002,
+    "author": "TOLKIEN, John Ronald Reuel"
   }
 }

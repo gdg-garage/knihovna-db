@@ -4,7 +4,7 @@
 <link rel="import" href="../../../packages/core_elements/core_icons.html">
 <link rel="import" href="../../../packages/paper_elements/paper_icon_button.html">
 
-<polymer-element name="books-list">
+<polymer-element name="books-list" fit vertical layout>
     <template>
         <style>
             :host {
@@ -35,6 +35,10 @@
             #buttons {
                 /*margin-bottom: 2em;*/
             }
+
+            /*core-list-dart {*/
+                /*height: 100%*/
+            /*}*/
 
             .item {
                 height: 60px;
@@ -71,14 +75,16 @@
             }
         </style>
 
-        <h3>{{originalBook.author}}</h3>
-        <h2>{{originalBook.title}}</h2>
+        <div>
+            <h3>{{originalBook.author}}</h3>
+            <h2>{{originalBook.title}}</h2>
 
-        <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
-        líbila knížka <em>{{originalBook.title}}</em>.</p>
+            <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
+            líbila knížka <em>{{originalBook.title}}</em>.</p>
 
-        <p id="options">Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
-            <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
+            <p id="options">Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
+                <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
+        </div>
 
         <core-list-dart id="list"
                         data="{{books}}"

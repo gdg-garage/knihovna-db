@@ -21,7 +21,9 @@ class AdminPage(webapp2.RequestHandler):
                         ("Test BigQuery", "/admin/test/bq/"),
                         ("Test Autocomplete", "/admin/test/autocomplete/"),
                         ("Update Autocomplete From BigQuery",
-                         '/admin/update_autocomplete/')
+                         '/admin/update_autocomplete/'),
+                        ("Consolidate data downloaded from BigQuery",
+                         '/admin/update_autocomplete/consolidate_only')
                     ]})
 
 
@@ -57,9 +59,12 @@ class UpdateAutocompleteConsolidateOnly(webapp2.RequestHandler):
 
 
 def init_autocomplete_updating():
+    # Clear past data.
     past_data_records = _AutocompleteUpdateJobRawData.query().fetch(1000)
     ndb.delete_multi([m.key for m in past_data_records])
-    _ConsolidationHashMap.get_by_id('singleton_record').key.delete()
+    cons_hashmaps = _ConsolidationHashMap.query().fetch(1000)
+    ndb.delete_multi([m.key for m in cons_hashmaps])
+    # Go.
     bq = BigQueryClient()
     query = ALL_BOOKS_QUERY
     if is_dev_server():
@@ -120,6 +125,10 @@ class _ConsolidationHashMap(ndb.Model):
 
 
 def parse_autocomplete_update_data():
+    # clear past data
+    cons_hashmaps = _ConsolidationHashMap.query().fetch(1000)
+    ndb.delete_multi([m.key for m in cons_hashmaps])
+    # go
     past_data_records = _AutocompleteUpdateJobRawData.query().fetch(1000)
     if len(past_data_records) >= 1000:
         logging.warning("There are more than 1000 data records.")
@@ -131,22 +140,28 @@ def parse_autocomplete_update_data():
     data = [item for sublist in past_data for item in sublist]
     del past_data
     consolidated_books = consolidate_books(data)
-    consolidated_record = _ConsolidationHashMap(
-        id='singleton_record',
-        hashmap=consolidated_books
-    )
-    consolidated_record.put()
+    NUM_SHARDS = 20
+    for shard_num in range(NUM_SHARDS):
+        consolidated_record = _ConsolidationHashMap(
+            id='shard{}'.format(shard_num),
+            hashmap={k: v for k, v in consolidated_books.iteritems()
+                     if k % NUM_SHARDS == shard_num}
+        )
+        consolidated_record.put()
     per_subprocess = 1000
     for offset in range(0, len(data), per_subprocess):
         next_offset = min(offset + per_subprocess, len(data))
         deferred.defer(save_consolidated_autocomplete_data,
                        data[offset:next_offset],
-                       offset)
+                       offset,
+                       _countdown=int(offset / 100))
     #ndb.delete_multi([m.key for m in past_data_records])
 
 def save_consolidated_autocomplete_data(data_slice, offset):
-    consolidated_record = _ConsolidationHashMap.get_by_id('singleton_record')
-    consolidated_books = consolidated_record.hashmap
+    consolidated_records = _ConsolidationHashMap.query().fetch(1000)
+    consolidated_books = {}
+    for rec in consolidated_records:
+        consolidated_books.update(rec.hashmap)
     logging.info("Running save subprocess for {} records, offset={}. "
                  "consolidated_books={}".format(
         len(data_slice), offset, len(consolidated_books)
