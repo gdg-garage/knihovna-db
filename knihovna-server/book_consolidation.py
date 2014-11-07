@@ -33,7 +33,7 @@ def consolidate_books(data):
             first_index, item_ids = consolidated_books[book_hash]
             item_ids = "{}|{}".format(item_ids, row[0])
             # truncate (key cannot be too long)
-            item_ids = (item_ids[:300]) if len(item_ids) > 300 else item_ids
+            item_ids = (item_ids[:500]) if len(item_ids) > 500 else item_ids
             consolidated_books[book_hash] = (first_index, item_ids)
     logging.info("Consolidating books: done ({} books from {} rows)".format(
         len(consolidated_books), len(data)

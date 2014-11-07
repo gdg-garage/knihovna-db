@@ -25,11 +25,11 @@ class BookInput extends PolymerElement {
 
       _coreAjax = $['ajax'];
       _coreAjax.onCoreResponse
-        .transform(new Debouncer(const Duration(milliseconds: 150)))
         .listen(_showNewSuggestions);
 
       _newValue.stream
-        .transform(new Debouncer(const Duration(milliseconds: 150)))
+        // ~ 33 words per minute = 400ms between characters
+        .transform(new Debouncer(const Duration(milliseconds: 400)))
         .listen(_sendAjaxRequest);
     });
   }

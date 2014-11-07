@@ -6,6 +6,7 @@ from unidecode import unidecode
 from google.appengine.api import search
 from google.appengine.ext import ndb
 import re
+import time
 
 class Autocompleter(object):
     def __init__(self):
@@ -14,6 +15,7 @@ class Autocompleter(object):
     SANITIZE_PATTERN = re.compile("[^a-zA-Z_0-9 ]")
 
     def get_results(self, query):
+        # logging.info("get_results start \n{}".format(time.clock() * 1000 % 1000))
         query_ascii = unidecode(query)
         query_ascii = Autocompleter.SANITIZE_PATTERN.sub("", query_ascii)
 
@@ -24,12 +26,14 @@ class Autocompleter(object):
         if not query_ascii:
             return []
 
+        # logging.info("before index search \n{}".format(time.clock() * 1000 % 1000))
         results = self.index.search(
             query=search.Query('tokens:({})'.format(query_ascii),
                 options=search.QueryOptions(limit=5,
                                             ids_only=True)
             )
         )
+        # logging.info("after index search \n{}".format(time.clock() * 1000 % 1000))
         logging.info("Got {} results.".format(len(results.results)))
         assert(isinstance(results, search.SearchResults))
         list_of_keys = []
@@ -37,6 +41,7 @@ class Autocompleter(object):
             assert(isinstance(search_result, search.ScoredDocument))
             key = ndb.Key('BookRecord', search_result.doc_id)
             list_of_keys.append(key)
+        # logging.info("get_multi start \n{}".format(time.clock() * 1000 % 1000))
         return ndb.get_multi(list_of_keys)
 
     def add(self, item_id, author, title, year, count):

@@ -6,6 +6,7 @@ import logging
 import json
 from suggest import Suggester, SuggestionsRecord
 from google.appengine.ext import ndb
+import time
 
 
 class MainPage(webapp2.RequestHandler):
@@ -18,11 +19,14 @@ class AutocompleteJson(webapp2.RequestHandler):
     CURRENT_VERSION = 1
 
     def get(self):
+        # logging.info("request start \n{}".format(time.clock() * 1000 % 1000))
         self.response.headers['Content-Type'] = 'text/plain; charset=utf-8'
         query = self.request.get('q')
         logging.info(u"Autocomplete search for '{}'".format(query))
         autocompleter = Autocompleter()
+        # logging.info("before autocompleter.get_results \n{}".format(time.clock() * 1000 % 1000))
         results = autocompleter.get_results(query)
+        # logging.info("after autocompleter.get_results \n{}".format(time.clock() * 1000 % 1000))
         json_results = []
         for book in results:
             assert isinstance(book, BookRecord)
@@ -37,7 +41,9 @@ class AutocompleteJson(webapp2.RequestHandler):
             'status': 'completed',
             'suggestions': json_results
         }
+        # logging.info("before json.dump \n{}".format(time.clock() * 1000 % 1000))
         self.response.write(json.dumps(json_object, indent=2))
+        # logging.info("after json.dump \n{}".format(time.clock() * 1000 % 1000))
 
 
 class QuerySuggestions(webapp2.RequestHandler):

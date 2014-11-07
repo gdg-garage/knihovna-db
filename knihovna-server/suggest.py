@@ -36,6 +36,7 @@ class Suggester(object):
         else:
             return suggestions
 
+BIGQUERY_JOB_ID_VER = "1"
 
 def start_bq_job(suggestions):
     assert isinstance(suggestions, SuggestionsRecord)
@@ -47,7 +48,9 @@ def start_bq_job(suggestions):
     item_ids_array = item_ids.split('|')
     sql_item_ids = ', '.join(item_ids_array)  # 12|123 -> 12, 123
     query = SUGGESTION_QUERY.format(sql_item_ids)
-    job_id = bq.create_query_job_async(query, item_ids)
+    job_id = bq.create_query_job_async(query, "suggestions-{}-v{}"
+                                       .format('-'.join(item_ids_array),
+                                               BIGQUERY_JOB_ID_VER))
     deferred.defer(check_bq_job, job_id, item_ids, suggestions,
                    _countdown=5)
 
@@ -87,29 +90,31 @@ def check_bq_job(job_id, item_ids, suggestions):
 
 
 SUGGESTION_QUERY = """
-/* Create prediction value by comparing borrow ratio of select audience with borrow ratio of everybody else. */
-SELECT items_with_ratios.item_id as item_id,
-       items_with_ratios.ratio / ratio_all.ratio as prediction
-FROM [mlp.borrow_ratio_all] AS ratio_all
-JOIN EACH (/* Compute ratio. */
-           SELECT item_id,
-                  RATIO_TO_REPORT(borrower_count) OVER (
-                                                        ORDER BY borrower_count DESC) AS ratio
-           FROM (/* Get other books borrowed by similar readers */
-                 SELECT log_readers.item_id AS item_id,
-                        COUNT(DISTINCT similar_reader_ids.user_id) AS borrower_count
-                 FROM [mlp.log_generalized] AS log_readers
-                 JOIN EACH (/* Get ids of users who have checked out the book. */
-                            SELECT user_id
-                            FROM [mlp.log_generalized]
-                            WHERE item_id IN
-                                ({})
-                            GROUP BY user_id) AS similar_reader_ids ON log_readers.user_id = similar_reader_ids.user_id
-                 GROUP BY item_id)) AS items_with_ratios ON items_with_ratios.item_id = ratio_all.item_id
-JOIN EACH [mlp.tituly] AS metadata ON items_with_ratios.item_id = metadata.item_id
-WHERE ratio_all.ratio > 0.002
-ORDER BY prediction DESC
-LIMIT 2000
+SELECT item_id FROM (
+    /* Create prediction value by comparing borrow ratio of select audience with borrow ratio of everybody else. */
+    SELECT items_with_ratios.item_id as item_id,
+           items_with_ratios.ratio / ratio_all.ratio as prediction
+    FROM [mlp.borrow_ratio_all] AS ratio_all
+    JOIN EACH (/* Compute ratio. */
+               SELECT item_id,
+                      RATIO_TO_REPORT(borrower_count) OVER (
+                                                            ORDER BY borrower_count DESC) AS ratio
+               FROM (/* Get other books borrowed by similar readers */
+                     SELECT log_readers.item_id AS item_id,
+                            COUNT(DISTINCT similar_reader_ids.user_id) AS borrower_count
+                     FROM [mlp.log_generalized] AS log_readers
+                     JOIN EACH (/* Get ids of users who have checked out the book. */
+                                SELECT user_id
+                                FROM [mlp.log_generalized]
+                                WHERE item_id IN
+                                    ({})
+                                GROUP BY user_id) AS similar_reader_ids ON log_readers.user_id = similar_reader_ids.user_id
+                     GROUP BY item_id)) AS items_with_ratios ON items_with_ratios.item_id = ratio_all.item_id
+    JOIN EACH [mlp.tituly] AS metadata ON items_with_ratios.item_id = metadata.item_id
+    WHERE ratio_all.ratio > 0.0015  # Selects from about 15000 books
+    ORDER BY prediction DESC
+    LIMIT 1200
+)
 """
 
 class SuggestionsRecord(ndb.Model):
