@@ -57,6 +57,8 @@ class UpdateAutocompleteConsolidateOnly(webapp2.RequestHandler):
 
 
 def init_autocomplete_updating():
+    past_data_records = _AutocompleteUpdateJobRawData.query().fetch(1000)
+    ndb.delete_multi([m.key for m in past_data_records])
     bq = BigQueryClient()
     query = ALL_BOOKS_QUERY
     if is_dev_server():
@@ -96,8 +98,7 @@ def check_autocomplete_update_job_done(job_id,
             logging.info("- running next round with token {}".format(next_page_token))
             deferred.defer(check_autocomplete_update_job_done,
                            job_id, max_results,
-                           next_page_token,
-                           _countdown=5)
+                           next_page_token)
         else:
             logging.info("- we have the whole dataset")
             deferred.defer(parse_autocomplete_update_data,
@@ -124,14 +125,30 @@ def parse_autocomplete_update_data():
     # flatten data
     data = [item for sublist in past_data for item in sublist]
     del past_data
+    consolidated_books = consolidate_books(data, delete_redundant_data=False)
+    per_subprocess = 1000
+    for offset in range(0, len(data), per_subprocess):
+        next_offset = min(offset + per_subprocess, len(data))
+        deferred.defer(save_consolidated_autocomplete_data,
+                       consolidated_books, data[offset:next_offset],
+                       offset)
+    #ndb.delete_multi([m.key for m in past_data_records])
+
+def save_consolidated_autocomplete_data(consolidated_books, data_slice, offset):
+    logging.info("Running save subprocess for {} records, offset={}. "
+                 "consolidated_books={}".format(
+        len(data_slice), offset, len(consolidated_books)
+    ))
     autocompleter = Autocompleter()
-    consolidated_books = consolidate_books(data, delete_redundant_data=True)
     docs = []
     records = []
     for book_hash in consolidated_books:
         book = consolidated_books[book_hash]
         assert isinstance(book, tuple)
-        row = data[book[0]]
+        index = book[0] - offset
+        if not (0 <= index < len(data_slice)):
+            continue  # not found in slice - a sibling process will take care of this
+        row = data_slice[index]
         year = None
         try:
             year = int(unicode(row[3]))
@@ -150,7 +167,7 @@ def parse_autocomplete_update_data():
             logging.info("{} docs were put into index".format(len(docs)))
             docs = []
         records.append(record)
-        if len(records) >= 500:
+        if len(records) >= 200:
             ndb.put_multi(records)
             logging.info(
                 "{} records were put into storage".format(len(records)))
@@ -159,7 +176,7 @@ def parse_autocomplete_update_data():
     logging.info("{} docs were put into index".format(len(docs)))
     ndb.put_multi(records)
     logging.info("{} records were put into storage".format(len(records)))
-    ndb.delete_multi([m.key for m in past_data_records])
+
 
 ALL_BOOKS_QUERY = """
     SELECT

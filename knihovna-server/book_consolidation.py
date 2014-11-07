@@ -16,7 +16,7 @@ def consolidate_books(data, delete_redundant_data=False):
     # saves 'author/title hash': (first_index, 'item_ids')
     consolidated_books = {}
     for i, row in enumerate(data):
-        if i % 1000 == 0:
+        if i % 10000 == 0:
             logging.info("Consolidating books: hash row {}/{}".format(
                 i, len(data)
             ))
