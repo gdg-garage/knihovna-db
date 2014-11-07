@@ -1,11 +1,11 @@
 # coding=utf-8
 import logging
 from google.appengine.ext import deferred
-from admin import is_dev_server
 from bigquery import BigQueryClient, BigQueryTable
 from book_record import BookRecord
 from google.appengine.ext import ndb
 import datetime
+from utils import is_dev_server
 
 
 class Suggester(object):
@@ -121,7 +121,7 @@ SELECT item_id FROM (
                                 GROUP BY user_id) AS similar_reader_ids ON log_readers.user_id = similar_reader_ids.user_id
                      GROUP BY item_id)) AS items_with_ratios ON items_with_ratios.item_id = ratio_all.item_id
     JOIN EACH [mlp.tituly] AS metadata ON items_with_ratios.item_id = metadata.item_id
-    WHERE ratio_all.ratio > 0.0013  # <- tune this
+    WHERE ratio_all.ratio > 0.0010  # <- tune this
     ORDER BY prediction DESC
     LIMIT 1200
 )

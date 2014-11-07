@@ -1,16 +1,17 @@
 # coding=utf-8
 import logging
-import os
 from datetime import datetime
 
 from google.appengine.ext import ndb
 import webapp2
 from google.appengine.ext import deferred
 
-from book_consolidation import _ConsolidatedBooksData, consolidate_books
+from book_consolidation import consolidate_books
 from jinja import render_html
 from bigquery import BigQueryClient, BigQueryTable
 from autocompleter import Autocompleter, BookRecord
+from suggest import SuggestionsRecord
+from utils import is_dev_server
 
 
 class AdminPage(webapp2.RequestHandler):
@@ -24,7 +25,8 @@ class AdminPage(webapp2.RequestHandler):
                          '/admin/update_autocomplete/'),
                         ("Consolidate data downloaded from BigQuery",
                          '/admin/update_autocomplete/consolidate_only'),
-                        ("Delete all books", '/admin/delete/books')
+                        ("Delete all books", '/admin/delete/books'),
+                        ("Delete all suggestions", '/admin/delete/suggestions')
                     ]})
 
 
@@ -227,7 +229,7 @@ ALL_BOOKS_QUERY = """
       item_id, author, title, year
     HAVING
       # Control against obscure books and potentially personally identifiable books.
-      cnt >= 100
+      cnt >= 50
     ORDER BY cnt DESC
 """
 
@@ -252,6 +254,7 @@ class TestBqPage(webapp2.RequestHandler):
         render_html(self, "admin_generic.html", u"Testing BQ",
                     result)
 
+
 class DeleteAllBooks(webapp2.RequestHandler):
     def get(self):
         logging.info("Starting task to delete all books")
@@ -268,12 +271,21 @@ def delete_books():
         logging.info("All books deleted!")
 
 
+class DeleteAllSuggestions(webapp2.RequestHandler):
+    def get(self):
+        logging.info("Starting task to delete all suggestions")
+        deferred.defer(delete_suggestions)
+        self.redirect("/admin/")
 
-def is_dev_server():
-    if os.environ['SERVER_SOFTWARE'].find('Development') == 0:
-        return True
+
+def delete_suggestions():
+    rec_keys = SuggestionsRecord.query().fetch(1000, keys_only=True)
+    if rec_keys:
+        ndb.delete_multi(rec_keys)
+        deferred.defer(delete_suggestions)
     else:
-        return False
+        logging.info("All suggestions deleted!")
+
 
 application = webapp2.WSGIApplication([
     ('/admin/', AdminPage),
@@ -281,5 +293,6 @@ application = webapp2.WSGIApplication([
     ('/admin/test/autocomplete/', TestAutocomplete),
     ('/admin/update_autocomplete/', UpdateAutocompleteFromBigQuery),
     ('/admin/update_autocomplete/consolidate_only', UpdateAutocompleteConsolidateOnly),
-    ('/admin/delete/books', DeleteAllBooks)
+    ('/admin/delete/books', DeleteAllBooks),
+    ('/admin/delete/suggestions', DeleteAllSuggestions)
 ], debug=True)
