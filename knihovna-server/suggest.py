@@ -26,8 +26,9 @@ class Suggester(object):
                 job_started=job_started,
                 books=[]
             )
-            deferred.defer(start_bq_job, suggestions)
             suggestions.put()
+            deferred.defer(start_bq_job, key,
+                           _countdown=1)
             return suggestions
         elif not suggestions.completed:
             # Started, but still running.
@@ -38,9 +39,8 @@ class Suggester(object):
 
 BIGQUERY_JOB_ID_VER = "1"
 
-def start_bq_job(suggestions):
-    assert isinstance(suggestions, SuggestionsRecord)
-    item_ids = suggestions.key.string_id()
+def start_bq_job(suggestions_key):
+    item_ids = suggestions_key.string_id()
     logging.info("Start getting suggestions for item_ids '{}'.".format(
         item_ids
     ))
@@ -51,16 +51,19 @@ def start_bq_job(suggestions):
     job_id = bq.create_query_job_async(query, "suggestions-{}-v{}"
                                        .format('-'.join(item_ids_array),
                                                BIGQUERY_JOB_ID_VER))
-    deferred.defer(check_bq_job, job_id, item_ids, suggestions,
+    deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
                    _countdown=5)
 
+MAX_RESULTS_PER_SUGGESTIONS_QUERY = 200
 
-def check_bq_job(job_id, item_ids, suggestions):
+def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     bq = BigQueryClient()
     logging.info("Polling suggestion job {}.".format(job_id))
-    json = bq.get_async_job_results(job_id, "", 2000)
+    json = bq.get_async_job_results(job_id, page_token,
+                                    MAX_RESULTS_PER_SUGGESTIONS_QUERY)
     if not json['jobComplete']:
-        deferred.defer(check_bq_job, job_id, item_ids, suggestions,
+        logging.info("- job not completed yet.")
+        deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
                        _countdown=5)
         return
     table = BigQueryTable(json)
@@ -81,12 +84,21 @@ def check_bq_job(job_id, item_ids, suggestions):
             books.append(consolidated_book)
         if len(books) >= 1000:
             break
-    suggestions.books = map(lambda br: br.key, books)
-    suggestions.completed = True
-    suggestions.put()
-    logging.info("Suggestions for item_ids '{}' completed and saved.".format(
-        item_ids
-    ))
+    suggestions = suggestions_key.get()
+    suggestions.books.extend(map(lambda br: br.key, books))
+    next_page_token = json.get('pageToken', "")
+    if next_page_token != "":
+        suggestions.put()
+        deferred.defer(check_bq_job, job_id, item_ids, suggestions_key,
+                       next_page_token)
+        logging.info("Suggestions for item_ids '{}' partly fetched. "
+                     "Running again.".format(item_ids))
+    else:
+        suggestions.completed = True
+        suggestions.put()
+        logging.info("Suggestions for item_ids '{}' completed and saved.".format(
+            item_ids
+        ))
 
 
 SUGGESTION_QUERY = """
@@ -111,7 +123,7 @@ SELECT item_id FROM (
                                 GROUP BY user_id) AS similar_reader_ids ON log_readers.user_id = similar_reader_ids.user_id
                      GROUP BY item_id)) AS items_with_ratios ON items_with_ratios.item_id = ratio_all.item_id
     JOIN EACH [mlp.tituly] AS metadata ON items_with_ratios.item_id = metadata.item_id
-    WHERE ratio_all.ratio > 0.0015  # Selects from about 15000 books
+    WHERE ratio_all.ratio > 0.0013  # <- tune this
     ORDER BY prediction DESC
     LIMIT 1200
 )
