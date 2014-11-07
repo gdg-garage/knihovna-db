@@ -31,6 +31,7 @@ class Suggester(object):
             return suggestions
         elif not suggestions.completed:
             # Started, but still running.
+            # TODO: restart if job_started too long ago
             return suggestions
         else:
             return suggestions
@@ -46,12 +47,21 @@ def start_bq_job(suggestions):
     item_ids_array = item_ids.split('|')
     sql_item_ids = ', '.join(item_ids_array)  # 12|123 -> 12, 123
     query = SUGGESTION_QUERY.format(sql_item_ids)
+    job_id = bq.create_query_job_async(query, item_ids)
+    deferred.defer(check_bq_job, job_id, item_ids, suggestions,
+                   _countdown=5)
 
-    # TODO XXX START HERE use create_query_job_async, defer the rest
 
-    job = bq.create_query_job(query, timeout_ms=100000)
-    json = job.execute()
+def check_bq_job(job_id, item_ids, suggestions):
+    bq = BigQueryClient()
+    logging.info("Polling suggestion job {}.".format(job_id))
+    json = bq.get_async_job_results(job_id, "", 2000)
+    if not json['jobComplete']:
+        deferred.defer(check_bq_job, job_id, item_ids, suggestions,
+                       _countdown=5)
+        return
     table = BigQueryTable(json)
+    item_ids_array = item_ids.split('|')
     # Get the consolidated book for each item_id
     books = []
     for row in table.data:
@@ -61,8 +71,8 @@ def start_bq_job(suggestions):
         consolidated_book = BookRecord.query(
             BookRecord.item_id_array == item_id).get()
         if not consolidated_book:
-            logging.warning("No consolidated book with item_id '{}' found."
-                            .format(item_id))
+            logging.info("No consolidated book with item_id '{}' found."
+                         .format(item_id))
             continue
         if not consolidated_book in books:
             books.append(consolidated_book)
@@ -97,7 +107,7 @@ JOIN EACH (/* Compute ratio. */
                             GROUP BY user_id) AS similar_reader_ids ON log_readers.user_id = similar_reader_ids.user_id
                  GROUP BY item_id)) AS items_with_ratios ON items_with_ratios.item_id = ratio_all.item_id
 JOIN EACH [mlp.tituly] AS metadata ON items_with_ratios.item_id = metadata.item_id
-WHERE ratio_all.ratio > 0.001
+WHERE ratio_all.ratio > 0.002
 ORDER BY prediction DESC
 LIMIT 2000
 """
