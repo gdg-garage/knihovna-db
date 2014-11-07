@@ -57,39 +57,49 @@ def init_autocomplete_updating():
     job_id = 'autocomplete-big-update-{}'.format(
         int((datetime.now()-datetime.utcfromtimestamp(0)).total_seconds())
     )
-    logging.info("Creating new autocomplete update job.")
+    logging.info("Creating new autocomplete update job: {}".format(job_id))
     bq.create_query_job_async(query, job_id)
-    deferred.defer(check_autocomplete_update_job_done, job_id,
-                   _countdown=10)
+    deferred.defer(check_autocomplete_update_job_done, job_id, 500, "", None,
+                   _countdown=5)
 
 
 def check_autocomplete_update_job_done(job_id,
-                                       max_results=1000,
-                                       page_token="",
-                                       past_data=None):
+                                       max_results,
+                                       page_token,
+                                       past_data):
     if not past_data:
         past_data = []
     bq = BigQueryClient()
-    logging.info("Polling autocomplete update job.")
+    logging.info("Polling autocomplete update job (pageToken={}).".format(
+        page_token
+    ))
     json = bq.get_async_job_results(job_id,
                                     page_token,
-                                    max_results=max_results)
+                                    max_results)
     if json['jobComplete']:
         # Job is complete, we have payload.
-        page_token = json.get('pageToken', "")
+        logging.info("- job is complete")
+        next_page_token = json.get('pageToken', "")
         new_data = BigQueryTable(json).data
+        logging.info("- we have {} new rows".format(len(new_data)))
         past_data.append(new_data)
-        if page_token != "":
+        if next_page_token != "":
             # Run again
+            logging.info("- running next round with token {}".format(next_page_token))
             deferred.defer(check_autocomplete_update_job_done,
-                           page_token=page_token,
-                           past_data=past_data)
+                           job_id, max_results,
+                           next_page_token, past_data,
+                           _countdown=5)
         else:
+            logging.info("- we have the whole dataset")
             # flatten data
             data = [item for sublist in past_data for item in sublist]
             deferred.defer(parse_autocomplete_update_data, data)
     else:
-        deferred.defer(check_autocomplete_update_job_done, job_id,
+        logging.info("- job isn't complete yet")
+        deferred.defer(check_autocomplete_update_job_done,
+                       job_id, max_results,
+                       page_token, past_data,
                        _countdown=10)
 
 

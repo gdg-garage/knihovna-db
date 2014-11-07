@@ -63,9 +63,9 @@ def consolidate_books(data):
             count=count
         )
         books.append(book)
-        logging.info(u"Book '{}' consolidated into item_ids='{}'.".format(
-            author_and_title, book.item_ids
-        ))
+        # logging.info(u"Book '{}' consolidated into item_ids='{}'.".format(
+        #     author_and_title, book.item_ids
+        # ))
     logging.info("Consolidating books: done ({} books from {} rows)".format(
         len(books), len(data)
     ))
