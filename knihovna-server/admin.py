@@ -123,8 +123,9 @@ def parse_autocomplete_update_data():
         past_data.append(data_record.rows)
     # flatten data
     data = [item for sublist in past_data for item in sublist]
+    del past_data
     autocompleter = Autocompleter()
-    consolidated_books = consolidate_books(data)
+    consolidated_books = consolidate_books(data, delete_redundant_data=True)
     docs = []
     records = []
     for book_hash in consolidated_books:
