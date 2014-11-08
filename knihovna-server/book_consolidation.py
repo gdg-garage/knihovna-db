@@ -31,9 +31,14 @@ def consolidate_books(data):
             )
         else:
             first_index, item_ids = consolidated_books[book_hash]
-            item_ids = "{}|{}".format(item_ids, row[0])
-            # truncate (key cannot be too long)
-            item_ids = (item_ids[:500]) if len(item_ids) > 500 else item_ids
+            # Construct consolidated item_ids (e.g. '23423|234235|314')
+            item_ids_candidate = "{}|{}".format(item_ids, row[0])
+            if len(item_ids_candidate) > 500:
+                logging.warning("Consolidated key '{}' would be too long, "
+                                "staying with the original key '{}'."
+                                .format(item_ids_candidate, item_ids))
+            else:
+                item_ids = item_ids_candidate
             consolidated_books[book_hash] = (first_index, item_ids)
     logging.info("Consolidating books: done ({} books from {} rows)".format(
         len(consolidated_books), len(data)
