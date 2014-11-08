@@ -1,10 +1,14 @@
 # coding=utf-8
 import logging
+import apiclient
+from apiclient.errors import HttpError
+from googleapiclient.errors import HttpError as gHttpError
 from google.appengine.ext import deferred
 from bigquery import BigQueryClient, BigQueryTable
 from book_record import BookRecord
 from google.appengine.ext import ndb
 import datetime
+import googleapiclient
 from utils import is_dev_server
 
 
@@ -48,13 +52,21 @@ def start_bq_job(suggestions_key):
     item_ids_array = item_ids.split('|')
     sql_item_ids = ', '.join(item_ids_array)  # 12|123 -> 12, 123
     query = SUGGESTION_QUERY.format(sql_item_ids)
-    job_id = bq.create_query_job_async(query, "suggestions-{}-v{}"
-                                       .format('-'.join(item_ids_array),
-                                               BIGQUERY_JOB_ID_VER))
+    job_id = "suggestions-{}-v{}".format('-'.join(item_ids_array),
+                                         BIGQUERY_JOB_ID_VER)
+    try:
+        bq.create_query_job_async(query, job_id)
+    except (HttpError, gHttpError) as e:
+        logging.error(u"HttpError received when trying to crete new job {}. "
+                      u"{}"
+                      u"Possible cause: job was created in the past 24 hours."
+                      u"Let's check it.".format(job_id, e))
+
     deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
                    _countdown=5)
 
 MAX_RESULTS_PER_SUGGESTIONS_QUERY = 200
+
 
 def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     bq = BigQueryClient()
