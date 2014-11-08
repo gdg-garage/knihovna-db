@@ -26,7 +26,8 @@ class AdminPage(webapp2.RequestHandler):
                         ("Consolidate data downloaded from BigQuery",
                          '/admin/update_autocomplete/consolidate_only'),
                         ("Delete all books", '/admin/delete/books'),
-                        ("Delete all suggestions", '/admin/delete/suggestions')
+                        ("Delete all suggestions", '/admin/delete/suggestions'),
+                        ("Delete index", '/admin/delete/index')
                     ]})
 
 
@@ -160,6 +161,7 @@ def parse_autocomplete_update_data():
                        _countdown=int(offset / 100))
     #ndb.delete_multi([m.key for m in past_data_records])
 
+
 def save_consolidated_autocomplete_data(data_slice, offset):
     consolidated_records = _ConsolidationHashMap.query().fetch(1000)
     consolidated_books = {}
@@ -286,6 +288,13 @@ def delete_suggestions():
     else:
         logging.info("All suggestions deleted!")
 
+class DeleteWholeIndex(webapp2.RequestHandler):
+    def get(self):
+        logging.info("Starting task to delete whole index")
+        autocompler = Autocompleter()
+        deferred.defer(autocompler.delete_all)
+        self.redirect("/admin/")
+
 
 application = webapp2.WSGIApplication([
     ('/admin/', AdminPage),
@@ -294,5 +303,6 @@ application = webapp2.WSGIApplication([
     ('/admin/update_autocomplete/', UpdateAutocompleteFromBigQuery),
     ('/admin/update_autocomplete/consolidate_only', UpdateAutocompleteConsolidateOnly),
     ('/admin/delete/books', DeleteAllBooks),
-    ('/admin/delete/suggestions', DeleteAllSuggestions)
+    ('/admin/delete/suggestions', DeleteAllSuggestions),
+    ('/admin/delete/index', DeleteWholeIndex)
 ], debug=True)

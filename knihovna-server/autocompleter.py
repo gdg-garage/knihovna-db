@@ -131,3 +131,14 @@ class Autocompleter(object):
                 a.append(word[0:i])
         return a
 
+    def delete_all(self):
+        # looping because get_range by default returns up to 100 documents at a time
+        while True:
+            # Get a list of documents populating only the doc_id field and extract the ids.
+            document_ids = [document.doc_id
+                            for document in self.index.get_range(ids_only=True)]
+            if not document_ids:
+                break
+            # Delete the documents for the given ids from the Index.
+            self.index.delete(document_ids)
+        logging.info("Whole index deleted")
