@@ -48,7 +48,7 @@ class SuggestionsLoader extends PolymerElement {
       } else {
         print("Will retry.");
         new Timer(DELAY_BETWEEN_RETRIES, () {
-          _sendAjaxRequest(itemIds);
+          _sendAjaxRequest();
         });
       }
       return;
