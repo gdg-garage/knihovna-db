@@ -74,14 +74,14 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
         item_id = row[0]
         if item_id in item_ids_array:
             continue  # Original book.
-        consolidated_book = BookRecord.query(
-            BookRecord.item_id_array == item_id).get()
-        if not consolidated_book:
+        consolidated_book_key = BookRecord.query(
+            BookRecord.item_id_array == item_id).get(keys_only=True)
+        if not consolidated_book_key:
             logging.info("No consolidated book with item_id '{}' found."
                          .format(item_id))
             continue
-        if not consolidated_book in suggestions.books:
-            suggestions.books.append(consolidated_book)
+        if not consolidated_book_key in suggestions.books:
+            suggestions.books.append(consolidated_book_key)
         if len(suggestions.books) >= 1000:
             break
     next_page_token = json.get('pageToken', "")

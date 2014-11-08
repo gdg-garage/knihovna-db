@@ -51,6 +51,8 @@ class QuerySuggestions(webapp2.RequestHandler):
 
     def get(self):
         self.response.headers['Content-Type'] = 'text/plain; charset=utf-8'
+        # TODO: find out if the request is auto-repeated or new
+        #       if new, force suggester to create new job if necessary
         item_ids = self.request.get('q')
         suggester = Suggester()
         suggestions = suggester.suggest(item_ids)
