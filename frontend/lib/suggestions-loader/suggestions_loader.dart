@@ -8,6 +8,7 @@ import 'dart:async';
 @CustomTag('suggestions-loader')
 class SuggestionsLoader extends PolymerElement {
   CoreAjax _coreAjaxForResults;
+  String itemIds;
 
   SuggestionsLoader.created() : super.created() {
     Polymer.onReady.then((_) {
@@ -18,7 +19,8 @@ class SuggestionsLoader extends PolymerElement {
   }
 
   void startLoading(String itemIds) {
-    _sendAjaxRequest(itemIds);
+    this.itemIds = itemIds;
+    _sendAjaxRequest();
   }
 
   static const DELAY_BETWEEN_RETRIES = const Duration(seconds: 5);
@@ -33,6 +35,10 @@ class SuggestionsLoader extends PolymerElement {
       return;  // TODO: maybe re-send?
     }
     String itemIds = _coreAjaxForResults.response['item_ids'];
+    if (itemIds != this.itemIds) {
+      print("Got result for itemIds that we don't care for anymore.");
+      return;
+    }
     if (_coreAjaxForResults.response['status'] != 'completed') {
       print("Job still in progress. Will retry.");
       numberOfTries[itemIds] = numberOfTries.putIfAbsent(itemIds, () => 1) + 1;
@@ -51,9 +57,8 @@ class SuggestionsLoader extends PolymerElement {
     fire("suggestions-loaded", detail: _coreAjaxForResults.response);
   }
 
-  // TODO: this should be resending requests until we have a full result
-  //       (before that, we will get something like {"error": "Not yet"}).
-  _sendAjaxRequest(String itemIds) {
+  /// Sends ajax for the current [itemId].
+  _sendAjaxRequest() {
     _coreAjaxForResults.params = JSON.encode({"q": itemIds});
     _coreAjaxForResults.go();
   }
