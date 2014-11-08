@@ -37,7 +37,7 @@ class Suggester(object):
         else:
             return suggestions
 
-BIGQUERY_JOB_ID_VER = "1"
+BIGQUERY_JOB_ID_VER = "2"
 
 def start_bq_job(suggestions_key):
     item_ids = suggestions_key.string_id()
