@@ -11,10 +11,10 @@ class BigQueryClient(object):
     SCOPE = 'https://www.googleapis.com/auth/bigquery'
     PROJECT_NUMBER = '1089267425611'
 
-    def __init__(self):
+    def __init__(self, deadline=10):
         # Create a new API service for interacting with BigQuery
         credentials = AppAssertionCredentials(scope=BigQueryClient.SCOPE)
-        http = credentials.authorize(httplib2.Http())
+        http = credentials.authorize(httplib2.Http(timeout=deadline))
         self.service = build('bigquery', 'v2', http=http)
 
     def create_query_job(self, query, timeout_ms=10000):
