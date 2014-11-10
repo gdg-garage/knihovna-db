@@ -6,12 +6,13 @@ import 'suggestions-loader/suggestions_loader.dart';
 import 'books-list/books_list.dart';
 import 'pushdown_automaton.dart';
 import 'models.dart';
+import 'util.dart';
 
 import 'package:route/client.dart';
 
 @CustomTag('book-app')
 class BookApp extends PolymerElement {
-  final State _welcome = new State('welcome', BASE_PATH + '/');
+  State _welcome;
 
   PushdownAutomatonStateMachine<State> _machine;
   State get currentState => _machine.currentState;
@@ -26,30 +27,35 @@ class BookApp extends PolymerElement {
 
   Router _router;
 
-  static const BASE_PATH = ""; // XXX: hack to make this work in WebStorm - put "/frontend" here
+  get _basePath => runningInDevelopment ? "/frontend" : "";
 
-  final _welcomeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
-  final _listUrl = new UrlPattern(BASE_PATH + r'/#([\d|]+)');
-  final _detailUrl = new UrlPattern(BASE_PATH + r'/#(\d+)/detail-([\d|]+)');
+  UrlPattern _welcomeUrl;
+  UrlPattern _listUrl;
+  UrlPattern _detailUrl;
 
   BookApp.created() : super.created() {
+    _welcome = new State('welcome', _basePath + '/');
+    _welcomeUrl = new UrlPattern(_basePath + r'/(index.html)?');
+    _listUrl = new UrlPattern(_basePath + r'/#([\d|]+)');
+    _detailUrl = new UrlPattern(_basePath + r'/#(\d+)/detail-([\d|]+)');
+  }
+
+  domReady() {
     _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
 
-    Polymer.onReady.then((_) {
-      _animatedPages = $['animated-pages'];
-      _bookInput = $['book-input'];
-      _suggestionsLoader = $['loader'];
-      _booksList = $['list'];
+    _animatedPages = $['animated-pages'];
+    _bookInput = $['book-input'];
+    _suggestionsLoader = $['loader'];
+    _booksList = $['list'];
 
-      _router = new Router()
-        ..addHandler(_welcomeUrl, routeToWelcome)
-        ..addHandler(_listUrl, routeToLoaderOrList)
-        ..addHandler(_detailUrl, routeToDetail);
-      _router.listen();
+    _router = new Router()
+      ..addHandler(_welcomeUrl, routeToWelcome)
+      ..addHandler(_listUrl, routeToLoaderOrList)
+      ..addHandler(_detailUrl, routeToDetail);
+    _router.listen();
 
-      _router.gotoPath(window.location.pathname + window.location.hash,
-          "Something" /* TODO */);
-    });
+    _router.gotoPath(window.location.pathname + window.location.hash,
+      "Something" /* TODO */);
 
     // Copy contents from the LightDom.
     ($['tagline'] as ParagraphElement).text = querySelector(".tagline").text;

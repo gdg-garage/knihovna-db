@@ -10,28 +10,32 @@ import 'book_autocomplete_list.dart';
 import 'package:core_elements/core_ajax_dart.dart';
 import 'dart:convert';
 
+import '../util.dart';
+
 @CustomTag('book-input')
 class BookInput extends PolymerElement {
   StreamController<String> _newValue = new StreamController<String>();
 
-  BookInput.created() : super.created() {
-    // Wait for Polymer to initialize before searching $[] fields.
-    Polymer.onReady.then((_) {
-      _inputElement = $['searchbox'] as PaperInput;
+  BookInput.created() : super.created();
 
-      _suggestionList = $['suggestion-list'];
+  domReady() {
+    _inputElement = $['searchbox'] as PaperInput;
 
-      _enterToastElement = $['enter-toast'];
+    _suggestionList = $['suggestion-list'];
 
-      _coreAjax = $['ajax'];
-      _coreAjax.onCoreResponse
-        .listen(_showNewSuggestions);
+    _enterToastElement = $['enter-toast'];
 
-      _newValue.stream
-        // ~ 33 words per minute = 400ms between characters
-        .transform(new Debouncer(const Duration(milliseconds: 400)))
-        .listen(_sendAjaxRequest);
-    });
+    _coreAjax = $['ajax'];
+    if (runningInDevelopment) {
+      _coreAjax.url = '/frontend/book-input/mock_response.json';
+    }
+    _coreAjax.onCoreResponse
+      .listen(_showNewSuggestions);
+
+    _newValue.stream
+      // ~ 33 words per minute = 400ms between characters
+      .transform(new Debouncer(const Duration(milliseconds: 400)))
+      .listen(_sendAjaxRequest);
   }
 
   BookSuggestionList _suggestionList;
