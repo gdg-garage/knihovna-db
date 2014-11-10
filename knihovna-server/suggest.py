@@ -65,7 +65,7 @@ def start_bq_job(suggestions_key):
     deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
                    _countdown=5)
 
-MAX_RESULTS_PER_SUGGESTIONS_QUERY = 200
+MAX_RESULTS_PER_SUGGESTIONS_QUERY = 600
 
 
 def check_bq_job(job_id, item_ids, suggestions_key, page_token):
