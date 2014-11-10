@@ -38,11 +38,11 @@ class BookApp extends PolymerElement {
     _welcomeUrl = new UrlPattern(_basePath + r'/(index.html)?');
     _listUrl = new UrlPattern(_basePath + r'/#([\d|]+)');
     _detailUrl = new UrlPattern(_basePath + r'/#(\d+)/detail-([\d|]+)');
+
+    _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
   }
 
   domReady() {
-    _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
-
     _animatedPages = $['animated-pages'];
     _bookInput = $['book-input'];
     _suggestionsLoader = $['loader'];

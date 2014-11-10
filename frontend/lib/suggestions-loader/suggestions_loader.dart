@@ -12,15 +12,16 @@ class SuggestionsLoader extends PolymerElement {
   CoreAjax _coreAjaxForResults;
   String itemIds;
 
-  SuggestionsLoader.created() : super.created() {
-    Polymer.onReady.then((_) {
-      _coreAjaxForResults = $['ajax-results'];
-      if (runningInDevelopment) {
-        _coreAjaxForResults.url = '/frontend/suggestions-loader/mock_suggestion_results.json';
-      }
-      _coreAjaxForResults.onCoreResponse
-        .listen(_showSuggestions);
-    });
+  SuggestionsLoader.created() : super.created();
+
+  domReady() {
+    _coreAjaxForResults = $['ajax-results'];
+    if (runningInDevelopment) {
+      _coreAjaxForResults.url = '/frontend/suggestions-loader/'
+        'mock_suggestion_results.json';
+    }
+    _coreAjaxForResults.onCoreResponse
+      .listen(_showSuggestions);
   }
 
   void startLoading(String itemIds) {

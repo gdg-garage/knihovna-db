@@ -5,8 +5,7 @@ import '../models.dart';
 class BookSuggestion extends PolymerElement {
   @published AutocompletedBook book;
 
-  BookSuggestion.created() : super.created() {
-  }
+  BookSuggestion.created() : super.created();
 
   void handleMouseOver(_, __, ___) {
     book.selected = true;
