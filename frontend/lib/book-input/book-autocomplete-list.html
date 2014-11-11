@@ -9,7 +9,11 @@
     <style>
       :host {
         display: block;
-        min-height: 100px;
+        min-height: 10px;
+
+        -webkit-transition: height 0.8s;
+        -moz-transition: height 0.8s;
+        transition: height 0.8s;
       }
     </style>
     <div id="loading" hidden?="{{!isLoading}}">Loading...</div>

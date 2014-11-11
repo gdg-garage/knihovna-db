@@ -6,7 +6,7 @@ import '../models.dart';
 @CustomTag('books-list')
 class BooksList extends PolymerElement {
   @observable ObservableList books;
-  @observable ListedBook originalBook;
+  @observable BookWithMetadata originalBook;
 
   BooksList.created() : super.created();
 
@@ -14,11 +14,13 @@ class BooksList extends PolymerElement {
     var map = jsonObject as Map<String,Object>;
     assert(map['version'] == 1);
     assert(map['status'] == 'completed');
-    originalBook = new ListedBook.fromMap(map['original_book']);
+    originalBook = new BookWithMetadata.fromMap(map['original_book']);
     books = new ObservableList();
     for (var bookMap in map['suggestions']) {
-      var book = new ListedBook.fromMap(bookMap);
-      books.add(book);
+      var book = new SuggestedBook.fromMap(bookMap);
+      if (book.suggestionWorthy) {
+        books.add(book);
+      }
     }
   }
 }

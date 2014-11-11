@@ -21,7 +21,8 @@
                 margin: 0 0 10px 0;
                 text-transform: uppercase;
                 font-weight: lighter;
-                font-size: 200%;
+                font-size: 300%;
+                font-family: 'Playfair Display SC', serif;
             }
 
             p {
@@ -41,32 +42,32 @@
             /*}*/
 
             .item {
-                height: 60px;
+                height: 80px;
             }
 
             .rank {
+                font-family: 'Playfair Display SC', serif;
                 width: 30px;
                 padding-right: 10px;
                 text-align: right;
                 font-weight: lighter;
-                font-size: 120%;
+                font-size: 140%;
             }
 
-            .author-and-title {
+            .author {
+                padding-left: 50px;
+            }
+
+            .title {
+                font-family: 'Playfair Display SC', serif;
+                text-transform: uppercase;
+                font-weight: lighter;
+                font-size: 140%;
                 padding-left: 10px;
                 padding-right: 10px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
-            }
-
-            .author {
-            }
-
-            .title {
-                text-transform: uppercase;
-                font-weight: lighter;
-                font-size: 120%;
             }
 
             a {
@@ -75,31 +76,30 @@
             }
         </style>
 
-        <div>
-            <h3>{{originalBook.author}}</h3>
-            <h2>{{originalBook.title}}</h2>
-
-            <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
-            líbila knížka <em>{{originalBook.title}}</em>.</p>
-
-            <p id="options">Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
-                <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
-        </div>
-
         <core-list-dart id="list"
                         data="{{books}}"
-                        height="60" flex>
-            <template>
-                <div class="item" horizontal layout center>
-                    <div class="rank">{{index + 1}}.</div>
-                    <div class="author-and-title">
-                        <div class="author">{{model.author}}</div>
-                        <div class="title">{{model.title}}</div>
-                    </div>
+                        height="80" flex>
+            <div>
+                <h3>{{originalBook.author}}</h3>
+                <h2>{{originalBook.title}}</h2>
 
-                    <paper-icon-button
-                            icon="info-outline"
-                            on-tap="{{showInfo}}"></paper-icon-button>
+                <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
+                    líbila knížka <em>{{originalBook.title}}</em>.</p>
+
+                <p id="options">Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
+                    <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
+            </div>
+            <template>
+                <div class="item">
+                    <div class="author">{{model.author}}</div>
+                    <div horizontal layout center>
+                        <div class="rank">{{index + 1}}.</div>
+                        <div class="title">{{model.title}}</div>
+
+                        <paper-icon-button
+                                icon="info-outline"
+                                on-tap="{{showInfo}}"></paper-icon-button>
+                    </div>
                 </div>
             </template>
         </core-list-dart>

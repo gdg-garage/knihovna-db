@@ -14,6 +14,7 @@
     <style>
       :host {
         display: block;
+        text-align: justify;
       }
 
       core-header-panel {
@@ -23,9 +24,7 @@
         background-color: #03A9F4;
       }
 
-      content[select="h1"]::content * {
-        font-size: 100%;
-        font-weight: normal;
+      content[select=".app-name"]::content * {
         color: white;
       }
 
@@ -35,12 +34,14 @@
         padding-top: 2em;
       }
 
-      #tagline {
-        font-size: 150%;
+      content[select="h1"]::content * {
+        margin-top: 50px;
+        text-align: center;
       }
 
       content[select=".tagline"]::content small {
         color: gray;
+        margin-bottom: 0;
       }
 
       book-input {
@@ -54,7 +55,7 @@
                 backButtonEnabled="{{backButtonEnabled}}"
                 on-back-button-tapped="{{goToParentState}}">
         </optional-back-button>
-        <content select="h1"></content>
+        <content select=".app-name"></content>
       </core-toolbar>
 
       <!-- The different views ('Activities') of the web app. -->
@@ -69,10 +70,12 @@
           <!--<content select=".tagline"></content>
               - Cannot use because it doesn't work well with
                 <core-animated-pages> (it doesn't fade). -->
-          <p id="tagline"></p>
+          <content select="h1" id="h1"></content>
+          <content select=".tagline"></content>
           <book-input id="book-input"></book-input>
           <!--<content></content>
               - Same as above. -->
+          <content></content>
         </section>
         <section id="wait">
           <suggestions-loader

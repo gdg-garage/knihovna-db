@@ -68,7 +68,7 @@ class BookApp extends PolymerElement {
       "Something" /* TODO */);
 
     // Copy contents from the LightDom.
-    ($['tagline'] as ParagraphElement).text = querySelector(".tagline").text;
+//    ($['tagline'] as ParagraphElement).text = querySelector(".tagline").text;
   }
 
   handleBookInput(_, var detail, __) {

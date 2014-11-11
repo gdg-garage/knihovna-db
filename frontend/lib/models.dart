@@ -22,11 +22,22 @@ class AutocompletedBook extends Book {
   AutocompletedBook.fromMap(Map<String, Object> map) : super.fromMap(map);
 }
 
-class ListedBook extends Book {
+class BookWithMetadata extends Book {
   final String description;
   // TODO: add description, url, etc.
 
-  ListedBook.fromMap(Map<String, Object> map)
+  BookWithMetadata.fromMap(Map<String, Object> map)
   : description = map['description'],
+    super.fromMap(map);
+}
+
+class SuggestedBook extends Book {
+  static const double PREDICTION_THRESHOLD = 0.03;
+
+  final double prediction;
+  bool get suggestionWorthy => prediction > PREDICTION_THRESHOLD;
+
+  SuggestedBook.fromMap(Map<String, Object> map)
+  : prediction = map['prediction'],
     super.fromMap(map);
 }
