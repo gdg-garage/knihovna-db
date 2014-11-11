@@ -82,8 +82,10 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     item_ids_array = item_ids.split('|')
     # Get the consolidated book for each item_id
     suggestions = suggestions_key.get()
+    assert isinstance(suggestions, SuggestionsRecord)
     for row in table.data:
         item_id = row[0]
+        prediction = float(row[1])
         if item_id in item_ids_array:
             continue  # Original book.
         consolidated_book_key = BookRecord.query(
@@ -94,6 +96,7 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
             continue
         if not consolidated_book_key in suggestions.books:
             suggestions.books.append(consolidated_book_key)
+            suggestions.books_prediction.append(prediction)
         if len(suggestions.books) >= 1000:
             break
     next_page_token = json.get('pageToken', "")
@@ -112,7 +115,6 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
 
 
 SUGGESTION_QUERY = """
-SELECT item_id FROM (
     /* Create prediction value by comparing borrow ratio of select audience with borrow ratio of everybody else. */
     SELECT items_with_ratios.item_id as item_id,
            items_with_ratios.ratio / ratio_all.ratio as prediction
@@ -136,7 +138,6 @@ SELECT item_id FROM (
     WHERE ratio_all.ratio > 0.0010  # <- tune this
     ORDER BY prediction DESC
     LIMIT 1200
-)
 """
 
 class SuggestionsRecord(ndb.Model):
@@ -144,4 +145,9 @@ class SuggestionsRecord(ndb.Model):
     original_book = ndb.KeyProperty(indexed=False, kind=BookRecord)
     completed = ndb.BooleanProperty(indexed=False)
     job_started = ndb.DateTimeProperty(indexed=False)
+    # A sorted array of BookRecord keys that are suggestion for [original_book]
     books = ndb.KeyProperty(repeated=True, indexed=False, kind=BookRecord)
+    # A sorted array of prediction probability values. Index corresponds to
+    # index in [books], so books[i] has a prediction prob. of
+    # books_prediction[i].
+    books_prediction = ndb.FloatProperty(repeated=True, indexed=False)

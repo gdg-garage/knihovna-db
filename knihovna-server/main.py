@@ -73,12 +73,15 @@ class QuerySuggestions(webapp2.RequestHandler):
             json_object['status'] = 'completed'
             json_object['suggestions'] = []
             book_records = ndb.get_multi(suggestions.books)
-            for book in book_records:
+            assert len(book_records) == len(suggestions.books_prediction)
+            for i in xrange(len(book_records)):
+                book = book_records[i]
                 assert isinstance(book, BookRecord)
                 json_object['suggestions'].append({
                     'author': book.author,
                     'title': book.title,
-                    'item_ids': book.key.string_id()
+                    'item_ids': book.key.string_id(),
+                    'prediction': suggestions.books_prediction[i]
                 })
         else:
             json_object['status'] = 'started'
