@@ -30,17 +30,10 @@
                 margin: 0.5em 0;
             }
 
-            #options {
-                margin-bottom: 2em;
+            core-list-dart > * {
+                max-width: 500px;
+                margin: 0 auto;
             }
-
-            #buttons {
-                /*margin-bottom: 2em;*/
-            }
-
-            /*core-list-dart {*/
-                /*height: 100%*/
-            /*}*/
 
             .item {
                 height: 80px;
@@ -94,7 +87,7 @@
                     <div class="author">{{model.author}}</div>
                     <div horizontal layout center>
                         <div class="rank">{{index + 1}}.</div>
-                        <div class="title">{{model.title}}</div>
+                        <div class="title" flex>{{model.title}}</div>
 
                         <paper-icon-button
                                 icon="info-outline"

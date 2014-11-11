@@ -11,6 +11,8 @@
     <style>
       :host {
         display: block;
+        max-width: 500px;
+        margin: 0 auto;
       }
 
       paper-input {
@@ -19,6 +21,49 @@
         color: #03A9F4;
         margin-bottom: 0;
           padding-top: 0;
+      }
+
+      paper-input /deep/ ::-webkit-input-placeholder {
+          color: #03A9F4;
+      }
+
+      paper-input /deep/ ::-moz-placeholder {
+          color: #03A9F4;
+      }
+
+      paper-input /deep/ :-ms-input-placeholder {
+          color: #03A9F4;
+      }
+
+      paper-input /deep/ .label-text,
+      paper-input /deep/ .error {
+          color: #03A9F4;
+      }
+
+      paper-input /deep/ .unfocused-underline {
+          background-color: #03A9F4;
+      }
+
+      paper-input[focused] /deep/ .floated-label .label-text {
+          color: #03A9F4;
+      }
+
+      paper-input /deep/ .focused-underline {
+          background-color: #03A9F4;
+      }
+
+      paper-input /deep/ .cursor {
+          background-color: #03A9F4;
+      }
+
+      paper-input.invalid /deep/ .floated-label .label-text,
+      paper-input /deep/ .error {
+          color: #03A9F4;
+      }
+
+      paper-input.invalid /deep/ .focused-underline,
+      paper-input.invalid /deep/ .cursor {
+          background-color: #03A9F4;
       }
 
       paper-progress {

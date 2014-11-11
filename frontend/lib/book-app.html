@@ -26,26 +26,29 @@
 
       content[select=".app-name"]::content * {
         color: white;
-      }
-
-      .content {
-        max-width: 500px;
-        margin: 0 auto;
-        padding-top: 2em;
+        margin: 0;
+        text-align: left;
       }
 
       content[select="h1"]::content * {
-        margin-top: 50px;
         text-align: center;
-      }
-
-      content[select=".tagline"]::content small {
-        color: gray;
-        margin-bottom: 0;
+        max-width: 500px;
+        margin: 0 auto;
+        margin-top: 30px;
       }
 
       book-input {
         width: 100%;
+      }
+
+      content[select=".tagline"]::content * {
+        max-width: 500px;
+        margin: 30px auto 10px auto;
+      }
+
+      content::content * {
+        max-width: 500px;
+        margin: 30px auto 0 auto;
       }
     </style>
 
