@@ -10,8 +10,6 @@ import 'book_autocomplete_list.dart';
 import 'package:core_elements/core_ajax_dart.dart';
 import 'dart:convert';
 
-import '../util.dart';
-
 @CustomTag('book-input')
 class BookInput extends PolymerElement {
   StreamController<String> _newValue = new StreamController<String>();
@@ -26,9 +24,10 @@ class BookInput extends PolymerElement {
     _enterToastElement = $['enter-toast'];
 
     _coreAjax = $['ajax'];
-    if (runningInDevelopment) {
-      _coreAjax.url = '/frontend/book-input/mock_response.json';
-    }
+    /* #if DEBUG */
+    _coreAjax.url = '/packages/knihovna_frontend/book-input/mock_response.json';
+    /* #endif */
+
     _coreAjax.onCoreResponse
       .listen(_showNewSuggestions);
 

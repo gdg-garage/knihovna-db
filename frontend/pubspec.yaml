@@ -10,6 +10,8 @@ dependencies:
   polymer: any
   rate_limit: any
   route: any
+  simple_preprocessor: any
 transformers:
+- simple_preprocessor
 - polymer:
     entry_points: web/index.html

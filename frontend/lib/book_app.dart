@@ -6,9 +6,9 @@ import 'suggestions-loader/suggestions_loader.dart';
 import 'books-list/books_list.dart';
 import 'pushdown_automaton.dart';
 import 'models.dart';
-import 'util.dart';
 
 import 'package:route/client.dart';
+import 'package:route/url_pattern.dart';
 
 @CustomTag('book-app')
 class BookApp extends PolymerElement {
@@ -27,19 +27,29 @@ class BookApp extends PolymerElement {
 
   Router _router;
 
-  get _basePath => runningInDevelopment ? "/frontend" : "";
+  /* #if DEBUG *//*
+  static const String BASE_PATH = "";
+  *//* #else */
+  static const String BASE_PATH = "";
+  /* #endif */
 
   UrlPattern _welcomeUrl;
   UrlPattern _listUrl;
   UrlPattern _detailUrl;
 
   BookApp.created() : super.created() {
-    _welcome = new State('welcome', _basePath + '/');
-    _welcomeUrl = new UrlPattern(_basePath + r'/(index.html)?');
-    _listUrl = new UrlPattern(_basePath + r'/#([\d|]+)');
-    _detailUrl = new UrlPattern(_basePath + r'/#(\d+)/detail-([\d|]+)');
+    _welcome = new State('welcome', BASE_PATH + '/');
+    _welcomeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
+    _listUrl = new UrlPattern(BASE_PATH + r'/#([\d|]+)');
+    _detailUrl = new UrlPattern(BASE_PATH + r'/#(\d+)/detail-([\d|]+)');
 
     _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
+
+    // #if DEBUG
+    print("Running in debug mode.");
+    // #else
+    print("Running in release mode.");
+    // #endif
   }
 
   domReady() {

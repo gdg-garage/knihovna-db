@@ -5,8 +5,6 @@ import 'package:core_elements/core_ajax_dart.dart';
 import 'dart:convert';
 import 'dart:async';
 
-import '../util.dart';
-
 @CustomTag('suggestions-loader')
 class SuggestionsLoader extends PolymerElement {
   CoreAjax _coreAjaxForResults;
@@ -16,10 +14,11 @@ class SuggestionsLoader extends PolymerElement {
 
   domReady() {
     _coreAjaxForResults = $['ajax-results'];
-    if (runningInDevelopment) {
-      _coreAjaxForResults.url = '/frontend/suggestions-loader/'
+    /* #if DEBUG */
+    _coreAjaxForResults.url = '/packages/knihovna_frontend/suggestions-loader/'
         'mock_suggestion_results.json';
-    }
+    /* #endif */
+
     _coreAjaxForResults.onCoreResponse
       .listen(_showSuggestions);
   }
