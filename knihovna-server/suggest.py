@@ -41,7 +41,7 @@ class Suggester(object):
         else:
             return suggestions
 
-BIGQUERY_JOB_ID_VER = "2"
+BIGQUERY_JOB_ID_VER = "3"
 
 def start_bq_job(suggestions_key):
     item_ids = suggestions_key.string_id()
@@ -71,6 +71,7 @@ MAX_RESULTS_PER_SUGGESTIONS_QUERY = 600
 def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     bq = BigQueryClient()
     logging.info("Polling suggestion job {}.".format(job_id))
+    # TODO: catch 404 errors for jobs created 24+ hours ago, retry with new jobid
     json = bq.get_async_job_results(job_id, page_token,
                                     MAX_RESULTS_PER_SUGGESTIONS_QUERY)
     if not json['jobComplete']:
