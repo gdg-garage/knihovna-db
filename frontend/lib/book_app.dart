@@ -74,7 +74,6 @@ class BookApp extends PolymerElement {
       window.console.error(e);
     }
 
-    ($["app-name"] as DivElement).text = querySelector(".app-name").text;
     _copyFromLightDom("app-name");
     _copyFromLightDom("h1");
     _copyFromLightDom("tagline");
