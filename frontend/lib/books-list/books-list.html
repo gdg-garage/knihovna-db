@@ -11,6 +11,10 @@
                 display: block;
             }
 
+            #start {
+                margin-bottom: 50px;
+            }
+
             h3 {
                 margin: 30px 0 0;
                 font-weight: normal;
@@ -26,17 +30,18 @@
                 line-height: 1.1em;
             }
 
+            core-list-dart > * {
+                max-width: 500px;
+                margin: 0 auto;
+                padding: 0 10px;
+            }
+
             p {
                 margin: 0.5em 0;
             }
 
-            core-list-dart > * {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-
             .item {
-                height: 80px;
+                height: 100px;
             }
 
             .rank {
@@ -67,19 +72,26 @@
                 color: blue;
                 cursor: pointer;
             }
+
+            #end {
+                /*margin-top: will be computed in books_list.dart */
+                margin-bottom: 100px;
+            }
         </style>
 
         <core-list-dart id="list"
                         data="{{books}}"
-                        height="80" flex>
-            <div>
+                        height="100"
+                        selectionEnabled="false"
+                        flex>
+            <div id="start">
                 <h3>{{originalBook.author}}</h3>
                 <h2>{{originalBook.title}}</h2>
 
                 <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
                     líbila knížka <em>{{originalBook.title}}</em>.</p>
 
-                <p id="options">Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
+                <p>Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
                     <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
             </div>
             <template>
@@ -95,6 +107,15 @@
                     </div>
                 </div>
             </template>
+
+            <div id="end">
+                <p hidden?="{{books.length == 1000}}">
+                    V tomto případě pro vás nemáme tisíc knih, ale “pouze” {{books.length}}. Nemáme dost informací, abychom si byli dostatečně jistí, že by se vám mohly další knížky na seznamu líbit. Ale snad je i toto dostatečně dlouhý čtenářský seznam.
+                </p>
+
+                <p>Seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
+                    <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
+            </div>
         </core-list-dart>
 
         <!--<div id="buttons" horizontal layout>-->

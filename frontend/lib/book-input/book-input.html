@@ -15,12 +15,15 @@
         margin: 0 auto;
       }
 
+      #wrapper {
+          padding: 0 10px;
+      }
+
       paper-input {
         width: 100%;
         font-size: 150%;
         color: #03A9F4;
         margin-bottom: 0;
-          padding-top: 0;
       }
 
       paper-input /deep/ ::-webkit-input-placeholder {
@@ -93,11 +96,13 @@
                  text="Vyberte si jednu z knížek a klikněte na ni.">
     </paper-toast>
 
-    <paper-input id="searchbox" label="Oblíbená knížka"
-                 on-input="{{handleChange}}"
-                 autofocus
-                 floatingLabel></paper-input>
-    <book-autocomplete-list id="suggestion-list"></book-autocomplete-list>
+    <div id="wrapper">
+        <paper-input id="searchbox" label="Oblíbená knížka"
+                     on-input="{{handleChange}}"
+                     autofocus
+                     floatingLabel></paper-input>
+        <book-autocomplete-list id="suggestion-list"></book-autocomplete-list>
+    </div>
   </template>
   <script type="application/dart" src="book_input.dart"></script>
 </polymer-element>
