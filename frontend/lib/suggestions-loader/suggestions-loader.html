@@ -1,13 +1,54 @@
 <!-- import polymer-element's definition -->
 <link rel="import" href="../../../packages/polymer/polymer.html">
 <link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
-<link rel="import" href="../../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../../packages/core_elements/core_icons.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+
+<link rel="import" href="../quotes-gadget/quotes_gadget.html">
 
 <polymer-element name="suggestions-loader">
   <template>
     <style>
       :host {
         display: block;
+      }
+
+      #wrapper {
+        margin-top: 50px;
+      }
+
+      #wrapper > * {
+        max-width: 500px;
+        margin: 10px auto;
+      }
+
+      #longer-wait {
+        overflow: hidden;
+
+        -webkit-transition: max-height 2s ease-out;
+        -moz-transition: max-height 2s ease-out;
+        transition: max-height 2s ease-out;
+      }
+
+      .rolled {
+        max-height: 0;
+      }
+
+      .unrolled {
+        max-height: 1000px;
+      }
+
+      .loader-animation {
+        height: 0.8em;
+      }
+
+      paper-button {
+        color: #03A9F4;
+      }
+
+      #continue {
+        text-align: right;
+        margin-bottom: 30px;
       }
     </style>
     <core-ajax-dart
@@ -16,8 +57,112 @@
     <!--url="/query/"-->
     <!--url="../../../packages/knihovna_frontend/suggestions-loader/mock_suggestion_results.json"-->
 
-    <p>WAIT HERE PLEASE</p>
-    <img src="../../../packages/knihovna_frontend/assets/loader.svg" />
+    <div id="wrapper">
+      <p>Toto chvíli potrvá. <img class="loader-animation" hidden?="{{isLongerWait}}" src="../../../packages/knihovna_frontend/assets/loader.svg" /></p>
+      <div id="longer-wait" class="{{ isLongerWait ? 'unrolled' : 'rolled' }}">
+        <p>
+          Ó, tak pozor &mdash; vypadá to, že knížku “{{ originalBook.title }}” tady zatím ještě nikdo nehledal!
+          To bohužel znamená, že pro ni ještě nemáme doporučení spočítané, a tak toto zabere o dost víc času než normálně (až několik minut).
+        </p>
+        <quotes-gadget id="quotes">
+          <div class="item">
+            <span class="text">Vždy čti něco, co bude dobře vypadat, pokud umřeš uprostřed čtení.</span>
+            <span class="author">P.J. O’Rourke</span>
+          </div>
+          <div class="item">
+            <span class="text">Žádní dva lidé ještě nečetli tu samou knihu.</span>
+            <span class="author">Edmund Wilson</span>
+          </div>
+          <div class="item">
+            <span class="text">Kniha je sen, který držíte v ruce.</span>
+            <span class="author">Neil Gaiman</span>
+          </div>
+          <div class="item">
+            <span class="text">Potkáme-li člověka vysokého intelektu, měli bychom se jej zeptat, co čte.</span>
+            <span class="author">Ralph Waldo Emerson</span>
+          </div>
+          <div class="item">
+            <span class="text">Občas je nutné zvolit, zda obrátit na další stránku nebo knížku zavřít.</span>
+            <span class="author">Josh Jameson</span>
+          </div>
+          <div class="item">
+            <span class="text">Kdo říká, že má jen jeden život, asi neví, jak číst knížky.</span>
+            <span class="author">autor neznámý</span>
+          </div>
+          <div class="item">
+            <span class="text">Život je jako dobrá kniha. Čím dál se dostanete, tím víc začíná dávat smysl.</span>
+            <span class="author">Harold Kushner</span>
+          </div>
+          <div class="item">
+            <span class="text">Pokud čteš jen to samé jako všichni ostatní, můžeš myslet jen jako všichni ostatní.</span>
+            <span class="author">Haruki Murakami</span>
+          </div>
+          <div class="item">
+            <span class="text">Je mnoho způsobů jako rozšířit svět vašeho dítěte. Láska ke knihám je z nich nejlepší.</span>
+            <span class="author">Jacqueline Kennedy Onassisová</span>
+          </div>
+          <div class="item">
+            <span class="text">Dobré romány říkají pravdu o svém hrdinovi; špatné romány říkají pravdu o svém autorovi.</span>
+            <span class="author">Gilbert K. Chesterton</span>
+          </div>
+          <div class="item">
+            <span class="text">Kniha je verze světa. Pokud se vám nelíbí, ignorujte ji nebo nabídněte verzi vlastní.</span>
+            <span class="author">Salman Rushdie</span>
+          </div>
+          <div class="item">
+            <span class="text">V dobré knize je to nejlepší mezi řádky.</span>
+            <span class="author">švédské přísloví</span>
+          </div>
+          <div class="item">
+            <span class="text">V našem dětství snad nejsou dny, které jsme žili opravdověji, než ty strávené s oblíbenou knihou.</span>
+            <span class="author">Marcel Proust</span>
+          </div>
+          <div class="item">
+            <span class="text">Střež se osoby jedné knihy.</span>
+            <span class="author">Tomáš Akvinský</span>
+          </div>
+          <div class="item">
+            <span class="text">Kniha je jediné místo, kde lze zkoumat křehkou myšlenku aniž bychom ji rozbili.</span>
+            <span class="author">Edward P. Morgan</span>
+          </div>
+          <div class="item">
+            <span class="text">Nakladatel mě požádal, abych napsal knihu o technice malby. Napsal jsem ji. Když jsem ji přečetl, naučil jsem se malovat.</span>
+            <span class="author">Salvator Dalí</span>
+          </div>
+          <div class="item">
+            <span class="text">Čti ty nejlepší knížky jako první, jinak se k nim možná vůbec nikdy nedostaneš.</span>
+            <span class="author">Henry David Thoreau</span>
+          </div>
+          <div class="item">
+            <span class="text">Nemilovat knihy znamená nemilovat moudrost. Nemilovat moudrost však znamená stávat se hlupákem.</span>
+            <span class="author">Jan Amos Komenský</span>
+          </div>
+          <div class="item">
+            <span class="text">Knihy připomínají člověku, že ty originální myšlenky, které nosí, zase tak originální nejsou.</span>
+            <span class="author">Abraham Lincoln</span>
+          </div>
+          <div class="item">
+            <span class="text">Pokud mi chcete opravdu popsat člověka, neříkejte mi, co čte, ale co čte pořád dokola.</span>
+            <span class="author">François Mauriac</span>
+          </div>
+          <div class="item">
+            <span class="text">Otevřeš knížku a slyšíš hlas jiného člověka. Občas někoho, kdo zemřel před tisícem let. Čtení je cestování časem.</span>
+            <span class="author">Carl Sagan</span>
+          </div>
+        </quotes-gadget>
+        <p>
+          Čas můžete vyplnit čtením citátů výše. Nebo si dejte tuto stránku do záložek, můžete se sem kdykoliv vrátit.
+        </p>
+        <div id="continue">
+          <paper-button id="show-button" disabled="{{ !isLoaded }}" on-tap="{{fireSuggestionsLoaded}}" raised>
+            <img hidden?="{{ isLoaded }}" class="loader-animation" src="../../../packages/knihovna_frontend/assets/loader.svg" />
+            Ukaž výsledky
+          </paper-button>
+        </div>
+
+      </div>
+      
+    </div>
   </template>
   <script type="application/dart" src="suggestions_loader.dart"></script>
 </polymer-element>

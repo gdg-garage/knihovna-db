@@ -5,10 +5,20 @@ import 'package:core_elements/core_ajax_dart.dart';
 import 'dart:convert';
 import 'dart:async';
 
+import '../models.dart';
+
 @CustomTag('suggestions-loader')
 class SuggestionsLoader extends PolymerElement {
   CoreAjax _coreAjaxForResults;
   String itemIds;
+
+  @observable
+  bool isLongerWait = false;
+  @observable
+  BookWithMetadata originalBook;
+  @observable
+  bool isLoaded = false;
+
 
   SuggestionsLoader.created() : super.created();
 
@@ -25,11 +35,20 @@ class SuggestionsLoader extends PolymerElement {
 
   void startLoading(String itemIds) {
     this.itemIds = itemIds;
+    isLongerWait = false;
+    originalBook = BookWithMetadata.BLANK;
+    isLoaded = false;
+    /* #if DEBUG *//*
+    isLongerWait = true;
+    new Timer(const Duration(seconds: 3), () {
+      isLoaded = true;
+    });
+    *//* #endif */
     _sendAjaxRequest();
   }
 
   static const DELAY_BETWEEN_RETRIES = const Duration(seconds: 5);
-  static const int MAX_RETIRES = 40;
+  static const int MAX_RETRIES = 40;
 
   Map<String,int> numberOfTries = new Map<String,int>();
 
@@ -46,12 +65,18 @@ class SuggestionsLoader extends PolymerElement {
     }
     if (_coreAjaxForResults.response['status'] != 'completed') {
       print("Job still in progress. Will retry.");
-      numberOfTries[itemIds] = numberOfTries.putIfAbsent(itemIds, () => 1) + 1;
-      if (numberOfTries[itemIds] > MAX_RETIRES) {
+      if (!numberOfTries.containsKey(itemIds)) {
+        originalBook = new BookWithMetadata.fromMap(
+            _coreAjaxForResults.response['original_book']);
+        numberOfTries[itemIds] = 0;
+      }
+      numberOfTries[itemIds]++;
+      if (numberOfTries[itemIds] > MAX_RETRIES) {
         print("No more tries left.");
         // TODO: tell user we have failed
       } else {
         print("Will retry.");
+        isLongerWait = true;
         new Timer(DELAY_BETWEEN_RETRIES, () {
           _sendAjaxRequest();
         });
@@ -59,6 +84,15 @@ class SuggestionsLoader extends PolymerElement {
       return;
     }
     print("Suggestion loaded!");
+
+    if (isLongerWait) {
+      isLoaded = true;
+    } else {
+      fireSuggestionsLoaded(null, null, null);
+    }
+  }
+
+  fireSuggestionsLoaded(_, __, ___) {
     fire("suggestions-loaded", detail: _coreAjaxForResults.response);
   }
 

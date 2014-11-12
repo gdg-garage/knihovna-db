@@ -9,6 +9,7 @@ import 'models.dart';
 
 import 'package:route/client.dart';
 import 'package:route/url_pattern.dart';
+import 'dart:async';
 
 @CustomTag('book-app')
 class BookApp extends PolymerElement {
@@ -64,11 +65,26 @@ class BookApp extends PolymerElement {
       ..addHandler(_detailUrl, routeToDetail);
     _router.listen();
 
-    _router.gotoPath(window.location.pathname + window.location.hash,
+    // This breaks in Safari and Firefox, currently.
+    try {
+      _router.gotoPath("${window.location.pathname}${window.location.hash}",
       "Something" /* TODO */);
+    } catch (e) {
+      print("Are you running Safari or Firefox by any chance?");
+      window.console.error(e);
+    }
 
-    // Copy contents from the LightDom.
-//    ($['tagline'] as ParagraphElement).text = querySelector(".tagline").text;
+    ($["app-name"] as DivElement).text = querySelector(".app-name").text;
+    _copyFromLightDom("app-name");
+    _copyFromLightDom("h1");
+    _copyFromLightDom("tagline");
+    _copyFromLightDom("below-input");
+  }
+
+  /// Copy contents from the LightDom. (Gets around Firefox/Safari not applying
+  /// style inside elements.)
+  void _copyFromLightDom(String className) {
+    ($[className] as Element).text = querySelector(".$className").text;
   }
 
   handleBookInput(_, var detail, __) {
@@ -99,10 +115,13 @@ class BookApp extends PolymerElement {
       print("Suggestions loaded, but we are already elsewhere.");
       return;
     }
-    _booksList.populateFromJson(detail);
-    var list = new ListState(currentState.url);
-    _machine.switchTo(list);
-    _showStatePage();
+    // Wait a little while before
+    new Timer(const Duration(milliseconds: 200), () {
+      _booksList.populateFromJson(detail);
+      var list = new ListState(currentState.url);
+      _machine.switchTo(list);
+      _showStatePage();
+    });
   }
 
   void routeToDetail(String path) {

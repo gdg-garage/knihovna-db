@@ -14,7 +14,12 @@
     <style>
       :host {
         display: block;
+        font-family: 'Roboto', sans-serif;
+        color: #333333;
         text-align: justify;
+
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-touch-callout: none;
       }
 
       section {
@@ -25,13 +30,14 @@
         background-color: #03A9F4;
       }
 
-      content[select=".app-name"]::content * {
+      #app-name {
         color: white;
         margin: 0;
         text-align: left;
       }
 
-      content[select="h1"]::content * {
+      h1 {
+        font-family: 'Playfair Display SC', serif;
         text-align: center;
         max-width: 500px;
         margin: 30px auto 0;
@@ -42,12 +48,12 @@
         width: 100%;
       }
 
-      content[select=".tagline"]::content * {
+      #tagline {
         max-width: 500px;
         margin: 30px auto 10px auto;
       }
 
-      content::content * {
+      #below-input {
         max-width: 500px;
         margin: 30px auto 0 auto;
       }
@@ -59,7 +65,7 @@
                 backButtonEnabled="{{backButtonEnabled}}"
                 on-back-button-tapped="{{goToParentState}}">
         </optional-back-button>
-        <content select=".app-name"></content>
+        <div id="app-name"><!-- This is programatically --></div>
       </core-toolbar>
 
       <!-- The different views ('Activities') of the web app. -->
@@ -74,12 +80,14 @@
           <!--<content select=".tagline"></content>
               - Cannot use because it doesn't work well with
                 <core-animated-pages> (it doesn't fade). -->
-          <content select="h1" id="h1"></content>
-          <content select=".tagline"></content>
+          <h1 id="h1"></h1>
+          <p id="tagline"></p>
+          <!--<content select="h1" id="h1"></content>-->
+          <!--<content select=".tagline"></content>-->
           <book-input id="book-input"></book-input>
           <!--<content></content>
               - Same as above. -->
-          <content></content>
+          <p id="below-input"></p>
         </section>
         <section id="wait">
           <suggestions-loader

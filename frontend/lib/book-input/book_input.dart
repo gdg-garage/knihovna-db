@@ -52,7 +52,6 @@ class BookInput extends PolymerElement {
   }
 
   void unselectAutocomplete() {
-    print("unselecting autocomplete");
     _suggestionList.unselect();
   }
 

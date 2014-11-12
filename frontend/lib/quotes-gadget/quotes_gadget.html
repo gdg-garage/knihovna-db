@@ -1,0 +1,82 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../packages/core_elements/core_animated_pages.html">
+<link rel="import" href="../../../packages/paper_elements/paper_icon_button.html">
+<!--<link rel="import" href="../../../packages/paper_elements/paper_button.html">-->
+
+<polymer-element name="quotes-gadget">
+    <template>
+        <style>
+            :host {
+                display: block;
+            }
+
+            #wrapper {
+                display: table;
+            }
+
+            #left-side, #right-side, section {
+                display: table;
+                height: 300px;
+            }
+
+            .button-wrapper, .quote-wrapper {
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            #animated-quote-pages {
+                width: 100%;
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            section {
+                padding: 0 40px;
+                height: 300px;
+            }
+
+            blockquote, p {
+                padding: 0;
+                margin: 0;
+            }
+
+            blockquote {
+                font-family: 'Playfair Display SC', serif;
+                font-size: 150%;
+                text-align: left;
+            }
+
+            p {
+                margin-top: 10px;
+                text-align: right;
+            }
+        </style>
+
+        <div id="wrapper">
+            <div id="left-side">
+                <div class="button-wrapper">
+                    <paper-icon-button icon="arrow-back" title="Předešlý citát" on-tap="{{showPrevious}}"></paper-icon-button>
+                </div>
+            </div>
+            <core-animated-pages id='animated-quote-pages'
+                                 transitions="cross-fade">
+                <template repeat="{{ quote in quotes }}">
+                    <section>
+                        <div class="quote-wrapper" cross-fade>
+                            <blockquote>[[ quote.text ]]</blockquote>
+                            <p>&mdash; [[ quote.author ]]</p>
+                        </div>
+                    </section>
+                </template>
+            </core-animated-pages>
+            <div id="right-side">
+                <div class="button-wrapper">
+                    <paper-icon-button icon="arrow-forward" title="Následující citát" on-tap="{{showNext}}"></paper-icon-button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script type="application/dart" src="quotes_gadget.dart"></script>
+</polymer-element>
+
