@@ -73,17 +73,6 @@ class BookApp extends PolymerElement {
       print("Are you running Safari or Firefox by any chance?");
       window.console.error(e);
     }
-
-    _copyFromLightDom("app-name");
-    _copyFromLightDom("h1");
-    _copyFromLightDom("tagline");
-    _copyFromLightDom("below-input");
-  }
-
-  /// Copy contents from the LightDom. (Gets around Firefox/Safari not applying
-  /// style inside elements.)
-  void _copyFromLightDom(String className) {
-    ($[className] as Element).text = querySelector(".$className").text;
   }
 
   handleBookInput(_, var detail, __) {

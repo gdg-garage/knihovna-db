@@ -30,13 +30,15 @@
         background-color: #03A9F4;
       }
 
-      #app-name {
+      polyfill-next-selector {content: ':host .app-name';}
+      content[select=".app-name"]::content * {
         color: white;
         margin: 0;
         text-align: left;
       }
 
-      h1 {
+      polyfill-next-selector {content: ':host h1';}
+      content[select="h1"]::content * {
         font-family: 'Playfair Display SC', serif;
         text-align: center;
         max-width: 500px;
@@ -48,14 +50,20 @@
         width: 100%;
       }
 
-      #tagline {
+      polyfill-next-selector {content: ':host .tagline';}
+      content[select=".tagline"]::content * {
         max-width: 500px;
         margin: 30px auto 10px auto;
       }
 
-      #below-input {
+      polyfill-next-selector {content: ':host p';}
+      content::content p {
         max-width: 500px;
         margin: 30px auto 0 auto;
+      }
+
+      #welcome-div {
+        margin-bottom: 50px;
       }
     </style>
 
@@ -65,7 +73,8 @@
                 backButtonEnabled="{{backButtonEnabled}}"
                 on-back-button-tapped="{{goToParentState}}">
         </optional-back-button>
-        <div id="app-name"><!-- This is programatically --></div>
+        <!--<div id="app-name">&lt;!&ndash; This is programatically &ndash;&gt;</div>-->
+        <content select=".app-name"></content>
       </core-toolbar>
 
       <!-- The different views ('Activities') of the web app. -->
@@ -77,17 +86,12 @@
         <section
                 id="welcome"
                 on-book-selected="{{handleBookInput}}">
-          <!--<content select=".tagline"></content>
-              - Cannot use because it doesn't work well with
-                <core-animated-pages> (it doesn't fade). -->
-          <h1 id="h1"></h1>
-          <p id="tagline"></p>
-          <!--<content select="h1" id="h1"></content>-->
-          <!--<content select=".tagline"></content>-->
-          <book-input id="book-input"></book-input>
-          <!--<content></content>
-              - Same as above. -->
-          <p id="below-input"></p>
+          <div id="welcome-div">
+            <content select="h1" id="h1"></content>
+            <content select=".tagline"></content>
+            <book-input id="book-input"></book-input>
+            <content></content>
+          </div>
         </section>
         <section id="wait">
           <suggestions-loader
