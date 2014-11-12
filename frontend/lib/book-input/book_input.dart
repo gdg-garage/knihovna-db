@@ -18,6 +18,7 @@ class BookInput extends PolymerElement {
 
   domReady() {
     _inputElement = $['searchbox'] as PaperInput;
+    _inputElement.scrollIntoView(ScrollAlignment.TOP);
 
     _suggestionList = $['suggestion-list'];
 
@@ -33,7 +34,7 @@ class BookInput extends PolymerElement {
 
     _newValue.stream
       // ~ 33 words per minute = 400ms between characters
-      .transform(new Debouncer(const Duration(milliseconds: 400)))
+      .transform(new Debouncer(const Duration(milliseconds: 500)))
       .listen(_sendAjaxRequest);
   }
 
