@@ -5,7 +5,7 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
   browser: any
-  core_elements: any
+  core_elements: "<=0.4.0+5"
   paper_elements: any
   polymer: any
   rate_limit: any

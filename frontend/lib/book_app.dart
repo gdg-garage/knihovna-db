@@ -104,7 +104,7 @@ class BookApp extends PolymerElement {
       return;
     }
     // Wait a little while before
-    new Timer(const Duration(milliseconds: 200), () {
+    new Timer(const Duration(milliseconds: 400), () {
       _booksList.populateFromJson(detail);
       var list = new ListState(currentState.url);
       _machine.switchTo(list);
