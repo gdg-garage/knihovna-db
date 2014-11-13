@@ -2,6 +2,7 @@ library suggestion_loader;
 
 import 'package:polymer/polymer.dart';
 import 'package:core_elements/core_ajax_dart.dart';
+import 'package:paper_elements/paper_toast.dart';
 import 'dart:convert';
 import 'dart:async';
 
@@ -87,6 +88,7 @@ class SuggestionsLoader extends PolymerElement {
 
     if (isLongerWait) {
       isLoaded = true;
+      ($['loaded-toast'] as PaperToast).show();
     } else {
       fireSuggestionsLoaded(null, null, null);
     }

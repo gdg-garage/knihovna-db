@@ -3,6 +3,7 @@
 <link rel="import" href="../../../packages/core_elements/core_ajax_dart.html">
 <link rel="import" href="../../../packages/core_elements/core_icons.html">
 <link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/paper_elements/paper_toast.html">
 
 <link rel="import" href="../quotes-gadget/quotes_gadget.html">
 
@@ -61,8 +62,8 @@
       <p>Toto chvíli potrvá. <img class="loader-animation" hidden?="{{isLongerWait}}" src="../../../packages/knihovna_frontend/assets/loader.svg" /></p>
       <div id="longer-wait" class="{{ isLongerWait ? 'unrolled' : 'rolled' }}">
         <p>
-          Ó, tak pozor &mdash; vypadá to, že knížku “{{ originalBook.title }}” tady zatím ještě nikdo nehledal!
-          To bohužel znamená, že pro ni ještě nemáme doporučení spočítané, a tak toto zabere o dost víc času než normálně (až několik minut).
+          Vypadá to, že knížku “{{ originalBook.title }}” tady zatím ještě nikdo nehledal.
+          To bohužel znamená, že pro ni ještě nemáme doporučení spočítané, a tak na této stránce strávíte o dost víc času než normálně (až několik minut).
         </p>
         <quotes-gadget id="quotes">
           <div class="item">
@@ -163,6 +164,11 @@
       </div>
       
     </div>
+
+    <paper-toast id="loaded-toast"
+                 text="Doporučení jsou načtená.">
+      <div style="color: #03A9F4;" on-tap="{{fireSuggestionsLoaded}}">Ukázat</div>
+    </paper-toast>
   </template>
   <script type="application/dart" src="suggestions_loader.dart"></script>
 </polymer-element>
