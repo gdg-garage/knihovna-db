@@ -36,12 +36,32 @@ class BookInput extends PolymerElement {
       // ~ 33 words per minute = 400ms between characters
       .transform(new Debouncer(const Duration(milliseconds: 500)))
       .listen(_sendAjaxRequest);
+
+    _hintElement = $['napis'] as ImageElement;
+    _hintTimer = new Timer(const Duration(seconds: 5), () {
+      showInputHint();
+    });
   }
 
   BookSuggestionList _suggestionList;
   CoreAjax _coreAjax;
   PaperInput _inputElement;
   PaperToast _enterToastElement;
+  ImageElement _hintElement;
+  Timer _hintTimer;
+
+  void showInputHint() {
+    _hintElement.attributes.remove("hidden");
+    _inputElement.focus();
+  }
+
+  void hideInputHint() {
+    _hintElement.attributes["hidden"] = "";
+  }
+
+  void cancelHintTimer() {
+    _hintTimer.cancel();
+  }
 
   void selectUp(Event e, var detail, Node target) {
     _suggestionList.moveUp();
@@ -68,6 +88,8 @@ class BookInput extends PolymerElement {
   }
 
   void handleChange(Event e, var detail, Node target) {
+    _hintTimer.cancel();
+    hideInputHint();
     _newValue.add(_inputElement.inputValue);  // Throttles through Debouncer.
   }
 

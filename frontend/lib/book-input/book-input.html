@@ -23,6 +23,7 @@
         width: 100%;
         font-size: 150%;
         color: #03A9F4;
+        margin-top: 20px;
         margin-bottom: 0;
       }
 
@@ -69,6 +70,12 @@
           background-color: #03A9F4;
       }
 
+      #napis {
+          width: 300px;
+          margin-left: -20px;
+          margin-top: -20px;
+      }
+
       paper-progress {
         width: 100%;
         margin-top: 0;
@@ -97,10 +104,12 @@
     </paper-toast>
 
     <div id="wrapper">
-        <paper-input id="searchbox" label="Oblíbená knížka"
+        <paper-input id="searchbox"
                      on-input="{{handleChange}}"
-                     autofocus
-                     floatingLabel></paper-input>
+                     autofocus></paper-input>
+
+        <img id="napis" src="napis.svg" hidden>
+
         <book-autocomplete-list id="suggestion-list"></book-autocomplete-list>
     </div>
   </template>

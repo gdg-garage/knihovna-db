@@ -30,10 +30,30 @@
   <link rel="import" href="packages/knihovna_frontend/book-app.html">
 
   <link href='//fonts.googleapis.com/css?family=Playfair+Display+SC|Roboto:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+  <style>
+    h1 {
+      font-family: 'Playfair Display SC', serif;
+      font-size: 300%;
+      text-align: center;
+      margin-top: 40vw;
+    }
+    .tagline {
+      font-family: "Roboto", sans-serif;
+      width: 500px;
+      text-align: justify;
+      margin: 0 auto;
+    }
+    .app-name, .below-input {
+      display: none;
+    }
+
+    #loader {
+    }
+  </style>
 </head>
 
-<body unresolved fullbleed vertical layout>
-  <book-app fit>
+<body fullbleed vertical layout>
+  <book-app unresolved fit fade-in>
     <div class="app-name">Tisíc knih</div>
     <h1 class="h1">Tisíc knih</h1>
     <p class="tagline">
@@ -43,6 +63,8 @@
       Protože dobrých knížek není nikdy dost. Tento engine byl vytvořen blah a taky ipsum lorem.
     </p>
   </book-app>
+
+  <img id="loader" src="packages/knihovna_frontend/assets/loader.svg">
 
   <script type="application/dart">export 'package:polymer/init.dart';</script>
 </body>
