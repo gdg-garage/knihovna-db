@@ -38,7 +38,7 @@ class BookInput extends PolymerElement {
       .listen(_sendAjaxRequest);
 
     _hintElement = $['napis'] as ImageElement;
-    _hintTimer = new Timer(const Duration(seconds: 5), () {
+    _hintTimer = new Timer(const Duration(seconds: 10), () {
       showInputHint();
     });
   }

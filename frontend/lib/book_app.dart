@@ -1,5 +1,6 @@
 import 'package:polymer/polymer.dart';
 import 'package:core_elements/core_animated_pages.dart';
+import 'package:paper_elements/paper_dialog.dart';
 import 'dart:html';
 import 'book-input/book_input.dart';
 import 'suggestions-loader/suggestions_loader.dart';
@@ -128,6 +129,10 @@ class BookApp extends PolymerElement {
     assert(_machine.states.length > 1);
     _machine.pop();
     _router.gotoPath(currentState.url, currentState.name /*TODO*/);
+  }
+
+  void showAbout() {
+    ($['about'] as PaperDialog).opened = true;
   }
 }
 

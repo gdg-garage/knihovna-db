@@ -53,8 +53,10 @@ class BookSuggestionList extends PolymerElement {
   }
 
   void createSuggestionsFromJson(var jsonObject) {
-    // TODO: reset selection (but only if currently selected book != selected book in new collection)
     suggestions.clear();
+    // TODO: Unselect only if currently selected book != selected book in
+    // new collection.
+    _selected = -1;
     assert(jsonObject is Map);
     assert(jsonObject['status'] == 'completed');
     assert(jsonObject['version'] == 1);

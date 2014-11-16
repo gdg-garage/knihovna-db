@@ -4,12 +4,13 @@
 <link rel="import" href="../../packages/core_elements/core_header_panel.html">
 <link rel="import" href="../../packages/core_elements/core_animated_pages.html">
 <link rel="import" href="../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../packages/paper_elements/paper_dialog.html">
 <link rel="import" href="book-input/book-input.html">
 <link rel="import" href="suggestions-loader/suggestions-loader.html">
 <link rel="import" href="books-list/books-list.html">
 <link rel="import" href="optional-back-button/optional-back-button.html">
 
-<polymer-element name="book-app">
+<polymer-element name="book-app" on-show-about="{{showAbout}}">
   <template>
     <style>
       :host {
@@ -65,6 +66,11 @@
       #welcome-div {
         margin-bottom: 50px;
       }
+
+      paper-dialog {
+        width: 80%;
+        text-align: left;
+      }
     </style>
 
     <core-header-panel fit>
@@ -102,6 +108,23 @@
         <books-list id="list"></books-list>
       </core-animated-pages>
     </core-header-panel>
+
+    <paper-dialog id="about"
+                  heading="O projektu “Tisíc knih”"
+                  backdrop
+                  transition="core-transition-center">
+      <p>
+        Tato aplikace vznikla jako nadšenecký projekt v rámci GDG Garage na
+        Praze 1. Více o jejím vzniku z fungování z technologického hlediska
+        se dozvíte na přednášce Filipa Hráčka na <a href="http://www.devfest.cz/">DevFestu 2014</a> (přednáška bude
+        k dispozici jako videozáznam na YouTube).
+      </p>
+      <p>
+        Autoři děkují Městské knihovně v Praze za poskytnutí prostorů pro
+        setkávání i za přístup k databázi knih.
+      </p>
+      <paper-button id="about-close" dismissive autofocus>Zavřít</paper-button>
+    </paper-dialog>
 
   </template>
   <script type="application/dart" src="book_app.dart"></script>

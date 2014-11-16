@@ -3,6 +3,8 @@
 <link rel="import" href="../../../packages/core_elements/core_list_dart.html">
 <link rel="import" href="../../../packages/core_elements/core_icons.html">
 <link rel="import" href="../../../packages/paper_elements/paper_icon_button.html">
+<link rel="import" href="../../../packages/paper_elements/paper_dialog.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
 
 <polymer-element name="books-list" fit vertical layout>
     <template>
@@ -77,6 +79,11 @@
                 /*margin-top: will be computed in books_list.dart */
                 margin-bottom: 100px;
             }
+
+            paper-dialog {
+                max-width: 80%;
+                text-align: left;
+            }
         </style>
 
         <core-list-dart id="list"
@@ -92,7 +99,7 @@
                     líbila knížka <em>{{originalBook.title}}</em>.</p>
 
                 <p>Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
-                    <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
+                    <a>sdílet</a>. Nebo se <a on-tap="{{showAbout}}">dozvědět</a>, jak jsme na něj přišli.</p>
             </div>
             <template>
                 <div class="item">
@@ -103,6 +110,7 @@
 
                         <paper-icon-button
                                 icon="info-outline"
+                                data-itemids="{{model.itemIds}}"
                                 on-tap="{{showInfo}}"></paper-icon-button>
                     </div>
                 </div>
@@ -117,6 +125,25 @@
                     <a>sdílet</a>. Nebo se <a>dozvědět</a>, jak jsme na něj přišli.</p>
             </div>
         </core-list-dart>
+
+        <paper-dialog id="book-info"
+                      heading="{{bookInInfoDialog.title}}"
+                      backdrop
+                      transition="core-transition-center">
+            <p>
+                Autor: {{bookInInfoDialog.author}}
+            </p>
+            <p>
+                (Tady bude anotace knížky, až se k tomu dostaneme...)
+            </p>
+            <p>
+                Více o knížce se dozvíte <a _href="{{bookInInfoDialogHref}}"
+                   target="_blank">na stránkách Městské knihovny v Praze</a>
+                (otevře se v novém okně).
+            </p>
+
+            <paper-button id="book-info-close" dismissive autofocus>Zavřít</paper-button>
+        </paper-dialog>
 
         <!--<div id="buttons" horizontal layout>-->
             <!--<paper-button>-->

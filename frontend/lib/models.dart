@@ -46,7 +46,14 @@ class SuggestedBook extends Book {
   final double prediction;
   bool get suggestionWorthy => prediction > PREDICTION_THRESHOLD;
 
+  SuggestedBook(String itemIds, String author, String title, int year,
+                double prediction)
+  : prediction = prediction,
+    super(itemIds, author, title, year);
+
   SuggestedBook.fromMap(Map<String, Object> map)
   : prediction = map['prediction'],
     super.fromMap(map);
+
+  static final SuggestedBook BLANK = new SuggestedBook("", "", "", 0, 0.0);
 }

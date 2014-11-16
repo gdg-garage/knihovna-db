@@ -1,13 +1,17 @@
 library books_list;
 
 import 'package:polymer/polymer.dart';
+import 'package:paper_elements/paper_dialog.dart';
 import '../models.dart';
+import 'dart:html';
 
 @CustomTag('books-list')
 class BooksList extends PolymerElement {
   @observable ObservableList books;
 
   @observable BookWithMetadata originalBook;
+  @observable SuggestedBook bookInInfoDialog = SuggestedBook.BLANK;
+  @observable String bookInInfoDialogHref;
 
   BooksList.created() : super.created();
 
@@ -33,5 +37,23 @@ class BooksList extends PolymerElement {
       endMarginTop = 100 * (books.length - 30) + 50;
     }
     $['end'].style.marginTop = '${endMarginTop}px';
+  }
+
+  void showAbout() {
+    fire("show-about");
+  }
+
+  void showInfo(Event event, Object detail, Node sender) {
+    String itemIds = (sender as Element).dataset['itemids'];
+
+    // This is sub-ideal, but whatever.
+    bookInInfoDialog = books
+        .singleWhere((SuggestedBook book) => book.itemIds == itemIds);
+    // TODO: get metadata
+
+    String firstItemId = itemIds.split("|").first;
+    bookInInfoDialogHref = "http://search.mlp.cz/cz/titul/$firstItemId/";
+
+    ($['book-info'] as PaperDialog).opened = true;
   }
 }
