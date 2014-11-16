@@ -51,7 +51,7 @@ def start_bq_job(suggestions_key):
     bq = BigQueryClient()
     item_ids_array = item_ids.split('|')
     sql_item_ids = ', '.join(item_ids_array)  # 12|123 -> 12, 123
-    query = SUGGESTION_QUERY.format(sql_item_ids)
+    query = SUGGESTION_QUERY.format(sql_item_ids, sql_item_ids)
     job_id = "suggestions-{}-v{}".format('-'.join(item_ids_array),
                                          BIGQUERY_JOB_ID_VER)
     try:
@@ -116,27 +116,23 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
 
 
 SUGGESTION_QUERY = """
-    /* Create prediction value by comparing borrow ratio of select audience with borrow ratio of everybody else. */
-    SELECT items_with_ratios.item_id as item_id,
-           items_with_ratios.ratio / ratio_all.ratio as prediction
-    FROM [mlp.borrow_ratio_all] AS ratio_all
-    JOIN EACH (/* Compute ratio. */
-               SELECT item_id,
-                      RATIO_TO_REPORT(borrower_count) OVER (
-                                                            ORDER BY borrower_count DESC) AS ratio
-               FROM (/* Get other books borrowed by similar readers */
-                     SELECT log_readers.item_id AS item_id,
-                            COUNT(DISTINCT similar_reader_ids.user_id) AS borrower_count
-                     FROM [mlp.log_generalized] AS log_readers
-                     JOIN EACH (/* Get ids of users who have checked out the book. */
-                                SELECT user_id
-                                FROM [mlp.log_generalized]
-                                WHERE item_id IN
-                                    ({})
-                                GROUP BY user_id) AS similar_reader_ids ON log_readers.user_id = similar_reader_ids.user_id
-                     GROUP BY item_id)) AS items_with_ratios ON items_with_ratios.item_id = ratio_all.item_id
-    JOIN EACH [mlp.tituly] AS metadata ON items_with_ratios.item_id = metadata.item_id
-    WHERE ratio_all.ratio > 0.0010  # <- tune this
+    SELECT books_borrowed_by_similar_users.item_id AS item_id,
+           COUNT(DISTINCT user_id) / sum_all_similar_users.value / ratio_all.ratio AS prediction
+    FROM [mlp.user_item_pairs_books_only] AS books_borrowed_by_similar_users
+    JOIN EACH [mlp.books_ratio_all] AS ratio_all ON books_borrowed_by_similar_users.item_id = ratio_all.item_id
+    CROSS JOIN ( /* Sum users who also borrowed this book. */
+                SELECT COUNT(DISTINCT user_id) AS value
+                FROM [mlp.user_item_pairs_books_only]
+                WHERE item_id IN ({}) ) AS sum_all_similar_users
+    WHERE user_id IN ( /* Users who also borrowed this book. */
+                      SELECT user_id
+                      FROM [mlp.user_item_pairs_books_only]
+                      WHERE item_id IN ({}) )
+      AND ratio_all.ratio > 0.0001
+      # AND cnt > 5
+    GROUP BY item_id,
+             sum_all_similar_users.value,
+             ratio_all.ratio
     ORDER BY prediction DESC
     LIMIT 1200
 """

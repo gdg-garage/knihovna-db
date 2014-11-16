@@ -177,7 +177,7 @@ def save_consolidated_autocomplete_data(data_slice, offset):
     for book_hash in consolidated_books:
         book = consolidated_books[book_hash]
         # assert isinstance(book, tuple)
-        assert len(book) == 2
+        assert len(book) == 3
         index = book[0] - offset
         if not (0 <= index < len(data_slice)):
             continue  # not found in slice - a sibling process will take care of this
@@ -192,7 +192,7 @@ def save_consolidated_autocomplete_data(data_slice, offset):
             row[1],  # author
             row[2],  # title
             year,  # year
-            int(row[4])  # count
+            book[2]  # count
         )
         docs.append(doc)
         if len(docs) >= 200:
@@ -212,25 +212,22 @@ def save_consolidated_autocomplete_data(data_slice, offset):
 
 
 ALL_BOOKS_QUERY = """
-    SELECT
-      tituly.item_id as item_id,
-      tituly.author as author,
-      tituly.title as title,
-      tituly.year as year,
-      COUNT(log.item_id) AS cnt
-    FROM
-      [mlp.log_generalized] as log
-    JOIN
-      EACH [mlp.tituly] AS tituly
-    ON
-      tituly.item_id = log.item_id
+    SELECT tituly.item_id AS item_id,
+           tituly.author AS author,
+           tituly.title AS title,
+           tituly.year AS year,
+           top_books.cnt AS cnt
+    FROM [mlp.top_books] AS top_books
+    JOIN EACH [mlp.tituly] AS tituly ON tituly.item_id = top_books.item_id
     # WHERE
       # Guard against old books getting more count due to being there longer.
       # log.vypujcky_when > '2013-01-01 00:00:00 UTC'
-    GROUP BY
-      item_id, author, title, year
-    HAVING
-      # Control against obscure books and potentially personally identifiable books.
+    GROUP BY item_id,
+             author,
+             title,
+             year,
+             cnt
+    HAVING # Control against obscure books and potentially personally identifiable books.
       cnt >= 50
     ORDER BY cnt DESC
 """
