@@ -105,12 +105,12 @@ class DownloadHandler(webapp2.RequestHandler):
         original_book = suggestions.original_book.get()
         book_records = ndb.get_multi(suggestions.books)
         suggestions = []
-        for book in book_records:
+        for i, book in enumerate(book_records):
             url = u"http://search.mlp.cz/cz/titul/{}/".format(
                 book.key.string_id().split('|')[0]
             )
             suggestions.append((
-                book.title, book.author, url
+                i + 1, book.title, book.author, url
             ))
         values = {
             "originalBookName": original_book.title,
