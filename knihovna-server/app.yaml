@@ -36,3 +36,6 @@ libraries:
 
 builtins:
 - deferred: on
+
+inbound_services:
+- warmup
