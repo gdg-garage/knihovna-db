@@ -10,6 +10,8 @@ from third_party.googleapiclient.errors import HttpError as gHttpError
 from bigquery import BigQueryClient, BigQueryTable
 from book_record import BookRecord
 
+import uuid
+
 
 class Suggester(object):
     def __init__(self):
@@ -40,8 +42,6 @@ class Suggester(object):
         else:
             return suggestions
 
-BIGQUERY_JOB_ID_VER = "4"
-
 def start_bq_job(suggestions_key):
     item_ids = suggestions_key.string_id()
     logging.info("Start getting suggestions for item_ids '{}'.".format(
@@ -51,8 +51,7 @@ def start_bq_job(suggestions_key):
     item_ids_array = item_ids.split('|')
     sql_item_ids = ', '.join(item_ids_array)  # 12|123 -> 12, 123
     query = SUGGESTION_QUERY.format(sql_item_ids, sql_item_ids)
-    job_id = "suggestions-{}-v{}".format('-'.join(item_ids_array),
-                                         BIGQUERY_JOB_ID_VER)
+    job_id = "suggestions-{}".format(str(uuid.uuid4()))
     try:
         bq.create_query_job_async(query, job_id)
     except (HttpError, gHttpError) as e:
