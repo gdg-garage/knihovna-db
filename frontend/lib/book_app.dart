@@ -144,6 +144,21 @@ class BookApp extends PolymerElement {
   void showAbout() {
     ($['about'] as PaperDialog).opened = true;
   }
+
+  @observable
+  String sharingUrlComponent = "";
+  @observable
+  String sharingTextComponent = "";
+  @observable
+  String sharingText = "";
+
+  void showSharingDialog(_, var detail, __) {
+    String url = window.location.href;
+    sharingUrlComponent = Uri.encodeQueryComponent(url);
+    sharingText = (detail as Map)['text'];
+    sharingTextComponent = Uri.encodeQueryComponent(sharingText);
+    ($['sharing-dialog'] as PaperDialog).opened = true;
+  }
 }
 
 class State {

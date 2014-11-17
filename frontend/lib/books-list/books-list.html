@@ -42,6 +42,10 @@
                 margin: 0.5em 0;
             }
 
+            a {
+                text-decoration: underline;
+            }
+
             .item {
                 height: 100px;
             }
@@ -103,7 +107,7 @@
                     líbila knížka <em>{{originalBook.title}}</em>.</p>
 
                 <p>Tento seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
-                    <a>sdílet</a>. Nebo se <a on-tap="{{showAbout}}">dozvědět</a>, jak jsme na něj přišli.</p>
+                    <a on-tap="{{showSharingDialog}}">sdílet</a>. Nebo se <a on-tap="{{showAbout}}">dozvědět</a>, jak jsme na něj přišli.</p>
             </div>
             <template>
                 <div class="item">
@@ -126,7 +130,7 @@
                 </p>
 
                 <p>Seznam si můžete <a _href="/download/{{originalBook.itemIds}}.txt">stáhnout</a> nebo jej
-                    <a>sdílet</a>. Nebo se <a on-tap="{{showAbout}}">dozvědět</a>, jak jsme na něj přišli.</p>
+                    <a on-tap="{{showSharingDialog}}">sdílet</a>. Nebo se <a on-tap="{{showAbout}}">dozvědět</a>, jak jsme na něj přišli.</p>
             </div>
         </core-list-dart>
 

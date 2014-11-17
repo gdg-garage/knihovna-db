@@ -10,7 +10,9 @@
 <link rel="import" href="books-list/books-list.html">
 <link rel="import" href="optional-back-button/optional-back-button.html">
 
-<polymer-element name="book-app" on-show-about="{{showAbout}}">
+<polymer-element name="book-app"
+                 on-show-about="{{showAbout}}"
+                 on-show-sharing="{{showSharingDialog}}">
   <template>
     <style>
       :host {
@@ -123,6 +125,25 @@
         setkávání i za přístup k databázi knih.
       </p>
       <paper-button id="about-close" dismissive autofocus>Zavřít</paper-button>
+    </paper-dialog>
+
+    <paper-dialog id="sharing-dialog"
+                  heading="Sdílet"
+                  backdrop
+                  transition="core-transition-center">
+      <p>Sdílejte “{{sharingText}}” na vaší oblíbené sociální síti:</p>
+      <ul>
+        <li><a target="_blank" _href="https://www.facebook.com/sharer/sharer.php?u={{sharingUrlComponent}}&t={{sharingTextComponent}}">
+          Facebook
+        </a></li>
+        <li><a target="_blank" _href="https://twitter.com/intent/tweet?source={{sharingUrlComponent}}&text={{sharingTextComponent}}:%20{{sharingUrlComponent}}&via=filiphracek">
+          Twitter
+        </a></li>
+        <li><a target="_blank" _href="https://plus.google.com/share?url={{sharingUrlComponent}}&text={{sharingTextComponent}}">
+          Google+
+        </a></li>
+      </ul>
+      <paper-button id="sharing-dialog-close" dismissive autofocus>Zavřít</paper-button>
     </paper-dialog>
 
   </template>

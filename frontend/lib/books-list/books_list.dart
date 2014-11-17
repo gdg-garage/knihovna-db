@@ -61,4 +61,10 @@ class BooksList extends PolymerElement {
 
     ($['book-info'] as PaperDialog).opened = true;
   }
+
+  void showSharingDialog() {
+    fire("show-sharing", detail: {
+      "text": "Pár doporučení pro čtenáře knížky ›${originalBook.title}‹"
+    });
+  }
 }
