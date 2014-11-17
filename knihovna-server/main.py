@@ -29,6 +29,10 @@ class AutocompleteJson(webapp2.RequestHandler):
         # logging.info("after autocompleter.get_results \n{}".format(time.clock() * 1000 % 1000))
         json_results = []
         for book in results:
+            if book is None:
+                logging.warning(u"Autocompleter result for '{}' returned None."
+                                .format(query))
+                continue
             assert isinstance(book, BookRecord)
             suggestion_map = {'author': book.author, 'title': book.title,
                               'year': book.year, 'count': book.count,

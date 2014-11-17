@@ -37,6 +37,10 @@ class BooksList extends PolymerElement {
       endMarginTop = 100 * (books.length - 30) + 50;
     }
     $['end'].style.marginTop = '${endMarginTop}px';
+
+    // #if DEBUG
+    print("${books.length} suggestions loaded");
+    // #endif
   }
 
   void showAbout() {

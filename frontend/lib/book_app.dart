@@ -74,6 +74,8 @@ class BookApp extends PolymerElement {
       print("Are you running Safari or Firefox by any chance?");
       window.console.error(e);
     }
+
+    document.querySelector("img#loader-img-unresolved").remove();
   }
 
   handleBookInput(_, var detail, __) {

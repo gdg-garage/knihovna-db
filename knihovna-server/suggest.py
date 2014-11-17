@@ -101,7 +101,7 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
         if len(suggestions.books) >= 1000:
             break
     next_page_token = json.get('pageToken', "")
-    if next_page_token != "":
+    if next_page_token != "" and len(suggestions.books) < 1000:
         suggestions.put()
         deferred.defer(check_bq_job, job_id, item_ids, suggestions_key,
                        next_page_token)
@@ -134,7 +134,7 @@ SUGGESTION_QUERY = """
              sum_all_similar_users.value,
              ratio_all.ratio
     ORDER BY prediction DESC
-    LIMIT 1200
+    LIMIT 1800
 """
 
 class SuggestionsRecord(ndb.Model):

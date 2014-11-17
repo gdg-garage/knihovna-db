@@ -16,6 +16,7 @@
 
       #wrapper {
         margin-top: 50px;
+        margin-bottom: 50px;
       }
 
       #wrapper > * {
@@ -59,7 +60,12 @@
     <!--url="../../../packages/knihovna_frontend/suggestions-loader/mock_suggestion_results.json"-->
 
     <div id="wrapper">
-      <p>Toto chvíli potrvá. <img class="loader-animation" hidden?="{{isLongerWait}}" src="../../../packages/knihovna_frontend/assets/loader.svg" /></p>
+      <p>Toto chvíli potrvá.
+        <span hidden?="{{isLongerWait}}">
+          <img class="loader-animation" src="../../../packages/knihovna_frontend/assets/loader.gif" />
+        </span>
+      </p>
+
       <div id="longer-wait" class="{{ isLongerWait ? 'unrolled' : 'rolled' }}">
         <p>
           Vypadá to, že knížku “{{ originalBook.title }}” tady zatím ještě nikdo nehledal.
@@ -156,7 +162,10 @@
         </p>
         <div id="continue">
           <paper-button id="show-button" disabled="{{ !isLoaded }}" on-tap="{{fireSuggestionsLoaded}}" raised>
-            <img hidden?="{{ isLoaded }}" class="loader-animation" src="../../../packages/knihovna_frontend/assets/loader.svg" />
+            <span hidden?="{{ isLoaded }}">
+              <!-- When "hidden?" is on img itself, it sometimes forgets to animate. -->
+              <img class="loader-animation" src="../../../packages/knihovna_frontend/assets/loader.gif" />
+            </span>
             Ukaž výsledky
           </paper-button>
         </div>

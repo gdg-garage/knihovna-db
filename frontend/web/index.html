@@ -35,7 +35,7 @@
       font-family: 'Playfair Display SC', serif;
       font-size: 300%;
       text-align: center;
-      margin-top: 40vw;
+      margin-top: 20vw;
     }
     .tagline {
       font-family: "Roboto", sans-serif;
@@ -43,11 +43,14 @@
       text-align: justify;
       margin: 0 auto;
     }
-    .app-name, .below-input {
-      display: none;
+    #app-name, .below-input {
+      color: white;
     }
 
-    #loader {
+    #loader-img-unresolved {
+      width: 64px;
+      height: 64px;
+      margin: 50px auto;
     }
   </style>
 </head>
@@ -64,7 +67,7 @@
     <!--</p>-->
   </book-app>
 
-  <img id="loader" src="packages/knihovna_frontend/assets/loader.svg">
+  <img id="loader-img-unresolved" src="packages/knihovna_frontend/assets/loader.svg">
 
   <script type="application/dart">export 'package:polymer/init.dart';</script>
 </body>

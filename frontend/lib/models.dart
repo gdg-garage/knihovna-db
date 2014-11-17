@@ -41,7 +41,7 @@ class BookWithMetadata extends Book {
 }
 
 class SuggestedBook extends Book {
-  static const double PREDICTION_THRESHOLD = 0.03;
+  static const double PREDICTION_THRESHOLD = 1.1;
 
   final double prediction;
   bool get suggestionWorthy => prediction > PREDICTION_THRESHOLD;
