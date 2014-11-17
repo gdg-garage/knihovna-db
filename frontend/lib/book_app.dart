@@ -97,7 +97,12 @@ class BookApp extends PolymerElement {
     String itemIds = _listUrl.parse(path)[0];
     _suggestionsLoader.startLoading(itemIds);
     var wait = new WaitState(path);
-    _machine.pushTo(wait);
+    if (_machine.currentState is! WaitState) {
+      _machine.pushTo(wait);
+    } else {
+      // Guard against two or more wait states on top of each other.
+      _machine.switchTo(wait);
+    }
     _showStatePage();
   }
 
