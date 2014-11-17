@@ -84,6 +84,10 @@
                 max-width: 80%;
                 text-align: left;
             }
+
+            html /deep/ #book-info::shadow #scroller {
+                height: 350px;
+            }
         </style>
 
         <core-list-dart id="list"
@@ -131,18 +135,23 @@
                       backdrop
                       transition="core-transition-center">
             <p>
+                Název: {{bookInInfoDialog.title}}
+            </p>
+            <p>
                 Autor: {{bookInInfoDialog.author}}
             </p>
             <p>
-                (Tady bude anotace knížky, až se k tomu dostaneme...)
+                (Tady bude anotace knížky, až se k tomu dostaneme...) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <p>
-                Více o knížce se dozvíte <a _href="{{bookInInfoDialogHref}}"
-                   target="_blank">na stránkách Městské knihovny v Praze</a>
-                (otevře se v novém okně).
-            </p>
+            <!--<p>-->
+                <!--Více o knížce se dozvíte <a _href="{{bookInInfoDialogHref}}"-->
+                   <!--target="_blank">na stránkách Městské knihovny v Praze</a>-->
+                <!--(otevře se v novém okně).-->
+            <!--</p>-->
 
             <paper-button id="book-info-close" dismissive autofocus>Zavřít</paper-button>
+            <paper-button id="book-info-more" affirmative><a _href="{{bookInInfoDialogHref}}"
+                                                             target="_blank">Více info</a></paper-button>
         </paper-dialog>
 
         <!--<div id="buttons" horizontal layout>-->
