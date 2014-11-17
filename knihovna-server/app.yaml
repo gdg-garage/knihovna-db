@@ -18,6 +18,10 @@ handlers:
 - url: /query/.*
   script: main.application
 
+- url: /download/.*
+  mime_type: application/octet-stream
+  script: main.application
+
 - url: /
   static_files: static/index.html
   upload: static

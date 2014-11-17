@@ -11,6 +11,8 @@ import json
 from suggest import Suggester, SuggestionsRecord
 from google.appengine.ext import ndb
 
+from jinja import render_txt
+
 
 class AutocompleteJson(webapp2.RequestHandler):
     CURRENT_VERSION = 1
@@ -90,7 +92,38 @@ class QuerySuggestions(webapp2.RequestHandler):
         self.response.write(json.dumps(json_object, indent=2))
 
 
+class DownloadHandler(webapp2.RequestHandler):
+    def get(self, item_ids, extension):
+        assert extension == "txt"
+        key = ndb.Key(SuggestionsRecord, item_ids)
+        suggestions = key.get()
+        if not suggestions or not suggestions.completed:
+            self.error(404)
+            self.response.out.write('Tato stránka neexistuje.')
+            return
+        assert isinstance(suggestions, SuggestionsRecord)
+        original_book = suggestions.original_book.get()
+        book_records = ndb.get_multi(suggestions.books)
+        suggestions = []
+        for book in book_records:
+            url = u"http://search.mlp.cz/cz/titul/{}/".format(
+                book.key.string_id().split('|')[0]
+            )
+            suggestions.append((
+                book.title, book.author, url
+            ))
+        values = {
+            "originalBookName": original_book.title,
+            "suggestions": suggestions
+        }
+        render_txt(self, "download.txt", values)
+
+
+
+
+
 application = webapp2.WSGIApplication([
     ('/autocomplete/suggestions.json', AutocompleteJson),
-    ('/query/', QuerySuggestions)
+    ('/query/', QuerySuggestions),
+    ('/download/([0-9|]+).(txt)', DownloadHandler)
 ], debug=True)

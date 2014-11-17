@@ -14,3 +14,9 @@ def render_html(request_handler, template, title, body, template_values=None):
     values["message"] = body
     template = JINJA_ENVIRONMENT.get_template(template)
     request_handler.response.write(template.render(values))
+
+
+def render_txt(request_handler, template, values):
+    jinja_template = JINJA_ENVIRONMENT.get_template(template)
+    request_handler.response.headers['Content-Type'] = 'application/octet-stream'
+    request_handler.response.write(jinja_template.render(values))
