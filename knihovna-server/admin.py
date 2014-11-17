@@ -1,5 +1,10 @@
 # coding=utf-8
+
+import sys
+import os
 import logging
+sys.path.append(os.path.join(os.path.dirname(__file__), "third_party"))
+
 from datetime import datetime
 
 from google.appengine.ext import ndb

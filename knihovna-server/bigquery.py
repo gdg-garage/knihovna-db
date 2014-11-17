@@ -1,9 +1,9 @@
 # coding=utf-8
 
-import httplib2
+from third_party import httplib2
 
-from apiclient.discovery import build
-from oauth2client.appengine import AppAssertionCredentials
+from third_party.apiclient.discovery import build
+from third_party.oauth2client.appengine import AppAssertionCredentials
 
 
 class BigQueryClient(object):

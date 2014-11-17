@@ -1,5 +1,4 @@
 import logging
-from bigquery import BigQueryTable
 
 
 class _ConsolidatedBooksData(object):

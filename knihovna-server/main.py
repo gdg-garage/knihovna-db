@@ -1,18 +1,15 @@
 # coding=utf-8
 
+import sys
+import os
+import logging
+sys.path.append(os.path.join(os.path.dirname(__file__), "third_party"))
+
 import webapp2
 from autocompleter import Autocompleter, BookRecord
-import logging
 import json
 from suggest import Suggester, SuggestionsRecord
 from google.appengine.ext import ndb
-import time
-
-
-class MainPage(webapp2.RequestHandler):
-    def get(self):
-        self.response.headers['Content-Type'] = 'text/plain; charset=utf-8'
-        self.response.write('Hello, Světe!')
 
 
 class AutocompleteJson(webapp2.RequestHandler):
@@ -94,7 +91,6 @@ class QuerySuggestions(webapp2.RequestHandler):
 
 
 application = webapp2.WSGIApplication([
-    ('/', MainPage),
     ('/autocomplete/suggestions.json', AutocompleteJson),
     ('/query/', QuerySuggestions)
 ], debug=True)

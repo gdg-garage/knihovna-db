@@ -1,15 +1,14 @@
 # coding=utf-8
 import logging
-import apiclient
-from apiclient.errors import HttpError
-from googleapiclient.errors import HttpError as gHttpError
+import datetime
+
+from third_party.apiclient.errors import HttpError
 from google.appengine.ext import deferred
+from google.appengine.ext import ndb
+
+from third_party.googleapiclient.errors import HttpError as gHttpError
 from bigquery import BigQueryClient, BigQueryTable
 from book_record import BookRecord
-from google.appengine.ext import ndb
-import datetime
-import googleapiclient
-from utils import is_dev_server
 
 
 class Suggester(object):

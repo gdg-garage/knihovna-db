@@ -1,12 +1,13 @@
 # coding=utf-8
 import logging
-from book_record import BookRecord
+import re
 
-from unidecode import unidecode
 from google.appengine.api import search
 from google.appengine.ext import ndb
-import re
-import time
+
+from book_record import BookRecord
+from third_party.unidecode import unidecode
+
 
 class Autocompleter(object):
     def __init__(self):
