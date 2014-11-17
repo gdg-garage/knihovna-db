@@ -129,7 +129,9 @@ class BookApp extends PolymerElement {
     // valueattr set to 'id'.
     _animatedPages.selected = currentState.name;
     backButtonEnabled = _machine.states.length > 1;
+    // #if DEBUG
     print(_machine.states);
+    // #endif
   }
 
   /// Called when the back button in the app is tapped.
