@@ -41,7 +41,7 @@ class SuggestionsLoader extends PolymerElement {
     isLoaded = false;
     /* #if DEBUG *//*
     isLongerWait = true;
-    new Timer(const Duration(seconds: 8), () {
+    new Timer(const Duration(seconds: 2), () {
       _sendAjaxRequest();
     });
     *//* #else */

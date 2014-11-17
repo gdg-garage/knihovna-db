@@ -19,6 +19,7 @@ class BooksList extends PolymerElement {
     var map = jsonObject as Map<String,Object>;
     assert(map['version'] == 1);
     assert(map['status'] == 'completed');
+    map['original_book']['item_ids'] = map['item_ids'];  // Fix json.
     originalBook = new BookWithMetadata.fromMap(map['original_book']);
     books = new ObservableList();
     for (var bookMap in map['suggestions']) {
