@@ -31,8 +31,8 @@
         background-color: #03A9F4;
       }
 
-      polyfill-next-selector {content: ':host .app-name';}
-      content[select=".app-name"]::content * {
+      polyfill-next-selector {content: ':host #app-name';}
+      content[select="#app-name"]::content * {
         color: white;
         margin: 0;
         text-align: left;
@@ -73,20 +73,19 @@
       }
     </style>
 
-    <core-header-panel fit>
-      <core-toolbar>
+    <core-header-panel id="header-panel" fit>
+      <core-toolbar id="toolbar">
         <optional-back-button
+                id="top-left-icon"
                 backButtonEnabled="{{backButtonEnabled}}"
                 on-back-button-tapped="{{goToParentState}}">
         </optional-back-button>
-        <!--<div id="app-name">&lt;!&ndash; This is programatically &ndash;&gt;</div>-->
-        <content select=".app-name"></content>
+        <content select="#app-name"></content>
       </core-toolbar>
 
       <!-- The different views ('Activities') of the web app. -->
       <core-animated-pages id='animated-pages'
                            valueattr='id'
-                           class="content"
                            transitions="cross-fade-all"
                            fit>
         <section
