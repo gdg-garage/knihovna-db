@@ -124,6 +124,7 @@ class BookApp extends PolymerElement {
     // valueattr set to 'id'.
     _animatedPages.selected = currentState.name;
     backButtonEnabled = _machine.states.length > 1;
+    print(_machine.states);
   }
 
   /// Called when the back button in the app is tapped.
@@ -142,6 +143,8 @@ class State {
   final String name;
   final String url;
   const State(this.name, this.url);
+
+  toString() => "State<$name>";
 }
 
 class WaitState extends State {

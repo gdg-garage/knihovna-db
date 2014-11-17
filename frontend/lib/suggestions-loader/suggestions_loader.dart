@@ -39,14 +39,11 @@ class SuggestionsLoader extends PolymerElement {
     isLongerWait = false;
     originalBook = BookWithMetadata.BLANK;
     isLoaded = false;
-    /* #if DEBUG *//*
-    isLongerWait = true;
-    new Timer(const Duration(seconds: 2), () {
-      _sendAjaxRequest();
-    });
-    *//* #else */
+//    isLongerWait = true;
+//    new Timer(const Duration(seconds: 2), () {
+//      _sendAjaxRequest();
+//    });
     _sendAjaxRequest();
-    /* #endif */
   }
 
   static const DELAY_BETWEEN_RETRIES = const Duration(seconds: 5);
