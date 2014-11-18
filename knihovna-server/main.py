@@ -129,7 +129,7 @@ class RootHandler(webapp2.RequestHandler):
     def get(self):
         fragment = self.request.get('_escaped_fragment_')
         if not fragment:
-            with open(os.path.join(os.path.dirname(__file__), "static/index.html"), "r") as f:
+            with open(os.path.join(os.path.dirname(__file__), "templates/index.html"), "r") as f:
                 while True:
                     output = f.read()
                     if output == "":
@@ -137,7 +137,6 @@ class RootHandler(webapp2.RequestHandler):
                     self.response.write(output)
             return
         item_ids = fragment.split('=')[1]
-        self.response.write(item_ids)
         key = ndb.Key(SuggestionsRecord, item_ids)
         suggestions = key.get()
         if not suggestions or not suggestions.completed:

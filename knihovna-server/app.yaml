@@ -26,7 +26,7 @@ handlers:
 
 - url: /
   static_dir: static
-  application_readable: true
+
 
 libraries:
 - name: webapp2

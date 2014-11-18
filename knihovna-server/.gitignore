@@ -57,3 +57,6 @@ docs/_build/
 
 # Mac
 .DS_Store
+
+# Auto-updated from frontend/
+templates/index.html
