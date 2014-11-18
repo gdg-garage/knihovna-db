@@ -47,7 +47,7 @@ class SuggestionsLoader extends PolymerElement {
   }
 
   static const DELAY_BETWEEN_RETRIES = const Duration(seconds: 5);
-  static const int MAX_RETRIES = 40;
+  static const int MAX_RETRIES = 100;
 
   Map<String,int> numberOfTries = new Map<String,int>();
 

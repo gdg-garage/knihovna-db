@@ -15,6 +15,12 @@
         -moz-transition: height 1s;
         transition: height 1s;
       }
+
+      #autocomplete-click-hint {
+        font-size: 80%;
+        padding: 0 20px;
+        color: #999999;
+      }
     </style>
     <div id="loading" hidden?="{{!isLoading}}">Počkat...</div>
     <div id="suggestions">
@@ -22,6 +28,7 @@
         <book-autocomplete-item book="{{book}}"></book-autocomplete-item>
       </template>
     </div>
+    <p id="autocomplete-click-hint" hidden?="{{ isLoading || suggestions.length == 0 }}">&uarr; Našli jste svoji oblíbenou knížku? Klikněte si na ni.</p>
   </template>
   <script type="application/dart" src="book_autocomplete_list.dart"></script>
 </polymer-element>
