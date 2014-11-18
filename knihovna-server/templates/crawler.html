@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{title}}</title>
+
+        <meta name="description" content="{{description}}" />
+
+          <!-- OpenGraph -->
+          <meta property="og:title" content="{{title}}">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="{{url}}">
+          <meta property="og:image" content="http://tisicknih.cz/tisic-knih.png">
+    </head>
+    <body>
+
+        <h2>{{originalBookAuthor}}</h2>
+        <h1>{{originalBookName}}</h1>
+
+        <p>Dobrého čtiva není nikdy dost. Tady je například pár doporučení pro lidi, kterým se
+            líbila knížka <em>{{originalBookName}}</em>.</p>
+
+        {% for book in suggestions %}
+        <div>
+            <span>{{ book[0] }}.</span>
+            <a href="{{ book[3] }}">
+                <span>{{ book[1] }}</span>
+                &mdash;
+                <span>{{ book[2] }}</span>
+            </a>
+        </div>
+        {% endfor %}
+
+    </body>
+</html>
+{% endautoescape %}
