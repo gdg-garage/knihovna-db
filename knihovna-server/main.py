@@ -137,6 +137,7 @@ class RootHandler(webapp2.RequestHandler):
                     self.response.write(output)
             return
         item_ids = fragment.split('=')[1]
+        item_ids = item_ids.replace('-', '|')
         key = ndb.Key(SuggestionsRecord, item_ids)
         suggestions = key.get()
         if not suggestions or not suggestions.completed:
@@ -150,6 +151,6 @@ class RootHandler(webapp2.RequestHandler):
 application = webapp2.WSGIApplication([
     ('/autocomplete/suggestions.json', AutocompleteJson),
     ('/query/', QuerySuggestions),
-    ('/download/([0-9|]+).(txt)', DownloadHandler),
+    ('/download/([0-9|\-]+).(txt)', DownloadHandler),
     ('/', RootHandler)
 ], debug=True)
