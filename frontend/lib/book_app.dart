@@ -37,13 +37,15 @@ class BookApp extends PolymerElement {
 
   UrlPattern _welcomeUrl;
   UrlPattern _listUrl;
-  UrlPattern _detailUrl;
+  UrlPattern _deprecatedListUrl;
+//  UrlPattern _detailUrl;
 
   BookApp.created() : super.created() {
     _welcome = new State('welcome', BASE_PATH + '/');
     _welcomeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
-    _listUrl = new UrlPattern(BASE_PATH + r'/#!id=([\d|]+)');
-    _detailUrl = new UrlPattern(BASE_PATH + r'/#!id=(\d+)&detail-([\d|]+)');
+    _deprecatedListUrl = new UrlPattern(BASE_PATH + r'/#!id=(\d+|[\d|]+)');
+    _listUrl = new UrlPattern(BASE_PATH + r'/#!id=([\d-]+)');
+//    _detailUrl = new UrlPattern(BASE_PATH + r'/#!id=(\d+)&detail-([\d|]+)');
 
     _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
 
@@ -62,8 +64,9 @@ class BookApp extends PolymerElement {
 
     _router = new Router()
       ..addHandler(_welcomeUrl, routeToWelcome)
-      ..addHandler(_listUrl, routeToLoaderOrList)
-      ..addHandler(_detailUrl, routeToDetail);
+      ..addHandler(_deprecatedListUrl, routeFromDeprecatedLoaderUrl)
+      ..addHandler(_listUrl, routeToLoaderOrList);
+//      ..addHandler(_detailUrl, routeToDetail);
     _router.listen();
 
     // This breaks in Safari and Firefox, currently.
@@ -92,12 +95,24 @@ class BookApp extends PolymerElement {
     _showStatePage();
   }
 
+  void routeFromDeprecatedLoaderUrl(String path) {
+    // #if DEBUG
+    print("Arrived at deprecated url - $path");
+    // #endif
+    String itemIds = _deprecatedListUrl.parse(path)[0];
+    itemIds = itemIds.replaceAll('|', '-');
+    _router.gotoPath(_listUrl.reverse([itemIds], useFragment: true),
+                     "Tisíc knih");
+  }
+
   void routeToLoaderOrList(String path) {
     // TODO: find out if we already have this loaded, skip to LIST if so
     String itemIds = _listUrl.parse(path)[0];
+    itemIds = itemIds.replaceAll('-', '|');
     _suggestionsLoader.startLoading(itemIds);
     var wait = new WaitState(path);
-    if (_machine.currentState is! WaitState) {
+    if (_machine.currentState is! WaitState &&
+        _machine.currentState is! ListState) {
       _machine.pushTo(wait);
     } else {
       // Guard against two or more wait states on top of each other.
