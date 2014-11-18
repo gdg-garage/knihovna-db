@@ -44,7 +44,7 @@ class BookApp extends PolymerElement {
     _welcome = new State('welcome', BASE_PATH + '/');
     _welcomeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
     _deprecatedListUrl = new UrlPattern(BASE_PATH + r'/#!id=(\d+|[\d|]+)');
-    _listUrl = new UrlPattern(BASE_PATH + r'/#!id=([\d-]+)');
+    _listUrl = new UrlPattern(BASE_PATH + r'/#!id=([\d\-]+)');
 //    _detailUrl = new UrlPattern(BASE_PATH + r'/#!id=(\d+)&detail-([\d|]+)');
 
     _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
@@ -84,7 +84,8 @@ class BookApp extends PolymerElement {
   handleBookInput(_, var detail, __) {
     print("Book selected: $detail");
     var book = detail as AutocompletedBook;
-    _router.gotoPath(_listUrl.reverse(["${book.itemIds}"], useFragment: true),
+    String itemIds = book.itemIds.replaceAll("|", "-");
+    _router.gotoPath(_listUrl.reverse([itemIds], useFragment: true),
                      book.title);
   }
 
@@ -101,6 +102,7 @@ class BookApp extends PolymerElement {
     // #endif
     String itemIds = _deprecatedListUrl.parse(path)[0];
     itemIds = itemIds.replaceAll('|', '-');
+    // TODO: remove this state from window.history
     _router.gotoPath(_listUrl.reverse([itemIds], useFragment: true),
                      "Tisíc knih");
   }
