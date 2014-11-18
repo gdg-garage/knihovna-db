@@ -73,6 +73,18 @@
         width: 80%;
         text-align: left;
       }
+
+      html /deep/ #about::shadow #scroller {
+        height: 350px;
+      }
+
+      #mlp-logo {
+        float: right;
+        max-width: 30%;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+      }
     </style>
 
     <core-header-panel id="header-panel" fit>
@@ -115,32 +127,41 @@
                   backdrop
                   transition="core-transition-center">
       <p>
-        Tato aplikace vznikla jako nadšenecký projekt v rámci GDG Garage na
+        Tato aplikace vznikla jako nadšenecký projekt v rámci <a href="http://gdg-garage.github.io/">GDG Garage</a> na
         Praze 1. Více o jejím vzniku a fungování z technologického hlediska
         se dozvíte na přednášce Filipa Hráčka na <a href="http://www.devfest.cz/">DevFestu 2014</a> (přednáška bude
         k dispozici jako videozáznam na YouTube).
       </p>
       <p>
-        Autoři děkují Městské knihovně v Praze za poskytnutí prostorů pro
+        Doporučení, které zde dostanete, jsou vytvářeny na základě poměrně
+        jednoduchého (ale výpočetně náročného) algoritmu. Nelze očekávat, že
+        všech 1.000 doporučení bude dávat smysl pro každého &mdash; právě proto
+        jich dáváme tolik, aby si uživatel mohl vybrat.
+      </p>
+      <p>
+        <a target="_blank" href="http://www.mlp.cz/cz/">
+          <img id="mlp-logo" src="../../packages/knihovna_frontend/assets/mlp-logo.gif">
+        </a>
+        Autoři děkují <a target="_blank" href="http://www.mlp.cz/cz/">Městské knihovně v Praze</a> za poskytnutí prostorů pro
         setkávání i za přístup k databázi knih.
       </p>
       <paper-button id="about-close" dismissive autofocus>Zavřít</paper-button>
     </paper-dialog>
 
     <paper-dialog id="sharing-dialog"
-                  heading="Sdílet"
+                  heading="Sdílet “{{sharingText}}”"
                   backdrop
                   transition="core-transition-center">
-      <p>Sdílejte “{{sharingText}}” na vaší oblíbené sociální síti:</p>
+      <p>Sdílejte doporučení na vaší oblíbené sociální síti:</p>
       <ul>
-        <li><a target="_blank" _href="https://www.facebook.com/sharer/sharer.php?u={{sharingUrlComponent}}&t={{sharingTextComponent}}">
-          Facebook
+        <li><a target="_blank" _href="https://www.facebook.com/sharer/sharer.php?u={{sharingUrlComponent}}&amp;t={{sharingTextComponent}}">
+          na Facebooku
         </a></li>
-        <li><a target="_blank" _href="https://twitter.com/intent/tweet?source={{sharingUrlComponent}}&text={{sharingTextComponent}}:%20{{sharingUrlComponent}}&via=filiphracek">
-          Twitter
+        <li><a target="_blank" _href="https://twitter.com/intent/tweet?source={{sharingUrlComponent}}&amp;text={{sharingTextComponent}}:%20{{sharingUrlComponent}}&amp;via=filiphracek">
+          na Twitteru
         </a></li>
-        <li><a target="_blank" _href="https://plus.google.com/share?url={{sharingUrlComponent}}&text={{sharingTextComponent}}">
-          Google+
+        <li><a target="_blank" _href="https://plus.google.com/share?url={{sharingUrlComponent}}&amp;text={{sharingTextComponent}}">
+          na Google+
         </a></li>
       </ul>
       <paper-button id="sharing-dialog-close" dismissive autofocus>Zavřít</paper-button>

@@ -64,7 +64,8 @@ class BooksList extends PolymerElement {
 
   void showSharingDialog() {
     fire("show-sharing", detail: {
-      "text": "Pár doporučení pro čtenáře knížky ›${originalBook.title}‹"
+      "text": "${books.length} doporučení pro čtenáře knížky "
+              "${originalBook.title}"
     });
   }
 }
