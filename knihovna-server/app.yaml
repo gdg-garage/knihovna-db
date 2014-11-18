@@ -22,11 +22,11 @@ handlers:
   script: main.application
 
 - url: /
-  static_files: static/index.html
-  upload: static
+  script: main.application
 
 - url: /
   static_dir: static
+  application_readable: true
 
 libraries:
 - name: webapp2

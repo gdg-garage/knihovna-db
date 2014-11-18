@@ -11,7 +11,7 @@ import json
 from suggest import Suggester, SuggestionsRecord
 from google.appengine.ext import ndb
 
-from jinja import render_txt
+from jinja import render_txt, render_html
 
 
 class AutocompleteJson(webapp2.RequestHandler):
@@ -92,6 +92,26 @@ class QuerySuggestions(webapp2.RequestHandler):
         self.response.write(json.dumps(json_object, indent=2))
 
 
+def get_jinja_template_values(suggestions):
+    assert isinstance(suggestions, SuggestionsRecord)
+    original_book = suggestions.original_book.get()
+    book_records = ndb.get_multi(suggestions.books)
+    suggestions = []
+    for i, book in enumerate(book_records):
+        url = u"http://search.mlp.cz/cz/titul/{}/".format(
+            book.key.string_id().split('|')[0]
+        )
+        suggestions.append((
+            i + 1, book.title, book.author, url
+        ))
+    values = {
+        "originalBookName": original_book.title,
+        "originalBookAuthor": original_book.author,
+        "suggestions": suggestions
+    }
+    return values
+
+
 class DownloadHandler(webapp2.RequestHandler):
     def get(self, item_ids, extension):
         assert extension == "txt"
@@ -101,29 +121,36 @@ class DownloadHandler(webapp2.RequestHandler):
             self.error(404)
             self.response.out.write('Tato stránka neexistuje.')
             return
-        assert isinstance(suggestions, SuggestionsRecord)
-        original_book = suggestions.original_book.get()
-        book_records = ndb.get_multi(suggestions.books)
-        suggestions = []
-        for i, book in enumerate(book_records):
-            url = u"http://search.mlp.cz/cz/titul/{}/".format(
-                book.key.string_id().split('|')[0]
-            )
-            suggestions.append((
-                i + 1, book.title, book.author, url
-            ))
-        values = {
-            "originalBookName": original_book.title,
-            "suggestions": suggestions
-        }
+        values = get_jinja_template_values(suggestions)
         render_txt(self, "download.txt", values)
 
 
+class RootHandler(webapp2.RequestHandler):
+    def get(self):
+        fragment = self.request.get('_escaped_fragment_')
+        if not fragment:
+            with open(os.path.join(os.path.dirname(__file__), "static/index.html"), "r") as f:
+                while True:
+                    output = f.read()
+                    if output == "":
+                        break
+                    self.response.write(output)
+            return
+        item_ids = fragment.split('=')[1]
+        self.response.write(item_ids)
+        key = ndb.Key(SuggestionsRecord, item_ids)
+        suggestions = key.get()
+        if not suggestions or not suggestions.completed:
+            self.redirect('/')
+            return
+        values = get_jinja_template_values(suggestions)
+        render_html(self, "crawler.html", "", "", template_values=values)
 
 
 
 application = webapp2.WSGIApplication([
     ('/autocomplete/suggestions.json', AutocompleteJson),
     ('/query/', QuerySuggestions),
-    ('/download/([0-9|]+).(txt)', DownloadHandler)
+    ('/download/([0-9|]+).(txt)', DownloadHandler),
+    ('/', RootHandler)
 ], debug=True)

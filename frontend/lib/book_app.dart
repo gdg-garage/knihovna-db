@@ -42,8 +42,8 @@ class BookApp extends PolymerElement {
   BookApp.created() : super.created() {
     _welcome = new State('welcome', BASE_PATH + '/');
     _welcomeUrl = new UrlPattern(BASE_PATH + r'/(index.html)?');
-    _listUrl = new UrlPattern(BASE_PATH + r'/#([\d|]+)');
-    _detailUrl = new UrlPattern(BASE_PATH + r'/#(\d+)/detail-([\d|]+)');
+    _listUrl = new UrlPattern(BASE_PATH + r'/#!id=([\d|]+)');
+    _detailUrl = new UrlPattern(BASE_PATH + r'/#!id=(\d+)&detail-([\d|]+)');
 
     _machine = new PushdownAutomatonStateMachine<State>(initialState: _welcome);
 
