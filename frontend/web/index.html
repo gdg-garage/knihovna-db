@@ -59,6 +59,14 @@
       height: 64px;
       margin: 50px auto;
     }
+
+    book-app {
+      transition: opacity 0.2s;
+    }
+
+    book-app[unresolved] {
+      opacity: 0.2;
+    }
   </style>
 
   <script>
@@ -80,9 +88,6 @@
     <p class="tagline">
       Zadejte knížku, kterou máte rádi, a my vám doporučíme tisíc podobných.
     </p>
-    <!--<p class="below-input">-->
-      <!--Protože dobrých knížek není nikdy dost. Tento engine byl vytvořen blah a taky ipsum lorem.-->
-    <!--</p>-->
   </book-app>
 
   <img id="loader-img-unresolved" src="packages/knihovna_frontend/assets/loader.svg">
