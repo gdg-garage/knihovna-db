@@ -144,6 +144,18 @@ class RootHandler(webapp2.RequestHandler):
             self.redirect('/')
             return
         values = get_jinja_template_values(suggestions)
+        # This is hacky. Should encode/decode path after hash bang?
+        values["url"] = self.request.url.replace("?_escaped_fragment_=", "#!")
+        # TODO: add the following when whe know that the book has image @ mlp.cz
+        # first_id_string = "{:010d}".format(int(item_ids.split("|")[0]))
+        # values["img"] = "http://web2.mlp.cz/koweb/{}/{}/{}/{}/Small.{}.jpg"\
+        #     .format(
+        #         first_id_string[0:2],
+        #         first_id_string[2:4],
+        #         first_id_string[4:6],
+        #         first_id_string[6:8],
+        #         first_id_string[8:],
+        #     )
         render_html(self, "crawler.html", "", "", template_values=values)
 
 

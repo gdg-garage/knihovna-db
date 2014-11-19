@@ -3,12 +3,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Doporučení pro čtenáře knihy {{originalBookName}} &mdash; Tisíc knih</title>
+        <title>{{ suggestions | length }} doporučení pro čtenáře knihy &#8222;{{originalBookName}}&#8220; &mdash; Tisíc knih</title>
 
-        <meta name="description" content="Doporučení pro čtenáře knihy {{originalBookName}}" />
+        <meta name="description" content="{{ suggestions | length }} doporučení pro čtenáře knihy &#8222;{{originalBookName}}&#8220;" />
 
           <!-- OpenGraph -->
-          <meta property="og:title" content="Doporučení pro čtenáře knihy {{originalBookName}}">
+          <meta property="og:title" content="{{ suggestions | length }} doporučení pro čtenáře knihy &#8222;{{originalBookName}}&#8220;">
           <meta property="og:type" content="website">
           <meta property="og:url" content="{{url}}">
           <meta property="og:image" content="http://tisicknih.cz/tisic-knih.png">
