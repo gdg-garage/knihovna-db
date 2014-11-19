@@ -96,11 +96,13 @@ class BookInput extends PolymerElement {
   _sendAjaxRequest(String value) {
     if (value.trim() == "") {
       _suggestionList.clear();
+      _suggestionList.inputEmpty = true;
       return;
     }
     _coreAjax.params = JSON.encode({"q": value});
     _coreAjax.go();
     _suggestionList.isLoading = true;
+    _suggestionList.inputEmpty = false;
   }
 
   void _showNewSuggestions(CustomEvent event) {

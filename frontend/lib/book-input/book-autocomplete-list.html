@@ -21,6 +21,24 @@
         padding: 0 20px;
         color: #999999;
       }
+
+      #autocomplete-no-book {
+        padding: 0 20px;
+        text-align: left;
+        opacity: 1;
+
+        -webkit-transition: opacity 0.2s;
+        -moz-transition: opacity 0.2s;
+        transition: opacity 0.2s;
+      }
+
+      #autocomplete-no-book.hidden  {
+        opacity: 0;
+      }
+
+      #autocomplete-no-book span {
+        color: red;
+      }
     </style>
     <div id="loading" hidden?="{{!isLoading}}">Počkat...</div>
     <div id="suggestions">
@@ -29,6 +47,9 @@
       </template>
     </div>
     <p id="autocomplete-click-hint" hidden?="{{ isLoading || suggestions.length == 0 }}">&uarr; Našli jste svoji oblíbenou knížku? Klikněte si na ni.</p>
+    <p id="autocomplete-no-book" class="{{ isLoading || inputEmpty || suggestions.length > 0 ? 'hidden' : ''}}">
+      <span>Tak takovou knížku jsme v databázi bohužel nenašli.</span> Přece jen v ní máme jen asi 70 tisíc nejpůjčovanějších knih. Není ale možné, že v zadání přebývá či schází písmenko?
+    </p>
   </template>
   <script type="application/dart" src="book_autocomplete_list.dart"></script>
 </polymer-element>

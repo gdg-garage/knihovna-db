@@ -18,6 +18,9 @@ class BookSuggestionList extends PolymerElement {
   bool get isLoading => readValue(#isLoading, () => false);
   set isLoading(bool newValue) => writeValue(#isLoading, newValue);
 
+  @observable
+  bool inputEmpty = true;
+
   BookSuggestionList.created() : super.created();
 
   void moveUp() {
