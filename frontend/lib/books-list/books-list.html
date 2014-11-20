@@ -5,6 +5,7 @@
 <link rel="import" href="../../../packages/paper_elements/paper_icon_button.html">
 <link rel="import" href="../../../packages/paper_elements/paper_dialog.html">
 <link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/knihovna_frontend/book-annotation/book_annotation.html">
 
 <polymer-element name="books-list" fit vertical layout>
     <template>
@@ -147,11 +148,6 @@
             <p>
                 (Tady bude anotace knížky, až se k tomu dostaneme...) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
             </p>
-            <!--<p>-->
-                <!--Více o knížce se dozvíte <a _href="{{bookInInfoDialogHref}}"-->
-                   <!--target="_blank">na stránkách Městské knihovny v Praze</a>-->
-                <!--(otevře se v novém okně).-->
-            <!--</p>-->
 
             <paper-button id="book-info-close" dismissive autofocus>Zavřít</paper-button>
             <paper-button id="book-info-more" affirmative><a _href="{{bookInInfoDialogHref}}"
