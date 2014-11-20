@@ -3,6 +3,8 @@
 import sys
 import os
 import logging
+from book_record import BookAnnotation
+
 sys.path.append(os.path.join(os.path.dirname(__file__), "third_party"))
 
 import webapp2
@@ -159,10 +161,33 @@ class RootHandler(webapp2.RequestHandler):
         render_html(self, "crawler.html", "", "", template_values=values)
 
 
+class AnnotationHandler(webapp2.RequestHandler):
+    CURRENT_VERSION = 1
+
+    def get(self):
+        item_ids = self.request.get('q')
+        item_ids = item_ids.replace('-', '|')
+        # TODO: fast check
+        key = ndb.Key(BookAnnotation, item_ids)
+        annotation = key.get()
+        if not annotation:
+            self.error(404)
+            self.response.out.write('Tato stránka neexistuje.')
+            return
+        assert isinstance(annotation, BookAnnotation)
+        json_object = {
+            'version': AnnotationHandler.CURRENT_VERSION,
+            'item_ids': item_ids,
+            'short': annotation.short,
+            'long': annotation.long
+        }
+        self.response.write(json.dumps(json_object, indent=2))
+
 
 application = webapp2.WSGIApplication([
     ('/autocomplete/suggestions.json', AutocompleteJson),
     ('/query/', QuerySuggestions),
+    ('/annotation/', AnnotationHandler),
     ('/download/([0-9|\-]+).(txt)', DownloadHandler),
     ('/', RootHandler)
 ], debug=True)

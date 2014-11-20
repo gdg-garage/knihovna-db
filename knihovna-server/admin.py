@@ -17,6 +17,7 @@ from bigquery import BigQueryClient, BigQueryTable
 from autocompleter import Autocompleter, BookRecord
 from suggest import SuggestionsRecord
 from utils import is_dev_server
+import annotations
 
 
 class AdminPage(webapp2.RequestHandler):
@@ -32,7 +33,8 @@ class AdminPage(webapp2.RequestHandler):
                          '/admin/update_autocomplete/consolidate_only'),
                         ("Delete all books", '/admin/delete/books'),
                         ("Delete all suggestions", '/admin/delete/suggestions'),
-                        ("Delete index", '/admin/delete/index')
+                        ("Delete index", '/admin/delete/index'),
+                        ("Update annotations from CSV", '/admin/update_annotations/')
                     ]})
 
 
@@ -298,6 +300,13 @@ class DeleteWholeIndex(webapp2.RequestHandler):
         self.redirect("/admin/")
 
 
+class UpdateAnnotations(webapp2.RequestHandler):
+    def get(self):
+        logging.info("Starting task to update annotations from GCS")
+        deferred.defer(annotations.update_annotations_from_csv)
+        self.redirect("/admin/")
+
+
 application = webapp2.WSGIApplication([
     ('/admin/', AdminPage),
     ('/admin/test/bq/', TestBqPage),
@@ -306,5 +315,6 @@ application = webapp2.WSGIApplication([
     ('/admin/update_autocomplete/consolidate_only', UpdateAutocompleteConsolidateOnly),
     ('/admin/delete/books', DeleteAllBooks),
     ('/admin/delete/suggestions', DeleteAllSuggestions),
-    ('/admin/delete/index', DeleteWholeIndex)
+    ('/admin/delete/index', DeleteWholeIndex),
+    ('/admin/update_annotations/', UpdateAnnotations)
 ], debug=True)

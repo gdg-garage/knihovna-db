@@ -18,6 +18,9 @@ handlers:
 - url: /query/.*
   script: main.application
 
+- url: /annotation/.*
+  script: main.application
+
 - url: /download/.*
   script: main.application
 
