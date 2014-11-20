@@ -1,4 +1,4 @@
-filename = "vypujcky.txt"
+filename = ARGV[0]
 lines = 200000
 
 out = File.open("#{filename}.out.txt", "w")
