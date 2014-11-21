@@ -66,17 +66,20 @@ class BookApp extends PolymerElement {
       ..addHandler(_welcomeUrl, routeToWelcome)
       ..addHandler(_deprecatedListUrl, routeFromDeprecatedLoaderUrl)
       ..addHandler(_listUrl, routeToLoaderOrList);
-//      ..addHandler(_detailUrl, routeToDetail);
+      // ..addHandler(_detailUrl, routeToDetail);
     _router.listen();
 
-    // This breaks in Safari and Firefox, currently.
-    try {
-      _router.gotoPath("${window.location.pathname}${window.location.hash}",
-      "Something" /* TODO */);
-    } catch (e) {
-      print("Are you running Safari or Firefox by any chance?");
-      window.console.error(e);
-    }
+    // This is needed to give the rest of the page time to domReady().
+    // TODO: less hacky please
+    new Timer(const Duration(milliseconds: 10), () {
+      // This breaks in Safari and Firefox, currently.
+      try {
+        _router.handle("${window.location.pathname}${window.location.hash}");
+      } catch (e) {
+        print("Are you running Safari or Firefox by any chance?");
+        window.console.error(e);
+      }
+    });
 
     document.querySelector("img#loader-img-unresolved").remove();
   }
