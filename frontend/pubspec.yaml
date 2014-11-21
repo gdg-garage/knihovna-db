@@ -7,7 +7,7 @@ dependencies:
   browser: any
   core_elements: "<=0.4.0+5"
   paper_elements: any
-  polymer: any
+  polymer: "<=0.15.1+4"
   rate_limit: any
   route: any
   simple_preprocessor: any
