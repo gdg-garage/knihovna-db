@@ -103,6 +103,7 @@ class RootHandler(webapp2.RequestHandler):
     def get(self):
         fragment = self.request.get('_escaped_fragment_')
         if not fragment:
+            # TODO: put into memory
             with open(os.path.join(os.path.dirname(__file__), "templates/index.html"), "r") as f:
                 while True:
                     output = f.read()

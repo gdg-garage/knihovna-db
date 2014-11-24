@@ -120,8 +120,13 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     bq = BigQueryClient()
     logging.info("Polling suggestion job {}.".format(job_id))
     # TODO: catch 404 errors for jobs created 24+ hours ago, retry with new jobid
-    bq_json = bq.get_async_job_results(job_id, page_token,
-                                    MAX_RESULTS_PER_SUGGESTIONS_QUERY)
+    try:
+        bq_json = bq.get_async_job_results(job_id, page_token,
+                                           MAX_RESULTS_PER_SUGGESTIONS_QUERY)
+    except HttpError as e:
+        logging.error("Error from BigQuery with item_id={}.".format(item_ids))
+        raise deferred.PermanentTaskFailure(e)
+        return
     if not bq_json['jobComplete']:
         logging.info("- job not completed yet.")
         deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
