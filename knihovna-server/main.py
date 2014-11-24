@@ -3,6 +3,7 @@
 import sys
 import os
 import logging
+from google.appengine.dist27 import urllib
 from book_record import BookAnnotation
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "third_party"))
@@ -59,50 +60,11 @@ class QuerySuggestions(webapp2.RequestHandler):
         # TODO: find out if the request is auto-repeated or new
         #       if new, force suggester to create new job if necessary
         item_ids = self.request.get('q')
+        item_ids = item_ids.replace('-', '|')
         suggester = Suggester()
-        precomputed_json = suggester.get_json(item_ids)
-        if precomputed_json:
-            logging.info("Precomputed JSON served for {}.".format(item_ids))
-            self.response.write(precomputed_json)
-            return
-
-        suggestions = suggester.suggest(item_ids)
-        assert isinstance(suggestions, SuggestionsRecord)
-        json_object = {
-            'version': QuerySuggestions.CURRENT_VERSION,
-            'item_ids': item_ids,
-            'job_started': suggestions.job_started.isoformat()
-        }
-        original_book = suggestions.original_book.get()
-        assert isinstance(original_book, BookRecord)
-        json_object['original_book'] = {
-            'author': original_book.author,
-            'title': original_book.title,
-            'year': original_book.year
-        }
-        if suggestions.completed:
-            json_object['status'] = 'completed'
-            json_object['suggestions'] = []
-            book_records = ndb.get_multi(suggestions.books)
-            assert len(book_records) == len(suggestions.books_prediction)
-            for i in xrange(len(book_records)):
-                book = book_records[i]
-                assert isinstance(book, BookRecord)
-                json_object['suggestions'].append({
-                    'author': book.author,
-                    'title': book.title,
-                    'item_ids': book.key.string_id(),
-                    'prediction': suggestions.books_prediction[i]
-                })
-        else:
-            json_object['status'] = 'started'
-
-        precomputed_json = json.dumps(json_object, indent=2)
-        self.response.write(precomputed_json)
-
-        if suggestions.completed:
-            suggester.set_json(item_ids, suggestions.key, precomputed_json)
-
+        suggestions_json = suggester.get_json(item_ids)
+        logging.info(suggestions_json)
+        self.response.write(suggestions_json)
 
 
 def get_jinja_template_values(suggestions):
@@ -132,7 +94,7 @@ class DownloadHandler(webapp2.RequestHandler):
         suggestions = key.get()
         if not suggestions or not suggestions.completed:
             self.error(404)
-            self.response.out.write('Tato stránka neexistuje.')
+            self.response.out.write(u'Tato stránka neexistuje.')
             return
         values = get_jinja_template_values(suggestions)
         render_txt(self, "download.txt", values)
@@ -149,6 +111,14 @@ class RootHandler(webapp2.RequestHandler):
                         break
                     self.response.write(output)
             return
+        item_ids = None
+        fragment = urllib.unquote(fragment)
+        if not '=' in fragment:
+            fragment = urllib.unquote(fragment)
+            if not '=' in fragment:
+                self.error(400)
+                self.response.out.write(u"Bad request")
+                return
         item_ids = fragment.split('=')[1]
         item_ids = item_ids.replace('-', '|')
         key = ndb.Key(SuggestionsRecord, item_ids)
@@ -175,15 +145,25 @@ class RootHandler(webapp2.RequestHandler):
 class AnnotationHandler(webapp2.RequestHandler):
     CURRENT_VERSION = 1
 
+    def _no_annotation(self, item_ids):
+        self.response.write(json.dumps({
+               'version': AnnotationHandler.CURRENT_VERSION,
+               'item_ids': item_ids,
+               'short': u"K této knize bohužel nemáme anotaci. :(",
+               'long': ""
+        }, indent=2))
+
     def get(self):
         item_ids = self.request.get('q')
         item_ids = item_ids.replace('-', '|')
         # TODO: fast check
+        if item_ids == "":
+            self._no_annotation(item_ids)
+            return
         key = ndb.Key(BookAnnotation, item_ids)
         annotation = key.get()
         if not annotation:
-            self.error(404)
-            self.response.out.write('Tato stránka neexistuje.')
+            self._no_annotation(item_ids)
             return
         assert isinstance(annotation, BookAnnotation)
         json_object = {

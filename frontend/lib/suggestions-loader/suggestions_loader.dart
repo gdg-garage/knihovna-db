@@ -71,7 +71,9 @@ class SuggestionsLoader extends PolymerElement {
         // TODO: tell user we have failed
       } else {
         print("Will retry.");
-        isLongerWait = true;
+        if (_coreAjaxForResults.response['status'] != 'generating_json') {
+          isLongerWait = true;
+        }
         new Timer(DELAY_BETWEEN_RETRIES, () {
           _sendAjaxRequest();
         });

@@ -11,6 +11,7 @@ from bigquery import BigQueryClient, BigQueryTable
 from book_record import BookRecord
 
 import uuid
+import json
 
 
 class Suggester(object):
@@ -19,7 +20,24 @@ class Suggester(object):
     def __init__(self):
         pass
 
-    def suggest(self, item_ids):
+    @staticmethod
+    def _no_suggestions_yet(item_ids, job_started, status="started"):
+        original_book_key = ndb.Key(BookRecord, item_ids)
+        original_book = original_book_key.get()
+        json_object = {
+            'version': Suggester.VERSION,
+            'item_ids': item_ids,
+            'job_started': job_started.isoformat(),
+            'status': status
+        }
+        json_object['original_book'] = {
+            'author': original_book.author,
+            'title': original_book.title,
+            'year': original_book.year
+        }
+        return json.dumps(json_object, indent=2)
+
+    def get_json(self, item_ids):
         key = ndb.Key(SuggestionsRecord, item_ids)
         suggestions = key.get()
         if not suggestions:
@@ -32,39 +50,46 @@ class Suggester(object):
                 completed=False,
                 version=Suggester.VERSION,
                 job_started=job_started,
-                books=[]
+                books=[],
+                json=None,
+                json_generation_started=False
             )
             suggestions.put()
             deferred.defer(start_bq_job, key,
                            _countdown=1)
-            return suggestions
-        elif not suggestions.completed:
+            logging.info("Suggester returns NO_SUGGESTIONS_YET for {} because "
+                         "this is the first time we see this."
+                         .format(item_ids))
+            return Suggester._no_suggestions_yet(item_ids, job_started)
+
+        assert isinstance(suggestions, SuggestionsRecord)
+        if not suggestions.completed:
             # Started, but still running.
-            # TODO: restart if job_started too long ago
-            return suggestions
+            logging.info("Suggester returns NO_SUGGESTIONS_YET for {} because "
+                         "job is in progress."
+                         .format(item_ids))
+            return Suggester._no_suggestions_yet(item_ids,
+                                                 suggestions.job_started)
+
+        elif not suggestions.json:
+            # Completed, but JSON is not available.
+            if not suggestions.json_generation_started:
+                # JSON creation hasn't even started yet
+                suggestions.json_generation_started = True
+                suggestions.put()
+                deferred.defer(create_suggestions_json, suggestions.key)
+                logging.info("Started creating JSON for {}".format(item_ids))
+            logging.info("Suggester returns NO_SUGGESTIONS_YET for {} because "
+                         "JSON is not yet generated."
+                         .format(item_ids))
+            return Suggester._no_suggestions_yet(item_ids,
+                                                 suggestions.job_started,
+                                                 status="generating_json")
+
         else:
-            return suggestions
-
-    def get_json(self, item_ids):
-        key = ndb.Key(SuggestionsJson, item_ids)
-        jsonRecord = key.get()
-        if not jsonRecord:
-            return None
-        assert isinstance(jsonRecord, SuggestionsJson)
-        return jsonRecord.json
-
-    def set_json(self, item_ids, suggestions_key, json):
-        assert isinstance(suggestions_key, ndb.Key)
-        key = ndb.Key(SuggestionsJson, item_ids)
-        jsonRecord = SuggestionsJson(
-            key=key,
-            version=Suggester.VERSION,
-            json=json
-        )
-        jsonRecord.put()
-        logging.info("Created a precomputed JSON record for {}."
-                     .format(item_ids))
-
+            logging.info("Suggester returns JSON for {}"
+                         .format(item_ids))
+            return suggestions.json
 
 
 def start_bq_job(suggestions_key):
@@ -95,14 +120,14 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     bq = BigQueryClient()
     logging.info("Polling suggestion job {}.".format(job_id))
     # TODO: catch 404 errors for jobs created 24+ hours ago, retry with new jobid
-    json = bq.get_async_job_results(job_id, page_token,
+    bq_json = bq.get_async_job_results(job_id, page_token,
                                     MAX_RESULTS_PER_SUGGESTIONS_QUERY)
-    if not json['jobComplete']:
+    if not bq_json['jobComplete']:
         logging.info("- job not completed yet.")
         deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
                        _countdown=5)
         return
-    table = BigQueryTable(json)
+    table = BigQueryTable(bq_json)
     item_ids_array = item_ids.split('|')
     # Get the consolidated book for each item_id
     suggestions = suggestions_key.get()
@@ -123,7 +148,7 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
             suggestions.books_prediction.append(prediction)
         if len(suggestions.books) >= 1000:
             break
-    next_page_token = json.get('pageToken', "")
+    next_page_token = bq_json.get('pageToken', "")
     if next_page_token != "" and len(suggestions.books) < 1000:
         suggestions.put()
         deferred.defer(check_bq_job, job_id, item_ids, suggestions_key,
@@ -132,10 +157,48 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
                      "Running again.".format(item_ids))
     else:
         suggestions.completed = True
+        suggestions.json_generation_started = True
         suggestions.put()
         logging.info("Suggestions for item_ids '{}' completed and saved.".format(
             item_ids
         ))
+        deferred.defer(create_suggestions_json, suggestions.key)
+
+
+def create_suggestions_json(suggestions_key):
+    suggestions = suggestions_key.get()
+    item_ids = suggestions.key.string_id()
+    assert isinstance(suggestions, SuggestionsRecord)
+    assert suggestions.completed
+    json_object = {
+        'version': Suggester.VERSION,
+        'item_ids': item_ids,
+        'job_started': suggestions.job_started.isoformat()
+    }
+    original_book = suggestions.original_book.get()
+    assert isinstance(original_book, BookRecord)
+    json_object['original_book'] = {
+        'author': original_book.author,
+        'title': original_book.title,
+        'year': original_book.year
+    }
+    json_object['status'] = 'completed'
+    json_object['suggestions'] = []
+    book_records = ndb.get_multi(suggestions.books)
+    assert len(book_records) == len(suggestions.books_prediction)
+    for i in xrange(len(book_records)):
+        book = book_records[i]
+        assert isinstance(book, BookRecord)
+        json_object['suggestions'].append({
+            'author': book.author,
+            'title': book.title,
+            'item_ids': book.key.string_id(),
+            'prediction': suggestions.books_prediction[i]
+        })
+    precomputed_json = json.dumps(json_object, indent=2)
+    suggestions.json = precomputed_json
+    suggestions.put()
+    logging.info("Created and saved JSON for {}".format(item_ids))
 
 
 SUGGESTION_QUERY = """
@@ -173,12 +236,7 @@ class SuggestionsRecord(ndb.Model):
     # index in [books], so books[i] has a prediction prob. of
     # books_prediction[i].
     books_prediction = ndb.FloatProperty(repeated=True, indexed=False)
-
-
-# Precomputed JSON for a SuggestionsRecord so that we don't need to construct
-# it every time.
-class SuggestionsJson(ndb.Model):
-    # item_ids of the original book is stored in key
-    record = ndb.KeyProperty(kind=SuggestionsRecord)
-    version = ndb.IntegerProperty()
+    # Precomputed JSON for a SuggestionsRecord so that we don't need to construct
+    # it every time.
     json = ndb.TextProperty()
+    json_generation_started = ndb.BooleanProperty()
