@@ -63,7 +63,6 @@ class QuerySuggestions(webapp2.RequestHandler):
         item_ids = item_ids.replace('-', '|')
         suggester = Suggester()
         suggestions_json = suggester.get_json(item_ids)
-        logging.info(suggestions_json)
         self.response.write(suggestions_json)
 
 
