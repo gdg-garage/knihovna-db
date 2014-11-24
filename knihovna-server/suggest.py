@@ -123,7 +123,7 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     try:
         bq_json = bq.get_async_job_results(job_id, page_token,
                                            MAX_RESULTS_PER_SUGGESTIONS_QUERY)
-    except HttpError as e:
+    except (HttpError, gHttpError) as e:
         logging.error("Error from BigQuery with item_id={}.".format(item_ids))
         raise deferred.PermanentTaskFailure(e)
     if not bq_json['jobComplete']:
