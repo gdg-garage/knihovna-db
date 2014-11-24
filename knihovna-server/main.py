@@ -60,6 +60,12 @@ class QuerySuggestions(webapp2.RequestHandler):
         #       if new, force suggester to create new job if necessary
         item_ids = self.request.get('q')
         suggester = Suggester()
+        precomputed_json = suggester.get_json(item_ids)
+        if precomputed_json:
+            logging.info("Precomputed JSON served for {}.".format(item_ids))
+            self.response.write(precomputed_json)
+            return
+
         suggestions = suggester.suggest(item_ids)
         assert isinstance(suggestions, SuggestionsRecord)
         json_object = {
@@ -91,7 +97,12 @@ class QuerySuggestions(webapp2.RequestHandler):
         else:
             json_object['status'] = 'started'
 
-        self.response.write(json.dumps(json_object, indent=2))
+        precomputed_json = json.dumps(json_object, indent=2)
+        self.response.write(precomputed_json)
+
+        if suggestions.completed:
+            suggester.set_json(item_ids, suggestions.key, precomputed_json)
+
 
 
 def get_jinja_template_values(suggestions):

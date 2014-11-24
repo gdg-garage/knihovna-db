@@ -14,6 +14,8 @@ import uuid
 
 
 class Suggester(object):
+    VERSION = 1
+
     def __init__(self):
         pass
 
@@ -28,6 +30,7 @@ class Suggester(object):
                 key=key,
                 original_book=original_book_key,
                 completed=False,
+                version=Suggester.VERSION,
                 job_started=job_started,
                 books=[]
             )
@@ -41,6 +44,28 @@ class Suggester(object):
             return suggestions
         else:
             return suggestions
+
+    def get_json(self, item_ids):
+        key = ndb.Key(SuggestionsJson, item_ids)
+        jsonRecord = key.get()
+        if not jsonRecord:
+            return None
+        assert isinstance(jsonRecord, SuggestionsJson)
+        return jsonRecord.json
+
+    def set_json(self, item_ids, suggestions_key, json):
+        assert isinstance(suggestions_key, ndb.Key)
+        key = ndb.Key(SuggestionsJson, item_ids)
+        jsonRecord = SuggestionsJson(
+            key=key,
+            version=Suggester.VERSION,
+            json=json
+        )
+        jsonRecord.put()
+        logging.info("Created a precomputed JSON record for {}."
+                     .format(item_ids))
+
+
 
 def start_bq_job(suggestions_key):
     item_ids = suggestions_key.string_id()
@@ -135,10 +160,12 @@ SUGGESTION_QUERY = """
     LIMIT 1800
 """
 
+
 class SuggestionsRecord(ndb.Model):
     # item_ids of the original book is stored in key
     original_book = ndb.KeyProperty(indexed=False, kind=BookRecord)
-    completed = ndb.BooleanProperty(indexed=False)
+    completed = ndb.BooleanProperty()
+    version = ndb.IntegerProperty()
     job_started = ndb.DateTimeProperty(indexed=False)
     # A sorted array of BookRecord keys that are suggestion for [original_book]
     books = ndb.KeyProperty(repeated=True, indexed=False, kind=BookRecord)
@@ -146,3 +173,12 @@ class SuggestionsRecord(ndb.Model):
     # index in [books], so books[i] has a prediction prob. of
     # books_prediction[i].
     books_prediction = ndb.FloatProperty(repeated=True, indexed=False)
+
+
+# Precomputed JSON for a SuggestionsRecord so that we don't need to construct
+# it every time.
+class SuggestionsJson(ndb.Model):
+    # item_ids of the original book is stored in key
+    record = ndb.KeyProperty(kind=SuggestionsRecord)
+    version = ndb.IntegerProperty()
+    json = ndb.TextProperty()
