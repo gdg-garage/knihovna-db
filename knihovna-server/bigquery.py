@@ -1,5 +1,6 @@
 # coding=utf-8
 
+import logging
 from third_party import httplib2
 
 from third_party.apiclient.discovery import build
@@ -75,6 +76,9 @@ class BigQueryTable(object):
     Copies data from a BigQuery json result into more pythonic data structure.
     """
     def __init__(self, json):
+        if not 'rows' in json:
+            logging.error(u"Invalid json for BigQueryTable:\n{}".format(json))
+            raise ValueError("Invalid BigQuery response JSON - no rows")
         self.ncols = len(json['schema']['fields'])
         self.nrows = len(json['rows'])
         self.data = []

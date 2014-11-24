@@ -126,12 +126,13 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
     except HttpError as e:
         logging.error("Error from BigQuery with item_id={}.".format(item_ids))
         raise deferred.PermanentTaskFailure(e)
-        return
     if not bq_json['jobComplete']:
         logging.info("- job not completed yet.")
         deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
                        _countdown=5)
         return
+    logging.info("Job item_ids={} jobComplete status is '{}'"
+                 .format(item_ids, bq_json['jobComplete']))
     table = BigQueryTable(bq_json)
     item_ids_array = item_ids.split('|')
     # Get the consolidated book for each item_id
@@ -181,6 +182,10 @@ def create_suggestions_json(suggestions_key):
         'job_started': suggestions.job_started.isoformat()
     }
     original_book = suggestions.original_book.get()
+    if not original_book:
+        raise deferred.PermanentTaskFailure("Original book not found for {} "
+                                            "when creating JSON."
+                                            .format(item_ids))
     assert isinstance(original_book, BookRecord)
     json_object['original_book'] = {
         'author': original_book.author,
