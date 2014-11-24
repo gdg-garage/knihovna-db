@@ -175,7 +175,12 @@ def create_suggestions_json(suggestions_key):
     suggestions = suggestions_key.get()
     item_ids = suggestions.key.string_id()
     assert isinstance(suggestions, SuggestionsRecord)
-    assert suggestions.completed
+    if not suggestions.completed:
+        logging.warning("create_suggestions_json for {} called although "
+                        "suggestions are still not completed.".format(item_ids))
+        # deferred.defer(create_suggestions_json, suggestions_key,
+        #                _countdown=3)
+        return
     json_object = {
         'version': Suggester.VERSION,
         'item_ids': item_ids,
