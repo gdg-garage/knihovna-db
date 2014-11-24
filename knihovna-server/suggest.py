@@ -131,8 +131,13 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
         deferred.defer(check_bq_job, job_id, item_ids, suggestions_key, "",
                        _countdown=5)
         return
-    logging.info("Job item_ids={} jobComplete status is '{}'"
-                 .format(item_ids, bq_json['jobComplete']))
+    if not 'rows' in bq_json:
+        logging.error(u"Invalid json for BigQueryTable. Job for {} is probably "
+                      u"invalid (bad item_id?).\n"
+                      u"JSON:\n"
+                      u"{}".format(item_ids, json))
+        raise deferred.PermanentTaskFailure("No rows in BigQuery response for"
+                                            "{}.".format(item_ids))
     table = BigQueryTable(bq_json)
     item_ids_array = item_ids.split('|')
     # Get the consolidated book for each item_id
