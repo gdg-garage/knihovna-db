@@ -3,8 +3,14 @@
 
 <polymer-element name="book-annotation">
     <template>
+        <core-ajax-dart id="book-anno-ajax"
+                        url="/annotation/"
+                        handleAs="json"></core-ajax-dart>
         <p>
-
+            {{short}}
+        </p>
+        <p>
+            {{long}}
         </p>
     </template>
     <script type="application/dart" src="book_annotation.dart"></script>

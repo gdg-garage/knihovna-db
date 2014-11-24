@@ -86,8 +86,8 @@
             }
 
             paper-dialog {
-                max-width: 80%;
                 text-align: left;
+                max-width: 500px;
             }
 
             html /deep/ #book-info::shadow #scroller {
@@ -138,16 +138,13 @@
         <paper-dialog id="book-info"
                       heading="{{bookInInfoDialog.title}}"
                       backdrop
+                      on-book-annotation-loaded="{{handleBookInfoContentResize}}"
                       transition="core-transition-center">
-            <p>
-                Název: {{bookInInfoDialog.title}}
-            </p>
             <p>
                 Autor: {{bookInInfoDialog.author}}
             </p>
-            <p>
-                (Tady bude anotace knížky, až se k tomu dostaneme...) Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
+
+            <book-annotation itemIds="{{bookInInfoDialog.itemIds}}"></book-annotation>
 
             <paper-button id="book-info-close" dismissive autofocus>Zavřít</paper-button>
             <paper-button id="book-info-more" affirmative><a _href="{{bookInInfoDialogHref}}"

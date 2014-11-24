@@ -4,6 +4,8 @@ import 'package:polymer/polymer.dart';
 import 'package:paper_elements/paper_dialog.dart';
 import '../models.dart';
 import 'dart:html';
+import 'dart:js' as js;
+import 'dart:async';
 
 @CustomTag('books-list')
 class BooksList extends PolymerElement {
@@ -12,6 +14,8 @@ class BooksList extends PolymerElement {
   @observable BookWithMetadata originalBook;
   @observable SuggestedBook bookInInfoDialog = SuggestedBook.BLANK;
   @observable String bookInInfoDialogHref;
+
+  PaperDialog _bookInfoDialog;
 
   BooksList.created() : super.created();
 
@@ -39,6 +43,8 @@ class BooksList extends PolymerElement {
     }
     $['end'].style.marginTop = '${endMarginTop}px';
 
+    _bookInfoDialog = $['book-info'];
+
     // #if DEBUG
     print("${books.length} suggestions loaded");
     // #endif
@@ -51,21 +57,33 @@ class BooksList extends PolymerElement {
   void showInfo(Event event, Object detail, Node sender) {
     String itemIds = (sender as Element).dataset['itemids'];
 
-    // This is sub-ideal, but whatever.
+    // This is not ideal, but whatever.
     bookInInfoDialog = books
         .singleWhere((SuggestedBook book) => book.itemIds == itemIds);
-    // TODO: get metadata
 
     String firstItemId = itemIds.split("|").first;
     bookInInfoDialogHref = "http://search.mlp.cz/cz/titul/$firstItemId/";
 
-    ($['book-info'] as PaperDialog).opened = true;
+    _bookInfoDialog.opened = true;
   }
 
   void showSharingDialog() {
     fire("show-sharing", detail: {
       "text": "${books.length} doporučení pro čtenáře knížky "
               "${originalBook.title}"
+    });
+  }
+
+  void handleBookInfoContentResize() {
+    var overlayEl = _bookInfoDialog.shadowRoot.querySelector("#overlay");
+    var overlay = new js.JsObject.fromBrowserObject(overlayEl);
+    // Wait for overlay to "size up" (= transform) before resizing it.
+    new Timer(const Duration(milliseconds: 200), () {
+      // #if DEBUG
+      print("Resizing the overlay");
+      // #endif
+
+      overlay.callMethod('resizeHandler', []);
     });
   }
 }
