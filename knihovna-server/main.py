@@ -3,7 +3,7 @@
 import sys
 import os
 import logging
-from google.appengine.dist27 import urllib
+import urllib
 from book_record import BookAnnotation
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "third_party"))
