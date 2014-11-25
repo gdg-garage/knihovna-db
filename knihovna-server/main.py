@@ -15,6 +15,9 @@ from suggest import Suggester, SuggestionsRecord
 from google.appengine.ext import ndb
 
 from jinja import render_txt, render_html
+import re
+
+VALID_ITEM_IDS = re.compile("^[0-9][0-9\|]*$")
 
 
 class AutocompleteJson(webapp2.RequestHandler):
@@ -61,6 +64,10 @@ class QuerySuggestions(webapp2.RequestHandler):
         #       if new, force suggester to create new job if necessary
         item_ids = self.request.get('q')
         item_ids = item_ids.replace('-', '|')
+        if not VALID_ITEM_IDS.match(item_ids):
+            self.error(400)
+            logging.info("Tried to get query for item_id={}".format(item_ids))
+            return
         suggester = Suggester()
         suggestions_json = suggester.get_json(item_ids)
         self.response.write(suggestions_json)
@@ -89,6 +96,12 @@ def get_jinja_template_values(suggestions):
 class DownloadHandler(webapp2.RequestHandler):
     def get(self, item_ids, extension):
         assert extension == "txt"
+        item_ids = item_ids.replace('-', '|')
+        if not VALID_ITEM_IDS.match(item_ids):
+            self.error(400)
+            logging.info("Tried to get download for item_id={}"
+                         .format(item_ids))
+            return
         key = ndb.Key(SuggestionsRecord, item_ids)
         suggestions = key.get()
         if not suggestions or not suggestions.completed:
@@ -121,6 +134,11 @@ class RootHandler(webapp2.RequestHandler):
                 return
         item_ids = fragment.split('=')[1]
         item_ids = item_ids.replace('-', '|')
+        if not VALID_ITEM_IDS.match(item_ids):
+            self.error(400)
+            logging.info("Tried to get escaped fragment for item_id={}"
+                         .format(item_ids))
+            return
         key = ndb.Key(SuggestionsRecord, item_ids)
         suggestions = key.get()
         if not suggestions or not suggestions.completed:
@@ -156,7 +174,11 @@ class AnnotationHandler(webapp2.RequestHandler):
     def get(self):
         item_ids = self.request.get('q')
         item_ids = item_ids.replace('-', '|')
-        # TODO: fast check
+        if not VALID_ITEM_IDS.match(item_ids):
+            self.error(400)
+            logging.info("Tried to get annotation for item_id={}"
+                         .format(item_ids))
+            return
         if item_ids == "":
             self._no_annotation(item_ids)
             return
