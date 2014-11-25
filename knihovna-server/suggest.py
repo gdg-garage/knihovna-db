@@ -135,8 +135,8 @@ def check_bq_job(job_id, item_ids, suggestions_key, page_token):
         logging.error(u"Invalid json for BigQueryTable. Job for {} is probably "
                       u"invalid (bad item_id?).\n"
                       u"JSON:\n"
-                      u"{}".format(item_ids, json))
-        raise deferred.PermanentTaskFailure("No rows in BigQuery response for"
+                      u"{}".format(item_ids, bq_json))
+        raise deferred.PermanentTaskFailure("No rows in BigQuery response for "
                                             "{}.".format(item_ids))
     table = BigQueryTable(bq_json)
     item_ids_array = item_ids.split('|')
